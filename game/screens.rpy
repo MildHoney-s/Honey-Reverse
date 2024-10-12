@@ -21,7 +21,7 @@ init python:
     g = Gallery()
 
     # Step 2. Add buttons and images to the gallery.
-    
+
     # The first unlocked image (main_menu.png)
     g.button("main_menu")   # Button for the first unlocked image
     g.image("gui/main_menu.png")
@@ -35,7 +35,7 @@ init python:
     g.button("CG2")
     g.image("images/save_load/locked.png")
     g.condition("persistent.cg2")
-    
+
     g.button("CG3")
     g.image("images/save_load/locked.png")
     g.condition("persistent.cg3")
@@ -79,7 +79,7 @@ init python:
     g.button("CB1")
     g.image(im.Scale("images/sd/chibi_1.png",1920,1080))
     g.condition("persistent.gameclear")
-    
+
     g.button("CB2")
     g.image(im.Scale("images/sd/chibi_2.png",1920,1080))
     g.condition("persistent.gameclear")
@@ -345,7 +345,6 @@ screen quick_menu():
             textbutton _("Setting") action ShowMenu("preferences")
             textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
-            
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -405,7 +404,7 @@ screen navigation():
                 action [SetVariable("config_from_main", True), ShowMenu("preferences")]
 
             imagebutton auto "images/main_menu/gallery_%s.png":
-                focus_mask True 
+                focus_mask True
                 action [SetVariable("config_from_main", True),ShowMenu("gallery_"+str(persistent.current_page_gallery))]
 
         else:
@@ -578,7 +577,6 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
                     transclude
 
-    
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
 
@@ -687,7 +685,7 @@ style about_label_text:
 screen save():
 
     tag menu
-    
+
     add gui.game_menu_background
     imagebutton auto "gui/button/window_%s.png" action Return() align(0.095,0.1)
     text ("Save") align(0.89,0.1):
@@ -703,7 +701,7 @@ screen save():
         textbutton _("Save") action ShowMenu('save')
         textbutton _("Load") action ShowMenu('load')
         textbutton _("Setting") action ShowMenu("preferences")
-    
+
     use file_slots(_("Save"))
 
 
@@ -711,8 +709,8 @@ screen load():
 
 
 
-    tag menu  
-    
+    tag menu
+
     if load_from_main == False:
         add gui.game_menu_background
         imagebutton auto "gui/button/window_%s.png" action Return() align(0.095,0.1)
@@ -729,19 +727,17 @@ screen load():
             textbutton _("Save") action ShowMenu('save')
             textbutton _("Load") action ShowMenu('load')
             textbutton _("Setting") action ShowMenu("preferences")
-            
     else:
         add gui.main_menu_background
         add "images/save_load/menu_load.png"
         imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.935
 
 
-    
+
     use file_slots(_("Load"))
 
 screen file_slots(title):
 
-    
     vbox:
         if load_from_main == False:
             xpos 176
@@ -761,15 +757,12 @@ screen file_slots(title):
                     ysize 288
 
                     imagebutton auto "images/save_load/bg_frame_%s.png" action FileAction(slot)
-                
+
                     image FileScreenshot(slot) align((0,0)) xsize 512 ysize 288
 
                     image "images/save_load/Slot_number.png" align((0.01,0.048))
                     text "#[slot]":
                             style "slot_number_text" align((0.05,0))
-    
-                        
-                       
 
     frame:
         xalign 0.5
@@ -785,20 +778,11 @@ screen file_slots(title):
                         if page == persistent.current_page:
                             image "images/save_load/page_hover.png"
                             text "[page]":
-                                style "slot_time_text" align((0.65,0.65)) 
+                                style "slot_time_text" align((0.65,0.65))
                         else:
                             imagebutton auto "images/save_load/page_%s.png" action [SetVariable("persistent.current_page",page),FilePage(page)]
                             text "[page]":
                                 style "slot_time_text" align((0.65,0.65))
-                    
-
-
-
-        
-
-
-
-
 
 style slot_number_text is gui_label_text
 
@@ -814,7 +798,6 @@ style slot_number_text:
     size 37
     spacing 2
     color '#750000'
-   
 
 
 ## Preferences screen ##########################################################
@@ -843,7 +826,7 @@ screen preferences():
             textbutton _("Save") action ShowMenu('save')
             textbutton _("Load") action ShowMenu('load')
             textbutton _("Setting") action ShowMenu("preferences")
-    else: 
+    else:
         add gui.main_menu_background
         add "images/config/settings.png" align((0.5, 0.5))
         imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.825
@@ -852,50 +835,37 @@ screen preferences():
     image "images/config/setting_skip.png" xpos 949 ypos 273
     image "images/config/setting_sound.png" xpos 516 ypos 589
     image "images/config/setting_window.png" xpos 516 ypos 273
-    
     use game_menu(_("Preferences"), scroll="viewport"):
-    
-
         hbox:
-            
-
             hbox:
-
                 xpos 245
                 ypos 15
-
                 spacing 6
-
                 if preferences.fullscreen == False:
                     imagebutton:
                         focus_mask True
                         idle "images/config/settings_checked.png"
-                    
                     text ("Window"):
                         style "setting_text"
-                                
                     imagebutton auto "images/config/settings_%s.png":
                         focus_mask True
                         action Preference("display", "fullscreen")
 
                     text ("Full Screen"):
                         style "setting_text"
-                                
                 else:
-                    imagebutton auto "images/config/settings_%s.png": 
+                    imagebutton auto "images/config/settings_%s.png":
                         focus_mask True
                         action Preference("display", "any window")
 
                     text ("Window"):
                         style "setting_text"
-                                
                     imagebutton:
                         focus_mask True
                         idle "images/config/settings_checked.png"
 
                     text ("Full Screen"):
                         style "setting_text"
-                                                                      
             hbox:
 
                 xpos 360
@@ -909,20 +879,17 @@ screen preferences():
                         idle "images/config/settings_checked.png"
                     text ("Only Seen Text "):
                         style "setting_text"
-                                
                     imagebutton auto "images/config/settings_%s.png":
                         focus_mask True
                         action Preference("skip", "toggle")
                     text ("All Text"):
                         style "setting_text"
-                                
                 else:
-                    imagebutton auto "images/config/settings_%s.png": 
+                    imagebutton auto "images/config/settings_%s.png":
                         focus_mask True
                         action Preference("skip", "toggle")
                     text ("Only Seen Text"):
                         style "setting_text"
-                                
                     imagebutton:
                         focus_mask True
                         idle "images/config/settings_checked.png"
@@ -957,8 +924,6 @@ screen preferences():
             xpos 532
             ypos 700
 
-                
-    
     hbox:
         style_prefix "slider"
         box_wrap True
@@ -976,7 +941,6 @@ screen preferences():
         xpos 1248
         ypos 762
         spacing 6
-    
         imagebutton :
             selected_idle "images/config/settings_checked.png"
             selected_hover "images/config/settings_checked.png"
@@ -984,14 +948,8 @@ screen preferences():
             hover "images/config/settings_idle.png"
             action Preference("all mute", "toggle")
 
-        
         text ("Mute All"):
             style "setting_text"
-                
-
-
-
- 
 
 
 style pref_label is gui_label
@@ -1082,7 +1040,6 @@ style setting_text:
 screen history():
 
     tag menu
-    
     add gui.game_menu_background
     imagebutton auto "gui/button/window_%s.png" action Return() align(0.095,0.1)
     text ("History") align(0.89,0.1):
@@ -1124,7 +1081,6 @@ screen history():
                 for h in _history_list:
 
                     window:
-                        
                         background Image("gui/historynamebox.png", xalign=0, yalign=0)
 
                         ## This lays things out properly if history_height is None.
@@ -1135,8 +1091,6 @@ screen history():
 
                             label h.who:
                                 style "history_name_text"
-                                
-                                
                                 substitute False
 
                                 ## Take the color of the who text from the Character, if
@@ -1149,9 +1103,6 @@ screen history():
                             line_spacing 5
                             substitute False
                             size 30
-                            
-                            
-
                     ## This puts some space between entries so it's easier to read
                     null height 20
 
@@ -1161,8 +1112,6 @@ screen history():
                     ## Adding line_spacing prevents the bottom of the text
                     ## from getting cut off. Adjust when replacing the
                     ## default fonts.
-
-    
 
 
 
@@ -1183,7 +1132,6 @@ style history_label_text is gui_label_text
 style history_window:
     xfill True
     ysize gui.history_height
-    
 
 style history_name:
     xpos gui.history_name_xpos
@@ -1191,7 +1139,6 @@ style history_name:
     ypos gui.history_name_ypos
     xsize gui.history_name_width
     font gui.name_text_font
-    
 
 
 style history_name_text:
@@ -1215,11 +1162,9 @@ style history_text:
 style history_label:
     xfill True
     top_margin -100
-    
 
 style history_label_text:
     xalign 0.5
-    
     ## Note: When altering the size of the label, you may need to increase the
     ## ypadding of the Frame, or separate it again into top_padding and bottom_padding
 
@@ -1266,12 +1211,11 @@ screen gallery_1():
                         if g_page == persistent.current_page_gallery:
                             image "images/save_load/page_hover.png"
                             text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65)) 
+                                style "slot_time_text" align((0.65,0.65))
                         else:
                             imagebutton auto "images/save_load/page_%s.png" action [SetVariable("persistent.current_page_gallery",g_page),ShowMenu("gallery_"+str(g_page))]
                             text "[g_page]":
                                 style "slot_time_text" align((0.65,0.65))
-    
 
 
     imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.935
@@ -1316,12 +1260,11 @@ screen gallery_2():
                         if g_page == persistent.current_page_gallery:
                             image "images/save_load/page_hover.png"
                             text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65)) 
+                                style "slot_time_text" align((0.65,0.65))
                         else:
                             imagebutton auto "images/save_load/page_%s.png" action [SetVariable("persistent.current_page_gallery",g_page),ShowMenu("gallery_"+str(g_page))]
                             text "[g_page]":
                                 style "slot_time_text" align((0.65,0.65))
-    
 
 
     imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.935
@@ -1366,12 +1309,11 @@ screen gallery_3():
                         if g_page == persistent.current_page_gallery:
                             image "images/save_load/page_hover.png"
                             text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65)) 
+                                style "slot_time_text" align((0.65,0.65))
                         else:
                             imagebutton auto "images/save_load/page_%s.png" action [SetVariable("persistent.current_page_gallery",g_page),ShowMenu("gallery_"+str(g_page))]
                             text "[g_page]":
                                 style "slot_time_text" align((0.65,0.65))
-    
 
 
     imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.935
@@ -1416,12 +1358,11 @@ screen gallery_4():
                         if g_page == persistent.current_page_gallery:
                             image "images/save_load/page_hover.png"
                             text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65)) 
+                                style "slot_time_text" align((0.65,0.65))
                         else:
                             imagebutton auto "images/save_load/page_%s.png" action [SetVariable("persistent.current_page_gallery",g_page),ShowMenu("gallery_"+str(g_page))]
                             text "[g_page]":
                                 style "slot_time_text" align((0.65,0.65))
-    
 
 
     imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.935
@@ -1466,12 +1407,11 @@ screen gallery_5():
                         if g_page == persistent.current_page_gallery:
                             image "images/save_load/page_hover.png"
                             text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65)) 
+                                style "slot_time_text" align((0.65,0.65))
                         else:
                             imagebutton auto "images/save_load/page_%s.png" action [SetVariable("persistent.current_page_gallery",g_page),ShowMenu("gallery_"+str(g_page))]
                             text "[g_page]":
                                 style "slot_time_text" align((0.65,0.65))
-    
 
 
     imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.935
@@ -1516,12 +1456,11 @@ screen gallery_6():
                         if g_page == persistent.current_page_gallery:
                             image "images/save_load/page_hover.png"
                             text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65)) 
+                                style "slot_time_text" align((0.65,0.65))
                         else:
                             imagebutton auto "images/save_load/page_%s.png" action [SetVariable("persistent.current_page_gallery",g_page),ShowMenu("gallery_"+str(g_page))]
                             text "[g_page]":
                                 style "slot_time_text" align((0.65,0.65))
-    
 
 
     imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.935
@@ -1723,21 +1662,16 @@ screen confirm(message, yes_action, no_action):
         $ show_text = "Back to Title"
         $ show_message = "Return to main menu?"
 
-    
     add "gui/overlay/confirm.png"
     add "gui/overlay/popup_box.png" align(0.5,0.5)
-    
-    
-    frame:
 
+    frame:
         vbox:
             xalign 0.5
             spacing 45
-                
             label _(show_text):
                 style "confirm_prompt_text"
                 xalign 0.5
-                
             label _(show_message):
                 style "confirm_prompt"
                 xalign 0.5
@@ -2002,7 +1936,6 @@ screen bookreading:
 
         style_prefix "nvl_window"
 
-        
         xmargin 80
         ymargin 120
         xpadding 180
@@ -2011,7 +1944,6 @@ screen bookreading:
 
         vbox:
             spacing 15
-            
 
             text "ในโลกที่มีการวิจัยดัดแปลงสิ่งมีชีวิตหรือที่เรียกกันว่ามิวแทนต์":
                 xalign 0.5
@@ -2033,9 +1965,3 @@ screen bookreading:
                 xalign 0.5
 
     imagebutton auto "gui/button/cg_close_%s.png" action Return() align((0.98, 0.02))
-
-
-
-    
-
-
