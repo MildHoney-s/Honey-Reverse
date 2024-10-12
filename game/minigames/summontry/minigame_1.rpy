@@ -10,6 +10,8 @@
 
 init python:
     from copy import copy
+    init_time = 5
+
     class summontry_demon:
         def __init__(self, name, image, stats, mana):
             self.name = name
@@ -67,7 +69,7 @@ init python:
             self.occupied_positions = [None] * len(self.spawn_positions)
 
         def clicked_portal(self, client):
-            renpy.play("summontry/rotate_up.ogg", "sound")
+            renpy.play("minigames/summontry/rotate_up.ogg", "sound")
 
             if client.demon:
                 if self.holding:
@@ -132,7 +134,7 @@ init python:
             self.hovered_client = None
             if not self.holding:
                 return
-            renpy.play("summontry/rotate_up.ogg", "sound")
+            renpy.play("minigames/summontry/rotate_up.ogg", "sound")
             self.holding_pos = (-200,-200)
             self.demons.append(self.holding)
             self.holding = None
@@ -165,7 +167,7 @@ init python:
                         
                     
                     # Other operations (sound effects, etc.)
-                    renpy.play("summontry/bubble_7.ogg", "sound")
+                    renpy.play("minigames/summontry/bubble_7.ogg", "sound")
                     spawn_mana(client.x, client.y, gain_amount, self)
                     
                     
@@ -188,12 +190,12 @@ init python:
                     i.chant_delay -= 1
                     if i.chant_delay <= 0:
                         i.stat = "chanting"
-                        renpy.play("summontry/fail.ogg", "sound")
+                        renpy.play("minigames/summontry/fail.ogg", "sound")
                 elif i.stat == "chanting":
                     i.chant_duration -= 1
                     if i.chant_duration <= 0:
                         i.stat = "idle"
-                        renpy.play("summontry/shed.ogg", "sound")
+                        renpy.play("minigames/summontry/shed.ogg", "sound")
                         self.release_slot(i)
                 elif i.stat == "serving":
                     i.serve_duration -= 1
@@ -213,7 +215,7 @@ init python:
                             # Set client to "waiting" when demon's mana is 0
                             i.waiting_duration = i.serve_duration  # Set remaining time as waiting_duration
                             i.stat = "waiting"
-                            renpy.play("summontry/return_bench.ogg", "sound")  # Play a sound when the demon returns to the bench
+                            renpy.play("minigames/summontry/return_bench.ogg", "sound")  # Play a sound when the demon returns to the bench
                             continue  # Skip further processing for this client as the demon is no longer serving
                     self.mana_gain_timers[i] -= 1  # Decrease the timer
                     if self.mana_gain_timers[i] <= 0:
@@ -280,7 +282,7 @@ init python:
                 # Assign the client to the available spawn position
                 self.current_client.x, self.current_client.y = self.spawn_positions[available_index]
                 self.occupied_positions[available_index] = self.current_client  # Mark the position as occupied
-                renpy.play("summontry/locked.ogg", "sound")
+                renpy.play("minigames/summontry/locked.ogg", "sound")
 
             # Reset spawn timer
             self.spawn_timer = 2
@@ -299,12 +301,12 @@ init python:
             self.hovered_client = None
         def reset(self):
             self.hovered_client = None
-            self.time = 90
+            self.time = init_time
             self.tonights_gain = 0
             self.missed = 0
             self.stat = "start"
         def start(self):
-            self.time = 90
+            self.time = init_time
             self.stat = "night"
         def end_night(self):
             """Ends the night cycle and resets all client states."""
