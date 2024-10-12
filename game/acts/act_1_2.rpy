@@ -9,7 +9,10 @@ label act1_2_shot_1:
     centered "{=centered_text} 1 ชั่วโมงผ่านไปหลังจากที่ฉันซื้อของเสร็จกลับมาที่ร้าน{/centered_text}"
     scene bg2day with fade
 
-    scene bg8day
+    scene bg8day:
+        crop (0,0,1920,1080)
+        size (1920, 1080)
+        linear 2.0 crop (300, 200, 1280, 720)
     pov "อ่ะ อรุณสวัสดิ์ มายด์"
     mild "สวัสดีตอนเช้าค่ะ [povname]"
     pov "(ท่าทางที่งัวเงีย และไม่สดใสเลย ทำเอาฉันกังวลนะเนี่ย)"

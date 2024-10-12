@@ -843,4 +843,7 @@ label act1_1_shot_7:
     scene black
     with fade
 
-    jump demo
+    if is_demo:
+        jump demo
+    else:
+        jump act1_2_shot_1
