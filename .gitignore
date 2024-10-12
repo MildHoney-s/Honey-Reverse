@@ -134,3 +134,13 @@ CubismSdkForNative-4-*.zip
 /cg
 /.vscode/launch.json
 /.vscode/tasks.json
+
+**/*~
+**/*.rpyc
+**/*.rpymc
+game/cache
+game/saves
+log.txt
+traceback.txt
+errors.txt
+text_overflow.txt
