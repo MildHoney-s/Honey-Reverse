@@ -134,6 +134,7 @@ CubismSdkForNative-4-*.zip
 /cg
 /.vscode/launch.json
 /.vscode/tasks.json
+/.vscode
 
 **/*~
 **/*.rpyc

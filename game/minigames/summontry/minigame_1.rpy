@@ -547,6 +547,30 @@ init:
         mana = 100,
         )
 
-    default summontry = summontry_handler([tsuru_working], all_clients)
+    default mild_working = summontry_demon(
+        name="Mild",
+        image="mild_portrait",
+        stats={
+            "Athletics": 5,
+            "Love": 20,
+            "Joy": 18,
+        },
+        mana=120,
+    )
+
+    default debirun_working = summontry_demon(
+        name="Debirun",
+        image="del_portrait",
+        stats={
+            "Athletics": 5,
+            "Love": 20,
+            "Joy": 18,
+        },
+        mana=120,
+    )
+
+    default minigame1_act1_1 = summontry_handler([tsuru_working], all_clients)
+    default minigame1_act1_2_shot_3 = summontry_handler([mild_working, debirun_working], all_clients)
+    default minigame1_act1_2_shot_4 = summontry_handler([mild_working, tsuru_working, debirun_working], all_clients)
 
 

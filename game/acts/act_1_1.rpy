@@ -582,7 +582,7 @@ label act1_1_shot_5:
 #shot 6 First Work
 label act1_1_shot_6:
     $ quick_menu = False
-    call screen minigame_1(summontry)
+    call screen minigame_1(minigame1_act1_1)
     $ renpy.block_rollback()
     $ quick_menu = True
 
