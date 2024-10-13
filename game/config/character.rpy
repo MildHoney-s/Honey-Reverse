@@ -5,10 +5,13 @@ init python:
     mild_nohood = Character("หญิงสวมฮู้ด",color="#afefdb")
     mild = Character("มายด์",color="#afefdb")
     tsuru = Character("ซึรุรุ",color="#4ddbf4")
+    tsuru_pov = Character("{color=#4ddbf4}ซึรุรุ{/color} & {color=#88483b}[povname]{/color}")
+    tsuru_debirun = Character("{color=#4ddbf4}ซึรุรุ{/color} & {color=#433ed5}เดบิรุน{/color}")
     unknow_debirun = Character("???",color="#433ed5")
     debirun = Character("เดบิรุน",color="#433ed5")
     mild_debirun = Character("{color=#afefdb}มายด์{/color} & {color=#433ed5}เดบิรุน{/color}")
     mild_tsuru_debirun = Character("{color=#afefdb}มายด์{/color} & {color=#4ddbf4}ซึรุ{/color} & {color=#433ed5}เดบิรุน{/color}")
+    pov_tsuru_debirun = Character("{color=#88483b}[povname]{/color} & {color=#4ddbf4}ซึรุ{/color} & {color=#433ed5}เดบิรุน{/color}")
     diary = nvl_narrator
     ami = Character("บุคคลปริศนา2",color="#e3f5f5")
     ashy = Character("บุคคลปริศนา1",color="#ea6e2f")
