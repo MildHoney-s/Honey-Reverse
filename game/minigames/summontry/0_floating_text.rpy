@@ -1,9 +1,7 @@
-﻿
-init python:
+﻿init python:
     def floating_text(m, x = 0, y = 0):
         t = "fight_notif{}".format(random.randint(1, 10000))
         renpy.show_screen("floating_text_screen", msg = m, x = x, y = y, tag = t, _tag = t)
-
 
 transform floating_text_animation(o):
     parallel:

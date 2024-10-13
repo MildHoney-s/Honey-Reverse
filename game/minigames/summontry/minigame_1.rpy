@@ -7,7 +7,6 @@
 - stat improvement and training
 """
 
-
 init python:
     from copy import copy
     init_time = 5
@@ -17,10 +16,8 @@ init python:
             self.name = name
             self.image = image
             self.stats = stats
-
             self.x = 0
             self.y = 0
-
             self.mana = mana
 
     class summontry_client:
@@ -28,17 +25,14 @@ init python:
             self.name = name
             self.image = image
             self.stats = stats
-
             self.chant_delay = 10
             self.chant_duration = 10
             self.serve_duration = 10
-
             self.mana = mana or random.randint(80, 100)
             self.x, self.y = pos
             self.parent = None
             self.demon = None
             self.stat = "idle"
-
             self.selected_stat = None
 
     class summontry_handler:
@@ -82,8 +76,6 @@ init python:
                     self.holding = old_demon
                     self.demons.append(old_demon)
 
-
-
                     self.holding = None
                     return
                 else:
@@ -112,7 +104,6 @@ init python:
 
 
         def calculate_serve_duration(self, client, demon):
-        
             ##Calculates the serve duration based on the demon's stats and the client's selected stat.
             ##Better matches result in shorter serve durations.
 
@@ -129,7 +120,7 @@ init python:
             elif demon_stat_value < client_required_value:
                 # Bad match: longer serving time (e.g., between 20-30 seconds)
                 return random.randint(15, 25)
-            
+
         def clicked_out(self):
             self.hovered_client = None
             if not self.holding:
@@ -156,22 +147,15 @@ init python:
 
                     # Compare the demon's stat to the client's selected stat
                     if demon_stat_value >= client_stat_value:
-                        
                         gain_amount = 11
-                        
                         # Adjust this if needed
                     elif demon_stat_value < client_stat_value:
-                        
                         gain_amount = 7
-                        
-                        
-                    
+
                     # Other operations (sound effects, etc.)
                     renpy.play("minigames/summontry/bubble_7.ogg", "sound")
                     spawn_mana(client.x, client.y, gain_amount, self)
-                    
-                    
-                    
+
         def gain_mana(self, amount):
             self.mana += amount
         def tick(self):
@@ -199,19 +183,16 @@ init python:
                         self.release_slot(i)
                 elif i.stat == "serving":
                     i.serve_duration -= 1
-                    
                     # Decrease demon's mana while serving
                     if i.demon:
                         i.demon.mana -= 1  # Decrease mana each tick
                         if i.demon.mana < 0:
                             i.demon.mana = 0  # Ensure mana doesn't go below zero
-                        
                         # Check if the demon's mana has reached 0
                         if i.demon.mana == 0:
                             # Return the demon to the bench
                             self.demons.append(i.demon)
                             i.demon = None
-                            
                             # Set client to "waiting" when demon's mana is 0
                             i.waiting_duration = i.serve_duration  # Set remaining time as waiting_duration
                             i.stat = "waiting"
@@ -220,9 +201,7 @@ init python:
                     self.mana_gain_timers[i] -= 1  # Decrease the timer
                     if self.mana_gain_timers[i] <= 0:
                         self.calculate(i)  # Gain 10 mana every 5 seconds (adjust as needed)
-                        self.mana_gain_timers[i] = 5 
-                    
-                    
+                        self.mana_gain_timers[i] = 5
                     if i.serve_duration < 0:
                         self.demons.append(i.demon)
                         i.demon = None
@@ -236,9 +215,7 @@ init python:
 
             # Call to regenerate mana for demons on the bench
             self.regenerate_mana_for_bench()
-            
             # Continue the spawning process
-            
 
         def regenerate_mana_for_bench(self):
             for demon in self.demons:
@@ -246,8 +223,6 @@ init python:
                 demon.mana += 3  # Increase mana by 1 each tick
                 if demon.mana > 100:  # Ensure mana doesn't exceed maximum
                     demon.mana = 100
-
-
 
         def spawn(self):
             """Handles client spawning."""
@@ -345,7 +320,7 @@ screen summontry_hire_screen(demon_list):
 screen minigame_1(g):
     add "images/minigame_shop_bg.png"
     style_prefix "summontry"
-    
+
     button:
         background None
         action Function(g.clicked_out)
@@ -353,7 +328,6 @@ screen minigame_1(g):
     for i in g.clients:
         fixed fit_first True:
             align (.5,.5) offset i.x,i.y
-            
             # Only show the button if the client's status is in ["waiting", "ready", "chanting", "serving"]
             if i.stat in ["waiting", "ready", "chanting", "serving"]:
                 vbox:
@@ -368,7 +342,6 @@ screen minigame_1(g):
                         text "[i.chant_delay]s" size 20 color "#080808"
                     elif i.stat == "serving":
                         text "[i.serve_duration]s" size 20 color "#080808"
-                    
                     # Button containing client image on the left and demon (if placed) on the right
                     button:
                         xsize 312  # Set button width
@@ -380,7 +353,6 @@ screen minigame_1(g):
                             spacing 0
                             # Display client's image on the left half of the button
                             add i.image xsize 156 ysize 120  # Left half for client image (156px wide)
-                            
                             # Display demon on the right half if a demon is placed
                             if i.demon:
                                 vbox:
@@ -440,7 +412,7 @@ screen minigame_1(g):
             align (0.5, 0.5) padding 20,20 background "#e66f0ecc"
             text "Finish , Today Gain : [g.mana]"
             action [SetVariable("money",money + g.mana),Return()]
-    
+
     if g.hovered_client and type(g.hovered_client) is summontry_demon:
         vbox spacing -90 box_reverse True align (0.5, 0.5):
             frame:
@@ -469,7 +441,7 @@ init:
         name = "Dana",
         image = "dana_portrait",
         stats = {
-            "Love": 33,           
+            "Love": 33,
         },
         pos = (-318,332),
         )
@@ -485,9 +457,7 @@ init:
         name = "Ririn",
         image = "ririn_portrait",
         stats = {
-
             "Love": 5,
- 
         },
         pos = (-687,-303),
         )
@@ -496,7 +466,6 @@ init:
         image = "keiko_portrait",
         stats = {
             "Joy": 45,
- 
         },
         pos = (-148,-104),
         )
@@ -513,7 +482,6 @@ init:
         image = "sora_portrait",
         stats = {
             "Athletics": 21,
-
         },
         pos = (347,142),
         )
@@ -522,7 +490,6 @@ init:
         image = "shiri_portrait",
         stats = {
             "Athletics": 62,
-
         },
         pos = (604,259),
         )
