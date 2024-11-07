@@ -4,40 +4,68 @@ label act1_2_shot_1:
     pov "(ก็ไม่ค่อยแน่ใจว่ามันคือเสียงอะไรกันแน่ ถึงจะถามเจ้าของบ้านคนก่อนหน้า เขาว่า “มันก็ไม่มีอะไร” นี่สิ)"
     pov "(เห้อ เอาเถอะ ยังไงซะต่อให้ฉันรู้ว่ามี หรือไม่มีอะไรเกิดขึ้น ฉันก็ทำอะไรไม่ได้อยู่แล้ว เตรียมตัวออกไปซื้อของเข้าร้านก่อนดีกว่า)"
     pov "เอาล่ะ วันนี้ก็ สู้!"
-    #door close sfx
     scene black with dissolve
     centered "{=centered_text} 1 ชั่วโมงผ่านไปหลังจากที่ฉันซื้อของเสร็จกลับมาที่ร้าน{/centered_text}"
     scene bg2day with fade
-
-    # scene bg8day:
-    #     size (1920, 1080)
+    show mild maid_wave at middleposmild
+    with easeinleft
     pov "อ่ะ อรุณสวัสดิ์ มายด์"
     mild "สวัสดีตอนเช้าค่ะ [povname]"
     pov "(ท่าทางที่งัวเงีย และไม่สดใสเลย ทำเอาฉันกังวลนะเนี่ย)"
     pov "ทานอะไรมั้ย เดี๋ยวฉันทำอะไรให้กิน"
+    show mild maid_flustered at middleposmild
+    with dissolve
     mild "ค-คะ!?"
+    scene bg2day:
+        crop (100,200,1480,720)
+        size (1920, 1080)
+    show mild maid_grumpy at mild_close
+    with dissolve
     mild "รอบนี้จะแกล้งให้ฉันต้องจ่ายค่าอาหารให้คุณอีกมั้ยคะเนี่ย"
     pov "กะ ก็ต้องไม่ใช่น่ะซิ! เป็นสวัสดิการให้พนักงานน่ะ!"
     pov "(นี่เธอยังระแวงเรื่องเมื่อตอนนั้นอยู่อีกหรอเนี่ย…)"
     pov "แล้วเธออยากทานอะไรล่ะ มีอะไรอยากกินเป็นพิเศษรึเปล่า"
+    show mild maid_doubt at mild_close
+    with dissolve
     mild "อื้ม….. พอดีฉันไม่ค่อยมีเมนูในใจเลยค่ะ ที่ทานแล้วอร่อยคงเป็น ชานม ที่[povname] เคยเอามาให้"
     pov "งั้น เอาเป็นเมนูของที่ร้านแล้วกันเนอะ"
+    show mild maid_smile1 at mild_close
+    with dissolve
     pov "เอาล่ะ! ได้เวลาโชว์ฝีมือแล้วสินะ!"
+    scene bg2day:
+        crop (100,200,1480,720)
+        size (1920, 1080)
+    show mild maid_blush2 at mild_close
+    with fade
     mild "(ถึงจะรู้อยู่แล้วว่า [povname] ทำอาหารเก่งก็เถอะนะ แต่พอได้ดูใกล้ๆ แบบนี้…)"
     pov "เสร็จแล้ว!"
+    show mild maid_smile3 at mild_close
+    with dissolve
     pov "เชิญทานเลย ออมไรส์สูตรพิเศษจากฉันเอง!"
     mild "งั้นขออนุญาต…ทานนะคะ"
+    show mild maid_smile9 at mild_close
+    with dissolve
     mild "อร่อยมากเลยค่ะ!"
     pov "แน่นอนอยู่แล้ว~ ถ้าเธอทานไม่หมดฉันจะเสียใจเอาน้าา"
     mild "แน่นอนค่ะ!"
+    show mild maid_smile6 at mild_close
+    with dissolve
     mild "ฮ่าส์ ขอบคุณสำหรับอาหารค่ะ!"
+    show rice at rice
     pov "อื้มมม อันนี้ชานม เติมพลังแล้วก็ยิ้มไว้เยอะๆ นะโอเคมั้ย"
+    show mild maid_smile10 at mild_close
+    with dissolve
     mild "ขอบคุณนะคะ"
 
     jump act1_2_shot_2
 
 label act1_2_shot_2:
-    scene bg2day
+    scene bg2day:
+        crop (100,200,1480,720)
+        size (1920, 1080)
+    show mild maid_blush1 at mild_close
+    show rice at rice
+    with dissolve
     pov "อ่ะ! อยู่เฉยๆ แปปนึงนะมายด์"
     menu:
         "เอามือไปลูบแก้ม เอาเม็ดข้าวที่ติดออกและนำเข้าปากตัวเอง":
@@ -45,18 +73,37 @@ label act1_2_shot_2:
 
         "เอากระดาษทิชชู่ไปลูบแก้มเพื่อเอาข้าวที่ติดออก":
             $ honey_score += 1
+    show mild maid_flustered at mild_close
+    hide rice
+    with sshake
     mild "ค-ค-ค-คะ!!?"
     pov "ฮิฮิ"
     unknow_debirun "เอ่อคือ…."
+    scene bg2day
+    show mild maid_blush1 at leftposmild
+    with dissolve
     unknow_debirun "สวัสดีค่ะ ผู้จัดการ…"
+    show del maid_smile2 at rightpostdel
+    with easeinright
     pov "อ่ะ ว่าไงสวัสดียามเช้านะ เดลจัง มาเช้าจังเลยนะ"
+    show del maid_idle1 at rightpostdel
+    with dissolve
     debirun "ก็มันว่างนี่คะ…."
+    show del maid_smile4 at rightpostdel
+    show mild maid_flustered at leftposmild
+    with dissolve
     debirun "แล้วนี่หนูมาขัดจังหวะผู้จัดการกับแฟนรึเปล่าคะเนี่ย…."
     pov "ฟะ แฟนอะไรละ มะ ไม่ใช่สักหน่อย เนอะมาย–"
     pov "(ระหว่างที่ฉันแก้ตัวพอได้หันไปมองที่มายด์ กลับเห็นสีหน้าของเธอที่แดงผ่าวราวกับมะเขือเทศ นะ นี่เธอเขินอยู่อย่างงั้นหรอ!)"
+    show del maid_smile5 at rightpostdel
+    show mild maid_blush2 at leftposmild
+    with dissolve
     debirun "เอาน่าาาา หนูก็แค่แซววววววว ฮิฮิ"
     pov "หนอยยยย ยัยเด็กนี่!"
     pov "ฟู่วว เอาเป็นว่า เธอคนนี้คือพนักงานใหม่ของร้านเรา ชื่อ มายด์อาร์"
+    show del maid_idle2 at rightpostdel
+    show mild maid_idle1 at leftposmild
+    with dissolve
     mild "มายด์อาร์ค่ะ เรียก มายด์เฉยๆ ก็ได้นะคะ"
     pov "มายด์ส่วนนี่ เดบิรุน"
     debirun "สวัสดีค่ะ เดบิรุน เรียกเดลก็ได้นะคะ"

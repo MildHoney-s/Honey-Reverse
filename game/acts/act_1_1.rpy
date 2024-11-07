@@ -72,9 +72,13 @@ label act1_1_shot_2:
         crop (0,0,1920,1080)
         size (1920,1080)
         linear 2.0 crop (300, 200, 1920, 1080)
-
+    with None
+    pause 1.5
+    show cucumbag at cucumber
+    with dissolve
     manager "(เมื่อผมมองผ่านด้านหลังของผู้สมัครคนนี้ ก็พบว่ามีกระสอบขนาดใหญ่วางอยู่ด้านหลัง)"
     hide ashy_sd_1
+    hide cucumbag
     show ashy_sd_1 at truecenter:
         zoom 0.6
     with dissolve
@@ -94,8 +98,10 @@ label act1_1_shot_2:
     ashy "มาแล้วค่า นายท่านเบอร์เกอร์สูตรพิเศษจากหนูเอง!"
     manager "ดูดีนี่ ไหนลองสิ..."
     manager "**ลองชิม**"
+    show cucumburg at truecenter
+    with dissolve
     manager "แค๊กๆ อะไรกันเนี่ยทำไมไส้ในถึงได้มีแต่แตงกวาล่ะ!"
-
+    hide cucumburg
     ashy "เธอจ๋าาา จะไม่เอาแตงกวาจริงหรอจ้ะ นี่น่ะของดีประจำอำเภ…{nw=0.7}"
     manager "เดี๋ยวลูกค้าก็ได้กินแตงกวาทุกเมนูพอดี ไม่ได้ๆ แบบนี้คงต้องให้ไม่ผ่าน!"
     manager "ไม่ผ่าน!!!" with ashyShake
@@ -306,7 +312,9 @@ label act1_1_shot_4:
 
     scene bg2day
     manager "อะนี่เอามาแล้ว"
+    show milktea at truecenter
     "กลับมาพร้อมน้ำ 1 แก้ว ที่มีสีน้ำตาลอมแดงและมีกลิ่นหอมเฉพาะตัว "
+    hide milktea
     show tsuru maid_idle1 at leftpostsuru
     show mild hood_idle1 at mildhood
     with dissolve
@@ -353,6 +361,9 @@ label act1_1_shot_4:
     tsuru "//จ้องฮันนี่"
     manager "อ อ อ่ อ่ะ เอาเป็นว่า เธอไม่ได้กินอะไรเลยหรอ ถึงได้หมดสติอยู่แถวนี้น่ะ"
     show mild unhood_idle1 at mildhood
+    hide emotion_celebrate
+    show tsuru maid_idle2 at leftpostsuru
+    with dissolve
     mild_nohood "คือฉัน………"
     manager "อ่ะ ไม่ต้องห่วงนะ ที่นี่ไม่มีใครทำร้ายเธอหรอกนะ"
     mild_nohood "//พยักหน้า"
@@ -641,7 +652,7 @@ label act1_1_shot_6:
     customer "เอา ฮันนี่บราวน์ชูก้า 1 แก้ว แล้วก็ออมไรซ์ 1 ที่ครับ"
     hide emotion_tear
     mild "ระ-รับทราบค่ะ ฮันนี่บราวน์ชูก้า 1 แก้ว แล้วก็ออมไรซ์ 1 ที่"
-    hide mild hood_idle1 with easeoutleft
+    hide mild maid_idle1 with easeoutleft
     scene bg2day:
         crop (0,240,960,820)
         size (1920, 1080)
@@ -668,11 +679,14 @@ label act1_1_shot_6:
         crop (400,240,1280,720)
         size (1920, 1080)
     show mild maid_idle2 at middleposmild
+    show omurice at omu
     with easeinleft
+    
     mild "ฮันนี่บราวน์ชูก้า กับ ออมไรซ์ ได้แล้วค่า รับซอสด้วยมั้ยคะ?"
 
     customer "รับค้าบบบ"
     show mild maid_idle1 at middleposmild
+    hide omurice
     with dissolve
     mild "เอารูปอะไรดีคะ?"
 
@@ -680,11 +694,14 @@ label act1_1_shot_6:
     show mild maid_idle2 at middleposmild
     with dissolve
     mild "รับทราบค่า"
-    mild "//วาดรูปที่เหมือนหมีขึ้นมา"
+    show omurice_red at truecenter
+    with fade
+    mild "เรียบร้อยค่ะ" 
 
     customer "คะ คุณเมดวาดรูปอะไรครับเนี่ย"
     show emotion_tear at emotepos
-    show mild maid_flustered at middleposmild
+    show omurice_red at omu
+    show mild maid_blush2 at middleposmild
     with dissolve
     mild "อ่าา หมีค่า… คือฉันพึ่งเริ่มทำงานเลยยังไม่ค่อยเก่งขอโทษด้วยนะคะ"
 
@@ -693,6 +710,7 @@ label act1_1_shot_6:
     customer "คะ คือว่าาา คุณเมดชื่ออะไรหรอครับ!!"
     hide emotion_tear
     show mild maid_idle2 at middleposmild
+    hide omurice_red
     with dissolve
     mild "ชื่อ มายด์อาร์ ค่ะ ขอฝากตัวด้วยนะคะ…."
     mild "(เอ๊ะแล้วเราต้องเรียกคุณลูกค้าว่าอะไรดีละ จะเรียกพี่ๆแบบซึรุก็ไม่ได้สินะ ถะ ถ้างั้น)"
@@ -701,8 +719,10 @@ label act1_1_shot_6:
     mild "ฮะ... ฮันนี่"
 
     mild "งะ งั้นทานให้อร่อยนะคะ มายฮันนี่"
-
-    mild "//เดินกลับมาที่เค้าเตอร์ครัวเพื่อรอเสิร์ฟต่อไป"
+    hide emotion_love
+    show mild maid_idle1 with dissolve
+    pause 0.5
+    hide mild maid_idle1 with easeoutleft
     "หลังจากมายด์เสิร์ฟลูกค้าโต๊ะนี้ มายด์ไม่รู้เลยว่าตัวเองได้มีแฟนคลับไปซะแล้ว"
 
     scene black
@@ -827,6 +847,7 @@ label act1_1_shot_7:
 
     scene bg7light
     with fade
+    show diary
     pov "(หลังจากที่แยกย้ายกัน ฉันที่อาบน้ำอะไรเรียบร้อย ก็ได้มานั่งเขียนไดอารี่ประจำวัน ถึงจะเขียนบ้างไม่ได้เขียนบ้าง แต่ก็ช่วยให้จดจำเรื่องราวที่ผ่านมาในชีวิตได้ดี)"
     nvl clear
     diary "ถึงไดอารี่ วันนี้มีเรื่องราวเกิดขึ้นด้วยละ"
