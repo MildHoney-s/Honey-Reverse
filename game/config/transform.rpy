@@ -12,17 +12,17 @@ transform tsuru_close():
     zoom 0.7
 
 transform middleposdel():
-    zoom 0.6
-    ypos 315
-    xpos 700
+    align (0.5, 1.0)
+    zoom 0.3
 transform leftposdel():
-    zoom 0.6
-    ypos 315
-    xpos 200
+    align (0.22, 1.0)
+    zoom 0.3
 transform rightpostdel():
-    zoom 0.6
-    ypos 315
-    xpos 1200
+    align (0.75, 1.0)
+    zoom 0.3
+transform del_close():
+    align (0.5, 0.2)
+    zoom 0.7
 
 transform middleposmild():
     align (0.5, 0.1)
@@ -66,3 +66,12 @@ transform emotepairpos2():
 transform emoteclose():
     align (0.5,-2)
     zoom 0.7
+transform cucumber():
+    align (0.69,0.69)
+    zoom 0.39
+transform omu():
+    align (0.5,0.42)
+    zoom 0.7
+transform rice():
+    align (0.53,0.46)
+    zoom 0.12
