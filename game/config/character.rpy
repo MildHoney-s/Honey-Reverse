@@ -16,6 +16,8 @@ init python:
     ami = Character("บุคคลปริศนา2",color="#e3f5f5")
     ashy = Character("บุคคลปริศนา1",color="#ea6e2f")
     customer = Character("ลูกค้า",color="#8e8f92")
+    employee = Character("พนักงาน",color="#484646")
+    researcher = Character("นักวิจัย",color="#f7f7f7")
 
 ## Sprite #####################################################################
 # Mild-R Hood

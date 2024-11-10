@@ -566,7 +566,7 @@ label act1_1_shot_5:
     mild "..."
     show mild maid_doubt at rightposmild
     show emotion_question at emotepairpos1
-    tsuru "ใช่มั้ยล่าาา แล้วพี่ [pov] จะให้มายด์เล่นบทอะไรหรอ"
+    tsuru "ใช่มั้ยล่าาา แล้วพี่ [povname] จะให้มายด์เล่นบทอะไรหรอ"
 
     pov "ฮื้ม... นั่นสินะยังไม่ได้ตัดสินใจเลย... เอ่อ"
 
