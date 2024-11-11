@@ -14,3 +14,14 @@ image emotion_surprise = "images/assets/Emotion/013.png"  # Image 13: Surprise/e
 image emotion_shock = "images/assets/Emotion/014.png"     # Image 14: Shock or surprise (!)
 image emotion_tear = "images/assets/Emotion/015.png"      # Image 15: Single tear (sadness)
 image emotion_dots = "images/assets/Emotion/016.png"      # Image 16: Speechless (ellipsis/dots)
+image loading:
+    "loading1"
+    pause 0.15
+    "loading2"
+    pause 0.15
+    "loading3"
+    pause 0.15
+    "loading5"
+    pause 0.15
+    repeat
+image gacha_movie = Movie(play="gacha.webm",size=(1300,607),loop=False,xalign=0.185,yalign=0.285)

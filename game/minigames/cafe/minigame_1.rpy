@@ -1,6 +1,6 @@
 init python:
     from copy import copy
-    init_time = 45
+    init_time = 5
 
     # Maid Class
     class cafe_maid:
@@ -159,6 +159,11 @@ init python:
                         client.maid = None
                         client.waiting_duration = client.serve_duration
                         client.stat = "waiting"
+                elif client.stat == "waiting":
+                    client.waiting_duration -= 1
+                    if client.waiting_duration <= 0:
+                        client.stat = "idle"  # Set to idle when waiting time runs out
+                        self.release_slot(client)
 
             self.regenerate_stamina_for_bench()
 
@@ -247,7 +252,7 @@ screen cafe_hire_screen(maid_list):
                                 for key,value in i.stats.items():
                                     text "[key]: [value]"
                             bar value i.stamina range 100 xysize 150,36 right_bar "stamina_bar_back" left_bar "stamina bar" align .5,.5
-                add i.image align (0.5, 0.0)
+                add i.image align (0.5, 0.0) xsize 156 ysize 120 
 
 screen minigame_1(g):
     add "images/minigame_shop_bg.png"
@@ -314,7 +319,7 @@ screen minigame_1(g):
         for i in g.maids:
             vbox:
                 button:
-                    add i.image
+                    add i.image xsize 156 ysize 120 
                     hovered Function(g.hovered, i)
                     unhovered Function(g.unhovered)
                     action Function(g.clicked_maid, i)
@@ -326,7 +331,7 @@ screen minigame_1(g):
     # Handling the held item (maid or client)
     if g.holding:
         timer .02 repeat True action Function(g.update_holding)
-        add g.holding.image offset g.holding_pos
+        add g.holding.image offset g.holding_pos xsize 156 ysize 120 
 
     # Time bar during night state
     if g.stat == "night":
@@ -360,7 +365,7 @@ screen minigame_1(g):
                             for key,value in g.hovered_client.stats.items():
                                 text "[key]: [value]"
                         bar value g.hovered_client.stamina range 100 xysize 150,36 right_bar "stamina_bar_back" left_bar "stamina bar" align .5,.5
-            add g.hovered_client.image align (0.5, 0.0)
+            add g.hovered_client.image align (0.5, 0.0) xsize 156 ysize 120
 
 init:
     style cafe_text:

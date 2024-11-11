@@ -1,7 +1,7 @@
 label act1_1_shot_1:
     #Start scene Story Board Shot 1
     scene bg1 with dissolve
-    $ renpy.music.play(f"{audio_path}/bgm1.mp3", loop=True)
+    $ renpy.music.play(f"{audio_path}/walking_bgm.mp3", loop=True)
 
     manager "ตอนนี้ฉันเป็นเชฟมือใหม่ ที่พึ่งจบจากโรงเรียนยอดเชฟจากต่างประเทศ"
     manager "ครอบครัวของฉันเป็นเชฟกันหมด แถมยังมีร้านอาหารเป็นของตัวเองกันทุกคน แต่ละคนก็มีสไตล์อาหารของตัวเองแตกต่างกันไป"
@@ -25,9 +25,9 @@ label act1_1_shot_1:
     manager "ยิ่งเสียงตอนเรียกหาฉันเวลามีปัญหา"
     manager "เห้ออ…"
     manager "แล้วฉันก็ทำงานในครัวคนเดียวซะด้วยสิ หรือว่า- จะหาสาวสวยๆมาช่วยทำครัวเพิ่มดีน้าา //อะแหะๆ."
-    $ renpy.sound.stop()
+    stop sound
     manager "ถึงจะเคยประกาศรับสมัครไปแล้วก็เถอะ แต่ผลลัพธ์ที่ได้ก็……"
-    $ renpy.music.stop()
+    stop music
     window hide dissolve
 
     jump act1_1_shot_2 #go to shot 2
@@ -53,14 +53,14 @@ label act1_1_shot_2:
     show ashy_sd_1 at truecenter:
         zoom 0.6
     with dissolve
-
-    ashy "คุณผู้จัดการจ๋าาาา ดิฉันเป็นเด็กสาว วัยรุ่น เอ๊าะๆ ที่เรียบร้อย พูดน้อย น่ารัก ค่ะ"
+    
+    play movie "ASH rap.webm"
+    $ renpy.pause(15, hard=True)
     hide ashy_sd_1
     show ashy_sd_2 at truecenter:
         zoom 0.6
-    ashy "แต่การถามถึงอายุของสุภาพสตรีมันเสียมารยาทนะคะ คุณผู้จัดการไม่เคยรู้เลยหรอคะ"
-    ashy "หนูไม่ได้เป็นป้าสักหน่อยทำไมถึงถามกันแบบนั้นละคะ"
     manager "(เดี๋ยวนะ ใครมันไปเอานักพากย์แข่งเรือแจวมาเนี่ย)"
+    $ renpy.music.play(f"{audio_path}/cafe_bgm.mp3", loop=True)
     manager "อ่า ใจเย็นๆก่อนนะ ขอโทษด้วยที่ถามเรื่องอายุ แล้วไม่ทราบว่า มีเมนูที่อยากแนะนำลูกค้ามั้ย"
     hide ashy_sd_2
     show ashy_sd_1 at truecenter:
@@ -100,6 +100,7 @@ label act1_1_shot_2:
     manager "**ลองชิม**"
     show cucumburg at truecenter
     with dissolve
+    stop music
     manager "แค๊กๆ อะไรกันเนี่ยทำไมไส้ในถึงได้มีแต่แตงกวาล่ะ!"
     hide cucumburg
     ashy "เธอจ๋าาา จะไม่เอาแตงกวาจริงหรอจ้ะ นี่น่ะของดีประจำอำเภ…{nw=0.7}"
@@ -111,10 +112,11 @@ label act1_1_shot_2:
     #Ami scene
     scene black with dissolve
     centered "{=centered_text}หลังจากผ่านไป 3 วัน บุคคลปริศนา2 ที่มาสมัครงาน มีผมสีขาว ลักษณะเป็นทวินเทล \nมีบางอย่างที่คล้ายๆที่ไขลานอยู่ด้านบน มีท่าทางเขินอาย ดูน่ารักน่าทะนุถนอม{/centered_text}"
+    
     $ renpy.pause(1,modal=True)
     scene bg2day with eye_open
     show ami_sd_1 at truecenter
-
+    $ renpy.music.play(f"{audio_path}/ami_bgm.mp3", loop=True)
     window show
     ami "(อื้อออ...เราทำได้..ทำได้..ใช่ทำได้)"
     ami "สวัสดีค่าา หัวใจที่บอบช้ำของคุณ ขอเค้าดูแลเถอะนะคะ ><"
@@ -129,6 +131,7 @@ label act1_1_shot_2:
     show ami_sd_2 at truecenter:
         zoom 0.667
     with dissolve
+    stop music
     ami "“สวัสดีค่า~! ขอฝากใบปลิวของร้านไว้หน่อยนะคะ~"
     "หลังจากนั้นก็มีกลุ่มผู้คนเข้ามารุมล้อมจนบังตัวผู้สัมภาษณ์คนนี้จนหมด"
     ami "อะ เอ่อ… ใบปลิวหมดแล้วค่าาา.. งื้อออ…. ค-คุณผู้จัดการคะะ..ช่วยด้วยค่าา…"
@@ -158,6 +161,7 @@ label act1_1_shot_2:
 label act1_1_shot_3:
     # Back to the street scene
     scene  bg1 with transition_4
+    $ renpy.music.play(f"{audio_path}/walking_bgm.mp3", loop=True)
     manager "นี่ก็ประกาศมา 2 สัปดาห์แล้วนะ ทำไมถึงไม่เจอสักที พนักงานดีๆน่ะ!"
     manager "ขอละ ช่วยส่งพนักงานที่ใช้ได้มาให้ฉันที!!~"
 
@@ -166,8 +170,9 @@ label act1_1_shot_3:
     window hide dissolve
     show sd_wanted at truecenter:
         zoom 1.1
-
+    stop music
     manager "เอ้ะ กระดาษอะไรปลิวมาใส่หน้ากันล่ะเนี่ย.."
+    $ renpy.music.play(f"{audio_path}/poster_bgm.mp3", loop=True)
     diary "ในโลกที่มีการวิจัยดัดแปลงสิ่งมีชีวิตหรือที่เรียกกันว่ามิวแทนต์"
     diary "ได้ถูกสร้างและดัดแปลงโดยเหล่านักวิทยาศาสตร์"
     diary "แต่ด้วยความอยากรู้อยากเห็นพวกเขาได้ทำการทดลองกับร่างกายมนุษย์จริงๆ"
@@ -185,10 +190,12 @@ label act1_1_shot_3:
     manager "เห้ออ… นั่นคนเลยนะ เป็นมนุษย์เหมือนกันแท้ๆ"
     manager "แล้วข้อความสุดท้ายนั่นก็คือ… ให้ระวังมิวแทนต์ไว้เพราะเป็นอันตรายงั้นหรอ…… เอาเถอะคงไม่เกี่ยวกับฉันล่ะมั้ง…"
     window hide
+    stop music
     scene bg4 with wipeleft
     scene bg4
     show chibi_1 at mildchibi
     with walkingVertical
+    $ renpy.music.play(f"{audio_path}/found_bgm.mp3", loop=True)
     $ renpy.pause(2,modal=True)
     manager "เอ๊ะ? นั่นใครน่ะ???"
     scene bg4 :
@@ -241,6 +248,7 @@ label act1_1_shot_3:
 label act1_1_shot_4:
     # Scene transition to the cafe
     scene bg2day
+    $ renpy.music.play(f"{audio_path}/cafe_bgm.mp3", loop=True)
     show tsuru maid_idle2 at middlepostsuru
     show emotion_question at emotepos
     with fade
@@ -302,6 +310,7 @@ label act1_1_shot_4:
     hide emotion_angry
     show emotion_anger at emotepairpos1
     tsuru "ไปเอาน้ำมาสิค๊า!" with ashyShake
+    stop music
 
     manager "อะ โอเค!"
     manager "(ทำไมฉันเหมือนเป็นเด็กเสิร์ฟซะเองล่ะเนี่ย)"
@@ -311,6 +320,7 @@ label act1_1_shot_4:
     $ renpy.pause(1,modal=True)
 
     scene bg2day
+    $ renpy.music.play(f"{audio_path}/cafe_bgm.mp3", loop=True)
     manager "อะนี่เอามาแล้ว"
     show milktea at truecenter
     "กลับมาพร้อมน้ำ 1 แก้ว ที่มีสีน้ำตาลอมแดงและมีกลิ่นหอมเฉพาะตัว "
@@ -330,6 +340,7 @@ label act1_1_shot_4:
     show emotion_anger at emotepairpos2
     with lshake
     hooded_figure "//สะดุ้ง ฮู้ดที่คลุมเปิดออก"
+    $ renpy.music.play(f"{audio_path}/bright_bgm.mp3", loop=True)
     scene cg2:
         size(1920,1080)
     with Dissolve(2.0)
@@ -360,6 +371,7 @@ label act1_1_shot_4:
     tsuru "เอ๊~ ถ้าไม่มีอะไรทำไมหน้าแดงล่ะ"
     tsuru "//จ้องฮันนี่"
     manager "อ อ อ่ อ่ะ เอาเป็นว่า เธอไม่ได้กินอะไรเลยหรอ ถึงได้หมดสติอยู่แถวนี้น่ะ"
+    stop music
     show mild unhood_idle1 at mildhood
     hide emotion_celebrate
     show tsuru maid_idle2 at leftpostsuru
@@ -370,6 +382,7 @@ label act1_1_shot_4:
     scene black with dissolve
     centered "{=centered_text}ผ่านไปสักพัก ก็ยอมเล่าเหตุการณ์ที่เกิดขึ้น{/centered_text}"
     scene bg2day
+    $ renpy.music.play(f"{audio_path}/dark_bgm.mp3", loop=True)
     show mild unhood_idle1 at mildunhood
     with fade
     mild_nohood "คือฉันเป็นตัวทดลอง ที่นักวิทยาศาสตร์จับมา
@@ -380,8 +393,10 @@ label act1_1_shot_4:
     mild_nohood "ฉันที่ออกมาก็เตร็ดเตร่ไปตามทาง จนตกลงไป
     ในธารน้ำ ด้วยความที่ฉันไม่มีแรง เลยถูกกระแสน้ำพัดไป ตื่นมาอีกที ก็อยู่แถวๆ นี้
     "
+    stop music
     hide emotion_tear with dissolve
     manager "เธอน่ะ รู้หรือเปล่าว่าข้างนอกห้องทดลอง เรามีกฎอยู่ว่า"
+    $ renpy.music.play(f"{audio_path}/bright_bgm.mp3", loop=True)
     manager "\"ถ้าไม่มีเงินเราก็ไม่ได้กิน\" แล้วจะทำยังไงกับค่าชานมที่เธอกินไปดีนะเนี่ย . ."
     show mild unhood_scared at mildunhood
     show emotion_anger at hoodemote
@@ -470,22 +485,23 @@ label act1_1_shot_4_q1_c2:
     manager "จ้าๆ ขอโทดๆ ก็จะเป็นฉันที่อยู่ในครัว ส่วนสาวๆก็จะเป็นเด็กเสิร์ฟให้บริการลูกค้าน่ะ"
 
     scene bg2day
-    show mild unhood_idle1 at mildhood
+    show mild unhood_smile at mildhood
     show tsuru maid_angry at leftpostsuru
     with dissolve
     mild_nohood "แล้วตอนนี้มีแค่คุณกับคุณก้อนเมฆหรอคะ?"
     show tsuru maid_smile1 at leftpostsuru
-    show emotion_question at emotepairpos2
     with dissolve
     tsuru "คะ คุณก้อนเมฆ? จะว่าไปเรายังไม่ได้แนะนำตัวกันเลยสินะ"
     show tsuru maid_smile2 at leftpostsuru
     with dissolve
     tsuru "อะฮุฮิฮุฮิ คุโมกุ ซึรูรุ เมดก้อนเมฆตัวน้อยยยที่น่ารักจากร้าน “ฮันนี่รีเวิร์ส” พร้อมที่จะมาให้บริการพี่ๆแล้วค่าาา"
     tsuru "เธอเรียกฉันว่า ซึรุ ได้เลยนะ"
+    $ renpy.pause(1,modal=False)
     jump act1_1_shot_5
 
 #shot 6 Introduction
 label act1_1_shot_5:
+    
     $ povname = renpy.input("ส่วนฉันชื่อ (กรอกชื่อของคุณ)")
 
     pov "ส่วนฉันชื่อ [povname] เป็นผู้จัดการของร้านนี้"
@@ -539,7 +555,7 @@ label act1_1_shot_5:
     scene black
     with fade
     centered "{=centered_text}ผ่านไปสักพัก{/centered_text}"
-
+    $ renpy.music.play(f"{audio_path}/maid_bgm.mp3", loop=True)
     scene bg2day
     show tsuru maid_smile1 at leftpostsuru
     tsuru "เสร็จแล้วววว"
@@ -566,7 +582,7 @@ label act1_1_shot_5:
     mild "..."
     show mild maid_doubt at rightposmild
     show emotion_question at emotepairpos1
-    tsuru "ใช่มั้ยล่าาา แล้วพี่ [povname] จะให้มายด์เล่นบทอะไรหรอ"
+    tsuru "ใช่มั้ยล่าาา แล้วพี่ [pov] จะให้มายด์เล่นบทอะไรหรอ"
 
     pov "ฮื้ม... นั่นสินะยังไม่ได้ตัดสินใจเลย... เอ่อ"
 
@@ -849,6 +865,7 @@ label act1_1_shot_7:
     with fade
     show diary
     pov "(หลังจากที่แยกย้ายกัน ฉันที่อาบน้ำอะไรเรียบร้อย ก็ได้มานั่งเขียนไดอารี่ประจำวัน ถึงจะเขียนบ้างไม่ได้เขียนบ้าง แต่ก็ช่วยให้จดจำเรื่องราวที่ผ่านมาในชีวิตได้ดี)"
+    show brown_transparent
     nvl clear
     diary "ถึงไดอารี่ วันนี้มีเรื่องราวเกิดขึ้นด้วยละ"
     diary "นั้นก็คือ ฉันได้พนักงานใหม่แล้ว เธอเป็นเด็กผู้หญิงที่น่ารัก"
@@ -857,6 +874,8 @@ label act1_1_shot_7:
     diary "รวมทั้งบรรยากาศใหม่ๆในร้านก็ดีขึ้นด้วย"
     diary "หวังว่าจากนี้จะได้มีความทรงจำที่ดีกับเธอไปเรื่อยๆเลยนะ ส่วนงานในร้านวันนี้.."
     nvl clear
+    hide diary
+    hide brown_transparent
     pov "(ระหว่างที่ฉันเขียนไดอารี่เกิดเสียงบางอย่างที่ แปลกประหลาด ทำให้ฉันต้องชะงักจากการเขียนไดอารี่ เสียงบางอย่างที่คล้ายกับเสียงคนร้องไห้ ทรมานด้วยเจ็บปวดอย่างน่าหดหู่)"
     pov "มะ ไม่มั่ง เอาเป็นว่าฉันเขียนไดอารี่แค่นี้ก่อนละกันนะ ไปนอนดีกว่า อะแหะๆๆ..."
     scene black with eye_shut

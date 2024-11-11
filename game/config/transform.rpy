@@ -7,6 +7,12 @@ transform leftpostsuru():
 transform rightpostsuru():
     align (0.75, 1.0)
     zoom 0.3
+transform rightclosetsuru():
+    align (1.0, 0.2)
+    zoom 0.45
+transform closeleftpostsuru():
+    align (0.22, 0.8)
+    zoom 0.4
 transform tsuru_close():
     align (0.5, 0.2)
     zoom 0.7
@@ -17,25 +23,54 @@ transform middleposdel():
 transform leftposdel():
     align (0.22, 1.0)
     zoom 0.3
-transform rightpostdel():
-    align (0.75, 1.0)
+transform llposdel():
+    align (0.42, 1.0)
     zoom 0.3
+transform leftclosedel():
+    align (0.0,0.2)
+    zoom 0.45
+transform rightposdel():
+    align (0.78, 1.0)
+    zoom 0.3
+transform closerightposdel():
+    align (0.75,0.8)
+    zoom 0.4
 transform del_close():
     align (0.5, 0.2)
     zoom 0.7
 
 transform middleposmild():
-    align (0.5, 0.1)
-    zoom 0.38
+    align (0.5, 0.0)
+    zoom 0.355
 transform leftposmild():
     align (0.21, 0.1)
     zoom 0.38
+transform llposmild():
+    align (0.1, 0.1)
+    zoom 0.38
+transform lsposmild():
+    align (0.05, 0.65)
+    zoom 0.34
 transform rightposmild():
     align (0.79, 0.1)
     zoom 0.38
 transform mild_close():
     align (0.5, 0.155)
     zoom 0.7
+transform mild_zoom():
+    align (0.5, 0.3)
+transform farmild():
+    xalign 0.5
+    ypos 230
+    zoom 0.3
+transform farfarmild():
+    xalign 0.5
+    ypos 460
+    zoom 0.28
+transform paja():
+    align (0.5, 0.25)
+    zoom 0.75
+    
 
 transform mildhood():
     align (0.75, 0.4)
@@ -75,3 +110,14 @@ transform omu():
 transform rice():
     align (0.53,0.46)
     zoom 0.12
+transform bounce:
+    pause .15
+    yoffset 0
+    easein .175 yoffset -10
+    easeout .175 yoffset 0
+    easein .175 yoffset -4
+    easeout .175 yoffset 0
+    yoffset 0
+transform loading():
+    align (0.52,0.25)
+    zoom 0.7

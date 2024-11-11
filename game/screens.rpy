@@ -379,6 +379,9 @@ screen black_screen():
 
 screen navigation():
 
+    add im.Scale("gui/game_logo.png",480,280):
+        align(0.05,0.025)
+
     vbox:
         style_prefix "navigation"
 
@@ -1965,3 +1968,11 @@ screen bookreading:
                 xalign 0.5
 
     imagebutton auto "gui/button/cg_close_%s.png" action Return() align((0.98, 0.02))
+
+screen my_keys():
+    timer 5.0 action [Hide("my_scr"), Return("value")]  # screen must return something to auto-advance through the game 
+    key "dismiss" action [[]]
+
+    key "rollback" action [[]]
+    key "rollforward" action [[]]
+    key "game_menu" action [[]]

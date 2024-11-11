@@ -74,6 +74,7 @@ init:
     define runningVertical = Move((2, 10), (2, -10), 0.25, bounce=True, repeat=True, delay=1.75)
     define dottransition = ImageDissolve("images/transition/dots.png", 1.0, time_warp=_warper.easeout)
     define transition_4 = ImageDissolve("images/transition/4.jpg", 1.0, time_warp=_warper.easeout)
+    define tv_transition = ImageDissolve("images/transition/tv.png", 1.0, time_warp=_warper.easeout)
 
 
 # The game starts here.
