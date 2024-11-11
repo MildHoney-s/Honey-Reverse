@@ -20,6 +20,10 @@ init python:
     customer = Character("ลูกค้า",color="#8e8f92")
     employee = Character("พนักงาน",color="#484646")
     researcher = Character("นักวิจัย",color="#f7f7f7")
+    pixchan = Character("ลูกค้า1",color="#ead1dc")
+    zoulfia = Character("ลูกค้า2",color="#cfe2f3")
+    other = Character("คนรอบๆ",color="#8e8f92")
+    restaurant_staff = Character("พนักงานร้านอาหาร",color="#484646")
 
 ## Sprite #####################################################################
 # Mild-R Hood
