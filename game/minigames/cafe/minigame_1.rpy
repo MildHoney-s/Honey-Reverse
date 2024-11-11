@@ -1,6 +1,6 @@
 init python:
     from copy import copy
-    init_time = 5
+    init_time = 45
 
     # Maid Class
     class cafe_maid:

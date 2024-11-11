@@ -72,14 +72,14 @@ label act2_1_shot_4:
         "ออมไรซ์":
             pass
 
-        "ข้าวกะเพรา":
+        "ข้าวกะเพราไก่ไข่ดาว":
             pass
 
         "สปาเก็ตตี้คาโบนาร่า":
             pass
 
         "หรือว่า [povname] ดีล่ะ":
-            pass
+            $ honey_score -= 1
 
     show mild pajamas_smile6 at leftposmild
     with dissolve

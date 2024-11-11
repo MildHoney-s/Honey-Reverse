@@ -394,11 +394,13 @@ label act1_2_shot_7:
     debirun "งั้นพี่มายด์ ดูนี่ๆ"
     scene black with dissolve
     stop music
+    $ quick_menu = False
     play movie "frog.webm"
     $ renpy.pause(42, hard=True)
     scene white with tv_transition
     play movie "animal.webm" 
     $ renpy.pause(36, hard=True)
+    $ quick_menu = True
     scene bg2night with fade
     show mild maid_blush1 at rightposmild
     mild "น่ารักจัง ตัวกลมๆ ขาวๆ หน้ามีรอยดำๆ น่ากอดจัง.."
