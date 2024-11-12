@@ -1,6 +1,6 @@
 init python:
     from copy import copy
-    init_time = 45
+    init_time = 25
 
     # Maid Class
     class cafe_maid:
@@ -46,7 +46,7 @@ init python:
             self.spawn_sequence = iter(clients)
             self.current_client = None
             self.stamina_gain_timers = {}
-            self.spawn_positions = [(-475, 95), (-475, -211), (460, -100), (460, 185), (460, -370)]
+            self.spawn_positions = [(-640, 275), (-520, -125), (600, 275), (540, -125)]
             self.occupied_positions = [None] * len(self.spawn_positions)
 
         def clicked_portal(self, client):
@@ -251,11 +251,11 @@ screen cafe_hire_screen(maid_list):
                             vbox:
                                 for key,value in i.stats.items():
                                     text "[key]: [value]"
-                            bar value i.stamina range 100 xysize 150,36 right_bar "stamina_bar_back" left_bar "stamina bar" align .5,.5
+                            bar value i.stamina range 100 xysize 150,36 right_bar "cafe_empty_stamina_bar" left_bar "cafe_full_stamina_bar" align .5,.5
                 add i.image align (0.5, 0.0) xsize 156 ysize 120 
 
 screen minigame_1(g):
-    add "images/minigame_shop_bg.png"
+    add "images/minigames/cafe/bg20.png"
     style_prefix "cafe"
 
     button:
@@ -300,7 +300,7 @@ screen minigame_1(g):
                                     add i.maid.image xsize 156 ysize 120  # Right half for maid image
 
                                     # Display maid stamina bar below the maid image
-                                    bar value i.maid.stamina range 100 xysize 150,36 right_bar "stamina_bar_back" left_bar "stamina bar" align .5,.5
+                                    bar value i.maid.stamina range 100 xysize 150,36 right_bar "cafe_empty_stamina_bar" left_bar "cafe_full_stamina_bar" align .5,.5
 
                         hovered Function(g.hovered, i)
                         unhovered Function(g.unhovered)
@@ -323,7 +323,7 @@ screen minigame_1(g):
                     hovered Function(g.hovered, i)
                     unhovered Function(g.unhovered)
                     action Function(g.clicked_maid, i)
-                bar value i.stamina range 100 xysize 150,36 right_bar "stamina_bar_back" left_bar "stamina bar" align .5,.5
+                bar value i.stamina range 100 xysize 150,36 right_bar "cafe_empty_stamina_bar" left_bar "cafe_full_stamina_bar" align .5,.5
 
     # Adjusted stamina bottle and text at the top-left
     text str(g.stamina) size 60 align .0,.0 offset 130,10  # Adjusted position for text
@@ -335,7 +335,8 @@ screen minigame_1(g):
 
     # Time bar during night state
     if g.stat == "night":
-        bar value g.time range 90 xysize 900,10 align (0.5, 0.0) yoffset 10
+        # bar value g.time range 90 xysize 900,10 align (0.5, 0.0) yoffset 10
+        bar value g.time range 45 xysize 150,36 right_bar "test_bar" left_bar "bar" align (0.5, 0.0) yoffset 10
         text ("[g.time]") align (0.5, 0.05)
         timer 1 repeat True action Function(g.tick)
 
@@ -364,7 +365,7 @@ screen minigame_1(g):
                         vbox:
                             for key,value in g.hovered_client.stats.items():
                                 text "[key]: [value]"
-                        bar value g.hovered_client.stamina range 100 xysize 150,36 right_bar "stamina_bar_back" left_bar "stamina bar" align .5,.5
+                        bar value g.hovered_client.stamina range 100 xysize 150,36 right_bar "cafe_empty_stamina_bar" left_bar "cafe_full_stamina_bar" align .5,.5
             add g.hovered_client.image align (0.5, 0.0) xsize 156 ysize 120
 
 init:
@@ -476,5 +477,5 @@ init:
 
     default minigame1_act1_2_shot_4 = cafe_handler(
         [mild_working, tsuru_working, debirun_working],  # Fixed clients
-        generate_random_clients(1)  # Generate 1 random client with up to 3 stats (default)
+        generate_random_clients(4, max_stats=1)  # Generate 1 random client with up to 3 stats (default)
     )

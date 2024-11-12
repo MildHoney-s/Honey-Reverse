@@ -4,7 +4,7 @@
         Show("spawn_stamina_screen", x = x, y = y, stamina = stamina, g= g, tag = tag, _tag = tag)()
 
 screen spawn_stamina_screen(x,y,stamina,g,tag):
-    add "mana_drop" align (0.5, 0.5) at stamina_get_animation(x, y)
+    add "cafe_coin" align (0.5, 0.5) size (48, 48) at stamina_get_animation(x, y)
     timer .6 repeat True action Function(g.gain_stamina, stamina)
     timer 1 repeat True action Hide(tag)
 

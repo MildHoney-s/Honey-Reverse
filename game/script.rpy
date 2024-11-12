@@ -83,3 +83,5 @@ label start:
     #$ config.rollback_enabled = False
     #$ persistent.gameclear = True
     jump act1_1_shot_1
+    # $ quick_menu = False
+    # call screen minigame_1(minigame1_act1_2_shot_4)
