@@ -94,11 +94,11 @@ label act1_2_shot_2:
     show del normal_idle1 at del_close
     with dissolve
     debirun "ก็มันว่างนี่คะ…."
-    hide del normal_idle1 
+    hide del normal_idle1
     show del normal_smile1 at del_close
     with dissolve
     debirun "แล้วนี่หนูมาขัดจังหวะผู้จัดการกับแฟนรึเปล่าคะเนี่ย…."
-    scene bg2day 
+    scene bg2day
     show mild maid_flustered at leftposmild
     show del normal_smile7 at rightposdel
     with dissolve
@@ -172,7 +172,7 @@ label act1_2_shot_3:
     mild "คืออะไรหรอคะ"
     pov "ไอดอลน่ะ เป็นเหมือนผู้ที่คอยมอบรอยยิ้ม ความสดใส ที่จะช่วย รักษาหัวใจ ให้กับผู้คนยังไงละ"
     show mild maid_blush2 at mild_close
-    hide emotion_question 
+    hide emotion_question
     with dissolve
     mild "ฉันเป็นแบบนั้นหรอคะ…"
     pov "อื้มม ใช่สิ ออร่าที่มาจากตัวเธอน่ะ สุดยอดมากเลยนะ"
@@ -221,7 +221,7 @@ label act1_2_shot_4:
     with fade
     debirun "นี่ก็ผ่านมาสักพักแล้วนะผู้จัดการ พี่ซึรุเขายังไม่มาเลย"
     pov "นั่นสิเป็นอะไรรึเปล่านะ…"
-    scene bg2day:    
+    scene bg2day:
         crop (400,240,1280,720)
         size (1920, 1080)
     show mild maid_doubt at mild_close
@@ -229,7 +229,7 @@ label act1_2_shot_4:
     scene bg2day
     show del maid_doubt at rightposdel
     show mild maid_doubt at leftposmild
-    with fade 
+    with fade
     pause 0.5
     show mild maid_doubt at llposmild
     show del maid_doubt at llposdel
@@ -288,7 +288,7 @@ label act1_2_shot_5:
     show tsuru maid_idle2 at rightpostsuru
     with dissolve
     tsuru "เอ๊ะ! จริงด้วย เดี๋ยวกลับไปซ่อมให้นะน้องห่วงใย"
-    scene bg2night:    
+    scene bg2night:
         crop (400,240,1280,720)
         size (1920, 1080)
     show tsuru maid_smile3 at tsuru_close
@@ -305,7 +305,7 @@ label act1_2_shot_5:
     show del maid_gloomy2 at leftposdel
     with dissolve
     tsuru "แต่ก็คงจะคิดถึงตอนออกมาทำงานแน่เลย"
-    scene bg2night:    
+    scene bg2night:
         crop (400,240,1280,720)
         size (1920, 1080)
     show siralfred at truecenter:
@@ -317,7 +317,7 @@ label act1_2_shot_5:
         zoom 0.3
     show tsuru maid_smile at rightpostsuru
 #เดลหน้าแดงเขินๆ
-    show del maid_smile2 at leftposdel 
+    show del maid_smile2 at leftposdel
     with dissolve
     tsuru "แน่ละสิ ก็เดลชอบกอดนี่นา ตอนมานอนกับพี่ทีไรยังขอกอดพี่อยู่บ่อยๆ เลย"
     show del maid_crying at leftposdel
@@ -353,12 +353,12 @@ label act1_2_shot_6:
     with dissolve
     debirun "เอ๊ะ! หลุดมาจากห้องทดลอง!?"
     show tsuru maid_smile2 at rightpostsuru
-    with dissolve   
+    with dissolve
     tsuru "ผู้จัดการยังไม่เล่าให้ฟังหรอ"
     debirun "ยังนะพี่….."
     pov "//กระแอม"
     show tsuru maid_smile3 at rightpostsuru
-    with dissolve  
+    with dissolve
     tsuru "เรื่องมีอยู่ว่า……."
     scene black with dissolve
     centered "{=centered_text} ซึรุได้เล่าเรื่องราวทั้งหมดให้เดลฟัง{/centered_text}"
@@ -398,7 +398,7 @@ label act1_2_shot_7:
     play movie "frog.webm"
     $ renpy.pause(42, hard=True)
     scene white with tv_transition
-    play movie "animal.webm" 
+    play movie "animal.webm"
     $ renpy.pause(36, hard=True)
     $ quick_menu = True
     scene bg2night with fade
@@ -412,7 +412,7 @@ label act1_2_shot_7:
     mild "แพน…. อะไรนะคะ?"
     show tsuru maid_smile4 at leftpostsuru
     with dissolve
-    tsuru "แพนนนนนนนน ด้าาา" 
+    tsuru "แพนนนนนนนน ด้าาา"
     show mild maid_stunned at rightposmild
     with dissolve
     mild "พะ แพน….."
@@ -458,5 +458,6 @@ label act1_2_shot_8:
     pov "นอนดีกว่า~ "#//(กึ้ง!).....sfx
     pov "อีกแล้วหรอ แหะๆ ห้ามทักนี่นา… รีบหนีไปนอนดีกว่า……"
     scene black with eye_shut
+    pause 1.0
 
     jump act2_1_shot_1

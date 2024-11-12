@@ -341,6 +341,7 @@ screen quick_menu():
             textbutton _("Q.Save") action QuickSave()
             textbutton _("Q.Load") action QuickLoad()
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            # textbutton _("Skip") action Function(DummySkip)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Setting") action ShowMenu("preferences")
             textbutton _("Back") action Rollback()

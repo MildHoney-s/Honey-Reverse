@@ -102,7 +102,7 @@ label act2_1_shot_4:
 
 label act2_1_shot_5:
     scene bg8day
-    "และหลังจากนั้น ฉันก็ได้ทำมื้อเช้าให้ทั้งตัวเองและก็มายด์" 
+    "และหลังจากนั้น ฉันก็ได้ทำมื้อเช้าให้ทั้งตัวเองและก็มายด์"
     show spa at truecenter:
         zoom 0.7
     "ซึ่งมายด์บอกว่าอยากจะกินสปาเก็ตตี้คาโบนาร่า"
@@ -265,7 +265,7 @@ label act2_1_shot_8:
     show del normal_crying1 at rightposdel
     with dissolve
     tsuru "มายด์… ลองกดดูสิ ถ้ากดแล้วออกหน้าตู้มาเดลอาจจะกลับมาเป็นเหมือนเดิมก็ได้นะ"
-    mild "ค่ะ…" 
+    mild "ค่ะ…"
     scene bg2day
     window hide
     show gacha_movie
@@ -280,10 +280,10 @@ label act2_1_shot_8:
     with fade
     pause 1.5
     show del normal_idle1 at del_close
-    with dissolve  
+    with dissolve
     pause 1.5
     show del normal_smile6 at del_close
-    with dissolve  
+    with dissolve
     pause 1.5
     pov "มายด์ เราเอาเงินตรงนั้นมาซื้อชานมได้นะ…"
     scene bg2day:
@@ -347,7 +347,7 @@ label act2_1_shot_10:
     mild "มีค่ะ มีค่ะ เขาว่า “ตอนนี้ยังดูเขินๆ อยู่เลย อยากให้มายด์แสดงให้สมบทบาทมากขึ้นกว่านี้จัง มันไม่เข้ากับบทบาทเลย”"
     pov "…"
     show mild pajamas_sorry at paja
-    with dissolve  
+    with dissolve
     pov "…จะว่าไป มายด์ก็ยังไม่มีบทบาทประจำตัวเลยนะ"
     scene bg2day
     with dissolve
@@ -365,7 +365,7 @@ label act2_1_shot_11:
     style cafe_text:
         color "#814412"
     style down_text:
-        color "#d04f40"    
+        color "#d04f40"
     scene bg2day
     show  mild pajamas_smile8 at paja
     with dissolve
@@ -405,7 +405,7 @@ label act2_1_shot_11:
     centered "{=down_text}XXX ปัดตก XXX{/down_text} "
     centered "{=cafe_text}- บทบาทพี่มินอาร์ -{/cafe_text}"
     show mild pajamas_smile1 at paja
-    mild "แหมมม อยากให้คนอื่นมารับเมนูอย่างงั้นหรอ… ทำไมต้องอยากได้คนอื่นล่ะ ในเมื่อมีฉันอยู่ทั้งคนแล้วหนิ" 
+    mild "แหมมม อยากให้คนอื่นมารับเมนูอย่างงั้นหรอ… ทำไมต้องอยากได้คนอื่นล่ะ ในเมื่อมีฉันอยู่ทั้งคนแล้วหนิ"
     # SFX : เป่าหู
     show mild pajamas_smile5 at paja
     with dissolve
@@ -450,7 +450,7 @@ label act2_1_shot_11:
     debirun "แต่น่าเสียดายนะ ในที่แห่งนี้ มีผู้บรรชาการสูงสุดได้เพียงแค่คนเดียว-!!"
     show del normal_smile9 at del_close
     with dissolve
-    debirun "งั้นมาดวลกัน" 
+    debirun "งั้นมาดวลกัน"
     nvl clear
     show blue_transparent
     del_nvl "ข้าในนามผู้บัญชาการสูงสุดกองทัพลับเมเทโอรอยด์\n
@@ -463,7 +463,7 @@ label act2_1_shot_11:
     ผู้นำพาหายนะอันแสนยิ่งใหญ่จากจักรวาลมาสู่โลกาและมวลมนุษยชาติ\n
     เด-บิ-รุน-!!"
     show dual_sd at truecenter:
-        zoom 0.4 
+        zoom 0.4
     mild_debirun "ดูเอล-!!"
     tsuru_pov "หยุด-!!"
     scene bg2day
@@ -492,8 +492,11 @@ label act2_1_shot_12:
     debirun "ผะ ผู้จัดการ ดูพี่มายด์สิ ตอนนี้ยืนตัวแข็งไปแล้ว-!!"
     show del normal_idle2 at middleposdel
     show tsuru normal_doubt at rightpostsuru
+    hide emotion_shock
     with easeinleft
     debirun "พี่มายด์ ทำใจดีๆ ไว้ พี่มายด์–!! พี่ซึรุทำอะไรสักอย่างทีสิ" # ทำหน้าล่ก
+    show tsuru normal_dark at rightpostsuru
+    with dissolve
     tsuru "มายด์ขึ้นสเตจหรอ… อะฮุฮิฮุฮิ น่าสนใจดีหนิน่า พี่มายด์ขึ้นสเตจ" # Char tsuru_maid_angry_au_darkface
     scene bg2day
     show mild_please_sd at truecenter:
@@ -533,7 +536,7 @@ label act2_1_shot_13:
         crop (100,200,1480,720)
         size (1920, 1080)
     show mild pajamas_doubt at paja
-    mild "…" 
+    mild "…"
     mild "{size=*0.5}เดือนนึง… //พูดด้วยเสียงเบาๆ{/size}"
     pov "อะ อะไรนะมายด์"
     show mild pajamas_grumpy at bounce,paja
@@ -556,7 +559,7 @@ label act2_1_shot_13:
     with None
     show mild pajamas_smile6 at bounce,paja
     with zoomin
-    mild "เย้-!!" 
+    mild "เย้-!!"
     pov "(ฉันคงใช้วิธีนี้บ่อยๆ ไม่ได้ ไม่งั้นรายได้ฉันหายแน่นอน)"
     scene bg7light
     with fade
@@ -578,9 +581,12 @@ label act2_1_shot_13:
     pov "อ่า วันนี้ก็ยังมีเสียงดังเหมือนเดิมเลยแหะ แต่นี่ผ่านมาเดือนนึงแล้วนะ ยังไม่หายไปเลย คงต้องจัดการสักหน่อยแล้ว"
     #"อึก… อือ…"
     with sshake
+    scene bg7night
     # อัปแอ่ๆ https://youtu.be/Fz6uJuhVq1w?t=539 8.59 วิ เสียงซึรุ อับแอ
     pov "วะ วันนี้คงต้องนอนแล้วล่ะ คะ คุณสุรชัยมาทักแล้ว"
     pov "(แต่ฉันก็สงสัยอยู่ดีว่า สรุปแล้วเป็นเสียงจากอะไรกันแน่)"
     pov "(เอาเป็นว่า วันนี้นอนก่อนดีกว่า)"
+    scene black with eye_shut
+    pause 1.0
 
-    jump demo
+    jump act2_2_shot_1

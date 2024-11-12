@@ -53,7 +53,7 @@ label act1_1_shot_2:
     show ashy_sd_1 at truecenter:
         zoom 0.6
     with dissolve
-    
+
     play movie "ASH rap.webm"
     $ renpy.pause(15, hard=True)
     hide ashy_sd_1
@@ -112,7 +112,7 @@ label act1_1_shot_2:
     #Ami scene
     scene black with dissolve
     centered "{=centered_text}หลังจากผ่านไป 3 วัน บุคคลปริศนา2 ที่มาสมัครงาน มีผมสีขาว ลักษณะเป็นทวินเทล \nมีบางอย่างที่คล้ายๆที่ไขลานอยู่ด้านบน มีท่าทางเขินอาย ดูน่ารักน่าทะนุถนอม{/centered_text}"
-    
+
     $ renpy.pause(1,modal=True)
     scene bg2day with eye_open
     show ami_sd_1 at truecenter
@@ -501,7 +501,6 @@ label act1_1_shot_4_q1_c2:
 
 #shot 6 Introduction
 label act1_1_shot_5:
-    
     $ povname = renpy.input("ส่วนฉันชื่อ (กรอกชื่อของคุณ)")
 
     pov "ส่วนฉันชื่อ [povname] เป็นผู้จัดการของร้านนี้"
@@ -697,7 +696,7 @@ label act1_1_shot_6:
     show mild maid_idle2 at middleposmild
     show omurice at omu
     with easeinleft
-    
+
     mild "ฮันนี่บราวน์ชูก้า กับ ออมไรซ์ ได้แล้วค่า รับซอสด้วยมั้ยคะ?"
 
     customer "รับค้าบบบ"
@@ -712,7 +711,7 @@ label act1_1_shot_6:
     mild "รับทราบค่า"
     show omurice_red at truecenter
     with fade
-    mild "เรียบร้อยค่ะ" 
+    mild "เรียบร้อยค่ะ"
 
     customer "คะ คุณเมดวาดรูปอะไรครับเนี่ย"
     show emotion_tear at emotepos

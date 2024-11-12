@@ -70,7 +70,6 @@ transform farfarmild():
 transform paja():
     align (0.5, 0.25)
     zoom 0.75
-    
 
 transform mildhood():
     align (0.75, 0.4)
@@ -85,6 +84,20 @@ transform mildchibi():
     zoom 0.18
     ypos 620
     xpos 980
+transform shadowmid():
+    align (0.8, 2.2)
+    zoom 0.5
+transform shadowright():
+    align (1.0, 2.2)
+    zoom 0.5
+transform shadowcloser():
+    xpos 120
+    ypos -60
+    zoom 1.2
+transform shadowclosel():
+    xpos -400
+    ypos 140
+    zoom 1.2
 
 transform emotepos():
     align (0.5,0.1)

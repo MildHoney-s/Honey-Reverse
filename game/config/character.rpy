@@ -20,8 +20,8 @@ init python:
     customer = Character("ลูกค้า",color="#8e8f92")
     employee = Character("พนักงาน",color="#484646")
     researcher = Character("นักวิจัย",color="#f7f7f7")
-    pixchan = Character("ลูกค้า1",color="#ead1dc")
-    zoulfia = Character("ลูกค้า2",color="#cfe2f3")
+    pixchan = Character("ลูกค้า1",color="#f05f9e")
+    zoulfia = Character("ลูกค้า2",color="#698dac")
     other = Character("คนรอบๆ",color="#8e8f92")
     restaurant_staff = Character("พนักงานร้านอาหาร",color="#484646")
 
@@ -135,6 +135,14 @@ image tsuru maid_smile6 = "images/character/Tsu_maid/Tsuru Maid Smile 2_3.png"
 image tsuru maid_shocked = "images/character/Tsu_maid/Tsuru Maid Shocked.png"
 image tsuru maid_smile = "images/character/Tsu_maid/Tsuru Maid Grin.png"
 image tsuru maid_wow = "images/character/Tsu_maid/Tsuru Maid Wow.png"
+image tsuru maid_frog1 = "images/character/Tsu_maid/tsururu_maid_smile_1_frog.png"
+image tsuru maid_frog2 = "images/character/Tsu_maid/tsururu_maid_smile_2_frog.png"
+image tsuru maid_frog3 = "images/character/Tsu_maid/tsururu_maid_smile_4_frog.png"
+image tsuru maid_frog4 = "images/character/Tsu_maid/tsururu_maid_smile_5_frog.png"
+image tsuru maid_drunk1 = "images/character/Tsu_maid/tsururu_maid_smile_1_drunk.png"
+image tsuru maid_drunk2 = "images/character/Tsu_maid/tsururu_maid_smile_2_drunk.png"
+image tsuru maid_drunk3 = "images/character/Tsu_maid/tsururu_maid_smile_4_drunk.png"
+image tsuru maid_drunk4 = "images/character/Tsu_maid/tsururu_maid_idle_2_drunk.png"
 
 ## Tsuru Normal
 image tsuru normal_abuse_ec = "images/character/Tsu_Normal/tsuru_normal_abuse_ec.png"
@@ -156,6 +164,7 @@ image tsuru normal_smile6 = "images/character/Tsu_Normal/tsuru_normal_smile_6.pn
 image tsuru normal_smug = "images/character/Tsu_Normal/tsuru_normal_smug.png"
 image tsuru normal_sorry = "images/character/Tsu_Normal/tsuru_normal_sorry.png"
 image tsuru normal_stunned = "images/character/Tsu_Normal/tsuru_normal_stunned.png"
+image tsuru normal_dark = "images/character/Tsu_Normal/tsuru_normal_grumpy_2_1.png"
 
 ## Debirun Maid
 image del maid_abuse = "images/character/Del_maid/del_maid_abuse.png"
