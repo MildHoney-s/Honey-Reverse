@@ -57,6 +57,9 @@ transform rightposmild():
 transform mild_close():
     align (0.5, 0.155)
     zoom 0.7
+transform mildcloser():
+    align (0.5, 0.155)
+    zoom 0.95   
 transform mild_zoom():
     align (0.5, 0.3)
 transform farmild():

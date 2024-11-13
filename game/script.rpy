@@ -75,6 +75,7 @@ init:
     define dottransition = ImageDissolve("images/transition/dots.png", 1.0, time_warp=_warper.easeout)
     define transition_4 = ImageDissolve("images/transition/4.jpg", 1.0, time_warp=_warper.easeout)
     define tv_transition = ImageDissolve("images/transition/tv.png", 1.0, time_warp=_warper.easeout)
+    define curtain = ImageDissolve("images/transition/curtain.jpeg", 1.0, time_warp=_warper.easeout)
 
 
 # The game starts here.
@@ -83,5 +84,3 @@ label start:
     #$ config.rollback_enabled = False
     #$ persistent.gameclear = True
     jump act1_1_shot_1
-    # $ quick_menu = False
-    # call screen minigame_1(minigame1_act1_2_shot_4)
