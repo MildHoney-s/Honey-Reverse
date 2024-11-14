@@ -54,6 +54,9 @@ transform lsposmild():
 transform rightposmild():
     align (0.79, 0.1)
     zoom 0.38
+transform rrposmild():
+    align (0.92, 0.7)
+    zoom 0.38
 transform mild_close():
     align (0.5, 0.155)
     zoom 0.7
@@ -83,6 +86,18 @@ transform mildunhood():
 transform mildunhood_close():
     align (0.5, 0.3)
     zoom 0.8
+transform mildcloseleft():
+    xpos 420
+    yalign (0.3)
+    zoom 0.8
+transform middlemildnormal():
+    xalign 0.5
+    ypos -112
+    zoom 0.355
+transform leftmildnormal():
+    xalign 0.25
+    ypos -112
+    zoom 0.355
 transform mildchibi():
     zoom 0.18
     ypos 620
@@ -114,6 +129,9 @@ transform emotepairpos1():
 transform emotepairpos2():
     align (0.75,0.1)
     zoom 0.4
+transform emotepairpos3():
+    align (0.84,0.08)
+    zoom 0.4
 transform emoteclose():
     align (0.5,-2)
     zoom 0.7
@@ -137,3 +155,9 @@ transform bounce:
 transform loading():
     align (0.52,0.25)
     zoom 0.7
+transform animal():
+    align (0.15,0.5)
+    zoom 0.142
+transform cake():
+    align (0.3,0.42)
+    zoom 0.142

@@ -393,8 +393,10 @@ label act2_3_shot_1:
     with easeoutright
     # SFX เสียงเดินไป
     pov "มายด์รอด้วยสิ"
+    scene black
     with fade
     scene bg7light
+    with dissolve
     show diary
     show brown_transparent
     nvl clear

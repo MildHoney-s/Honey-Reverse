@@ -429,7 +429,7 @@ label act2_1_shot_11:
     with fade
     centered "{=down_text}XXX ปัดตก XXX{/down_text} "
     centered "{=cafe_text}- บทบาทมายบิรุน -{/cafe_text}"
-    show mild pajamas_smile3 at paja
+    show mild pajamas_biao at paja
     with eye_open
     pause 1.0
     nvl clear
