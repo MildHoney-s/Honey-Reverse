@@ -1,59 +1,26 @@
-﻿## This file contains options that can be changed to customize your game.
-##
-## Lines beginning with two '#' marks are comments, and you shouldn't uncomment
-## them. Lines beginning with a single '#' mark are commented-out code, and you
-## may want to uncomment them when appropriate.
+﻿## Basic Settings #########################################################
 
-## Basics ######################################################################
-
-## A human-readable name of the game. This is used to set the default window
-## title, and shows up in the interface and error reports.
-##
-## The _() surrounding the string marks it as eligible for translation.
-
+## Human-readable game name.
 define config.name = _("HONEY REVERSE")
+
+## Game version for display and debugging purposes.
+define config.version = "0.01"
+
+## Short name used in builds (no spaces or special characters).
+define build.name = "HoneyReverse"
+
+## The directory for game save files.
+define config.save_directory = "HoneyReverse"
+
+## Enable or disable sound, music, and voice support.
+define config.has_sound = True
+define config.has_music = True
+define config.has_voice = True
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
 
 define gui.show_name = False
-
-## The version of the game.
-
-define config.version = "0.01"
-
-## Text that is placed on the game's about screen. Place the text between the
-## triple-quotes, and leave a blank line between paragraphs.
-
-define gui.about = _p("""""")
-
-## A short name for the game used for executables and directories in the built
-## distribution. This must be ASCII-only, and must not contain spaces, colons,
-## or semicolons.
-
-define build.name = "TEST"
-
-## Sounds and music ############################################################
-
-## These three variables control, among other things, which mixers are shown
-## to the player by default. Setting one of these to False will hide the
-## appropriate mixer.
-
-define config.has_sound = True
-define config.has_music = True
-define config.has_voice = True
-
-## To allow the user to play a test sound on the sound or voice channel,
-## uncomment a line below and use it to set a sample sound to play.
-
-# define config.sample_sound = "sample-sound.ogg"
-# define config.sample_voice = "sample-voice.ogg"
-
-## Uncomment the following line to set an audio file that will be played while
-## the player is at the main menu. This file will continue playing into the
-## game, until it is stopped or another file is played.
-
-# define config.main_menu_music = "main-menu-theme.ogg"
 
 ## Transitions #################################################################
 ##
@@ -110,22 +77,6 @@ default preferences.text_cps = 0
 
 default preferences.afm_time = 15
 
-## Save directory ##############################################################
-##
-## Controls the platform-specific place Ren'Py will place the save files for
-## this game. The save files will be placed in:
-##
-## Windows: %APPDATA\RenPy\<config.save_directory>
-##
-## Macintosh: $HOME/Library/RenPy/<config.save_directory>
-##
-## Linux: $HOME/.renpy/<config.save_directory>
-##
-## This generally should not be changed, and if it is, should always be a
-## literal string, not an expression.
-
-define config.save_directory = "TEST-1718683976"
-
 ## Icon ########################################################################
 ##
 ## The icon displayed on the taskbar or dock.
@@ -154,13 +105,27 @@ init python:
     ## **.ogg" matches ogg files in the game directory or any of its
     ## subdirectories, and "**.psd" matches psd files anywhere in the project.
 
-    ## Classify files as None to exclude them from the built distributions.
+    ## Exclude temporary and backup files from the build process.
 
     build.classify('**~', None)
     build.classify('**.bak', None)
     build.classify('**/.**', None)
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
+    build.classify("**/__pycache__", None)
+    build.classify("**/__pycache__/**", None)
+
+    ## Exclude unnecessary development resources like layered image files.
+    build.classify('**.psd', None)        # Photoshop files.
+    build.classify('**.xcf', None)        # GIMP files.
+
+    ## Exclude source control folders (e.g., `.git`, `.svn`).
+    build.classify('**/.git/**', None)
+    build.classify('**/.svn/**', None)
+
+    ## Exclude documentation files from the build (optional).
+    build.classify('**/*.md', None)       # Markdown files (e.g., README.md)
+    build.classify('**/*.txt', None)      # Text files (e.g., notes.txt)
 
     ## To archive files, classify them as 'archive'.
 
