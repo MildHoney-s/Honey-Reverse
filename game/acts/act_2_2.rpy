@@ -2,6 +2,7 @@ label act2_2_shot_1:
     # - หลังจากเล่นมินิเกมบริหารร้าน -
     # SFX กรุงกริ้ง
     scene bg2day
+    play music pixfia_bgm loop fadein 1.5
     show mild maid_idle3 at leftposmild
     mild "ยินดีต้อนรับค่าาา"
     show pixchan at shadowright
@@ -77,6 +78,7 @@ label act2_2_shot_1:
     hide mild maid_blush1 with easeoutleft
     pause 1.0
     scene bg8day
+    play music before_bgm loop fadein 0.5 fadeout 1.0
     with fade
     show tsuru maid_wow at rightpostsuru
     with None
@@ -103,13 +105,20 @@ label act2_2_shot_1:
     mild "เพลงอะไรอ่ะ"
     scene black
     with fade
-    centered "ก่อนจะเข้าสู่สเตจ ขอเชิญ มายด์อาร์ ที่กลางจอ เพื่อเข้าสู่การแสดงในลำดับต่อไป ขอบพระคุณ"
+    stop music 
+    centered "ก่อนจะเข้าสู่สเตจ ขอเชิญ Mild-R ที่กลางจอ เพื่อเข้าสู่การแสดงในลำดับต่อไป ขอบพระคุณ"
+    play movie "Bang Pho.webm"
+    $ renpy.pause(26, hard=True)
+    scene black
+    with fade
+    $ renpy.pause(1, modal = True)
     scene bg2day:
         crop (100,200,1480,720)
         size (1920, 1080)
-    # https://www.youtube.com/watch?v=CptYeeMg-08 จากพี่ต้อมมาแบบไม่มีมายและแอชี่ และ ตัดเสียงแอชี่ออกจากเสียงเพลง เอาแค่วิดีโอด้านหลัง แล้วให้มายด์ในไลฟ์ขึ้นมากลางจอ
+    with fade
     show pixchan at shadowcloser
     show zoulfia at bounce,shadowclosel
+    play music maid_bgm loop fadeout 0.5
     zoulfia "สนุกมากเลยค่าาาาาาาาาาาา *แฮ๊กๆ*"
     show pixchan at bounce,shadowcloser
     pixchan "สนุกใหญ่เลยนะเธอ"
@@ -158,10 +167,12 @@ label act2_2_shot_1:
     show mild maid_smile4 at leftposmild
     with dissolve
     mild "ขอบคุณสำหรับคำแนะนำนะคะะะะะะะ!"
+    stop music fadeout 1.5
     scene black
     with fade
     scene bg2day
     with dissolve
+    play music cafe_bgm loop fadein 1.5
     pov "(หลังจากที่ไปแสดงสเตจวันนั้น มายด์ก็ดูมีชีวิตชีวามากขึ้นนะ รวมทั้งยอมขึ้นสเตจตามปกติแล้วด้วย)"
     pov "(และแล้วก็มาถึงอีเว้นท์ของเดือนกันยายนจนได้ นั่นก็คือ วันเกิดซึรุรุ!)"
     pov "(ธีมที่ซึรุขอมาก็คือ กบ)"
@@ -174,15 +185,21 @@ label act2_2_shot_1:
     tsuru "ขอบคุณทุกคนที่มาอีเว้นท์วันเกิดของซึรุนะค๊าาาาา"
     show tsuru maid_frog3 at tsuru_close
     with dissolve
-    tsuru "วันนี้ซึรุ มีของขวัญสุดพิเศษ มาฝากพี่ๆ ทุกคนล่ะอ๊บ ช่วยรับฟังด้วยนะ อ๊บอ๊บ" # //Asset ที่คาดผมกบแบบในวันเกิดซึรุ
-    # https://youtu.be/PlWXaq6iecQ 20 วิ ครับ เฟตเสียงให้ด้วย
-    tsuru "อยากจะรู้เวลาที่ใกล้เธอจะเป็นอย่างไร ผู้ชายที่กล้ามโต ถ้าได้จับ…"
-    tsuru "คงจะจี๊ดๆ ข้างใน หวั่นไหวในใจแล้วสิเรา ต้องว๊าวแน่ๆ เลยยยยยย"
-    # //GreenScreen ซึรุเต้น ฤดูออกกำลังกาย
+    tsuru "วันนี้ซึรุ มีของขวัญสุดพิเศษ มาฝากพี่ๆ ทุกคนล่ะอ๊บ ช่วยรับฟังด้วยนะ อ๊บอ๊บ"
+    play music idol_bgm fadein 0.5
+    play movie "Tsuru Dance.webm"
+    $ renpy.block_rollback()
+    $ renpy.pause(27, hard=True)
+    scene black
+    with fade
+    stop music fadeout 1.5
+    $ renpy.pause(1, modal = True)
     # SFX เสียงตรบมือ
+    scene bg2day
     show tsuru maid_frog4 at tsuru_close
     with dissolve
     tsuru "ขอบคุณค่าาาาาาาาา"
+    play music bright_bgm loop fadein 0.5
     show edamame at truecenter:
         zoom 0.7
     tsuru "แล้วอย่าลืมสั่งเมนูพิเศษ ถั่วแระญี่ปุ่น ของโปรดซึรุด้วยนะค๊าาาา" # //Asset ถั่วแระญี่ปุ่น
@@ -213,9 +230,11 @@ label act2_2_shot_1:
     hide tsuru maid_frog1
     with easeoutleft
     mild_debirun "ได้เลยจ้าา"
+    stop music fadeout 1.5
     scene black
     centered "{=centered_text}แล้วเวลาก็ผ่านไปจนถึงเวลาร้านปิด{/centered_text}"
     scene bg2night
+    play music night_bgm loop fadein 0.5
     with fade
     show del maid_idle2 at leftposdel
     show tsuru maid_smile1 at rightpostsuru
@@ -263,6 +282,7 @@ label act2_2_shot_1:
     mild "อื้มๆ ไปกัน"
     scene black
     with fade
+    play music roman_bgm loop fadein 0.5 fadeout 0.5
     scene bg14night
     with walkingVertical
     show tsuru normal_smile1 at bounce,leftpostsuru
@@ -302,5 +322,6 @@ label act2_2_shot_1:
     scene black
     with fade
     centered "หลังจากนั้นทั้งสามสาวก็ใช้เวลาเดินเที่ยวเล่นอย่างเพลิดเพลิน ในยามค่ำคืน"
+    stop music fadeout 1.5
 
     jump act2_3_shot_1

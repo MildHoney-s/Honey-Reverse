@@ -1,6 +1,7 @@
 label act2_3_shot_1:
     scene bg8day
     with fade
+    play music rest_bgm loop fadein 0.5
     pause 0.5
     pov "(หลังจากวันนั้น มายด์ก็เริ่มชินกับการขึ้นสเตจแล้วสินะ)"
     pov "(ทั้งต้อนรับลูกค้าและแสดงบทบาทก็ทำได้ดีเลย แบบนี้ ช่วงปลายปีน่าจะพาไปเที่ยวสักหน่อยแล้วสิ)"
@@ -83,12 +84,15 @@ label act2_3_shot_1:
     show mild maid_blush1 at mildcloser
     show emotion_anger at emoteclose
     with zoomout
+    stop music fadeout 1.5
     mild "ถะ ถ้างั้น"
     pov "(ฮึก! อะไรกัน นะ น่ารัก!)"
     hide emotion_anger
     show mild maid_flustered at mildcloser
     show emotion_love at emoteclose
     with dissolve
+    play music roman_bgm fadein 0.5 loop
+    show heart
     mild "ช่วยไปซื้อของด้วยกันได้มั้ยคะ"
     pov "(ดะ เดท นี่มันเดท)"
     pov "(หัวใจฉันเต้นแรงมากเลย มายด์จะได้ยินมั้ยเนี่ย!)"
@@ -103,8 +107,10 @@ label act2_3_shot_1:
     show mild maid_smile6 at mildcloser
     with dissolve
     mild "ค่า!" 
+    stop music fadeout 0.25
     scene bg16
     with dottransition
+    play music store_bgm loop
     show mild hood_scared at mildunhood
     with zoomin
     mild "คะ คือ.." 
@@ -270,9 +276,11 @@ label act2_3_shot_1:
     pov "เอาเป็นชาไทย กับ ชานม อย่างละแก้วก็พอ.."
     restaurant_staff "รับทราบแล้วค่า"
     pov "(จะว่าไปมันมีอาเคดเซนเตอร์ อยู่นี่นาลองพามายด์ไปเล่นดูดีมั้ยนะ)"
+    stop music fadeout 0.5
     show mild unhood_smile at mild_close
     with dissolve
     mild "ขอบคุณนะคะ"
+    play music roman_bgm loop fadein 1.0
     pov "อยู่ๆ ขอบคุณอะไรหรอ"
     show mild unhood_blush2 at mild_close
     with dissolve
@@ -318,6 +326,7 @@ label act2_3_shot_1:
     with dissolve
     mild "ปะ ไปไหนหรอคะ"
     pov "ฮิฮี่ ม่ายย บอกกกก"
+    play music arcade_bgm loop fadein 1.0 fadeout 0.5
     scene bg19
     pov "ที่นี่ไงล่าาา"
     show mild unhood_idle2 at leftposmild
@@ -374,6 +383,7 @@ label act2_3_shot_1:
     scene bg17
     show mild unhood_blushed at mildunhood_close
     with fade
+    play music mildroom_bgm loop fadein 1.0 fadeout 0.5
     pov "อะนี่ ฉันให้เธอนะ"
     scene bg17:
         crop (100,200,1480,720)
@@ -391,12 +401,14 @@ label act2_3_shot_1:
     mild "มะ ไม่มีอะไรค่ะ เรากลับร้านกันเถอะนะคะ เดี๋ยวจะไม่ทันร้านเปิด"
     hide mild unhood_blush2 
     with easeoutright
+    stop music fadeout 1.5
     # SFX เสียงเดินไป
     pov "มายด์รอด้วยสิ"
     scene black
     with fade
     scene bg7light
     with dissolve
+    play music diary_bgm loop fadein 1.5
     show diary
     show brown_transparent
     nvl clear
@@ -416,6 +428,7 @@ label act2_3_shot_1:
     diary "กับอีเว้นท์ของที่ร้าน จากนี้ก็หวังว่าจะสร้างความสุขให้กับเหล่าลูกค้าได้เรื่อยๆ นะ"
     scene bg7night
     with fade
+    stop music fadeout 0.5
     scene black
     with eye_shut
     pause 1.5

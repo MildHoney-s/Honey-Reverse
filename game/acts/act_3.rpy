@@ -1,5 +1,6 @@
 label act3_shot_1:
     scene bg7day with eye_open
+    play music morning_bgm loop 
     pov "ขึ้นเดือนใหม่ เดือนสุดท้ายของปีแล้วสินะ"
     pov "เดือนนี้ก็มีอีเว้นท์อีกหลายอย่างเลย รวมถึงวันเกิดของมายด์ด้วย…"
     scene black
@@ -8,6 +9,7 @@ label act3_shot_1:
     # ภาพ flashback  (VFX จอมืด) ในภาพร้านมี ซึรุ เดล และฮันนี่
     scene bg8day
     with fade
+    play music flashback_bgm loop fadein 0.5 fadeout 0.25
     show tsuru maid_idle2 at leftpostsuru
     with dissolve
     tsuru "นี่ผู้จัดการ กับมายด์แล้วรู้สึกยังไงหรอ"
@@ -41,10 +43,13 @@ label act3_shot_1:
     with dissolve
     tsuru "เฮ้ออ… ถ้างั้นพวกหนูจะหาจังหวะให้อยู่ด้วยกันสองต่อสองแล้วกัน พี่ก็ทำให้เต็มที่ด้วยล่ะ"
     tsuru "แล้วเดี๋ยวหนูกับเดลจะเอาเค้กตา–" #//ตัดไป (19) เลย ?
+    show heart
+    with dissolve
     pov "สะ สะ สะ สารภาพรัก! ฉัน ฉัน ฉัน….." #ตัดภาพกลับมา BG 7 ห้องฮันนี่?
     scene black
     with transition_4
     scene bg7day
+    play music morning_bgm loop fadein 0.5 fadeout 0.25
     with fade
     pov "เล่นเอาหลังจากนั้นก็จำไม่ได้เลยว่าซึรุพูดว่าอะไร…."
     pov "ชั่งมันละกันนะ…. คงต้องหาของขวัญวันเกิดไว้ล่วงหน้าด้วย"
@@ -64,6 +69,7 @@ label act3_shot_1:
     # SFX ตึกๆๆ เดิน
     # SFX เสียงร้านค้า supermarket
     scene bg9day with dottransition
+    play music store_bgm loop fadein 0.5 fadeout 0.25
     pov "อ่าา..เอาอันนี้แล้วก็อันนี้ เอาล่ะ! ครบแล้วสินะ"
     employee "สวัสดีค่า ยินดีให้บริการค่า"
     employee "คุณลูกค้าได้รับสิทธิ หมุนการาปองค่ะ มีสิทธิได้รับตั๋วออนเซ็น 1 ครอบครัวค่า!"
@@ -79,8 +85,10 @@ label act3_shot_1:
     "หลังจากที่หมุนการาปองแบบขอไปทีนั้นเอง ก็มีลูกกลมๆสีทองกลิ้งออกมา"
     # SFX แกร๊งๆๆๆๆๆๆๆๆๆ ระฆังเล็กๆ
     employee "ยินดีด้วยค่ะคุณลูกค้า! ได้รับตั๋วรางวัลพิเศษเที่ยวออนเซ็น 1 ครอบครัวค่าาาาา!......."
+    stop music fadeout 1.5
     pov "…… (เอาจริงดิ)"
     scene bg2day with dottransition
+    play music cafe_bgm loop fadein 0.5 fadeout 0.25
     show tsuru maid_drunk1 at middlepostsuru
     show del maid_wave at rightposdel
     with dissolve
@@ -158,12 +166,14 @@ label act3_shot_1:
     mild "ปะ ไปค่ะ ได้มั้ยคะ [povname]"
     pov "แน่นอนสิ ถ้าเธออยากไปฉันก็จะพาเธอไป"
     tsuru_debirun "ไชโยย~"
+    stop music fadeout 0.75
     scene black with fade
     pause 1.0
     jump act3_shot_2
 
 label act3_shot_2:
     scene bg10day with dottransition
+    play music zoo_bgm loop fadein 0.5 fadeout 0.25
     show mild normal_smile12 at middlemildnormal
     show del normal_idle1 at rightposdel
     show tsuru normal_idle2_1 at leftpostsuru
@@ -193,13 +203,16 @@ label act3_shot_2:
     show mild normal_idle2 at mildunhood_close
     with dissolve
     mild "ค่าาาา" 
+    stop music fadeout 1.0
     scene bg18day:
         crop (800,200,1600,720)
         size (1920, 1080)
+    play sound animal_bgm loop fadein 1.0 volume 0.8
     show rabbit at bounce,animal
     with dottransition
     show mild normal_idle1 at mildhood
     with easeinright
+    play music zoo_bgm loop volume 0.25 fadein 1.0 fadeout 1.0
     mild "ว้าววว ดูสิๆ น่ารักจังเลยค่ะ!" # //Char Mild ชุดเดท ตาเป็นประกาย
     show rabbit at bounce,animal
     pov "กระต่ายน่ะปกติตัวเล็กแต่มีขาที่แข็งแรงมากๆ ในการกระโดด มีหูที่ยาว ใช้ฟังเสียงได้ดีเลยล่ะ"
@@ -254,6 +267,7 @@ label act3_shot_2:
     show mild normal_flustered at bounce,mildhood
     with hpunch
     pov "เป็นอะไรมั้ย" # เสียง SFX จบตรงนี้
+    stop sound
     show mild normal_idle2 at bounce,mildhood
     with dissolve
     mild "ไม่เป็นไรค่ะ แล้วเมื่อกี้"
@@ -387,6 +401,7 @@ label act3_shot_2:
     with fade
     centered "แล้วเวลาก็ผ่านไป ช่วงเย็นๆ พวกเราก็มาถึงที่ออนเซ็น"
     scene bg11eve with dottransition
+    play music walking_bgm loop fadein 0.5 fadeout 0.25
     show del normal_gloomy2 at rightposdel
     with dissolve
     debirun "มาถึงสักที หนูหิวจะตายแล้วพี่"
@@ -442,11 +457,13 @@ label act3_shot_2:
     pov "(สาวๆ ดูจะสนุกน่าดูเลยนะ ฉันเองก็พักผ่อนบ้างดีกว่า)"
     scene black
     with fade
+    stop music fadeout 1.5
     centered "หลังจากที่สาวๆ ทานอาหารเสร็จก็ได้ไปแช่ออนเซ็นกันต่อ"
     scene cg3:
         crop (804, 790, 1920, 1080)
         size (1920, 1080)
     with eye_open
+    play music onsen_bgm loop fadein 1.0 
     debirun "อิ่มจังเลยน้า~ อาหารก็อร่อย เที่ยวสวนสัตว์ก็สนุกสุดๆ เลย"
     tsuru "นั่นสินะ เดลดูสนุกสุดๆ เลยนี่นา"
     tsuru "มายด์ล่ะ เป็นไงบ้าง สนุกมั้ย อาหารอร่อยรึเปล่า"
@@ -497,6 +514,7 @@ label act3_shot_2:
     scene bg12night_on with dissolve
     show mild onsen_blush1 at mildunhood_close
     with dissolve
+    play music roman_bgm loop fadein 0.5 fadeout 0.25
     pov "อ่ะ! มายด์ ไปแช่น้ำมาเป็นไงบ้าง"
     show mild onsen_flustered at bounce,mildunhood_close
     mild "คะ คะ [povname]" #//Char Mild หน้าแดง
@@ -518,7 +536,7 @@ label act3_shot_2:
     pov "อื้มม ไปกัน"
     scene bg13night with wipeleft
     pov "มายด์เอาน้ำอะไรมั้ย"
-    show mild onsen_idle1 at mildunhood
+    show mild onsen_smile5 at mildunhood
     with easeinleft
     mild "นะ น้ำเปล่าก็ได้ค่ะ"
     show mild onsen_blush1 at mildunhood
@@ -526,14 +544,14 @@ label act3_shot_2:
     mild "คะ คือ เรานั่งคุยกันก่อนได้มั้ยคะ"
     pov "หื้มได้สิ"
     pov "(อะ อะไรกันท่าทางที่ดูน่ารักนั่น)"
-    show mild onsen_blush1 at mildunhood_close
+    show mild onsen_smile6 at mildunhood_close
     with dissolve
     mild "วันนี้ขอบคุณมากเลยนะคะ"
     pov "ระ เรื่องอะไรหรอ"
-    show mild onsen_smile1 at mildunhood_close
+    show mild onsen_smile5 at mildunhood_close
     with dissolve
     mild "ที่ดูแลฉันมาตลอด ทั้งความใจดี ความเอาใจใส่ที่มีให้ ฉันดีใจมากๆเลยค่ะ"
-    show mild onsen_blush2 at mildunhood_close
+    show mild onsen_smile4 at mildunhood_close
     with dissolve
     mild "[povname] คะ ฉัน….."
     show mild onsen_blush2 at mildunhood_close:
@@ -556,7 +574,6 @@ label act3_shot_2:
     pov "นะ นี่"
     show mild onsen_sleep at mildunhood_close
     with easeinbottom
-    # //Char มายด์ กับ asset ชุดในออนเซ็น  ที่หลับตาอยู่ เพราะนอน
     pov "หลับหรอกหรอ…"
     pov "(อุ้มกลับไปส่งแล้วกัน)"
     scene bg12night_on with dottransition
@@ -569,6 +586,7 @@ label act3_shot_2:
     tsuru "ได้ค่าาา หลับไม่ฝันนะคะพี่"
     pov "อื้มม เหมือนกันนะ"
     pov "พรุ่งนี้ก็กลับแล้วสินะ เอาล่ะไปนอนดีกว่าา"
+    stop music fadeout 2.5
     scene black with eye_shut
     pause 2.5
     jump act3_shot_3
@@ -576,6 +594,7 @@ label act3_shot_2:
 label act3_shot_3:
     window hide
     scene bg2night
+    play music cafe_bgm loop fadein 0.5 volume 0.6
     with dissolve
     pause 1.5
     scene bg2night # opacity ไฟดับ
@@ -585,13 +604,18 @@ label act3_shot_3:
     mild "{size=*1.5}[povname] คะ…..{/size}" # ตะโกน
     pov "ยัยเด็กพวกนั้นนี่นะ… ถึงจะเตี้ยมกันแล้วก็เถอะ แต่ไม่คิดจะส่งสัญญาณบอกกันเลยรึไง?"
     pov "ถ้าฉันหัวใจวายขึ้นมาจะทำไงเล่า!? ช่างมันเถอะ…"
+    stop music fadeout 0.5
     pov "เอาเป็นว่าไปเตรียมอาหารก่อนแล้วกั- (ตึ้ง!!)"
-    pov "ยัยเด็กพเสียงอะไรน่ะ! มาจากชั้นบนหนิ มายด์ทำอะไรตกรึป่าวนะ…"
+    play music drama_bgm loop fadein 0.75 
+    pov "เสียงอะไรน่ะ! มาจากชั้นบนหนิ มายด์ทำอะไรตกรึป่าวนะ…"
     # SFX เสียงเดิน
     scene bg5night with walkingVertical
     centered "[povname] เดินขึ้นไปชั้นบน เพื่อไปดูที่ห้องมายด์เผื่อว่ามายด์จะทำอะไรตก"
     # SFX เคาะประตู ก๊อกๆๆ
-#*ขอ BG หน้าประตูห้อง
+    show bg21:
+        zoom 1.5
+        xalign 0.5
+        yalign 0.6
     pov "มายด์ เธอได้ทำอะไรตกรึป่าว?"
     centered "…………" # ไม่มีเสียงตอบรับจากภายในห้อง
     pov "มายด์…! เธอเป็นอะไรรึป่าว?"
@@ -607,8 +631,14 @@ label act3_shot_3:
     # SFX เสียงไขกุญแจ
     # SFX เสียงเปิดประตู
     pause 1.5
+    show bg21:
+        zoom 1.5
+        xalign 0.5
+        yalign 0.6
+    with vpunch
+    pause 0.5
     scene bg6night
-    show mild pajamas_sorry at mild_close
+    show mild pajamas_sad at mild_close
     show black:
         alpha .5
     pov "(พอฉันเปิดประตูออกมาพบกับมายด์ที่นั่งทรุดอยู่ที่พื้น)"
@@ -643,7 +673,8 @@ label act3_shot_3:
     mild "[povname]… อยากจะฟังจริงๆ หรอ… [povname] อาจจะกลัวมายด์ไปเลยก็ได้…"
     pov "ไม่มีทางเป็นแบบนั้นหรอก ตลอดมาฉันไม่เคยกลัวเธอเลยนะ"
     mild "ถะ ถ้า [povname] พูดมาถึงขนาดนั้น…"
-    scene bglab with fade
+    play music dark_bgm loop fadein 0.75 fadeout 1.25 
+    scene bg24 with fade
     pause 1.5
     researcher "มันอาจจะเจ็บนิดหน่อยนะสาวน้อย"
     researcher "DNA ของเธอนี่ช่างเหมาะกับการทดลองเสียจริง"
@@ -651,9 +682,13 @@ label act3_shot_3:
     mild "มะ ไม่เอาค่ะ…"
     researcher "โธ่~ สาวน้อย เธอจะได้รับร่างกายที่แข็งแกร่ง เพียงแค่เธอ~ ยอมให้ฉันดัดแปลง DNA ของเธอนิดหน่อย~" # SFX ที่ดูน่ากลัว
     mild "ไม่ไม่ ไม่ไม่ ไม่ไม่ ไม่เอานะคะ ไม่เอา อย่า-"
-    centered "(มายด์สะดุ้งตื่นด้วยความหวาดกลัวและระแวง)"
-    centered "(ร่างกายสาวตัวเล็กที่สะดุ้งตื่นจากฝันอันแสนเลวร้ายที่ตัวของเธอไม่อยากจะจดจำ และรับรู้ถึงมันเสียด้วยซ้ำ ร่างกายที่สั่นเครือของเธอแสดงถึงความหวาดระแวงและความหวาดกลัวได้อย่างชัดเจน)"
+    scene black
+    with eye_open
+    centered "{=down_text}(มายด์สะดุ้งตื่นด้วยความหวาดกลัวและระแวง){/down_text}"
+    centered "{=down_text}(ร่างกายสาวตัวเล็กที่สะดุ้งตื่นจากฝันอันแสนเลวร้ายที่ตัวของเธอไม่อยากจะจดจำ และรับรู้ถึงมันเสียด้วยซ้ำ){/down_text}"
+    centered "{=down_text}(ร่างกายที่สั่นเครือของเธอแสดงถึงความหวาดระแวงและความหวาดกลัวได้อย่างชัดเจน){/down_text}"
     pov "…(นี่เธอ… ผ่านอะไรมาเยอะขนาดนี้ด้วยร่างกายเล็กๆนั้น……..)"
+    play music drama_bgm loop fadein 1.0 fadeout 0.5
     scene cg4:
         xpos -650 ypos -220
     show black:
@@ -670,6 +705,7 @@ label act3_shot_3:
     show black:
         alpha .25
     with dissolve
+    play music hug_bgm loop fadein 1.0 fadeout 2.0
     pov "อย่าพูดแบบนั้นสิ…"
     pov "แม้ฉันจะรู้แล้วว่าเธอมีที่มายังไง แต่ฉันก็ยังรู้สึกกับเธอเหมือนเดิมนะ"
     pov "ฉันเสียใจมาก ฉันทำให้เธอกลัวและนึกถึงเรื่องราวแย่ๆ"
@@ -699,6 +735,7 @@ label act3_shot_3:
             mild "ฉันเอง… ฉันเองก็…."
             if honey_score >= 3:
                 scene cg5
+    stop music fadeout 0.25
     scene bg6night 
     with vpunch
     show tsuru normal_smile2 at middlepostsuru
@@ -706,6 +743,7 @@ label act3_shot_3:
     show cake at cake
     with easeinleft
     tsuru_debirun "เซอร์ไพรส์~! แฮปปี้เบิร์ดเดย์นะมายด์"
+    play music bright_bgm loop fadein 1.0 fadeout 2.0
     scene bg6night:
         crop (200, 120, 1400, 920)
         size (1920, 1080) 
@@ -756,6 +794,7 @@ label act3_shot_3:
     mild "ไอ้เดล! ฉันแค่ลืมเฉยๆ เถอะ"
     pov "จ้าๆ ไว้ไปจัดการกันทีหลังนะ ก่อนที่เทียนจะละลายหยดใส่เค้ก"
     scene bg6light
+    play music hbd_bgm loop fadein 1.0 fadeout 2.0
     show mild pajamas_smile2 at mildunhood_close
     show cake at center:
         zoom 0.32
@@ -787,10 +826,12 @@ label act3_shot_3:
     show mild pajamas_smile6 at mildcloseleft
     with dissolve
     mild "สวยจัง!" #//ตาเป็นประกาย
+    show mild pajamas_idle2 at mildunhood_close
+    with dissolve
     mild "[povname] จะให้เค้าจริงๆหรอ"
     pov "แน่นอนสิ มายด์"
     scene bg6light
-    show mild pajamas_idle2 at mildunhood_close
+    show mild pajamas_smile5 at mildunhood_close
     with dissolve
     mild "ขะ-ขอบคุณนะ ที่ทำเพื่อเค้าขนาดนี้…"
     pov "ด้วยความยินดีเลยล่ะ"

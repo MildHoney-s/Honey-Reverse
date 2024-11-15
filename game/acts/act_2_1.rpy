@@ -2,8 +2,11 @@ label act2_1_shot_1:
     # - หลังจากเล่นมินิเกมบริหารร้าน -
     scene bg2day
     with fade
+    stop music fadeout 1.5
     "ไม่รู้ทำไมเหมือนกันแต่เวลาที่ได้อยู่ด้วยกันกับมาย ผ่านไปเร็วมากเลยล่ะ รู้ตัวอีกทีก็ผ่านไป 1 เดือนซะแล้ว"
     scene bg2day
+    show curtain:
+        alpha 0.25
     show mild maid_smile10 at middleposmild
     with fade
     pov "นะ นั่นมายด์หรอ"
@@ -12,6 +15,7 @@ label act2_1_shot_1:
     show del normal_police at rightposdel
     show tsuru normal_grumpy1 at leftpostsuru
     with zoomin
+    play music nightmare_bgm loop fadein 0.5 fadeout 1.0
     debirun "เอาเงินมาให้เราซะดีๆ ผู้จัดการรร หึหึ"
     show mild maid_smile10 at farfarmild
     with dissolve
@@ -26,9 +30,11 @@ label act2_1_shot_1:
     jump act2_1_shot_2
 
 label act2_1_shot_2:
+    stop music fadeout 1.0
     pov "เฮือกกกกก-!!"
     scene bg7day with eye_open
     "หลังจากที่ตื่นจากฝันอันแปลกประหลาด เราได้พบว่าตัวเองอยู่ที่พื้นข้างๆ เตียง"
+    play music morning_bgm loop fadein 0.5 fadeout 1.0 volume 0.5
     pov "ฝันร้ายอะไรกันนี่…"
     pov "ทำไม… ฉันต้องฝันว่าเจอสองคนนั้นไถเงินด้วยล่ะเนี่ย อุส่าได้เจอมายในฝันแท้ ๆ เชียว"
     pov "แปปนะไถเงินหรอ วันนี้วันเสาร์… วันที่ต้องจ่ายเงินเดือนนี่น่า"
@@ -55,7 +61,7 @@ label act2_1_shot_3:
     show bg5day with hpunch
     # text : (SFX : เสียงดัง *ปั้ง-!!*) พร้อมกับประตูห้องที่ปิดลง
     pov "อะ ขอโทษนะมายด์-! เอิ่ม… มาปลุกให้ไปกินข้าวน่ะ "
-    $ renpy.sound.play(f"{audio_path}/walking.mp3", loop=True)
+    play sound walking_sfx
     pov "เดี๋ยวฉันลงไปทำข้าวเช้ารอนะ ถ้าแต่งตัวเสร็จแล้วลงมาทานด้วยนะ"
     stop sound
 
@@ -64,6 +70,7 @@ label act2_1_shot_3:
 label act2_1_shot_4:
     scene bg8day
     with fade
+    play music rest_bgm loop fadein 0.75 fadeout 1.0
     "หลังจากผ่านไปสักพักหนึ่ง มายด์ก็ได้เดินตามมาที่ครัว"
     show mild pajamas_idle2 at leftposmild
     with easeinleft
@@ -120,6 +127,7 @@ label act2_1_shot_5:
     pause 1.5
     scene black with fade
     pause 0.5
+    stop music fadeout 2.5
     centered "{=centered_text}และทั้งคู่ก็กินข้าวอย่างเป็นสุขชั่วนิรันดร์{/centered_text}"
     centered "{=centered_text}อวสาน{/centered_text}"
     centered "{=centered_text}thank you for plaping{/centered_text}"
@@ -136,6 +144,7 @@ label act2_1_shot_6:
     with dissolve
     pause 1.0
     scene bg2day
+    play music bright_bgm loop fadein 0.5 fadeout 1.0
     show mild pajamas_flustered1 at lsposmild
     with dissolve
     show tsuru normal_smug at middlepostsuru
@@ -269,26 +278,32 @@ label act2_1_shot_8:
     scene bg2day
     window hide
     show gacha_movie
+    stop music fadeout 0.5
     show phone at truecenter:
         zoom 3.2
     $ renpy.pause(39, hard=True)
     scene bg2day:
         crop (100,200,1480,720)
         size (1920, 1080)
+    show tsuru normal_smile3 at tsuru_close
+    with dissolve
     tsuru "เดลดูนี่สิ ดูนี่สิ ได้หน้าตู้ล่ะ"
+    hide tsuru normal_smile3
     show del normal_crying1 at del_close
     with fade
     pause 1.5
     show del normal_idle1 at del_close
     with dissolve
     pause 1.5
-    show del normal_smile6 at del_close
+    show del normal_smile6 at bounce,del_close
     with dissolve
     pause 1.5
-    pov "มายด์ เราเอาเงินตรงนั้นมาซื้อชานมได้นะ…"
     scene bg2day:
         crop (400,200,1780,720)
         size (1920, 1080)
+    show mild pajamas_smile5 at paja
+    with dissolve
+    pov "มายด์ เราเอาเงินตรงนั้นมาซื้อชานมได้นะ…"
     show mild pajamas_flustered1 at paja
     mild "อ่ะ จริงด้วยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยย-!!"
     "และนี่ก็เป็นครั้งแรกที่มายด์ได้รับบทเรียนเกี่ยวกับการใช้เงิน"
@@ -297,6 +312,7 @@ label act2_1_shot_8:
 
 label act2_1_shot_9:
     scene black with eye_shut
+    play music maid_bgm loop fadein 0.75 fadeout 1.0
     centered "{=centered_text}หลังจากเรื่องวุ่น ๆ จบลง เราก็นำกล่องความคิดเห็นมาเปิดอ่าน{/centered_text}"
     scene bg2day
     pov "แต่ละคนได้รับความเห็นเป็นยังไงบ้างนะ"
@@ -367,6 +383,7 @@ label act2_1_shot_11:
     style down_text:
         color "#d04f40"
     scene bg2day
+    play music role_bgm loop fadein 0.75 fadeout 1.0
     show  mild pajamas_smile8 at paja
     with dissolve
     mild "งะ งั้นเริ่มเลยนะ"
@@ -468,15 +485,18 @@ label act2_1_shot_11:
     tsuru_pov "หยุด-!!"
     scene bg2day
     with fade
+    stop music fadeout 1.5
     centered "{=down_text}XXX ปัดตก XXX{/down_text} "
     centered "{=cafe_text}และทุกคนก็ลงความคิดเห็นได้ว่า… มายด์เป็นเหมือนเดิมแหละดีแล้ว{/cafe_text}"
 
     jump act2_1_shot_12
 
 label act2_1_shot_12:
+    play music cafe_bgm loop fadein 1.5
     scene bg2day:
         crop (100,200,1480,720)
         size (1920, 1080)
+    with fade
     show mild pajamas_idle1 at lsposmild
     show tsuru normal_idle1_2 at middlepostsuru
     show del normal_smile1 at rightposdel
@@ -560,8 +580,10 @@ label act2_1_shot_13:
     show mild pajamas_smile6 at bounce,paja
     with zoomin
     mild "เย้-!!"
+    stop music fadeout 1.5
     pov "(ฉันคงใช้วิธีนี้บ่อยๆ ไม่ได้ ไม่งั้นรายได้ฉันหายแน่นอน)"
     scene bg7light
+    play music diary_bgm loop fadein 1.5
     with fade
     show diary
     show brown_transparent
@@ -582,10 +604,12 @@ label act2_1_shot_13:
     #"อึก… อือ…"
     with sshake
     scene bg7night
+    with dissolve
     # อัปแอ่ๆ https://youtu.be/Fz6uJuhVq1w?t=539 8.59 วิ เสียงซึรุ อับแอ
     pov "วะ วันนี้คงต้องนอนแล้วล่ะ คะ คุณสุรชัยมาทักแล้ว"
     pov "(แต่ฉันก็สงสัยอยู่ดีว่า สรุปแล้วเป็นเสียงจากอะไรกันแน่)"
     pov "(เอาเป็นว่า วันนี้นอนก่อนดีกว่า)"
+    stop music fadeout 2.0
     scene black with eye_shut
     pause 1.0
 

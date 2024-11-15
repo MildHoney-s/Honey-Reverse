@@ -1,7 +1,8 @@
 label act1_2_shot_1:
     scene bg7day with eye_open
+    play music morning_bgm loop fadein 1.0
     pov "(เช้าวันรุ่งขึ้น หลังจากที่ฉันหนีไปนอนเพราะเสียงประหลาดในช่วงกลางคืน)"
-    pov "(ก็ไม่ค่อยแน่ใจว่ามันคือเสียงอะไรกันแน่ ถึงจะถามเจ้าของบ้านคนก่อนหน้า เขาว่า “มันก็ไม่มีอะไร” นี่สิ)"
+    pov "(ก็ไม่ค่อยแน่ใจว่ามันคือเสียงอะไรกันแน่ ถึงจะถามเจ้าของบ้านคนก่อน เขาว่า“มันก็ไม่มีอะไร”นี่สิ)"
     pov "(เห้อ เอาเถอะ ยังไงซะต่อให้ฉันรู้ว่ามี หรือไม่มีอะไรเกิดขึ้น ฉันก็ทำอะไรไม่ได้อยู่แล้ว เตรียมตัวออกไปซื้อของเข้าร้านก่อนดีกว่า)"
     pov "เอาล่ะ วันนี้ก็ สู้!"
     scene black with dissolve
@@ -80,10 +81,12 @@ label act1_2_shot_2:
     with sshake
     mild "ค-ค-ค-คะ!!?"
     pov "ฮิฮิ"
+    stop music fadeout 1.0
     unknow_debirun "เอ่อคือ…."
     scene bg2day
     show mild maid_blush1 at leftposmild
     with dissolve
+    play music cafe_bgm loop fadein 1.0 fadeout 1.0
     unknow_debirun "สวัสดีค่ะ ผู้จัดการ…"
     show del normal_smile2 at rightposdel
     with easeinright
@@ -208,6 +211,7 @@ label act1_2_shot_3:
     mild "…………………………….."
 
     $ quick_menu = False
+    play music minigame2_bgm loop fadein 1.0 fadeout 0.5
     call screen minigame_1(minigame1_act1_2_shot_3)
     $ renpy.block_rollback()
     $ quick_menu = True
@@ -216,6 +220,7 @@ label act1_2_shot_3:
 
 label act1_2_shot_4:
     scene bg2day
+    play music cafe_bgm loop fadein 1.0 fadeout 1.0
     show del maid_doubt at rightposdel
     show mild maid_smile10 at leftposmild
     with fade
@@ -258,10 +263,13 @@ label act1_2_shot_4:
     show tsuru normal_smile4 at rightpostsuru
     with dissolve
     tsuru "ค้าบบบบบบบ"
+    stop music fadeout 1.0
     show black
     with fade
 
+
     $ quick_menu = False
+    play music minigame2_bgm loop fadein 1.0 fadeout 0.5
     call screen minigame_1(minigame1_act1_2_shot_4)
     $ renpy.block_rollback()
     $ quick_menu = True
@@ -270,6 +278,7 @@ label act1_2_shot_4:
 
 label act1_2_shot_5:
     scene bg2night
+    play music night_bgm loop fadein 1.5 fadeout 0.5
     pov "(หลังจากที่ร้านปิด ฉันเดินออกมาจากห้องพักพนักงานเพื่อที่จะเริ่มเก็บกวาดครัว ส่วนสาวๆ ก็กำลังเม้าท์ไปเก็บกวาดร้านไปด้วย)"
     show caring at truecenter:
         zoom 0.3
@@ -361,8 +370,10 @@ label act1_2_shot_6:
     with dissolve
     tsuru "เรื่องมีอยู่ว่า……."
     scene black with dissolve
+    stop music fadeout 1.0
     centered "{=centered_text} ซึรุได้เล่าเรื่องราวทั้งหมดให้เดลฟัง{/centered_text}"
     scene bg2night with fade
+    play music roman_bgm loop fadein 1.5 fadeout 0.5
     show milddel at truecenter:
         zoom 1.05
     debirun "//สะอื้น"
@@ -396,12 +407,17 @@ label act1_2_shot_7:
     stop music
     $ quick_menu = False
     play movie "frog.webm"
+    $ renpy.block_rollback()
     $ renpy.pause(42, hard=True)
     scene white with tv_transition
+    stop music
     play movie "animal.webm"
     $ renpy.pause(36, hard=True)
     $ quick_menu = True
+    $ renpy.block_rollback()
+    stop music
     scene bg2night with fade
+    play music night_bgm loop fadein 0.5 fadeout 1.0
     show mild maid_blush1 at rightposmild
     mild "น่ารักจัง ตัวกลมๆ ขาวๆ หน้ามีรอยดำๆ น่ากอดจัง.."
     show tsuru maid_idle2 at leftpostsuru
@@ -434,12 +450,13 @@ label act1_2_shot_7:
     show tsuru maid_smile4 at leftpostsuru
     with dissolve
     mild_tsuru_debirun "ขอบคุณที่เหนื่อยค่าาาาาาาาาาา"
-
+    stop music fadeout 1.0
     jump act1_2_shot_8
 
 label act1_2_shot_8:
     scene bg7light
     with fade
+    play music diary_bgm loop fadein 0.5 fadeout 1.0
     pov "(เอาล่ะวันนี้ผ่านไปอีกวัน ทีนี้ก็มาเขียนสรุปไดอารี่ดีกว่า)"
     show diary
     show brown_transparent

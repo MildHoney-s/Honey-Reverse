@@ -1068,7 +1068,7 @@ screen history():
         #background Frame(["gui/overlay/main_menu.png"], tile=True)
         xmargin 180
         ymargin 50
-        xpadding 80
+        xpadding 50
         ypadding 160
 
         vpgrid:
@@ -1085,7 +1085,8 @@ screen history():
                 for h in _history_list:
 
                     window:
-                        background Image("gui/historynamebox.png", xalign=0, yalign=0)
+                        if h.who != None:
+                            background Image("gui/historynamebox.png", xalign=0, yalign=0)
 
                         ## This lays things out properly if history_height is None.
                         has fixed:
@@ -1104,9 +1105,17 @@ screen history():
 
                         $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
                         text what:
-                            line_spacing 5
-                            substitute False
-                            size 30
+                            if h.who == None:
+                                xalign 0.8
+                                line_spacing 5
+                                substitute False
+                                size 30
+                            
+                            else:
+                                xalign 1.15
+                                line_spacing 5
+                                substitute False
+                                size 25
                     ## This puts some space between entries so it's easier to read
                     null height 20
 
@@ -1933,47 +1942,4 @@ style nvl_button_text:
     properties gui.button_text_properties("nvl_button")
 
 
-screen bookreading:
-    predict False
-    add "gui/overlay/dark.png"
-    frame:
 
-        style_prefix "nvl_window"
-
-        xmargin 80
-        ymargin 120
-        xpadding 180
-        ypadding 40
-        align (0.5, 0)
-
-        vbox:
-            spacing 15
-
-            text "ในโลกที่มีการวิจัยดัดแปลงสิ่งมีชีวิตหรือที่เรียกกันว่ามิวแทนต์":
-                xalign 0.5
-            text "ได้ถูกสร้างและดัดแปลงโดยเหล่านักวิทยาศาสตร์ ":
-                xalign 0.5
-            text "แต่ด้วยความอยากรู้อยากเห็นพวกเขาได้ทำการทดลองกับร่างกายมนุษย์จริงๆ":
-                xalign 0.5
-            text "จนกระทั่งถูกรัฐบาลจับได้ว่าทำการทดลองกับมนุษย์":
-                xalign 0.5
-            text "จึงมีการบุกจับกุมยังห้องทดลอง":
-                xalign 0.5
-            text "ทว่า กลับไม่พบร่องรอยเหลืออยู่เลย เหลือเพียงความว่างเปล่า":
-                xalign 0.5
-            text "อีกทั้งยังไม่พบกับร่างของมนุษย์ผู้ที่ถูกดัดแปลงอีกด้วย":
-                xalign 0.5
-            text "ฝากแก่ทุกท่าน มิวแทนต์⬜⬜⬜เป็นอันตราย ":
-                xalign 0.5
-            text "กรุณาจัดการ⬜⬜⬜มิวแทนต์ ถ้าเป็นไปได้":
-                xalign 0.5
-
-    imagebutton auto "gui/button/cg_close_%s.png" action Return() align((0.98, 0.02))
-
-screen my_keys():
-    timer 5.0 action [Hide("my_scr"), Return("value")]  # screen must return something to auto-advance through the game 
-    key "dismiss" action [[]]
-
-    key "rollback" action [[]]
-    key "rollforward" action [[]]
-    key "game_menu" action [[]]

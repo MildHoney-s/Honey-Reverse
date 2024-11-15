@@ -96,6 +96,7 @@ image mild pajamas_smile6 = "images/character/Mild_Paja/mild_pajamas_smile_6.png
 image mild pajamas_smile7 = "images/character/Mild_Paja/mild_pajamas_smile_7.png"
 image mild pajamas_smile8 = "images/character/Mild_Paja/mild_pajamas_smile_8.png"
 image mild pajamas_sorry = "images/character/Mild_Paja/mild_pajamas_sorry.png"
+image mild pajamas_sad = "images/character/Mild_Paja/mild_pajamas_sorry_2.png"
 image mild pajamas_stunned = "images/character/Mild_Paja/mild_pajamas_stunned.png"
 image mild pajamas_tsundere = "images/character/Mild_Paja/mild_pajamas_tsudere.png"
 
@@ -229,6 +230,9 @@ image mild onsen_sleep = "images/character/onsen/mild_onsen_sleep.png"
 image mild onsen_smile1 = "images/character/onsen/mild_onsen_smile_1.png"
 image mild onsen_smile2 = "images/character/onsen/mild_onsen_smile_2.png"
 image mild onsen_smile3 = "images/character/onsen/mild_onsen_smile_3.png"
+image mild onsen_smile4 = "images/character/onsen/mild_onsen_smile_4.png"
+image mild onsen_smile5 = "images/character/onsen/mild_onsen_smile_5.png"
+image mild onsen_smile6 = "images/character/onsen/mild_onsen_smile_6.png"
 
 # tsuru Onsen
 image tsuru onsen_grumpy = "images/character/onsen/tsuru_onsen_grumpy.png"
