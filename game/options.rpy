@@ -83,6 +83,11 @@ default preferences.afm_time = 15
 
 define config.window_icon = "gui/honey_revense_logo.png"
 
+## Mouse
+
+define config.mouse = {}
+define config.mouse['shooter'] = [(im.Scale("images/minigames/shooting/shooting_pointer.png", 80, 80), 0, 0)]
+
 ## Build configuration #########################################################
 ##
 ## This section controls how Ren'Py turns your project into distribution files.
