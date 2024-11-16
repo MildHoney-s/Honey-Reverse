@@ -82,5 +82,5 @@ init:
 label start:
     #$ _skipping = False
     #$ config.rollback_enabled = False
-    $ persistent.gameclear = True
+    # $ persistent.gameclear = True
     jump act1_1_shot_1
