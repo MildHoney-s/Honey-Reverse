@@ -83,7 +83,11 @@ default preferences.afm_time = 15
 
 define config.window_icon = "gui/honey_revense_logo.png"
 
-## Mouse
+## Main Menu ###################################################################
+
+define config.main_menu_music = "audio/start_game.mp3"
+
+## Mouse #######################################################################
 
 define config.mouse = {}
 define config.mouse['shooter'] = [(im.Scale("images/minigames/shooting/shooting_pointer.png", 80, 80), 0, 0)]
