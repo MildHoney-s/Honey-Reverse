@@ -1,6 +1,6 @@
 label act2_2_shot_1:
     # - หลังจากเล่นมินิเกมบริหารร้าน -
-    # SFX กรุงกริ้ง
+    play sound door_sfx fadein 0.25 volume 0.45
     scene bg2day
     play music pixfia_bgm loop fadein 1.5
     show mild maid_idle3 at leftposmild
@@ -194,7 +194,7 @@ label act2_2_shot_1:
     with fade
     stop music fadeout 1.5
     $ renpy.pause(1, modal = True)
-    # SFX เสียงตรบมือ
+    play sound clap_sfx fadein 0.5
     scene bg2day
     show tsuru maid_frog4 at tsuru_close
     with dissolve
@@ -202,6 +202,7 @@ label act2_2_shot_1:
     play music bright_bgm loop fadein 0.5
     show edamame at truecenter:
         zoom 0.7
+    stop sound fadeout 0.5
     tsuru "แล้วอย่าลืมสั่งเมนูพิเศษ ถั่วแระญี่ปุ่น ของโปรดซึรุด้วยนะค๊าาาา" # //Asset ถั่วแระญี่ปุ่น
     scene bg2day:
         crop (100,200,1480,720)
@@ -308,7 +309,7 @@ label act2_2_shot_1:
     mild "ถะ ถ่ายรูป???"
     scene black
     with wipeleft
-    # SFX เสียงชัตเตอร์
+    play sound camera_sfx fadein 0.125
     scene bg28 with eye_open
     show photo_sd at truecenter:
         zoom 0.55

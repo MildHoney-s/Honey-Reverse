@@ -44,19 +44,19 @@ transform middleposmild():
     zoom 0.355
 transform leftposmild():
     align (0.21, 0.1)
-    zoom 0.38
+    zoom 0.355
 transform llposmild():
     align (0.1, 0.1)
-    zoom 0.38
+    zoom 0.355
 transform lsposmild():
     align (0.05, 0.65)
     zoom 0.34
 transform rightposmild():
     align (0.79, 0.1)
-    zoom 0.38
+    zoom 0.355
 transform rrposmild():
     align (0.92, 0.7)
-    zoom 0.38
+    zoom 0.355
 transform mild_close():
     align (0.5, 0.155)
     zoom 0.7

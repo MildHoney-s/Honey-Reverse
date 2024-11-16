@@ -1,7 +1,6 @@
 label act1_1_shot_1:
     #Start scene Story Board Shot 1
     scene bg1 with dissolve
-    #play music walking_bgm loop
     play music walking_bgm loop
 
     manager "ตอนนี้ฉันเป็นเชฟมือใหม่ ที่พึ่งจบจากโรงเรียนยอดเชฟจากต่างประเทศ"
@@ -10,8 +9,6 @@ label act1_1_shot_1:
     manager "ถึงช่วงแรกจะโดนพวกพี่ๆ กับ ญาติๆบอกให้ไปช่วยงานที่ร้านของเขาก่อนก็เถอะ แต่ฉันมันดื้อ เลยมาเปิดร้านของตัวเองซะก่อน"
     manager "แรกๆ ก็มีคุณน้ามาช่วยอยู่ 2 - 3 เดือน แต่ตอนนี้เธอก็กลับไปดูแลร้านของตัวเองแล้วละ กลับมาที่ร้านของฉัน"
 
-    #Walking Effect
-    #$ renpy.sound.play(f"{audio_path}/walking loop
     play sound walking_sfx loop
     window hide
     $ renpy.pause(1.5,modal=True)
@@ -63,7 +60,6 @@ label act1_1_shot_2:
     show ashy_sd_2 at truecenter:
         zoom 0.6
     manager "(เดี๋ยวนะ ใครมันไปเอานักพากย์แข่งเรือแจวมาเนี่ย)"
-    #play music cafe_bgm loop
     play music cafe_bgm loop volume 0.8
     manager "อ่า ใจเย็นๆก่อนนะ ขอโทษด้วยที่ถามเรื่องอายุ แล้วไม่ทราบว่า มีเมนูที่อยากแนะนำลูกค้ามั้ย"
     hide ashy_sd_2
@@ -105,7 +101,8 @@ label act1_1_shot_2:
     show cucumburg at truecenter
     with dissolve
     stop music fadeout 1.0
-    manager "แค๊กๆ อะไรกันเนี่ยทำไมไส้ในถึงได้มีแต่แตงกวาล่ะ!"
+    manager "แค๊กๆ อะไรกันเนี่ยทำไมไส้ในถึงได้มีแต่แตงกวาล่ะ!" with sshake
+    play music nightmare_bgm loop  fadein 1.25
     hide cucumburg
     ashy "เธอจ๋าาา จะไม่เอาแตงกวาจริงหรอจ้ะ นี่น่ะของดีประจำอำเภ…{nw=1.5}"
     manager "เดี๋ยวลูกค้าก็ได้กินแตงกวาทุกเมนูพอดี ไม่ได้ๆ แบบนี้คงต้องให้ไม่ผ่าน!"
@@ -115,13 +112,14 @@ label act1_1_shot_2:
 
     #Ami scene
     scene black with dissolve
+    stop music
     centered "{=centered_text}หลังจากผ่านไป 3 วัน บุคคลปริศนา2 ที่มาสมัครงาน มีผมสีขาว ลักษณะเป็นทวินเทล \nมีบางอย่างที่คล้ายๆที่ไขลานอยู่ด้านบน มีท่าทางเขินอาย ดูน่ารักน่าทะนุถนอม{/centered_text}"
 
     $ renpy.pause(1,modal=True)
     scene bg2day with eye_open
     show ami_sd_1 at truecenter
     #play music ami_bgm loop
-    play music ami_bgm loop
+    play music ami_bgm loop fadein 0.25
     window show
     ami "(อื้อออ...เราทำได้..ทำได้..ใช่ทำได้)"
     ami "สวัสดีค่าา หัวใจที่บอบช้ำของคุณ ขอเค้าดูแลเถอะนะคะ ><"
@@ -129,7 +127,8 @@ label act1_1_shot_2:
 
     manager "ไม่เป็นไรนะ สบายๆนะ"
     manager "ถ้างั้นช่วยแจกใบปลิวสัก 15 ใบได้มั้ย"
-
+    show ami_sd_1 at bounce,truecenter
+    with dissolve
     ami "ได้ค่ะ! เค้าจะพยายามนะคะ!"
     scene bg4
     hide ami_sd_1
@@ -137,6 +136,7 @@ label act1_1_shot_2:
         zoom 0.667
     with dissolve
     stop music
+    play sound crowded_sfx loop volume 0.75 fadein 1.25
     ami "“สวัสดีค่า~! ขอฝากใบปลิวของร้านไว้หน่อยนะคะ~"
     "หลังจากนั้นก็มีกลุ่มผู้คนเข้ามารุมล้อมจนบังตัวผู้สัมภาษณ์คนนี้จนหมด"
     ami "อะ เอ่อ… ใบปลิวหมดแล้วค่าาา.. งื้อออ…. ค-คุณผู้จัดการคะะ..ช่วยด้วยค่าา…"
@@ -152,11 +152,13 @@ label act1_1_shot_2:
         size (1920,1080)
         linear 1.0 crop (350, 200, 1280, 720)
     ami "พวกเตงอย่ามาชมกันแบบนี้สิคะะะ~……"
+    stop sound fadeout 1.0
     scene black with dissolve
     centered "{=centered_text}มีมือประหลาด 2 ข้าง พุ่งออกมาทำให้ผู้คนที่รุมล้อมและตัวฉันกระจายออกไป{/centered_text}"
     scene bg2day
     show ami_sd_3 at truecenter:
         zoom 0.667
+    play sound mecha_sfx volume 0.8
     ami "ชะ- ช่วยด้วยคร๊าาา ToT"
     manager "(จากนั้นหัวของเธอ ก็ได้หมุนไปเรื่อยๆ ไม่หยุด ทำให้ได้รู้ว่าหากเด็กคนนี้เขิน ร่างกายในส่วนหัวของเธอจะหมุนไม่หยุด . . . แม้กระทั่งเธอได้เดินออกจากร้านไป และการสัมภาษณ์ก็ได้จบลง...)"
 
@@ -168,35 +170,37 @@ label act1_1_shot_3:
     scene  bg1 with transition_4
     play music walking_bgm loop fadein 1.0
     manager "นี่ก็ประกาศมา 2 สัปดาห์แล้วนะ ทำไมถึงไม่เจอสักที พนักงานดีๆน่ะ!"
-    manager "ขอละ ช่วยส่งพนักงานที่ใช้ได้มาให้ฉันที!!~"
-
-    # SFX: Sound of wind blowing
-
+    manager "ขอละ ช่วยส่งพนักงานที่ใช้ได้มาให้ฉันที!!~" with vpunch
+    play sound wind_sfx volume 1.25
     window hide dissolve
     show sd_wanted at truecenter:
         zoom 1.1
     stop music
     manager "เอ้ะ กระดาษอะไรปลิวมาใส่หน้ากันล่ะเนี่ย.."
+    play sound "<from 10.5 to 13>SFX/paper_sfx.mp3" 
     play music poster_bgm loop fadein 0.5 volume 0.5
     show white_transparent
-    diary "ในโลกที่มีการวิจัยดัดแปลงสิ่งมีชีวิตหรือที่เรียกกันว่ามิวแทนต์"
-    diary "ได้ถูกสร้างและดัดแปลงโดยเหล่านักวิทยาศาสตร์"
-    diary "แต่ด้วยความอยากรู้อยากเห็นพวกเขาได้ทำการทดลองกับร่างกายมนุษย์จริงๆ"
-    diary "จนกระทั่งถูกรัฐบาลจับได้ว่าทำการทดลองกับมนุษย์"
-    diary "จึงมีการบุกจับกุมยังห้องทดลอง"
-    diary "ทว่า กลับไม่พบร่องรอยเหลืออยู่เลย เหลือเพียงความว่างเปล่า"
-    diary "อีกทั้งยังไม่พบกับร่างของมนุษย์ผู้ที่ถูกดัดแปลงอีกด้วย"
-    diary "ฝากแก่ทุกท่าน มิวแทนต์⬜⬜⬜เป็นอันตราย"
-    diary "กรุณาจัดการ⬜⬜⬜มิวแทนต์ ถ้าเป็นไปได้"
+    diary "{=down_text}ในโลกที่มีการวิจัยดัดแปลงสิ่งมีชีวิตหรือที่เรียกกันว่ามิวแทนต์{/down_text}"
+    diary "{=down_text}ได้ถูกสร้างและดัดแปลงโดยเหล่านักวิทยาศาสตร์{/down_text}"
+    diary "{=down_text}แต่ด้วยความอยากรู้อยากเห็นพวกเขาได้ทำการทดลองกับร่างกายมนุษย์จริงๆ{/down_text}"
+    diary "{=down_text}จนกระทั่งถูกรัฐบาลจับได้ว่าทำการทดลองกับมนุษย์{/down_text}"
+    diary "{=down_text}จึงมีการบุกจับกุมยังห้องทดลอง{/down_text}"
+    diary "{=down_text}ทว่า กลับไม่พบร่องรอยเหลืออยู่เลย เหลือเพียงความว่างเปล่า{/down_text}"
+    diary "{=down_text}อีกทั้งยังไม่พบกับร่างของมนุษย์ผู้ที่ถูกดัดแปลงอีกด้วย{/down_text}"
+    diary "{=down_text}ฝากแก่ทุกท่าน มิวแทนต์⬜⬜⬜เป็นอันตราย{/down_text}"
+    diary "{=down_text}กรุณาจัดการ⬜⬜⬜มิวแทนต์ ถ้าเป็นไปได้{/down_text}"
     nvl clear
+    play sound "<from 13 to 15>SFX/paper_sfx.mp3" 
     hide white_transparent
+    
 
     hide sd_wanted
     manager "นักวิทยาศาสตร์ชอบทดลองอะไรประหลาดๆ อยู่เรื่อย"
     manager "เห้ออ… นั่นคนเลยนะ เป็นมนุษย์เหมือนกันแท้ๆ"
     manager "แล้วข้อความสุดท้ายนั่นก็คือ… ให้ระวังมิวแทนต์ไว้เพราะเป็นอันตรายงั้นหรอ…… เอาเถอะคงไม่เกี่ยวกับฉันล่ะมั้ง…"
     window hide
-    stop music
+    stop music fadeout 1.25
+    play sound walking_sfx loop fadein 0.5
     scene bg4 with wipeleft
     scene bg4
     show chibi_1 at mildchibi
@@ -204,6 +208,7 @@ label act1_1_shot_3:
     play music found_bgm loop fadein 2.0
     $ renpy.pause(2,modal=True)
     manager "เอ๊ะ? นั่นใครน่ะ???"
+    play sound running_sfx loop fadein 0.25
     scene bg4 :
         crop (0,0,1920,1080)
         size (1920, 1080)
@@ -218,6 +223,7 @@ label act1_1_shot_3:
 
     with runningVertical
     $ renpy.pause(1.0,modal=True)
+    stop sound
     scene black with dissolve
     scene bg4 :
         size (1920, 1080)
@@ -240,6 +246,7 @@ label act1_1_shot_3:
     manager "(ระหว่างที่อุ้ม ก็ยืนนิ่งคิดอยู่สักพัก)"
     manager "อ่ะ! จริงสิ พาไปที่ร้านของเราก่อนแล้วกันนะ ถ้าตื่นแล้วลองคุยดูก่อนละกัน" with sshake
     window hide
+    play sound walking_sfx 
     scene bg4:
         crop (0,0,1920,1080)
         size (1920, 1080)
@@ -253,6 +260,7 @@ label act1_1_shot_3:
 #Introduce Mild and Tsuru shot 4-5
 label act1_1_shot_4:
     # Scene transition to the cafe
+    play sound door_sfx fadein 0.25 volume 0.55
     scene bg2day
     play music cafe_bgm loop fadein 0.5
     show tsuru maid_idle2 at middlepostsuru
@@ -344,6 +352,8 @@ label act1_1_shot_4:
     show emotion_anger at emotepairpos2
     with lshake
     hooded_figure "//สะดุ้ง ฮู้ดที่คลุมเปิดออก"
+    play sound glitter_sfx fadein 0.25
+    queue sound heartbeat_sfx fadein 0.25 volume 0.5
     play music bright_bgm loop
     scene cg2:
         size(1920,1080)
@@ -554,7 +564,7 @@ label act1_1_shot_5:
     hide tsuru maid_idle2
     hide mild hood_idle2
     with moveoutleft
-
+    stop music fadeout 3.5
     scene black
     with fade
     centered "{=centered_text}ผ่านไปสักพัก{/centered_text}"
@@ -592,7 +602,8 @@ label act1_1_shot_5:
     pov "เมด... เมด... น่ารัก..."
     show emotion_sparkle at emotepairpos2
     with fade
-    #sound //เสียงนาฬิกาตีดังเป็นจังหวะเริ่มดังขึ้น เป็นเสียงที่บ่งบอกว่าได้เวลาเปิดร้านแล้ว //กรุ้งกริ้งๆ   เสียงประตูหน้าร้านได้เปิดออกในขณะที่มีเสียงกริ่งดังขึ้น//
+    play sound "<from 0.5 to 3.5>SFX/clock_sfx.mp3" fadein 0.5 
+    queue sound door_sfx fadein 0.25
     scene bg2day
     with dissolve
     pause 1.0
@@ -621,8 +632,8 @@ label act1_1_shot_6:
 
     scene bg2day with fade
     play music cafe_bgm loop fadein 0.5
+    play sound  crowded_sfx fadein 0.5 volume 0.65
     "คนในร้านเริ่มเยอะ จนซึรุวิ่งรับลูกค้าไม่ไหว"
-
     show tsuru maid_idle2 at rightpostsuru
     with moveinleft
     hide tsuru maid_idle2
@@ -642,6 +653,7 @@ label act1_1_shot_6:
     with easeoutright
 
     manager "ข้าวผัดได้แล้ววววววววว" with sshake
+    stop sound fadeout 1.5
     scene bg2day:
         crop (0,240,960,820)
         size (1920, 1080)
@@ -884,10 +896,13 @@ label act1_1_shot_7:
     nvl clear
     hide diary
     hide brown_transparent
+    play sound cry_sfx fadein 0.5 volume 0.35
     pov "(ระหว่างที่ฉันเขียนไดอารี่เกิดเสียงบางอย่างที่ แปลกประหลาด ทำให้ฉันต้องชะงักจากการเขียนไดอารี่ เสียงบางอย่างที่คล้ายกับเสียงคนร้องไห้ ทรมานด้วยเจ็บปวดอย่างน่าหดหู่)"
     pov "มะ ไม่มั่ง เอาเป็นว่าฉันเขียนไดอารี่แค่นี้ก่อนละกันนะ ไปนอนดีกว่า อะแหะๆๆ..."
-    scene black with eye_shut
+    scene bg7night
+    with dissolve
     stop music
+    scene black with eye_shut
     pov "(หลังจากนั้นฉันก็คลุมโปงทั้งคืนจนหลับไป ...)"
     scene black
     with fade

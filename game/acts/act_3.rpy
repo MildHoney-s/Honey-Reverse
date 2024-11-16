@@ -43,8 +43,8 @@ label act3_shot_1:
     with dissolve
     tsuru "เฮ้ออ… ถ้างั้นพวกหนูจะหาจังหวะให้อยู่ด้วยกันสองต่อสองแล้วกัน พี่ก็ทำให้เต็มที่ด้วยล่ะ"
     tsuru "แล้วเดี๋ยวหนูกับเดลจะเอาเค้กตา–" #//ตัดไป (19) เลย ?
-    show heart
-    with dissolve
+    #show heart
+    #with dissolve
     pov "สะ สะ สะ สารภาพรัก! ฉัน ฉัน ฉัน….." #ตัดภาพกลับมา BG 7 ห้องฮันนี่?
     scene black
     with transition_4
@@ -59,16 +59,22 @@ label act3_shot_1:
     hide locket_open
     with pixellate 
     pov "เอาเป็นว่าไปซื้อของเข้าร้านก่อนดีกว่า~"
-    # SFX ปิดประตู
+    play sound doorclose_sfx fadein 0.5
     scene bg5day with wiperight
     pov "(จะว่าไปมายด์ตื่นรึยังนะ ลองเรียกหน่อยดีกว่า)"
-    # SFX ก๊อกๆ เสียงเคาะประตู
+    scene bg22:
+        zoom 1.5
+        xalign 0.5
+        yalign 0.6
+    with wiperight
+    play sound knock_sfx fadein 0.25 
     pov "มายด์ มายด์ตื่นรึยัง ทานอะไรมั้ย"
     pov "(ไม่ตอบแหะ)"
+    scene bg5day with wipeleft
+    play sound walking_sfx fadein 0.2
     pov "งั้นฉันจะทำอะไรไว้ให้นะ อย่าลืมลงมาทานด้วยล่ะ"
-    # SFX ตึกๆๆ เดิน
-    # SFX เสียงร้านค้า supermarket
     scene bg9day with dottransition
+    play sound market_sfx fadein 0.15
     play music store_bgm loop fadein 0.5 fadeout 0.25
     pov "อ่าา..เอาอันนี้แล้วก็อันนี้ เอาล่ะ! ครบแล้วสินะ"
     employee "สวัสดีค่า ยินดีให้บริการค่า"
@@ -77,13 +83,11 @@ label act3_shot_1:
     pov "(คนไม่มีดวงอย่างฉัน จะไปหมุนได้ ได้ยังไงกันล่ะ TT)"
     show garapon_sd at truecenter
     with dissolve
-    # // SD Garapon
-    # SFX กรุ๊กๆๆ garapon ที่หมุนอยู่
-    pause 2.5
-    # // SD Garapon มีลูกสีทองออกมา
+    play sound garapon_sfx fadein 0.15 volume 0.75
+    $ renpy.pause(3.5, hard=True)
     show garapon_win_sd at truecenter
     "หลังจากที่หมุนการาปองแบบขอไปทีนั้นเอง ก็มีลูกกลมๆสีทองกลิ้งออกมา"
-    # SFX แกร๊งๆๆๆๆๆๆๆๆๆ ระฆังเล็กๆ
+    play sound "<from 5 to 8>SFX/bell_sfx.mp3" fadeout 0.25
     employee "ยินดีด้วยค่ะคุณลูกค้า! ได้รับตั๋วรางวัลพิเศษเที่ยวออนเซ็น 1 ครอบครัวค่าาาาา!......."
     stop music fadeout 1.5
     pov "…… (เอาจริงดิ)"
@@ -262,7 +266,7 @@ label act3_shot_2:
     with wiperight
     show mild normal_smile8 at mildhood
     with easeinright
-    # SFX เสียงลมพัด หรือ เสียงพัดจากปีก แบบช้าๆ
+    play sound bird_sfx fadein 0.125
     pov "มายด์ระวังง!"
     show mild normal_flustered at bounce,mildhood
     with hpunch
@@ -290,8 +294,11 @@ label act3_shot_2:
 
         "เอาหน้าผากวัดไปเลย!":
             $ honey_score -= 1
+    play sound walking_sfx 
     hide mild normal_blush1
     with easeoutright
+    pause 1.0 
+    stop sound
     mild "มะ ไม่เป็นอะไรค่ะ!" # //Char Mild หายไป
     pov "(หรือฉันทำอะไรไม่ดีไปรึเปล่านะ เอาเป็นว่าเดินตามไปก่อนละกัน)"
     scene bg18day:
@@ -395,8 +402,9 @@ label act3_shot_2:
                 size (1920, 1080)
                 linear 1.0 crop (800, 200, 1800, 720)
             with wipeleft
-
+    play sound running_sfx fadein 0.5
     tsuru_debirun "รอด้วยสิคะะะะะะ!"
+    stop sound
     scene black
     with fade
     centered "แล้วเวลาก็ผ่านไป ช่วงเย็นๆ พวกเราก็มาถึงที่ออนเซ็น"
@@ -608,29 +616,38 @@ label act3_shot_3:
     pov "เอาเป็นว่าไปเตรียมอาหารก่อนแล้วกั- (ตึ้ง!!)"
     play music drama_bgm loop fadein 0.75 
     pov "เสียงอะไรน่ะ! มาจากชั้นบนหนิ มายด์ทำอะไรตกรึป่าวนะ…"
-    # SFX เสียงเดิน
+    play sound walking_sfx
     scene bg5night with walkingVertical
     centered "[povname] เดินขึ้นไปชั้นบน เพื่อไปดูที่ห้องมายด์เผื่อว่ามายด์จะทำอะไรตก"
-    # SFX เคาะประตู ก๊อกๆๆ
+    play sound knock_sfx
     show bg21:
         zoom 1.5
         xalign 0.5
         yalign 0.6
     pov "มายด์ เธอได้ทำอะไรตกรึป่าว?"
     centered "…………" # ไม่มีเสียงตอบรับจากภายในห้อง
+    play sound knock_sfx volume 1.5
     pov "มายด์…! เธอเป็นอะไรรึป่าว?"
-    centered "…………" # ฮันนี่เคาะประตูเสียงดังขึ้น ก๊อกๆๆ
+    centered "…………" 
+    play sound knock_sfx volume 1.8
     pov "มายด์อาร์!! เธอยังโอเคดีใช่มั้ย!?"
     pov "มายด์! รอฉันก่อนนะ!"
-    # SFX เสียงเปิดประตู
+    play sound opendoor_sfx fadein 0.85
     scene bg7night with runningVertical
-    # SFX เสียงเปิดลิ้นชัก
-    # SFX กุญแจขยับ
-    pause 1.5
+    $ renpy.pause(1.5,hard=True)
+    play sound drawer_sfx
+    queue sound key_sfx
+    $ renpy.pause(3,hard=True)
     scene bg5night with runningVertical
-    # SFX เสียงไขกุญแจ
-    # SFX เสียงเปิดประตู
+    play sound running_sfx
     pause 1.5
+    scene bg21:
+        zoom 1.5
+        xalign 0.5
+        yalign 0.6
+    play sound unlock_sfx
+    queue sound opendoor_sfx fadein 0.95
+    $ renpy.pause(10,hard=True)
     show bg21:
         zoom 1.5
         xalign 0.5
@@ -656,6 +673,7 @@ label act3_shot_3:
     pov "ขอโทษนะ ฉันไม่นึกว่าจะเธอกลัวมากขนาดนี้…"
     mild "มะ ไม่เป็นไร"
     pov "ไม่เป็นไรไม่ได้หรอกนะ…"
+    play sound head_sfx fadein 0.25
     "ลูบหัวมายด์"
     pov "ฉันขอโทษจริงๆ นะ ฉันสัญญาว่าจะไม่ปล่อยให้เรื่องแบบนี้เกิดขึ้นอีก"
     pov "ฉันอยู่ตรงนี้กับเธอนะ"
@@ -800,7 +818,8 @@ label act3_shot_3:
         zoom 0.32
     with fade
     pov "เอาเลยมายด์ เป่าเทียนได้เลย"
-    mild "*สูดหายใจเข้า*"# SFX ลมเข้า เป่าลม
+    mild "*สูดหายใจเข้า*"
+    play sound blow_sfx fadein 0.25 fadeout 0.5 volume 0.35
     show mild pajamas_tsundere at mildunhood_close
     hide cake
     show cake2 at center:

@@ -31,6 +31,7 @@ label act2_1_shot_1:
 
 label act2_1_shot_2:
     stop music fadeout 1.0
+    play sound nightmare_sfx 
     pov "เฮือกกกกก-!!"
     scene bg7day with eye_open
     "หลังจากที่ตื่นจากฝันอันแปลกประหลาด เราได้พบว่าตัวเองอยู่ที่พื้นข้างๆ เตียง"
@@ -46,18 +47,26 @@ label act2_1_shot_2:
 label act2_1_shot_3:
     scene bg5day with wiperight
     "หลังจาก [pov] ได้ลุกขึ้นมาจากข้างเตียงของเขา ก็ได้ไปยังห้องนอนของมายด์เพื่อที่จะปลุกมายด์"
+    play sound walking_sfx
     pov "(มายด์เขามักจะตื่นสายเสมอเลยถ้าไม่มีใครไปปลุก)"
     pov "(ปกติเดลหรือซึรุจะเป็นคนมาปลุกมายด์ แต่วันนี้ฉันน่าจะเป็นคนไปปลุกแทนเพราะสะดุ้งตื่นจากสองคนนั้นเนี่ย)"
     pov "(แปลกจังเลยนะปกติวันหยุด เดลกับซึรุจะมาเล่นกับมายด์นิ ทำไมยังไม่มากันอีก)"
+    show bg22:
+        zoom 1.5
+        xalign 0.5
+        yalign 0.6
+    with dissolve
     pov "(วันนี้สงสัยทั้งคู่ติดธุระกันอยู่)"
-    # text : *ก๊อกๆ*
+    play sound knock_sfx fadein 0.25
     pov "มายด์ตื่นหรือยัง"
+    play sound opendoor_sfx fadein 0.25
     scene bg6day
     show mild pajamas_sleep at mild_zoom
     with dissolve
     "หลังจากผ่านไปสักครู่ ประตูก็ได้เปิดออกมา"
     show mild pajamas_flustered1 at mild_zoom,bounce
     mild "*กรี้ด* อ๊าา-!! เดี๋ยว-!!"
+    play sound doorclose_sfx fadein 0.25
     show bg5day with hpunch
     # text : (SFX : เสียงดัง *ปั้ง-!!*) พร้อมกับประตูห้องที่ปิดลง
     pov "อะ ขอโทษนะมายด์-! เอิ่ม… มาปลุกให้ไปกินข้าวน่ะ "
@@ -138,11 +147,11 @@ label act2_1_shot_5:
     jump act2_1_shot_6
 
 label act2_1_shot_6:
-    # (SFX : กรุ้งกริ้ง กรุ้งกริ้ง)
     scene black
     centered "{=centered_text}และซึรุกับเดลก็เดินเข้าร้านมา{/centered_text}"
     with dissolve
     pause 1.0
+    play sound door_sfx volume 0.5
     scene bg2day
     play music bright_bgm loop fadein 0.5 fadeout 1.0
     show mild pajamas_flustered1 at lsposmild
@@ -232,7 +241,7 @@ label act2_1_shot_8:
     show del normal_crying2 at rightposdel
     with dissolve
     debirun "คือ งบเติมกาชาหนูหมดไปแล้วกับค่าซ่อมรถน่ะค่ะ… แล้ว แล้ว… กาชาที่หนูว่าจะเปิดมันจะหมดแล้ว แง่—"
-    mild "//ยื่นซองให้"
+    mild "//ยื่นซองให้เดล"
     show mild pajamas_smile4 at lsposmild
     with dissolve
     mild "อ่ะเดลอันนี้ฉันให้"
@@ -254,13 +263,13 @@ label act2_1_shot_8:
     with moveoutright
     show mild pajamas_stunned at lsposmild
     with dissolve
+    play sound door_sfx volume 0.5
     "แล้วเดลก็หยิบซองน้ำตาลของมายด์ด้วยความเร็วสูง แล้ววิ่งออกจากร้านไป"
-    # SFX : กรุ้งกริ้ง
     show tsuru normal_sorry at middlepostsuru
     with dissolve
     tsuru_pov "อ่า ไม่ทันแล้ว"
     mild "อ่ะ เดล… เดลหายไปแล้ว"
-    # SFX : กรุ้งกริ้ง
+    play sound door_sfx volume 0.5
     show del normal_smile6 at rightposdel
     with easeinright
     debirun "เย่ๆ-!! ได้เปิดกาชาแล้ว-!! กดเลย-!!"
@@ -285,6 +294,7 @@ label act2_1_shot_8:
     scene bg2day:
         crop (100,200,1480,720)
         size (1920, 1080)
+    play music bright_bgm loop fadein 0.5 fadeout 1.0
     show tsuru normal_smile3 at tsuru_close
     with dissolve
     tsuru "เดลดูนี่สิ ดูนี่สิ ได้หน้าตู้ล่ะ"
@@ -416,20 +426,30 @@ label act2_1_shot_11:
     centered "{=cafe_text}- บทบาทคูลเดเระ -{/cafe_text}"
     show mild pajamas_cooldere at paja
     mild "อาหารของคุณที่สั่ง กินให้อร่อยนะ…"
-    pov_tsuru_debirun "…" # SFX : เสียงลมพัด
+    play sound "<from 0.2 to 10.5>SFX/silentwind_sfx.mp3" fadein 0.5
+    pov_tsuru_debirun "…" 
     scene bg2day
     with fade
     centered "{=down_text}XXX ปัดตก XXX{/down_text} "
     centered "{=cafe_text}- บทบาทพี่มินอาร์ -{/cafe_text}"
-    show mild pajamas_smile1 at paja
+    show mild pajamas_smile2 at paja
     mild "แหมมม อยากให้คนอื่นมารับเมนูอย่างงั้นหรอ… ทำไมต้องอยากได้คนอื่นล่ะ ในเมื่อมีฉันอยู่ทั้งคนแล้วหนิ"
-    # SFX : เป่าหู
-    show mild pajamas_smile5 at paja
+    show mild pajamas_smile1 at paja:
+        xpos 450
+        zoom 1.35
+    with zoomout
+    play sound ear_sfx fadein 0.25
+    mild "ฟู่วว.."
+    show mild pajamas_smile5 at paja:
+        xpos 450
+        zoom 1.35
     with dissolve
     pov "*เฮือก-!!*"
     pov "ซึรุกับเดลเป็นอะไรไปหรอ?"
     show del normal_crying1 at leftclosedel
     show tsuru normal_crying at rightclosetsuru
+    hide mild pajamas_smile5
+    with dissolve
     tsuru_debirun "เอาพี่มายด์ของหนูคืนมา-!!" # Char หน้าร้องไห้
     scene bg2day
     with fade
@@ -451,6 +471,7 @@ label act2_1_shot_11:
     pause 1.0
     nvl clear
     show white_transparent
+    play music byou_bgm fadein 0.25 loop
     mild_nvl "ผู้บัญชาการสูงสุดแห่งกองทัพลับฮันนี่โอลอย\n
     มายด์บิลอสอาลาเชียไดโนเสาร์พารามิเตอร์\n
     ผู้ถือครองวัตถุโบราณสตาร์ดัสไลค์แอนด์ดาร์คเนสออฟเดอะโพคาลิป\n
@@ -596,20 +617,19 @@ label act2_1_shot_13:
     diary "รวมไปถึงเราจะได้เห็นมายด์ขึ้นสเตจแล้ว ฉันดีใจมากเลย"
     diary "ถึงแม้ว่า… ฉันจะต้องสังเวยชานมสำหรับหนึ่งเดือนไป"
     diary "มันต้องคุ้มแน่ๆ กับการที่มายด์-"
+    play sound falling_sfx fadein 0.15
     nvl clear
     hide diary
     hide brown_transparent
-    # "*กึ่ง-!!*"
     pov "อ่า วันนี้ก็ยังมีเสียงดังเหมือนเดิมเลยแหะ แต่นี่ผ่านมาเดือนนึงแล้วนะ ยังไม่หายไปเลย คงต้องจัดการสักหน่อยแล้ว"
-    #"อึก… อือ…"
-    with sshake
+    play sound cry_sfx fadein 0.25 fadeout 1.5 volume 0.35
     scene bg7night
     with dissolve
-    # อัปแอ่ๆ https://youtu.be/Fz6uJuhVq1w?t=539 8.59 วิ เสียงซึรุ อับแอ
     pov "วะ วันนี้คงต้องนอนแล้วล่ะ คะ คุณสุรชัยมาทักแล้ว"
     pov "(แต่ฉันก็สงสัยอยู่ดีว่า สรุปแล้วเป็นเสียงจากอะไรกันแน่)"
     pov "(เอาเป็นว่า วันนี้นอนก่อนดีกว่า)"
     stop music fadeout 2.0
+    stop sound fadeout 0.5
     scene black with eye_shut
     pause 1.0
 

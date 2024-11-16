@@ -8,6 +8,7 @@ label act1_2_shot_1:
     scene black with dissolve
     centered "{=centered_text} 1 ชั่วโมงผ่านไปหลังจากที่ฉันซื้อของเสร็จกลับมาที่ร้าน{/centered_text}"
     scene bg2day with fade
+    play sound door_sfx fadein 0.25 volume 0.55
     show mild maid_smile6 at leftposmild
     with easeinleft
     pause 0.5
@@ -82,6 +83,7 @@ label act1_2_shot_2:
     mild "ค-ค-ค-คะ!!?"
     pov "ฮิฮิ"
     stop music fadeout 1.0
+    play sound door_sfx fadein 0.25 volume 0.55
     unknow_debirun "เอ่อคือ…."
     scene bg2day
     show mild maid_blush1 at leftposmild
@@ -202,6 +204,7 @@ label act1_2_shot_3:
     with easeinleft
     mild "เป็นอะไรไปหรอเดลจัง"
     scene bg2day
+    play sound "<from 0.5 to 2.5>SFX/slap_sfx.mp3" fadein 0.25
     show delbyou at truecenter:
         zoom 1.1
     with fade
@@ -236,6 +239,9 @@ label act1_2_shot_4:
     show mild maid_doubt at leftposmild
     with fade
     pause 0.5
+    play sound "<from 0.5 to 2.5>SFX/running_sfx.mp3" fadein 0.25
+    queue sound door_sfx fadein 0.25
+    pause 4
     show mild maid_doubt at llposmild
     show del maid_doubt at llposdel
     show tsuru normal_smug at rightpostsuru
@@ -472,6 +478,7 @@ label act1_2_shot_8:
     pov "วันนี้ก็คงประมาณนี้แหละ หวังว่าหลังจากนี้จะราบรื่นเหมือนกันทุกวันนะ~"
     scene bg7night
     with dissolve
+    play sound body_sfx fadein 0.8 volume 0.75
     pov "นอนดีกว่า~ "#//(กึ้ง!).....sfx
     pov "อีกแล้วหรอ แหะๆ ห้ามทักนี่นา… รีบหนีไปนอนดีกว่า……"
     scene black with eye_shut

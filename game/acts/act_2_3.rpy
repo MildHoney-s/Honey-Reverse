@@ -92,8 +92,12 @@ label act2_3_shot_1:
     show emotion_love at emoteclose
     with dissolve
     play music roman_bgm fadein 0.5 loop
+    window hide
     show heart
+    with dissolve
+    pause 1.25
     mild "ช่วยไปซื้อของด้วยกันได้มั้ยคะ"
+    play sound heartbeat_sfx fadein 0.25 volume 0.75
     pov "(ดะ เดท นี่มันเดท)"
     pov "(หัวใจฉันเต้นแรงมากเลย มายด์จะได้ยินมั้ยเนี่ย!)"
     window hide
@@ -114,16 +118,19 @@ label act2_3_shot_1:
     show mild hood_scared at mildunhood
     with zoomin
     mild "คะ คือ.." 
-    # SFX เสียงผู้คน
+    play sound crowded_sfx loop fadein 0.25 fadeout 0.25 volume 0.85
     pov "เห็นมั้ย คนอื่นๆ เขาเองก็แต่งธีมฮาโลวีนกันนะ"
     pov "ไม่ต้องห่วงหรอกนะ"
     show mild hood_idle2 at mildunhood_close
     with zoomout
     mild "ตะ แต่ว่า.."
     pov "เอาน่าา"
+    play sound walking_sfx fadein 0.5 
     show mild hood_idle2 at mildunhood_close:
         zoom 1.8
     with vpunch
+    pause 1.2
+    stop sound fadeout 0.25
     mild "ดะ เดี๋ยวค่ะ"
     show mild unhood_flustered at bounce,mildunhood_close:
         zoom 1.8
@@ -143,6 +150,7 @@ label act2_3_shot_1:
         zoom 1.6
     with dissolve  
     mild "คะ ค่า" 
+    stop sound fadeout 0.5
     scene bg15
     with dottransition
     show mild unhood_idle3 at mildunhood
@@ -233,10 +241,10 @@ label act2_3_shot_1:
     with  fade
     pause 1.0
     scene bg25
+    play sound curtain_sfx fadein 0.5
     show mild normal_blush2 at mildunhood
     with curtain
     pause 1.5
-    # SFX เสียงลากผ้าม่านห้องลองเสื้อ
     mild "คะ… คือว่า… เป็นยังไงบ้างคะ"
     show mild normal_blush2 at mildunhood_close
     with dissolve
@@ -401,8 +409,10 @@ label act2_3_shot_1:
     mild "มะ ไม่มีอะไรค่ะ เรากลับร้านกันเถอะนะคะ เดี๋ยวจะไม่ทันร้านเปิด"
     hide mild unhood_blush2 
     with easeoutright
+    play sound walking_sfx fadein 0.25 volume 0.95
     stop music fadeout 1.5
-    # SFX เสียงเดินไป
+    pause 1.5
+    stop sound
     pov "มายด์รอด้วยสิ"
     scene black
     with fade
