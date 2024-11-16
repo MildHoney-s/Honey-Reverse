@@ -33,20 +33,16 @@ init python:
     g.condition("persistent.gameclear")
 
     g.button("CG2")
-    g.image("images/save_load/locked.png")
-    g.condition("persistent.cg2")
+    g.image(im.Scale("images/cg/cg3.png",1920,1080))
+    g.condition("persistent.gameclear")
 
     g.button("CG3")
-    g.image("images/save_load/locked.png")
-    g.condition("persistent.cg3")
+    g.image(im.Scale("images/cg/cg4.jpg",1920,1080))
+    g.condition("persistent.gameclear")
 
     g.button("CG4")
-    g.image("images/save_load/locked.png")
-    g.condition("persistent.cg4")
-
-    g.button("CG5")
-    g.image("images/save_load/locked.png")
-    g.condition("persistent.cg5")
+    g.image(im.Scale("images/cg/cg5.png",1920,1080))
+    g.condition("persistent.gameclear")
 
     g.button("SD1")
     g.image(im.Scale("images/sd/ashy_sd_1.png",1920,1080))
@@ -69,19 +65,107 @@ init python:
     g.condition("persistent.gameclear")
 
     g.button("SD5")
-    g.image(im.Scale("images/cg/cg2.png",1920,1080))
+    g.image(im.Scale("images/sd/delbyou.jpg",1920,1080))
     g.condition("persistent.gameclear")
 
     g.button("SD6")
-    g.image(im.Scale("images/cg/cg2.png",1920,1080))
+    g.image(im.Scale("images/sd/milddel.jpg",1920,1080))
+    g.condition("persistent.gameclear")
+
+    g.button("SD7")
+    g.image(im.Scale("images/sd/dual_sd.png",1920,1080))
+    g.condition("persistent.gameclear")
+
+    g.button("SD8")
+    g.image(im.Scale("images/sd/mild_please_sd.png",1920,1080))
+    g.condition("persistent.gameclear")
+
+    g.button("SD9")
+    g.image(im.Scale("images/sd/photo_sd.png",1920,1080))
+    g.condition("persistent.gameclear")
+
+    g.button("SD10")
+    g.image(im.Scale("images/sd/ppan_sd.png",1920,1080))
+    g.condition("persistent.gameclear")
+
+    g.button("SD11")
+    g.image(im.Scale("images/sd/garapon_sd.jpg",1920,1080))
+    g.image(im.Scale("images/sd/garapon_win_sd.jpg",1920,1080))
     g.condition("persistent.gameclear")
 
     g.button("CB1")
-    g.image(im.Scale("images/sd/chibi_1.png",1920,1080))
+    g.image(im.Scale("images/sd/chibi_1.png",1000,1000))
     g.condition("persistent.gameclear")
 
     g.button("CB2")
-    g.image(im.Scale("images/sd/chibi_2.png",1920,1080))
+    g.image(im.Scale("images/sd/chibi_2.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("CB3")
+    g.image(im.Scale("images/sd/rabbit.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("CB4")
+    g.image(im.Scale("images/sd/capybara.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("CB5")
+    g.image(im.Scale("images/sd/hornbill.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("CB6")
+    g.image(im.Scale("images/sd/panda.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("CB7")
+    g.image(im.Scale("images/sd/del_lili.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("AS1")
+    g.image(im.Scale("images/assets/cucumbag.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("AS2")
+    g.image(im.Scale("images/assets/cucumburg.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("AS3")
+    g.image(im.Scale("images/assets/milktea.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("AS4")
+    g.image(im.Scale("images/assets/omurice.png",1000,1000))
+    g.image(im.Scale("images/assets/omurice_red.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("AS5")
+    g.image(im.Scale("images/assets/diary.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("AS6")
+    g.image(im.Scale("images/assets/caring.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("AS7")
+    g.image(im.Scale("images/assets/siralfred.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("AS8")
+    g.image(im.Scale("images/assets/spa.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("AS9")
+    g.image(im.Scale("images/assets/edamame.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("AS10")
+    g.image(im.Scale("images/assets/cake.png",1000,1000))
+    g.image(im.Scale("images/assets/cake2.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("AS11")
+    g.image(im.Scale("images/assets/locket_close.png",1000,1000))
+    g.image(im.Scale("images/assets/locket_open.png",1000,1000))
     g.condition("persistent.gameclear")
 
     # The transition used when switching images.
@@ -1110,7 +1194,7 @@ screen history():
                                 line_spacing 5
                                 substitute False
                                 size 30
-                            
+
                             else:
                                 xalign 1.15
                                 line_spacing 5
@@ -1180,303 +1264,6 @@ style history_label_text:
     xalign 0.5
     ## Note: When altering the size of the label, you may need to increase the
     ## ypadding of the Frame, or separate it again into top_padding and bottom_padding
-
-## Gallery Screen #################################################################
-##
-
-
-screen gallery_1():
-
-    # Ensure this replaces the main menu.
-    tag menu
-
-    # The background.
-    add gui.main_menu_background
-    add "images/save_load/menu_gallery.png"
-
-    # A grid of buttons.
-    # Create a grid layout with 2 rows and 3 columns.
-    grid 3 2:
-
-        xpos 119
-        ypos 168
-        spacing 13
-
-        # Call make_button to display the gallery images or locked placeholders.
-        add g.make_button("main_menu", im.Scale("gui/main_menu.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
-        add g.make_button("CG1", im.Scale("images/cg/cg2.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
-        add g.make_button("CG2", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG3", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG4", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-
-
-    frame:
-        xalign 0.5
-        yalign 0.85
-        hbox:
-            style_prefix "page"
-            grid 6 1:
-                spacing 15
-                for g_page in range(1,7):
-                    frame:
-                        xsize 68
-                        ysize 68
-                        if g_page == persistent.current_page_gallery:
-                            image "images/save_load/page_hover.png"
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65))
-                        else:
-                            imagebutton auto "images/save_load/page_%s.png" action [SetVariable("persistent.current_page_gallery",g_page),ShowMenu("gallery_"+str(g_page))]
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65))
-
-
-    imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.935
-
-screen gallery_2():
-
-    # Ensure this replaces the main menu.
-    tag menu
-
-    # The background.
-    add gui.main_menu_background
-    add "images/save_load/menu_gallery.png"
-
-    # A grid of buttons.
-    # Create a grid layout with 2 rows and 3 columns.
-    grid 3 2:
-
-        xpos 119
-        ypos 168
-        spacing 13
-
-        # Call make_button to display the gallery images or locked placeholders.
-        add g.make_button("SD1", im.Scale("images/sd/ashy_sd_1.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
-        add g.make_button("SD2", im.Scale("images/sd/ami_sd_2.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
-        add g.make_button("SD3", im.Scale("images/sd/sd_wanted.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
-        add g.make_button("SD4", im.Scale("images/sd/mildru_sd_1.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("SD5", "images/save_load/locked.png", xalign=0.5, yalign=0.5) # Locked image
-        add g.make_button("SD6", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-
-
-    frame:
-        xalign 0.5
-        yalign 0.85
-        hbox:
-            style_prefix "page"
-            grid 6 1:
-                spacing 15
-                for g_page in range(1,7):
-                    frame:
-                        xsize 68
-                        ysize 68
-                        if g_page == persistent.current_page_gallery:
-                            image "images/save_load/page_hover.png"
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65))
-                        else:
-                            imagebutton auto "images/save_load/page_%s.png" action [SetVariable("persistent.current_page_gallery",g_page),ShowMenu("gallery_"+str(g_page))]
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65))
-
-
-    imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.935
-
-screen gallery_3():
-
-    # Ensure this replaces the main menu.
-    tag menu
-
-    # The background.
-    add gui.main_menu_background
-    add "images/save_load/menu_gallery.png"
-
-    # A grid of buttons.
-    # Create a grid layout with 2 rows and 3 columns.
-    grid 3 2:
-
-        xpos 119
-        ypos 168
-        spacing 13
-
-        # Call make_button to display the gallery images or locked placeholders.
-        add g.make_button("CB1", im.Scale("images/sd/chibi_1.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image  # Unlocked first image
-        add g.make_button("CB2", im.Scale("images/sd/chibi_2.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG2", "images/save_load/locked.png", xalign=0.5, yalign=0.5)
-        add g.make_button("CG3", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG4", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG5", "images/save_load/locked.png", xalign=0.5, yalign=0.5)
-
-
-    frame:
-        xalign 0.5
-        yalign 0.85
-        hbox:
-            style_prefix "page"
-            grid 6 1:
-                spacing 15
-                for g_page in range(1,7):
-                    frame:
-                        xsize 68
-                        ysize 68
-                        if g_page == persistent.current_page_gallery:
-                            image "images/save_load/page_hover.png"
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65))
-                        else:
-                            imagebutton auto "images/save_load/page_%s.png" action [SetVariable("persistent.current_page_gallery",g_page),ShowMenu("gallery_"+str(g_page))]
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65))
-
-
-    imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.935
-
-screen gallery_4():
-
-    # Ensure this replaces the main menu.
-    tag menu
-
-    # The background.
-    add gui.main_menu_background
-    add "images/save_load/menu_gallery.png"
-
-    # A grid of buttons.
-    # Create a grid layout with 2 rows and 3 columns.
-    grid 3 2:
-
-        xpos 119
-        ypos 168
-        spacing 13
-
-        # Call make_button to display the gallery images or locked placeholders.
-        add g.make_button("SD5", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Unlocked first image
-        add g.make_button("CG1", "images/save_load/locked.png", xalign=0.5, yalign=0.5)
-        add g.make_button("CG2", "images/save_load/locked.png", xalign=0.5, yalign=0.5)
-        add g.make_button("CG3", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG4", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG5", "images/save_load/locked.png", xalign=0.5, yalign=0.5)
-
-
-    frame:
-        xalign 0.5
-        yalign 0.85
-        hbox:
-            style_prefix "page"
-            grid 6 1:
-                spacing 15
-                for g_page in range(1,7):
-                    frame:
-                        xsize 68
-                        ysize 68
-                        if g_page == persistent.current_page_gallery:
-                            image "images/save_load/page_hover.png"
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65))
-                        else:
-                            imagebutton auto "images/save_load/page_%s.png" action [SetVariable("persistent.current_page_gallery",g_page),ShowMenu("gallery_"+str(g_page))]
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65))
-
-
-    imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.935
-
-screen gallery_5():
-
-    # Ensure this replaces the main menu.
-    tag menu
-
-    # The background.
-    add gui.main_menu_background
-    add "images/save_load/menu_gallery.png"
-
-    # A grid of buttons.
-    # Create a grid layout with 2 rows and 3 columns.
-    grid 3 2:
-
-        xpos 119
-        ypos 168
-        spacing 13
-
-        # Call make_button to display the gallery images or locked placeholders.
-        add g.make_button("SD5", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Unlocked first image
-        add g.make_button("CG1", "images/save_load/locked.png", xalign=0.5, yalign=0.5)
-        add g.make_button("CG2", "images/save_load/locked.png", xalign=0.5, yalign=0.5)
-        add g.make_button("CG3", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG4", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG5", "images/save_load/locked.png", xalign=0.5, yalign=0.5)
-
-
-    frame:
-        xalign 0.5
-        yalign 0.85
-        hbox:
-            style_prefix "page"
-            grid 6 1:
-                spacing 15
-                for g_page in range(1,7):
-                    frame:
-                        xsize 68
-                        ysize 68
-                        if g_page == persistent.current_page_gallery:
-                            image "images/save_load/page_hover.png"
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65))
-                        else:
-                            imagebutton auto "images/save_load/page_%s.png" action [SetVariable("persistent.current_page_gallery",g_page),ShowMenu("gallery_"+str(g_page))]
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65))
-
-
-    imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.935
-
-screen gallery_6():
-
-    # Ensure this replaces the main menu.
-    tag menu
-
-    # The background.
-    add gui.main_menu_background
-    add "images/save_load/menu_gallery.png"
-
-    # A grid of buttons.
-    # Create a grid layout with 2 rows and 3 columns.
-    grid 3 2:
-
-        xpos 119
-        ypos 168
-        spacing 13
-
-        # Call make_button to display the gallery images or locked placeholders.
-        add g.make_button("SD5", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Unlocked first image
-        add g.make_button("CG1", "images/save_load/locked.png", xalign=0.5, yalign=0.5)
-        add g.make_button("CG2", "images/save_load/locked.png", xalign=0.5, yalign=0.5)
-        add g.make_button("CG3", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG4", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG5", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-
-
-    frame:
-        xalign 0.5
-        yalign 0.85
-        hbox:
-            style_prefix "page"
-            grid 6 1:
-                spacing 15
-                for g_page in range(1,7):
-                    frame:
-                        xsize 68
-                        ysize 68
-                        if g_page == persistent.current_page_gallery:
-                            image "images/save_load/page_hover.png"
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65))
-                        else:
-                            imagebutton auto "images/save_load/page_%s.png" action [SetVariable("persistent.current_page_gallery",g_page),ShowMenu("gallery_"+str(g_page))]
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65))
-
-
-    imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.935
 
 ## Help screen #################################################################
 ##
