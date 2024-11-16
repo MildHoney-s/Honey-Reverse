@@ -104,7 +104,7 @@ label act1_1_shot_2:
     manager "แค๊กๆ อะไรกันเนี่ยทำไมไส้ในถึงได้มีแต่แตงกวาล่ะ!" with sshake
     play music nightmare_bgm loop  fadein 1.25
     hide cucumburg
-    ashy "เธอจ๋าาา จะไม่เอาแตงกวาจริงหรอจ้ะ นี่น่ะของดีประจำอำเภ…{nw=1.5}"
+    ashy "เธอจ๋าาา จะไม่เอาแตงกวาจริงหรอจ้ะ นี่น่ะของดีประจำอำเภ…"
     manager "เดี๋ยวลูกค้าก็ได้กินแตงกวาทุกเมนูพอดี ไม่ได้ๆ แบบนี้คงต้องให้ไม่ผ่าน!"
     manager "ไม่ผ่าน!!!" with ashyShake
     hide ashy_sd_1 with dissolve
@@ -177,7 +177,7 @@ label act1_1_shot_3:
         zoom 1.1
     stop music
     manager "เอ้ะ กระดาษอะไรปลิวมาใส่หน้ากันล่ะเนี่ย.."
-    play sound "<from 10.5 to 13>SFX/paper_sfx.mp3" 
+    play sound "<from 10.5 to 13>SFX/paper_sfx.mp3"
     play music poster_bgm loop fadein 0.5 volume 0.5
     show white_transparent
     diary "{=down_text}ในโลกที่มีการวิจัยดัดแปลงสิ่งมีชีวิตหรือที่เรียกกันว่ามิวแทนต์{/down_text}"
@@ -190,9 +190,8 @@ label act1_1_shot_3:
     diary "{=down_text}ฝากแก่ทุกท่าน มิวแทนต์⬜⬜⬜เป็นอันตราย{/down_text}"
     diary "{=down_text}กรุณาจัดการ⬜⬜⬜มิวแทนต์ ถ้าเป็นไปได้{/down_text}"
     nvl clear
-    play sound "<from 13 to 15>SFX/paper_sfx.mp3" 
+    play sound "<from 13 to 15>SFX/paper_sfx.mp3"
     hide white_transparent
-    
 
     hide sd_wanted
     manager "นักวิทยาศาสตร์ชอบทดลองอะไรประหลาดๆ อยู่เรื่อย"
@@ -246,7 +245,7 @@ label act1_1_shot_3:
     manager "(ระหว่างที่อุ้ม ก็ยืนนิ่งคิดอยู่สักพัก)"
     manager "อ่ะ! จริงสิ พาไปที่ร้านของเราก่อนแล้วกันนะ ถ้าตื่นแล้วลองคุยดูก่อนละกัน" with sshake
     window hide
-    play sound walking_sfx 
+    play sound walking_sfx
     scene bg4:
         crop (0,0,1920,1080)
         size (1920, 1080)
@@ -450,7 +449,7 @@ label act1_1_shot_4_q1_c2:
 
     show mild unhood_blushed at mildunhood_close
     with dissolve
-    manager "เธอสนใจมาทำงานที่นี้มั้ยละ"
+    manager "เธอสนใจมาทำงานที่นี่มั้ยละ"
     hide emotion_anger
     show mild unhood_idle2 at mildunhood_close
     show emotion_question at hoodemote
@@ -602,7 +601,7 @@ label act1_1_shot_5:
     pov "เมด... เมด... น่ารัก..."
     show emotion_sparkle at emotepairpos2
     with fade
-    play sound "<from 0.5 to 3.5>SFX/clock_sfx.mp3" fadein 0.5 
+    play sound "<from 0.5 to 3.5>SFX/clock_sfx.mp3" fadein 0.5
     queue sound door_sfx fadein 0.25
     scene bg2day
     with dissolve
@@ -879,7 +878,7 @@ label act1_1_shot_7:
     show mild maid_idle2 at mild_close
     with dissolve
     mild "ขะ ขอบคุณค่ะ"
-    
+
     scene bg7light
     with fade
     play music diary_bgm loop fadein 1.0

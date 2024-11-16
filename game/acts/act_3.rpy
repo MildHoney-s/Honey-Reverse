@@ -1,6 +1,6 @@
 label act3_shot_1:
     scene bg7day with eye_open
-    play music morning_bgm loop 
+    play music morning_bgm loop
     pov "ขึ้นเดือนใหม่ เดือนสุดท้ายของปีแล้วสินะ"
     pov "เดือนนี้ก็มีอีเว้นท์อีกหลายอย่างเลย รวมถึงวันเกิดของมายด์ด้วย…"
     scene black
@@ -57,7 +57,7 @@ label act3_shot_1:
         zoom 0.25
     pause 0.025
     hide locket_open
-    with pixellate 
+    with pixellate
     pov "เอาเป็นว่าไปซื้อของเข้าร้านก่อนดีกว่า~"
     play sound doorclose_sfx fadein 0.5
     scene bg5day with wiperight
@@ -67,7 +67,7 @@ label act3_shot_1:
         xalign 0.5
         yalign 0.6
     with wiperight
-    play sound knock_sfx fadein 0.25 
+    play sound knock_sfx fadein 0.25
     pov "มายด์ มายด์ตื่นรึยัง ทานอะไรมั้ย"
     pov "(ไม่ตอบแหะ)"
     scene bg5day with wipeleft
@@ -131,9 +131,9 @@ label act3_shot_1:
     show mild maid_idle2 at llposmild
     with dissolve
     mild_tsuru_debirun "ค่าาาา"
-    hide del maid_smile1 
-    hide tsuru maid_drunk1 
-    hide mild maid_idle2 
+    hide del maid_smile1
+    hide tsuru maid_drunk1
+    hide mild maid_idle2
     with easeoutleft
     "สาวๆช่วยกันเอาของเข้าตู้เย็น"
     with fade
@@ -206,7 +206,7 @@ label act3_shot_2:
         size (1920, 1080)
     show mild normal_idle2 at mildunhood_close
     with dissolve
-    mild "ค่าาาา" 
+    mild "ค่าาาา"
     stop music fadeout 1.0
     scene bg18day:
         crop (800,200,1600,720)
@@ -227,7 +227,7 @@ label act3_shot_2:
     show mild normal_smile8 at mildhood
     mild "อ่ะ!  นั้นมัน!" # //Char เคลื่อนออกไป
     show rabbit at bounce,animal
-    hide mild normal_smile8 
+    hide mild normal_smile8
     with moveoutright
     show rabbit at bounce,animal
     pov "หื้ม รอด้วยสิมายย"
@@ -254,7 +254,7 @@ label act3_shot_2:
     show mild normal_blush1 at leftmildnormal
     with dissolve
     mild "ปะ เปล่าค่ะ! เราไปต่อไปเลยมั้ยคะะ"
-    hide mild normal_smile8 
+    hide mild normal_smile8
     with moveoutright
     scene bg18day:
         crop (0,0,1080,720)
@@ -294,10 +294,10 @@ label act3_shot_2:
 
         "เอาหน้าผากวัดไปเลย!":
             $ honey_score -= 1
-    play sound walking_sfx 
+    play sound walking_sfx
     hide mild normal_blush1
     with easeoutright
-    pause 1.0 
+    pause 1.0
     stop sound
     mild "มะ ไม่เป็นอะไรค่ะ!" # //Char Mild หายไป
     pov "(หรือฉันทำอะไรไม่ดีไปรึเปล่านะ เอาเป็นว่าเดินตามไปก่อนละกัน)"
@@ -391,9 +391,8 @@ label act3_shot_2:
                 crop (400, 200, 800, 720)
                 size (1920, 1080)
                 linear 1.0 crop (800, 200, 1800, 720)
-            hide mild normal_smile13 
+            hide mild normal_smile13
             with easeoutright
-            
 
         "วิ่งนำไปก่อนเลย":
             $ honey_score -= 1
@@ -424,11 +423,11 @@ label act3_shot_2:
     show tsuru normal_idle1_2 at leftpostsuru
     with dissolve
     tsuru "ได้เลยค้าบบบ"
-    scene bg11eve 
+    scene bg11eve
     show mild normal_flustered at mild_close
     with dissolve
     mild "ระ รบกวนด้วยนะคะ"
-    scene bg11eve 
+    scene bg11eve
     show tsuru normal_smile5 at leftpostsuru
     show del normal_smile8 at rightposdel
     show mild normal_flustered at middlemildnormal
@@ -456,7 +455,7 @@ label act3_shot_2:
     show tsuru onsen_stunned at rightpostsuru
     with dissolve
     tsuru "ป่ะ ไปกันนะมายด์~"
-    scene bg12eve 
+    scene bg12eve
     show mild onsen_blush1 at mildunhood_close
     with fade
     mild "ค่า!"
@@ -471,7 +470,7 @@ label act3_shot_2:
         crop (804, 790, 1920, 1080)
         size (1920, 1080)
     with eye_open
-    play music onsen_bgm loop fadein 1.0 
+    play music onsen_bgm loop fadein 1.0
     debirun "อิ่มจังเลยน้า~ อาหารก็อร่อย เที่ยวสวนสัตว์ก็สนุกสุดๆ เลย"
     tsuru "นั่นสินะ เดลดูสนุกสุดๆ เลยนี่นา"
     tsuru "มายด์ล่ะ เป็นไงบ้าง สนุกมั้ย อาหารอร่อยรึเปล่า"
@@ -614,7 +613,7 @@ label act3_shot_3:
     pov "ถ้าฉันหัวใจวายขึ้นมาจะทำไงเล่า!? ช่างมันเถอะ…"
     stop music fadeout 0.5
     pov "เอาเป็นว่าไปเตรียมอาหารก่อนแล้วกั- (ตึ้ง!!)"
-    play music drama_bgm loop fadein 0.75 
+    play music drama_bgm loop fadein 0.75
     pov "เสียงอะไรน่ะ! มาจากชั้นบนหนิ มายด์ทำอะไรตกรึป่าวนะ…"
     play sound walking_sfx
     scene bg5night with walkingVertical
@@ -628,7 +627,7 @@ label act3_shot_3:
     centered "…………" # ไม่มีเสียงตอบรับจากภายในห้อง
     play sound knock_sfx volume 1.5
     pov "มายด์…! เธอเป็นอะไรรึป่าว?"
-    centered "…………" 
+    centered "…………"
     play sound knock_sfx volume 1.8
     pov "มายด์อาร์!! เธอยังโอเคดีใช่มั้ย!?"
     pov "มายด์! รอฉันก่อนนะ!"
@@ -691,7 +690,7 @@ label act3_shot_3:
     mild "[povname]… อยากจะฟังจริงๆ หรอ… [povname] อาจจะกลัวมายด์ไปเลยก็ได้…"
     pov "ไม่มีทางเป็นแบบนั้นหรอก ตลอดมาฉันไม่เคยกลัวเธอเลยนะ"
     mild "ถะ ถ้า [povname] พูดมาถึงขนาดนั้น…"
-    play music dark_bgm loop fadein 0.75 fadeout 1.25 
+    play music dark_bgm loop fadein 0.75 fadeout 1.25
     scene bg24 with fade
     pause 1.5
     researcher "มันอาจจะเจ็บนิดหน่อยนะสาวน้อย"
@@ -756,7 +755,7 @@ label act3_shot_3:
                 scene cg5
                 pause 10
     stop music fadeout 0.25
-    scene bg6night 
+    scene bg6night
     with vpunch
     show tsuru normal_smile2 at middlepostsuru
     show del normal_smile5 at leftposdel
@@ -766,17 +765,17 @@ label act3_shot_3:
     play music bright_bgm loop fadein 1.0 fadeout 2.0
     scene bg6night:
         crop (200, 120, 1400, 920)
-        size (1920, 1080) 
+        size (1920, 1080)
     show tsuru normal_dark at tsuru_close
     with dissolve
     tsuru "เอ๋~ ทั้งสองคนทำอะไรกันหรอคะ?"
     scene bg6night:
         crop (100, 120, 1200, 920)
-        size (1920, 1080) 
+        size (1920, 1080)
     show del normal_police at del_close
     with dissolve
     debirun "ตำรวจ…"
-    scene bg6night 
+    scene bg6night
     show tsuru normal_idle1 at middlepostsuru
     show del normal_stunned2 at leftposdel
     show cake at cake
@@ -829,7 +828,7 @@ label act3_shot_3:
     with dissolve
     # Asset เค้กมีเทียนไฟ กับ เทียนดับ
     pov "มายด์ฉันมีอะไรที่เตรียมมาให้เธอด้วยนะ"
-    hide cake2 
+    hide cake2
     with easeoutbottom
     show locket_close at center:
         zoom 0.32
@@ -856,7 +855,7 @@ label act3_shot_3:
     with dissolve
     mild "ขะ-ขอบคุณนะ ที่ทำเพื่อเค้าขนาดนี้…"
     pov "ด้วยความยินดีเลยล่ะ"
-    scene black 
+    scene black
     with fade
     jump demo
     # // transition รีรัน BG ทั้งหมด แล้วตัดจบที่จอมืดลง

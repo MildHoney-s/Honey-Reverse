@@ -252,7 +252,7 @@ screen cafe_hire_screen(maid_list):
                                 for key,value in i.stats.items():
                                     text "[key]: [value]"
                             bar value i.stamina range 100 xysize 150,36 right_bar "cafe_empty_stamina_bar" left_bar "cafe_full_stamina_bar" align .5,.5
-                add i.image align (0.5, 0.0) xsize 156 ysize 120 
+                add i.image align (0.5, 0.0) xsize 156 ysize 120
 
 screen minigame_1(g):
     add "images/minigames/cafe/bg20.png"
@@ -319,7 +319,7 @@ screen minigame_1(g):
         for i in g.maids:
             vbox:
                 button:
-                    add i.image xsize 156 ysize 120 
+                    add i.image xsize 156 ysize 120
                     hovered Function(g.hovered, i)
                     unhovered Function(g.unhovered)
                     action Function(g.clicked_maid, i)
@@ -331,7 +331,7 @@ screen minigame_1(g):
     # Handling the held item (maid or client)
     if g.holding:
         timer .02 repeat True action Function(g.update_holding)
-        add g.holding.image offset g.holding_pos xsize 156 ysize 120 
+        add g.holding.image offset g.holding_pos xsize 156 ysize 120
 
     # Time bar during night state
     if g.stat == "night":

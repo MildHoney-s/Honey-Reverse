@@ -195,7 +195,7 @@ screen doll_checker(g):
 
 screen doll_indicator_screen(x, tag, g, img):
     button:
-        align .5,1.0 xoffset x 
+        align .5,1.0 xoffset x
         add g.current_player.indicator
         action Function(g.current_player.take, tag)
 

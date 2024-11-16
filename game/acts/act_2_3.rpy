@@ -105,19 +105,19 @@ label act2_3_shot_1:
         zoom 1.45
     with dissolve
     pause 1.0
-    mild "[povname] คะ? เป็นอะไรรึเปล่าคะ หน้าแดงเชียว" 
+    mild "[povname] คะ? เป็นอะไรรึเปล่าคะ หน้าแดงเชียว"
     pov "ปะ เปล่า! ไม่มีอะไรถ้างั้น เราไปด้วยกันนะ!"
     hide emotion_love
     show mild maid_smile6 at mildcloser
     with dissolve
-    mild "ค่า!" 
+    mild "ค่า!"
     stop music fadeout 0.25
     scene bg16
     with dottransition
     play music store_bgm loop
     show mild hood_scared at mildunhood
     with zoomin
-    mild "คะ คือ.." 
+    mild "คะ คือ.."
     play sound crowded_sfx loop fadein 0.25 fadeout 0.25 volume 0.85
     pov "เห็นมั้ย คนอื่นๆ เขาเองก็แต่งธีมฮาโลวีนกันนะ"
     pov "ไม่ต้องห่วงหรอกนะ"
@@ -125,7 +125,7 @@ label act2_3_shot_1:
     with zoomout
     mild "ตะ แต่ว่า.."
     pov "เอาน่าา"
-    play sound walking_sfx fadein 0.5 
+    play sound walking_sfx fadein 0.5
     show mild hood_idle2 at mildunhood_close:
         zoom 1.8
     with vpunch
@@ -135,7 +135,7 @@ label act2_3_shot_1:
     show mild unhood_flustered at bounce,mildunhood_close:
         zoom 1.8
     with dissolve
-    mild "อ่ะ!" 
+    mild "อ่ะ!"
     pov "เห็นมั้ยไม่ต้องกังวลหรอก"
     pov "มานี่สิ"
     show mild unhood_blushed at bounce,mildunhood_close:
@@ -144,12 +144,12 @@ label act2_3_shot_1:
     mild "อะ เอ๊ะ! (อยู่ๆ มาจับมือแบบนี้)"
     show mild unhood_blush2 at mildunhood_close:
         zoom 1.6
-    with dissolve    
+    with dissolve
     pov "ไปกันเถอะ ไม่ต้องห่วงฉันจะอยู่ข้างๆ เธอนะ"
     show mild unhood_blush5 at mildunhood_close:
         zoom 1.6
-    with dissolve  
-    mild "คะ ค่า" 
+    with dissolve
+    mild "คะ ค่า"
     stop sound fadeout 0.5
     scene bg15
     with dottransition
@@ -183,7 +183,7 @@ label act2_3_shot_1:
     show mild unhood_blush4 at mildunhood_close:
         zoom 1.2
     with dissolve
-    mild "คะ ค่า" 
+    mild "คะ ค่า"
     scene black
     centered "หลังจากนั้น ทั้งสองก็ได้เดินเข้าไปยังร้านขายผ้า"
     scene bg15:
@@ -218,12 +218,12 @@ label act2_3_shot_1:
     with dissolve
     mild "เข้าใจแล้วค่า"
     show mild unhood_blush5 at mildunhood_close:
-        zoom 1.5   
+        zoom 1.5
     "(ฉันที่เห็นท่าทางน่ารักๆ ของมายด์ แล้วกำลังจะลูบหัวก็..)"
     employee "ของที่สั่งได้แล้วนะคะคุณลูกค้า"
     show mild unhood_blush5 at mildunhood_close:
         zoom 0.8
-    with vpunch  
+    with vpunch
     pov "ยะ เย้ยย ขะ ขอบคุณนะ"
     pov "(โดนขัดซะได้)"
     scene bg25
@@ -402,12 +402,12 @@ label act2_3_shot_1:
     pov "ถ้าเธอชอบฉันก็ดีใจนะ ดูแลพี่แพนดีๆล่ะ"
     pov "(อ่า.. )"
     mild "จะดูแลอย่างดีเลยค่ะ ขอบคุณนะคะ [povname]"
-    mild "{size=*0.5}แบบนี้จะไม่ให้ชอบ… ได้ยังไงล่ะ{/size}" 
+    mild "{size=*0.5}แบบนี้จะไม่ให้ชอบ… ได้ยังไงล่ะ{/size}"
     pov "มายด์พูดอะไรรึเปล่า?"
     scene bg17
     show mild unhood_blush2 at mildunhood_close
     mild "มะ ไม่มีอะไรค่ะ เรากลับร้านกันเถอะนะคะ เดี๋ยวจะไม่ทันร้านเปิด"
-    hide mild unhood_blush2 
+    hide mild unhood_blush2
     with easeoutright
     play sound walking_sfx fadein 0.25 volume 0.95
     stop music fadeout 1.5

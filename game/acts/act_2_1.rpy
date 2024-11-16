@@ -31,7 +31,7 @@ label act2_1_shot_1:
 
 label act2_1_shot_2:
     stop music fadeout 1.0
-    play sound nightmare_sfx 
+    play sound nightmare_sfx
     pov "เฮือกกกกก-!!"
     scene bg7day with eye_open
     "หลังจากที่ตื่นจากฝันอันแปลกประหลาด เราได้พบว่าตัวเองอยู่ที่พื้นข้างๆ เตียง"
@@ -427,7 +427,7 @@ label act2_1_shot_11:
     show mild pajamas_cooldere at paja
     mild "อาหารของคุณที่สั่ง กินให้อร่อยนะ…"
     play sound "<from 0.2 to 10.5>SFX/silentwind_sfx.mp3" fadein 0.5
-    pov_tsuru_debirun "…" 
+    pov_tsuru_debirun "…"
     scene bg2day
     with fade
     centered "{=down_text}XXX ปัดตก XXX{/down_text} "

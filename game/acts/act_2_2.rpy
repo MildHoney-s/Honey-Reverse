@@ -105,7 +105,7 @@ label act2_2_shot_1:
     mild "เพลงอะไรอ่ะ"
     scene black
     with fade
-    stop music 
+    stop music
     centered "ก่อนจะเข้าสู่สเตจ ขอเชิญ Mild-R ที่กลางจอ เพื่อเข้าสู่การแสดงในลำดับต่อไป ขอบพระคุณ"
     play movie "Bang Pho.webm"
     $ renpy.pause(26, hard=True)
