@@ -1,8 +1,11 @@
 init python:
+    import renpy.store as store
+
     class mole:
         def __init__(self, x, y):
             self.name = None
-            self.image = "mole_molly"
+            self.image = "mole_honey"
+            self.injured_image = f'{self.image}_injured'
             self.x = x
             self.y = y
             self.yo = 500
@@ -28,6 +31,11 @@ init python:
                 self.popped = 0
                 self.whacked = 0
             self.body += 1
+            # handle global money in game
+            if store.money >= 0:
+                store.money -= 10
+            else:
+                store.money += 10
             renpy.play("minigames/mole/coin.ogg", "sound")
 
         def body_shot(self):
@@ -53,10 +61,13 @@ init python:
 
             if isinstance(m, mole) and m.yo and m != self.last:
                 m.image = renpy.random.choice(self.moles)
+                m.injured_image = f'{m.image}_injured'
                 m.yo = 0
                 renpy.play("minigames/mole/popup.ogg", "sound")
                 self.popped += 1
             self.last = m
+
+image resize_mole_coin_acceptor = im.Scale("images/minigames/mole/mole_coin_acceptor.png", 20, 60)
 
 screen whack_a_mole(g):
     default insert = "insert"
@@ -79,24 +90,24 @@ screen whack_a_mole(g):
 
                         fixed:
                             fit_first True
-                            add i.image
+                            add i.image size(300,500)
                             if i.yo > 499:
-                                add "mole_bands"
+                                add i.injured_image size(300,500)
                         action Function(g.whack, i)
         frame:
-            align .569,.04 xysize 120,50 background None
+            align .569,.2 xysize 120,50 background None
             text "{} / {}".format(g.whacked, g.popped) align .5,.5 size 20 color "#0f0"
         vbox:
-            align .772,.0 yoffset 246 spacing 20
+            align .74,-.12 yoffset 246 spacing 20
             frame:
-                xysize 120,50 background None
+                xysize 500,20 background None
                 if g.body:
-                    text str(g.body) align .5,.5 color "#0f0"
+                    text str(g.body) align .7,.1 color "#0f0"
                 else:
-                    timer 1 repeat True action ToggleScreenVariable("insert", "insert", "coin")
-                    text insert align .5,.5 color "#0f0" size 20
+                    # timer 1 repeat True action ToggleScreenVariable("insert", "insert", "coin")
+                    text "insert coin" align .75,-.05 color "#0f0" size 20
             button:
-                align .5,.5 xysize 40,70 background None
+                align .725,.5 xysize 40,70 background "resize_mole_coin_acceptor"
                 action Function(g.insert_coin)
     if g.body:
         timer 1.2 repeat True action Function(g.tick)
@@ -113,18 +124,17 @@ transform whack_shaking:
 
 default whack_1 = whack_a_mole_game(
     [
-        ["mole_whack cover small", 345],
-        ["mole_whack_top", 0],
-        mole(-190, -140), mole(190, -140),
-        ["mole_whack cover big", 499],
-        ["mole_whack_up", 410],
-        mole(-382, 0), mole(0, 0), mole(382, 0),
-        ["mole_whack cover small", 643],
-        ["mole_whack_down", 562],
-        mole(-190, 140), mole(190, 140),
-        ["mole_whack_bottom", 711],
+        # ["mole_whack cover small", 345],
+        ["mole_4", 0],
+        # ["mole_whack cover big", 499],
+        ["mole_3", 364],
+        mole(-350, -200), mole(0, -200), mole(350, -200),
+        # ["mole_whack cover small", 643],
+        ["mole_2", 559],
+        mole(-420, 25), mole(10, 25), mole(420, 25),
+        ["mole_1", 804],
     ],
-    ["mole_molly", "mole_eddmo", "mole_mall", "mole_melle", "mole_mill", "mole_mole doc", "mole_mollo"]
+    ["mole_honey", "mole_cubie", "mole_huangyang", "mole_bluebell", "mole_dustirion", "mole_manta"]
 )
 
 label whack_a_mole_game_center:
