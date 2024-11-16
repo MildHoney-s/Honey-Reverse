@@ -20,7 +20,7 @@ screen gallery_1():
         add g.make_button("CG1", im.Scale("images/cg/cg2.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
         add g.make_button("CG2", im.Scale("images/cg/cg3.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
         add g.make_button("CG3", im.Scale("images/cg/cg4.jpg" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG4", im.Scale("images/cg/cg5.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image extra condition
+        add g.make_button("CG4", im.Scale("images/cg/cg5.png" if persistent.gameclear and persistent.secret_cg else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image extra condition
 
     frame:
         xalign 0.5

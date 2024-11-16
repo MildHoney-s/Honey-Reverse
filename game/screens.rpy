@@ -6,10 +6,7 @@ init offset = -1
 default money = 0
 default honey_score = 0
 default persistent.gameclear = False
-default persistent.cg2 = False
-default persistent.cg3 = False
-default persistent.cg4 = False
-default persistent.cg5 = False
+default persistent.secret_cg = False
 default persistent.current_page = 1
 default persistent.current_page_gallery = 1
 default load_from_main = True
@@ -42,7 +39,7 @@ init python:
 
     g.button("CG4")
     g.image(im.Scale("images/cg/cg5.png",1920,1080))
-    g.condition("persistent.gameclear")
+    g.condition("persistent.gameclear and persistent.secret_cg")
 
     g.button("SD1")
     g.image(im.Scale("images/sd/ashy_sd_1.png",1920,1080))
@@ -430,6 +427,7 @@ screen quick_menu():
             textbutton _("Setting") action ShowMenu("preferences")
             textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
+            text "[honey_score]"
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever

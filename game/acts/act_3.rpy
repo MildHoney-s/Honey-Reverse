@@ -529,10 +529,10 @@ label act3_shot_2:
     pov "เป็นอะไรมั้ย ทำไมหน้าแดงล่ะ แช่น้ำนานไปรึป่าว"
     menu:
         "เข้าไปดูอาการ":
-            $ honey_score -= 1
+            $ honey_score += 1
 
         "ยืนกระวนกระวายอยู่เฉยๆ":
-            $ honey_score += 1
+            $ honey_score -= 1
     show mild onsen_blush2 at mildunhood_close
     with dissolve
     mild "มะ ไม่มีอะไรค่ะ แล้ว [povname] กำลังจะออกไปไหนหรอคะ"
@@ -751,8 +751,10 @@ label act3_shot_3:
             $ honey_score += 1
             pov "ฉันมั่นใจแล้ว ว่าฉันน่ะรักเธอ"
             mild "ฉันเอง… ฉันเองก็…."
-            if honey_score >= 3:
+            if honey_score == 8:
+                $ persistent.secret_cg = True
                 scene cg5
+                pause 10
     stop music fadeout 0.25
     scene bg6night 
     with vpunch
