@@ -11,6 +11,7 @@ default persistent.current_page = 1
 default persistent.current_page_gallery = 1
 default load_from_main = True
 default config_from_main = True
+default show_skip_btn = True
 
 init python:
 
@@ -422,12 +423,14 @@ screen quick_menu():
             textbutton _("Q.Save") action QuickSave()
             textbutton _("Q.Load") action QuickLoad()
             # textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Skip") action Call("confirm_pause")
+            if show_skip_btn:
+                textbutton _("Skip") action Call("confirm_pause")
+            else:
+                textbutton _("Skip") action Return() sensitive False
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Setting") action ShowMenu("preferences")
             textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
-            text "[honey_score]"
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -773,12 +776,12 @@ screen save():
     tag menu
 
     add gui.game_menu_background
-    imagebutton auto "gui/button/window_%s.png" action Return() align(0.095,0.1)
-    text ("Save") align(0.89,0.1):
+    imagebutton auto "gui/button/window_%s.png" action Return() align(0.91,0.1)
+    text ("Save") align(0.095,0.1):
         style "pref_label_text"
     hbox:
 
-        xalign 0.12
+        xalign 0.14
         yalign 0.145
         spacing 5
 
@@ -799,12 +802,12 @@ screen load():
 
     if load_from_main == False:
         add gui.game_menu_background
-        imagebutton auto "gui/button/window_%s.png" action Return() align(0.095,0.1)
-        text ("Load") align(0.89,0.1):
+        imagebutton auto "gui/button/window_%s.png" action Return() align(0.91,0.1)
+        text ("Load") align(0.095,0.1):
             style "pref_label_text"
         hbox:
 
-            xalign 0.12
+            xalign 0.14
             yalign 0.145
             spacing 5
 
@@ -898,12 +901,12 @@ screen preferences():
     tag menu
     if config_from_main == False:
         add gui.game_menu_background
-        imagebutton auto "gui/button/window_%s.png" action Return() align(0.095,0.1)
-        text ("Setting") align(0.89,0.1):
+        imagebutton auto "gui/button/window_%s.png" action Return() align(0.91,0.1)
+        text ("Setting") align(0.095,0.1):
             style "pref_label_text"
         hbox:
 
-            xalign 0.12
+            xalign 0.14
             yalign 0.145
             spacing 5
 
@@ -1127,12 +1130,12 @@ screen history():
 
     tag menu
     add gui.game_menu_background
-    imagebutton auto "gui/button/window_%s.png" action Return() align(0.095,0.1)
-    text ("History") align(0.89,0.1):
+    imagebutton auto "gui/button/window_%s.png" action Return() align(0.91,0.1)
+    text ("History") align(0.095,0.1):
         style "pref_label_text"
     hbox:
 
-        xalign 0.12
+        xalign 0.14
         yalign 0.145
         spacing 5
 
