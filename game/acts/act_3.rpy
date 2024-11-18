@@ -846,6 +846,7 @@ label act3_shot_3:
     show mild pajamas_smile6 at mildcloseleft
     with dissolve
     mild "สวยจัง!" #//ตาเป็นประกาย
+    hide locket_open
     show mild pajamas_idle2 at mildunhood_close
     with dissolve
     mild "[povname] จะให้เค้าจริงๆหรอ"

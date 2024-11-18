@@ -900,6 +900,7 @@ label act1_1_shot_7:
     pov "มะ ไม่มั่ง เอาเป็นว่าฉันเขียนไดอารี่แค่นี้ก่อนละกันนะ ไปนอนดีกว่า อะแหะๆๆ..."
     scene bg7night
     with dissolve
+    stop sound
     stop music
     scene black with eye_shut
     pov "(หลังจากนั้นฉันก็คลุมโปงทั้งคืนจนหลับไป ...)"
