@@ -92,8 +92,8 @@ transform mildcloseleft():
     zoom 0.8
 transform middlemildnormal():
     xalign 0.5
-    ypos -112
-    zoom 0.355
+    ypos -120
+    zoom 0.344
 transform leftmildnormal():
     xalign 0.25
     ypos -112

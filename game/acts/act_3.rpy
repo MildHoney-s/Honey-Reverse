@@ -165,7 +165,7 @@ label act3_shot_1:
         crop (100,200,1480,720)
         size (1920, 1080)
     show mild maid_smile9 at bounce,mildunhood_close:
-        zoom 0.9
+        zoom 0.65
     with zoomout
     mild "ปะ ไปค่ะ ได้มั้ยคะ [povname]"
     pov "แน่นอนสิ ถ้าเธออยากไปฉันก็จะพาเธอไป"
@@ -608,7 +608,6 @@ label act3_shot_3:
     show black:
         alpha .5
     pause 1
-    mild "{size=*1.5}[povname] คะ…..{/size}" # ตะโกน
     pov "ยัยเด็กพวกนั้นนี่นะ… ถึงจะเตี้ยมกันแล้วก็เถอะ แต่ไม่คิดจะส่งสัญญาณบอกกันเลยรึไง?"
     pov "ถ้าฉันหัวใจวายขึ้นมาจะทำไงเล่า!? ช่างมันเถอะ…"
     stop music fadeout 0.5
@@ -672,7 +671,7 @@ label act3_shot_3:
     pov "ขอโทษนะ ฉันไม่นึกว่าจะเธอกลัวมากขนาดนี้…"
     mild "มะ ไม่เป็นไร"
     pov "ไม่เป็นไรไม่ได้หรอกนะ…"
-    play sound head_sfx fadein 0.25
+    play sound "<from 0.5 to 5.5>SFX/head_sfx.mp3" fadein 0.25
     "ลูบหัวมายด์"
     pov "ฉันขอโทษจริงๆ นะ ฉันสัญญาว่าจะไม่ปล่อยให้เรื่องแบบนี้เกิดขึ้นอีก"
     pov "ฉันอยู่ตรงนี้กับเธอนะ"
