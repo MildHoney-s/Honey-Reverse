@@ -1171,7 +1171,7 @@ screen history():
 
                     window:
                         if h.who != None:
-                            background Image("gui/historynamebox.png", xalign=0, yalign=0)
+                            background Image("gui/historynamebox_lg.png", xalign=0, yalign=0)
 
                         ## This lays things out properly if history_height is None.
                         has fixed:
@@ -1241,7 +1241,8 @@ style history_name:
 
 style history_name_text:
     xpos 0
-    ypos 5
+    ypos .05
+    yanchor 1
     size 20
     min_width gui.history_name_width
     text_align gui.history_name_xalign
