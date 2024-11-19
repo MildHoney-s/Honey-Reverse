@@ -1,3 +1,5 @@
+default persistent.shoot_highscore = 69
+
 init python:
     import random
     import time
@@ -37,27 +39,26 @@ init python:
             self.change("_shooting")
             self.parent.got_shot()
 
-        def render(self,width,height,st,at):
+        def render(self, width, height, st, at):
             if self.yzoom < 1:
                 self.yzoom += .2
             else:
                 self.yzoom = 1
             self.time += 1
-            # time before enemy fire
-            if self.stat == "_idle":
-                if self.time > 500 and self.image == "shooting_villager":
-                    # self.change("hidden")
-                    pass
-                elif self.time > 500 and self.image != "shooting_villager":
+            if self.image == "shooting_villager" and self.time > 120:
+                self.change("hidden")
+            elif self.stat == "_idle":
+                if self.time > 100 and self.image != "shooting_villager":
                     self.shoot()
             elif self.time > 100 and self.stat == "_shooting":
                 self.change("_idle")
             elif self.time > 100 and self.stat == "_dead":
                 self.change("hidden")
+
             img = self.image + self.stat
             if self.stat == "hidden":
                 return renpy.Render(0, 0)
-            t = Transform(img, xanchor=0.5, yanchor=0.5, zoom = self.z, yzoom = self.yzoom, nearest = True)
+            t = Transform(img, xanchor=0.5, yanchor=0.5, zoom=self.z, yzoom=self.yzoom, nearest=True)
             child_render = renpy.render(t, width, height, st, at)
             cw, ch = child_render.get_size()
 
@@ -66,6 +67,7 @@ init python:
 
             renpy.redraw(self, 0)
             return rv
+
 
     class shooter_handler:
         def __init__(self, enemies):
@@ -76,14 +78,26 @@ init python:
             self.health = 5
             self.bullets = 8
             self.kills = 0
-
+            self.combo_kills = 0
             self.original_spawn = self.spawn
+            self.shoot_cooldown = 0
+            self.spawn_interval = 0.8  # Spawn every 1 second initially
+            self.time_elapsed = 0  # Tracks time passed
+
+        def increase_difficulty(self):
+            # Increase difficulty by reducing spawn interval
+            self.time_elapsed += 1
+            if self.time_elapsed % 30 == 0:  # Every 30 seconds
+                self.spawn_interval = max(0.1, self.spawn_interval - 0.15)  # Reduce spawn interval but not below 0.5
 
         def start(self):
             self.stat = "playing"
 
+        def cooldown(self):
+            if self.shoot_cooldown > 0:
+                self.shoot_cooldown -= 1
+
         def restart(self):
-            # handle global money in game
             if store.money >= 0:
                 store.money -= 10
 
@@ -92,7 +106,7 @@ init python:
                 self.bullets = 8
                 self.active_enemies = []
                 self.stat = "playing"
-
+                self.combo_kills = 0
                 self.spawn = self.original_spawn
             else:
                 store.money += 10
@@ -100,39 +114,61 @@ init python:
         def spawn(self):
             if self.stat == "dead":
                 return
-            for i in self.active_enemies:
-                if i.stat == "hidden":
-                    self.active_enemies.remove(i)
+
+            # Remove hidden enemies from the active list
+            self.active_enemies = [i for i in self.active_enemies if i.stat != "hidden"]
+
+            # Spawn only if fewer than the maximum number of active enemies
             if len(self.active_enemies) < 3:
-                weights = [1] * (len(self.enemies) - 1) + [0.1]
+                # Fixed weights for enemies: 5 for thieves, 2 for villagers (2:3 ratio)
+                weights = [3 if enemy[0][0] == "shooting_thief" else 2 for enemy in self.enemies]
+
+                # Select an enemy based on the fixed weights
                 e = random.choices(self.enemies, weights=weights, k=1)[0]
+
+                # Create the enemy instance
                 enemy = shooter_enemy(*e)
+
+                # Avoid spawning on the same position
                 for i in self.active_enemies:
-                    if i.x == enemy.x:
-                        if i.y == enemy.y:
-                            return
+                    if i.x == enemy.x and i.y == enemy.y:
+                        return
+
+                # Add the enemy to the active list
                 enemy.parent = self
                 self.active_enemies.append(enemy)
 
         def shoot(self, enemy):
-            if self.stat != "playing":
-                return
+            if self.stat != "playing" or self.shoot_cooldown > 0:
+                renpy.play("minigames/shooting/empty.ogg", "sound")
+                self.combo_kills = 0
 
-            if self.bullets > 0:
+            elif self.bullets > 0:
                 tag = f"shooter_bullets_{random.randint(0,10000)}"
-                x, y = [*renpy.get_mouse_pos()]
-                Show("shooter_bullets", x = x, y = y, z = 8, tag = tag, _tag = tag)()
+                x, y = renpy.get_mouse_pos()
+                Show("shooter_bullets", x=x, y=y, z=8, tag=tag, _tag=tag)()
                 self.bullets -= 1
                 renpy.play("minigames/shooting/gun_2.ogg", "sound")
+                if self.combo_kills >= 20:
+                    self.shoot_cooldown = 8
+                else:
+                    self.shoot_cooldown = 10
+
                 if not enemy:
                     return
-                if not enemy.stat == "_dead":
+                if enemy.stat != "_dead":
                     renpy.play("minigames/shooting/kill.ogg", "sfx1")
                     enemy.change("_dead")
-                    if enemy.image == 'shooting_villager':
+                    if enemy.image == "shooting_villager":
                         self.kills -= 2
+                        self.combo_kills = 0
                     else:
                         self.kills += 1
+                        self.combo_kills += 1
+                        if self.kills > persistent.shoot_highscore:
+                            persistent.shoot_highscore = self.kills
+                        if (self.combo_kills%10) == 0:
+                            self.health += 1
             else:
                 renpy.play("minigames/shooting/empty.ogg", "sound")
 
@@ -148,86 +184,147 @@ init python:
                     self.spawn = lambda: None
 
         def reload(self):
-            renpy.play("minigames/shooting/reload.ogg", "sound")
-            self.bullets = 8
+            if self.bullets == 0:
+                renpy.play("minigames/shooting/reload.ogg", "sound")
+                self.bullets = 8
+
 
 screen shooter():
     modal True
     style_prefix "shooter"
-    default g = shooter_handler([
+    default shooter_game = shooter_handler([
         [["shooting_thief", "shooting_villager"], 550, 335, .25],
         [["shooting_thief", "shooting_villager"], 650, 800, .25],
         [["shooting_thief", "shooting_villager"], 510, 1100, .25],
         [["shooting_thief", "shooting_villager"], 1230, 950, .25],
         [["shooting_thief", "shooting_villager"], 960, 575, .125],
     ])
-    # add g.clock
+
+
     button:
         background None
-        action Function(g.shoot, None)
+        action Function(shooter_game.shoot, None)
     fixed:
         xysize 1920,1080
-        for i in g.active_enemies:
+        for i in shooter_game.active_enemies:
             button:
                 padding .0,.0 pos i.x,i.y background None anchor .5,1.0
                 add i
-                action Function(g.shoot, i)
+                action Function(shooter_game.shoot, i)
 
-    if g.stat == "start":
+    if shooter_game.stat == "start":
         button:
             align .5,.5
             text "Start"
-            action Function(g.start)
+            action Function(shooter_game.start)
 
-    elif g.stat == "playing":
-        timer 1 repeat True action Function(g.spawn)
+    elif shooter_game.stat == "playing":
+        timer shooter_game.spawn_interval repeat True action Function(shooter_game.spawn)
+
+        # Increase difficulty over time
+        timer 1.0 repeat True action Function(shooter_game.increase_difficulty)
+
+        # Shoot Cooldown logic
+        timer 0.1 repeat True action Function(shooter_game.cooldown)
         hbox:
-            align .0,1.0 spacing 10  offset 20,-20
-            for i in range(g.health):
+            align .0,1.0 spacing 10 offset 20,-20
+            for i in range(shooter_game.health):
                 add "shooting_heart" at zoom(.25, True)
-        if g.bullets > 0:
+        if shooter_game.bullets > 0:
             hbox:
                 align 1.0,1.0 spacing 10 offset -20,-20
-                for i in range(g.bullets):
+                for i in range(shooter_game.bullets):
                     add "shooting_ammo" at zoom(.175, True)
-
         else:
             button:
-                align 1.0,1.0  offset -20,-20
+                align 1.0,1.0 offset -20,-20
                 text "Reload"
-                action Function(g.reload)
-        key "K_r" action Function(g.reload)
+                action Function(shooter_game.reload)
+        key "K_r" action Function(shooter_game.reload)
 
-    elif g.stat == "dead":
-        hbox:
+    elif shooter_game.stat == "dead":
+        vbox:
             align .5,.5 spacing 10
             if money > 0:
                 button:
+                    background "#006"
+                    insensitive_background "#eae4e4"
+                    hover_background "#00a"
                     padding 20,20
-                    text "Restart"
-                    action Function(g.restart)
+                    align (0.5, 0.5)
+                    text "Restart use 3 coins"
+                    action Function(shooter_game.restart)
             button:
+                background "#006"
+                insensitive_background "#eae4e4"
+                hover_background "#00a"
                 padding 20,20
-                text "Done"
-                action Return(g.kills)
+                align (0.5, 0.5)
+                text "Exit" style "exitshooter_text"
+                action Return(shooter_game.kills)
 
     vbox:
-        text str(g.kills)
+        spacing -30
+        align (0.5, 0.01)
+        text "HIGH SCORE\n" style "highscore_text" align (0.5, 0.5)
+        text str(persistent.shoot_highscore):
+            align (0.5, 0.5)
+            style "highscore_text"
+    vbox:
+        align (0.04,0.02)
+        spacing 20
+        hbox:
+            text "SCORE : " style "score_text"
+            text str(shooter_game.kills) style "score_text"
+        hbox:
+            text "COMBO " style "combo_text"
+            text str(shooter_game.combo_kills) style "combo_text"
+
+
+style shooter_text:
+    font "ARCADE_N.ttf"
+    size 40
+    color "#f6a330"
+    outlines [ (3, "#ffffff", 0, 0) ]
+    bold True
+
+style score_text:
+    font "ARCADE_N.ttf"
+    size 25
+    color "#df6507"
+    outlines [ (2, "#ecdda8", 0, 0) ]
+
+style combo_text:
+    font "ARCADE_N.ttf"
+    size 25
+    color "#227114"
+    outlines [ (2, "#c2f09a", 0, 0) ]
+
+style highscore_text:
+    font "ARCADE_N.ttf"
+    size 40
+    color "#ed412e"
+    outlines [ (4, "#efe66c", 0, 0) ]
+
+style exitshooter_text:
+    font "ARCADE_N.ttf"
+    size 40
+    color "#ef3232"
+    outlines [ (3, "#84260f", 0, 0) ]
 
 style shooter_button:
     background Frame("shooting_shooter_frame", 6,6) padding (20,20)
+    outlines [ (8, "#ffffff", 0, 0) ]
 
 screen shooter_bullets(x,y,z,tag):
     add "shooting_ammo_effect" pos x,y anchor .5,.5 at zoom(.1, True)
     timer 1 repeat True action Hide(tag)
 
-label shooter_example:
+label shooting_game_center:
     $ default_mouse = "shooter"
 
     show shooting_bg at truecenter:
         zoom 1.25 ypos 605
-    $ quick_menu = False
+    play music arcade_bgm loop volume 0.75
     call screen shooter
-    $ quick_menu = True
-
-    # jump act1_1_shot_1
+    jump act2_3_shot_3
