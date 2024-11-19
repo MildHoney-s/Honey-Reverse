@@ -16,7 +16,6 @@ init python:
         def __init__(self, layers, moles):
             self.layers = layers
             self.moles = moles
-
             self.shaking = False
             self.last = []
             self.popped = 0
@@ -27,15 +26,15 @@ init python:
             self.speed = 1.2  # Initial mole pop-up interval
             self.running = False  # Whether the game is running
             self.score = 0  # Current score
-            self.highest_score = persistent.mole_highscore # Highest score
+            # self.highest_score = persistent.mole_highscore # Highest score
 
         def whack(self, mole):
             if self.running:
                 mole.yo = 500
                 self.whacked += 1
                 self.score += 10  # Increase score by 10 for each successful whack
-                if self.score > self.highest_score:
-                    self.highest_score = self.score
+                if self.score > persistent.mole_highscore:
+                    persistent.mole_highscore = self.score
                 renpy.play("minigames/mole/whack.ogg", "sound")
 
         def insert_coin(self):
@@ -65,7 +64,6 @@ init python:
             # Decrease the timer
             self.time_remaining -= 1
             if self.time_remaining <= 0:
-                persistent.mole_highscore = self.highest_score
                 self.time_remaining = 0
                 for i in self.layers:
                     if isinstance(i, mole) and i.yo != 500:
@@ -160,7 +158,7 @@ screen whack_a_mole(g):
         # Highest score display
         frame:
             align .61, .15 xysize 240, 80 background None
-            text "HIGH SCORE \n      {}".format(g.highest_score) align .5, .5 size 30 color "#ff0"
+            text "HIGH SCORE \n      {}".format(persistent.mole_highscore) align .5, .5 size 30 color "#ff0"
 
         # Show "Click to Play" or Insert Coin
         if not g.running:
@@ -227,5 +225,7 @@ default whack_1 = whack_a_mole_game(
 
 label whack_a_mole_game_center:
     play music arcade_bgm loop volume 0.75
+    $ quick_menu = False
     call screen whack_a_mole(whack_1)
+    $ quick_menu = True
     jump act2_3_shot_2

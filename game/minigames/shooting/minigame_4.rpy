@@ -19,8 +19,8 @@ init python:
             return renpy.Render(0, 0)
 
     class shooter_enemy(renpy.Displayable):
-        def __init__(self, images, x, y, z, ):
-            super(renpy.Displayable,self).__init__()
+        def __init__(self, images, x, y, z):
+            super(renpy.Displayable, self).__init__()
             self.image = random.choice(images)
             self.x = x
             self.y = y
@@ -45,10 +45,10 @@ init python:
             else:
                 self.yzoom = 1
             self.time += 1
-            if self.image == "shooting_villager" and self.time > 120:
+            if self.image == "shooting_villager" and self.time > 300:
                 self.change("hidden")
             elif self.stat == "_idle":
-                if self.time > 100 and self.image != "shooting_villager":
+                if self.time > 300 and self.image != "shooting_villager":
                     self.shoot()
             elif self.time > 100 and self.stat == "_shooting":
                 self.change("_idle")
@@ -100,7 +100,6 @@ init python:
         def restart(self):
             if store.money >= 0:
                 store.money -= 10
-
                 self.kills = 0
                 self.health = 5
                 self.bullets = 8
@@ -188,7 +187,6 @@ init python:
                 renpy.play("minigames/shooting/reload.ogg", "sound")
                 self.bullets = 8
 
-
 screen shooter():
     modal True
     style_prefix "shooter"
@@ -199,7 +197,6 @@ screen shooter():
         [["shooting_thief", "shooting_villager"], 1230, 950, .25],
         [["shooting_thief", "shooting_villager"], 960, 575, .125],
     ])
-
 
     button:
         background None
@@ -280,7 +277,6 @@ screen shooter():
             text "COMBO " style "combo_text"
             text str(shooter_game.combo_kills) style "combo_text"
 
-
 style shooter_text:
     font "ARCADE_N.ttf"
     size 40
@@ -322,9 +318,11 @@ screen shooter_bullets(x,y,z,tag):
 
 label shooting_game_center:
     $ default_mouse = "shooter"
-
+    $ quick_menu = False
     show shooting_bg at truecenter:
         zoom 1.25 ypos 605
     play music arcade_bgm loop volume 0.75
     call screen shooter
+    $ default_mouse = ""
+    $ quick_menu = True
     jump act2_3_shot_3

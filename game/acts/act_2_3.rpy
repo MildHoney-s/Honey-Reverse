@@ -394,6 +394,7 @@ label act2_3_shot_3:
     mild "พี่แพนนน" # Emote ประกาย
     pov "เอาล่ะนะ!"
     # เข้าเกม คีบตุ๊กตา
+
 label act2_3_shot_4:
     scene bg17
     show mild unhood_blushed at mildunhood_close
