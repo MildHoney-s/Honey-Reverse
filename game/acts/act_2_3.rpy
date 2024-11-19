@@ -349,7 +349,10 @@ label act2_3_shot_1:
     show mild unhood_smile at leftposmild
     with dissolve
     mild "จะ จะลองดูนะคะ"
-    # เข้าเกม ทุบตุ่น
+    
+    jump whack_a_mole_game_center
+
+label act2_3_shot_2:
     scene bg19
     show mild unhood_idle1 at leftposmild
     with fade
@@ -368,6 +371,7 @@ label act2_3_shot_1:
     with dissolve
     mild "ค่า!"
     # เข้าเกม ยิงโจร
+label act2_3_shot_3:
     scene bg19
     show mild unhood_smile at leftposmild
     with fade
@@ -388,6 +392,7 @@ label act2_3_shot_1:
     mild "พี่แพนนน" # Emote ประกาย
     pov "เอาล่ะนะ!"
     # เข้าเกม คีบตุ๊กตา
+label act2_3_shot_4:
     scene bg17
     show mild unhood_blushed at mildunhood_close
     with fade

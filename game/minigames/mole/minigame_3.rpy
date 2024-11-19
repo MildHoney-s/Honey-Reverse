@@ -1,3 +1,5 @@
+default persistent.mole_highscore = 120
+
 init python:
     import renpy.store as store
 
@@ -25,7 +27,7 @@ init python:
             self.speed = 1.2  # Initial mole pop-up interval
             self.running = False  # Whether the game is running
             self.score = 0  # Current score
-            self.highest_score = 200  # Highest score
+            self.highest_score = persistent.mole_highscore # Highest score
 
         def whack(self, mole):
             if self.running:
@@ -63,6 +65,7 @@ init python:
             # Decrease the timer
             self.time_remaining -= 1
             if self.time_remaining <= 0:
+                persistent.mole_highscore = self.highest_score
                 self.time_remaining = 0
                 for i in self.layers:
                     if isinstance(i, mole) and i.yo != 500:
@@ -223,6 +226,6 @@ default whack_1 = whack_a_mole_game(
 )
 
 label whack_a_mole_game_center:
-    play music arcade_bgm
+    play music arcade_bgm loop volume 0.75
     call screen whack_a_mole(whack_1)
     jump act2_3_shot_2
