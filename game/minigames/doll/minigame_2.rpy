@@ -1,295 +1,253 @@
+image doll1 = Transform("images/minigames/dolls/bluebell.png",zoom=.25)
+image doll2 = Transform("images/minigames/dolls/cubie.png",zoom=.25)
+image doll3 = Transform("images/minigames/dolls/dustirian.png",zoom=.25)
+image doll4 = Transform("images/minigames/dolls/honey.png",zoom=.25)
+image doll5 = Transform("images/minigames/dolls/manta.png",zoom=.25)
+image doll6 = Transform("images/minigames/dolls/huangyang.png",zoom=.25)
+image P_pan = Transform("images/minigames/dolls/p_pan.png",zoom=.25)
+image claw = Transform("images/minigames/dolls/doll_claw.png",zoom=.75)
+
 init python:
     import random
     import time
     random.seed(time.time())
-    def get_pixel(image, x, y):
-        img = renpy.load_surface(image)
-        return img.get_at((x, y))
 
-    class doll_bar(renpy.Displayable):
+    def is_within_rectangle(x, y, rect):
+        """Check if point (x, y) is within the specified rectangle."""
+        x1, y1, x2, y2 = rect
+        return x1 <= x <= x2 and y1 <= y <= y2
+
+
+    class Doll:
+        def __init__(self, x, y, image):
+            self.x = x
+            self.y = y
+            self.image = image
+
+        def reset(self, x, y):
+            """Reset the doll's position."""
+            self.x = x
+            self.y = y
+
+        def get_scaled_image(self):
+            """Return the scaled image (load lazily)."""
+            return self.image
+
+        def contains(self, x, y):
+            """Check if a point (x, y) is inside the doll's bounds."""
+            return self.x + 160 <= x <= self.x + 320 and self.y + 130 <= y <= self.y + 382
+
+
+    class DollBar(renpy.Displayable):
         def __init__(self, image):
-            super(renpy.Displayable,self).__init__()
+            super().__init__()
             self.image = image
             self.x = 0
             self.y = 0
             self.x_direction = 8
-            self.y_direction = 8
+            self.y_direction = 8  # Negative to move upward
             self.x_moving = False
             self.y_moving = False
-            self.limit = 450
+            self.limit_x = 1360  # Horizontal limit
+            self.limit_y = 640# Vertical limit for upward movement
             self.speed = 8
 
-        def render(self,width,height,st,at):
-            if self.y > self.limit:
-                self.y_direction = -self.speed
-            elif self.y < -self.limit:
-                self.y_direction = self.speed
+        def render(self, width, height, st, at):
+            """Render the DollBar and handle movement."""
 
-            if self.x > self.limit:
-                self.x_direction = -self.speed
-            elif self.x < -self.limit:
-                self.x_direction = self.speed
-            if self.y_moving:
-                self.y += self.y_direction
+            # Handle horizontal movement boundaries
+            if self.x > self.limit_x or self.x < 0:
+                self.x_direction = -self.x_direction
+
+            # Handle vertical movement boundaries (reverse if at top or bottom)
+            if self.y < 0 or self.y > self.limit_y:  # Adjust for vertical limits
+                self.y_direction = -self.y_direction
+
+            # Move the DollBar if needed
             if self.x_moving:
                 self.x += self.x_direction
+            if self.y_moving:
+                self.y += self.y_direction
 
+            # Apply transformation and render
             t = Transform(self.image, xanchor=0.5, yanchor=0.5)
             child_render = renpy.render(t, width, height, st, at)
-            cw, ch = child_render.get_size()
-
-            rv = renpy.Render(cw, ch)
+            rv = renpy.Render(*child_render.get_size())
             rv.blit(child_render, (self.x, self.y))
 
             renpy.redraw(self, 0)
             return rv
 
-    class doll_player:
-        def __init__(self, name, image, doll, doll_butt, indicator):
-            self.name = name
-            self.image = image
-            self.doll = doll
-            self.doll_butt = doll_butt
-            self.indicator = indicator
-            self.target = 0
-            self.history = []
-            self.current = []
-            self.playing = True
-            self.holding = None
 
-        def pick(self, doll):
-            if not self.playing:
-                return
-            if self.holding:
-                return
-            play_one("minigames/doll/take.ogg")
-            self.holding = doll
-            self.doll.remove(doll)
 
-        def take(self, doll):
-            if self.playing:
-                return
-            play_one("minigames/doll/take.ogg")
-            self.doll.append(doll)
-            Hide(doll)()
+    class doll_game:
+        def __init__(self, player_name):
+            self.player_name = player_name
+            self.coin = 0
+            self.attempts_left = 3
+            self.running = False
+            self.winner = False
+            self.collected_doll = None  # Track the collected doll
 
-    class doll_class:
-        def __init__(self, target, players):
-            self.target = 301
-            self.players = players
-            self.bottom_arrow = doll_bar("doll_bottom_arrow")
-            self.side_arrow = doll_bar("doll_side_arrow")
-            self.bottom_arrow.y = 450
-            self.side_arrow.x = -450
-            self.current_player = None
-            self.winner = None
-            self.stat = "waiting"
-            self.tries = 0
+            # Initialize dolls with random positions and types only once when starting the screen
+            self.dolls = []  # Initially empty
 
-        def next(self):
-            if len(self.current_player.doll) < 3:
-                renpy.notify("Pick up your doll, will ya?")
-                return
-            self.players.append(self.current_player)
-            self.current_player = self.players.pop(0)
-            self.current_player.playing = True
+            # Initialize arrows
+            self.claw = DollBar("claw")
+            self.reset_game()
+
+        def generate_dolls(self):
+            """Generates dolls, ensuring 'P_pan' is included and randomly placed."""
+            fixed_positions = [
+                (25, 25), (1315, 25), (236, 25), (1315, 562),  # Corners
+                (657, 25), (657, 552), (25, 293), (1315, 293),  # Middle points on sides
+                (300, 333), (399, 25), (850, 225), (670, 289),  # Random points
+                (1120, 25), (200, 186), (448, 511), (1100, 550), (300, 550),
+                (800, 500), (1100, 300), (565, 200), (1050, 150), (800, 25),  # Random points
+            ]
+
+            # List of other doll types
+            available_doll_types = ["doll1", "doll2", "doll3", "doll4", "doll5", "doll6"]
+
+            # Shuffle the positions
+            random.shuffle(fixed_positions)
+
+            # Randomly select a position for "P_pan"
+            p_pan_position = fixed_positions.pop()  # Remove one position for "P_pan"
+            dolls = [Doll(p_pan_position[0], p_pan_position[1], "P_pan")]
+
+            # Shuffle the other doll types to ensure variety
+            random.shuffle(available_doll_types)
+
+            # Assign remaining dolls to the positions
+            for i, position in enumerate(fixed_positions):
+                x_base, y_base = position
+                doll_type = available_doll_types[i % len(available_doll_types)]  # Loop through doll types
+
+                # Add a slight random offset within ±20 pixels for variety
+                x = x_base + random.randint(-20, 20)
+                y = y_base + random.randint(-20, 20)
+
+                dolls.append(Doll(x, y, doll_type))
+
+            return dolls
+
+
+        def reset_game(self):
+            """Reset the game state but keep the same dolls."""
+            self.coin = 0
+            self.attempts_left = 3
+            self.winner = False
+            self.claw.x = 0
+            self.claw.y = 0
+
+
+            # Only generate dolls once when the game starts
+            if not self.dolls:  # Generate dolls if they haven't been generated yet
+                self.dolls = self.generate_dolls()
+
+        def insert_coin(self):
+            """Inserts a coin."""
+            if self.coin < 3:
+                self.coin += 1
+
+        def start_game(self):
+            """Starts the game after inserting coins."""
+            if self.coin >= 3:
+                self.running = True
+                self.coin -= 3
 
         def throw(self):
-            x = self.bottom_arrow.x
-            y = self.side_arrow.y
-            pixel = get_pixel("images/minigames/dolls/doll_zones.png", x+960, y+540)
-            base = pixel[0]//10
-            multiplier = (pixel[1]//100) + 1
-            score = base*multiplier
-            if base == 21:
-                score = 25
-            elif base == 22:
-                score = 50
-            elif base == 25:
-                score = 0
-            self.current_player.current.append(score)
-            if base == 25:
-                play_one("minigames/doll/doll_1.ogg")
-                self.stick(x, y, True)
-            else:
-                play_one("minigames/doll/doll_2.ogg", "minigames/doll/doll_3.ogg", "minigames/doll/doll_4.ogg")
-                self.stick(x, y)
+            """Throws the arrow and checks for collision."""
+            if self.attempts_left <= 0 or self.winner:
+                return
 
-        def stick(self, x, y, bounce = False):
-            r = random.randint(0,180)
-            tag = self.current_player.holding
-            if bounce:
-                Show("doll_doll_screen", x = x, y = y, r = r, tag = tag, g = self, _tag = tag, bounce = self.current_player.holding)()
-            else:
-                Show("doll_doll_screen", x = x, y = y, r = r, tag = tag, g = self, _tag = tag)()
+            x = self.claw.x + 189
+            y = self.claw.y + 180
 
-            self.current_player.holding = None
-            if len(self.current_player.doll) < 1:
-                self.current_player.playing = False
-                Show("doll_checker", g = self)()
+            # Check collision with dolls
+            for doll in self.dolls:
+                if doll.contains(x, y):
+                    self.collected_doll = doll
+                    self.dolls.remove(doll)  # Remove the collected doll
+                    if doll.image == "P_pan":
+                        self.winner = True
+                    break
 
-        def check_for_win(self):
-            self.current_player.target -= sum(self.current_player.current)
-            if self.current_player.target < 0:
-                self.winner = self.current_player
-            else:
-                self.current_player.current = []
-
-        def test(self):
-            x,y = renpy.get_mouse_pos()
-            pixel = get_pixel("images/minigames/dolls/doll_zones.png", x, y)
-            base = pixel[0]//10
-            renpy.notify(base)
+            self.attempts_left -= 1
+            self.claw.x = 0  # Reset bottom arrow position
+            self.claw.y = 0
 
         def clicked(self):
-            if not self.current_player.holding:
-                return
-            if self.bottom_arrow.x_moving:
-                self.bottom_arrow.x_moving = False
-                self.side_arrow.y_moving = True
-            elif self.side_arrow.y_moving:
-                self.side_arrow.y_moving = False
+            """Handles the arrow movement and throwing."""
+            if self.claw.x_moving:
+                self.claw.x_moving = False
+                self.claw.y_moving = True
+            elif self.claw.y_moving:
+                self.claw.y_moving = False
                 self.throw()
             else:
-                self.bottom_arrow.x_moving = True
-
-        def start(self):
-            for i in self.players:
-                i.target = self.target
-                i.history = []
-                i.current = []
-                i.playing = True
-                i.holding = None
-            self.current_player = self.players.pop(0)
-            self.winner = None
-            self.stat = "playing"
-
-init:
-    image orange_doll_1 = "orange_doll"
-    image orange_doll_2 = "orange_doll"
-    image orange_doll_3 = "orange_doll"
-
-    image green_doll_1 = "green_doll"
-    image green_doll_2 = "green_doll"
-    image green_doll_3 = "green_doll"
-
-transform doll_doll_animation(x,y,r):
-    xoffset random.randint(0,100)
-    yoffset random.randint(400,500)
-    rotate 0
-    zoom 3
-    parallel:
-        ease_circ .2 xoffset x yoffset y zoom 1
-    parallel:
-        linear .2 rotate r
-
-transform doll_bounce_animation(x,y):
-    alpha 0
-    pause .2
-    alpha 1
-    xoffset 0 yoffset 0
-    ease .2 xoffset random.randint(-100,100) yoffset 1200 rotate random.randint(300,500)
-
-screen doll_checker(g):
-    timer 3 action Function(g.check_for_win), Hide("doll_checker")
-
-screen doll_indicator_screen(x, tag, g, img):
-    button:
-        align .5,1.0 xoffset x
-        add g.current_player.indicator
-        action Function(g.current_player.take, tag)
-
-screen bounced_doll_screen(x, y, tag, g, img):
-    timer .4 action Show("doll_indicator_screen", x = x, tag = tag, g = g, img = img, _tag = tag)
-    button:
-        align .5,.5 offset x,y at doll_bounce_animation(x, y)
-        add tag
-        action Function(g.current_player.take, tag)
-    text tag yoffset 100
-
-screen doll_doll_screen(x, y, r, tag, g, bounce = None):
-    if bounce:
-        timer .2 action Show("bounced_doll_screen", x = x, y = y, tag = tag, g = g, img = bounce, _tag = tag)
-
-    button:
-        align .5,.5 at doll_doll_animation(x, y, r)
-        add g.current_player.doll_butt
-        action Function(g.current_player.take, tag)
+                self.claw.x_moving = True
 
 screen doll_screen():
+    default game = doll_game("Player 1")
+
     modal True
-    default g = doll_class(
-            301,
-            [
-                doll_player(
-                    "June",
-                    "doll_june",
-                    ["orange_doll_1", "orange_doll_2", "orange_doll_3"],
-                    "orange_doll_butt",
-                    "orange_doll_indicator"
-                ),
-                doll_player(
-                    "Debbie",
-                    "doll_debbie",
-                    ["green_doll_1", "green_doll_2", "green_doll_3"],
-                    "green_doll_butt",
-                    "green_doll_indicator"
-                )
-            ]
-        )
 
-    add g.bottom_arrow align .5,.5
-    add g.side_arrow align .5,.5
-
-    button:
-        action Function(g.clicked)
-    fixed:
-        xysize 430,73 align 1.0,1.0 offset -40,-100
-        hbox:
-            align .5,.5 spacing 20 yoffset -40
-            if g.current_player:
-                for i in g.current_player.doll:
-                    button:
-                        add i
-                        action Function(g.current_player.pick, i)
-        add "doll_holder":
-            align .5,.5
-        if g.current_player:
-            if not g.current_player.playing:
-                button:
-                    align .5,.5
-                    text "Next"
-                    action Function(g.next)
-    if g.current_player:
+    if not game.running:
         vbox:
-            offset 40,40
-            add g.current_player.image
-            text g.current_player.name
-            text "[g.current_player.target]"
-            hbox:
-                text "[g.current_player.current]"
-
-    if g.stat == "waiting":
-        frame:
-            align .5,.5 background "#000d" padding 40,40
-            vbox:
-                text "Are you ready?"
+            align .5, .1
+            text "Insert Coins: [game.coin]/3"
+            if game.coin < 3:
                 button:
-                    align .5,.5 background "#000d" padding 20,20
-                    text "Start"
-                    action Function(g.start)
-
-    if g.winner:
-        frame:
-            align .5,.5 background "#000d" padding 40,40
-            vbox:
-                text "Great job!"
+                    text "Insert Coin"
+                    action Function(game.insert_coin)
+            else:
                 button:
-                    align .5,.5 background "#000d" padding 20,20
-                    text "Next"
-                    action Return(g.winner)
+                    text "Start Game"
+                    action Function(game.start_game)
+        for doll in game.dolls:
+            add doll.get_scaled_image() xpos doll.x ypos doll.y
+
+    if game.running:
+        for doll in game.dolls:
+            add doll.get_scaled_image() xpos doll.x ypos doll.y
+
+        # Draw the arrows
+        add game.claw align 0.0, 0.0
+
+        vbox:
+            align .5, .1
+            text "[game.player_name]: [game.attempts_left] attempts left"
+            if game.winner:
+                text "ได้พี่แพนแล้ว!" color "#00ff00"
+            elif game.attempts_left <= 0:
+                text "เอาใหม่ๆยังไม่ได้พี่แพนเลย" color "#ff0000"
+            else:
+                text "คีบพี่แพนไปให้มายด์สิ" color "#ff9900"
+
+    # Bind space key for throwing action
+    if game.running and not (game.attempts_left <= 0 or game.winner):
+        key "K_SPACE" action Function(game.clicked)
+
+    if game.attempts_left <= 0 or game.winner:
+        vbox:
+            align .5, .5
+            if game.winner:
+                button:
+                    text "EXIT"
+                    action Return()
+            else:
+                button:
+                    text "RETRY"
+                    action Function(game.reset_game)
+
 
 label doll_game_center:
-    scene black
-    show doll_board with dissolve
+    scene doll_bg
+    play music arcade_bgm
+    $ quick_menu = False
     call screen doll_screen
+    $ povname = "test"
+    $ quick_menu = True
+    jump act2_3_shot_4

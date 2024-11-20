@@ -83,6 +83,7 @@ label start:
     #$ _skipping = False
     #$ config.rollback_enabled = False
     # $ persistent.gameclear = True
+    #jump doll_game_center
     jump act1_1_shot_1
     # $ povname = "Test"
     # $ money = 100
