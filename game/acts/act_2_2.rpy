@@ -107,7 +107,9 @@ label act2_2_shot_1:
     with fade
     stop music
     centered "ก่อนจะเข้าสู่สเตจ ขอเชิญ Mild-R ที่กลางจอ เพื่อเข้าสู่การแสดงในลำดับต่อไป ขอบพระคุณ"
+    $ _game_menu_screen = None
     play movie "Bang Pho.webm"
+    $ _game_menu_screen = "save"
     $ renpy.pause(26, hard=True)
     scene black
     with fade
@@ -187,7 +189,9 @@ label act2_2_shot_1:
     with dissolve
     tsuru "วันนี้ซึรุ มีของขวัญสุดพิเศษ มาฝากพี่ๆ ทุกคนล่ะอ๊บ ช่วยรับฟังด้วยนะ อ๊บอ๊บ"
     play music idol_bgm fadein 0.5
+    $ _game_menu_screen = None
     play movie "Tsuru Dance.webm"
+    $ _game_menu_screen = "save"
     $ renpy.block_rollback()
     $ renpy.pause(27, hard=True)
     scene black

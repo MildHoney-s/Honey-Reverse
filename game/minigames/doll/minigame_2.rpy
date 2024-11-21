@@ -135,6 +135,7 @@ init python:
 
         def reset_game(self):
             """Reset the game state but keep the same dolls."""
+            self.running = False
             self.coin = 0
             self.attempts_left = 3
             self.winner = False
@@ -149,7 +150,7 @@ init python:
         def insert_coin(self):
             """Inserts a coin."""
             if self.coin < 3:
-                self.coin += 1
+                self.coin += 3
 
         def start_game(self):
             """Starts the game after inserting coins."""
@@ -195,19 +196,27 @@ screen doll_screen():
     modal True
 
     if not game.running:
+        for doll in game.dolls:
+            add doll.get_scaled_image() xpos doll.x ypos doll.y
         vbox:
-            align .5, .1
-            text "Insert Coins: [game.coin]/3"
+            align .5, .5
             if game.coin < 3:
                 button:
-                    text "Insert Coin"
+                    background "#006"
+                    insensitive_background "#eae4e4"
+                    hover_background "#00a"
+                    padding 20,20
+                    text "Use 3 coins to START" color "#ed3d89"
                     action Function(game.insert_coin)
             else:
                 button:
-                    text "Start Game"
+                    background "#006"
+                    insensitive_background "#eae4e4"
+                    hover_background "#00a"
+                    padding 20,20
+                    text "START GAME" color "#36d559"
                     action Function(game.start_game)
-        for doll in game.dolls:
-            add doll.get_scaled_image() xpos doll.x ypos doll.y
+
 
     if game.running:
         for doll in game.dolls:
@@ -217,30 +226,28 @@ screen doll_screen():
         add game.claw align 0.0, 0.0
 
         vbox:
-            align .5, .1
-            text "[game.player_name]: [game.attempts_left] attempts left"
-            if game.winner:
-                text "ได้พี่แพนแล้ว!" color "#00ff00"
-            elif game.attempts_left <= 0:
-                text "เอาใหม่ๆยังไม่ได้พี่แพนเลย" color "#ff0000"
+            align .5, .025
+            text "[game.attempts_left]/3" align (0.5,0.5)
+            if game.attempts_left <= 0:
+                text "เอาใหม่ๆยังไม่ได้พี่แพนเลย" color "#f81528"
             else:
-                text "คีบพี่แพนไปให้มายด์สิ" color "#ff9900"
+                text "คีบพี่แพนไปให้มายด์สิ" color "#4bccdb"
 
     # Bind space key for throwing action
     if game.running and not (game.attempts_left <= 0 or game.winner):
         key "K_SPACE" action Function(game.clicked)
-
-    if game.attempts_left <= 0 or game.winner:
+    if game.attempts_left <= 0:
         vbox:
             align .5, .5
-            if game.winner:
-                button:
-                    text "EXIT"
-                    action Return()
-            else:
-                button:
-                    text "RETRY"
-                    action Function(game.reset_game)
+            button:
+                background "#006"
+                insensitive_background "#eae4e4"
+                hover_background "#00a"
+                padding 20,20
+                text "RETRY" color "#ac0303"
+                action Function(game.reset_game)
+    elif game.winner:
+        timer 0.05 action Return()
 
 
 label doll_game_center:

@@ -52,10 +52,12 @@ label act1_1_shot_2:
     show ashy_sd_1 at truecenter:
         zoom 0.6
     with dissolve
-
+    $ _game_menu_screen = None
+    $ renpy.block_rollback()
     play movie "ASH rap.webm"
     $ renpy.pause(15, hard=True)
     $ renpy.block_rollback()
+    $ _game_menu_screen = "save"
     hide ashy_sd_1
     show ashy_sd_2 at truecenter:
         zoom 0.6
@@ -143,9 +145,13 @@ label act1_1_shot_2:
     manager "เดี๋ยวก่อนเผลอแปปเดียวทำไมคนมาเยอะขนาดนั้นล่ะ!"
     manager "หยุดก่อน หยุดก่อนนนนนน"
     manager "(ถึงแม้ตัวฉันจะพยายามห้ามผู้คนที่มารุมล้อมเท่าไหร่ ก็ไม่สามารถเข้าไปช่วยเหลือได้)"
-    customer "สวัสดีครับคนน่ารัก น่ารักจังเลย"
-    customer "น่ารักมาก น่ารักที่สุดเลย"
-    customer "ทำงานที่นี่หรอครับ เลิกงานกี่โมงสนใจไปทานข้าว"
+    stop sound
+    $ _game_menu_screen = None
+    $ renpy.block_rollback()
+    play movie "Ami crowded.webm"
+    $ renpy.pause(18, hard=True)
+    $ renpy.block_rollback()
+    $ _game_menu_screen = "save"
     hide ami_sd_2
     show ami_sd_3 at truecenter:
         crop (0,0,1920,1080)

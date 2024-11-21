@@ -411,6 +411,7 @@ label act1_2_shot_7:
     debirun "งั้นพี่มายด์ ดูนี่ๆ"
     scene black with dissolve
     stop music
+    $ _game_menu_screen = None
     $ quick_menu = False
     play movie "frog.webm"
     $ renpy.block_rollback()
@@ -421,6 +422,7 @@ label act1_2_shot_7:
     $ renpy.pause(36, hard=True)
     $ quick_menu = True
     $ renpy.block_rollback()
+    $ _game_menu_screen = "save"
     stop music
     scene bg2night with fade
     play music night_bgm loop fadein 0.5 fadeout 1.0

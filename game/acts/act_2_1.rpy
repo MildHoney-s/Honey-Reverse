@@ -140,8 +140,10 @@ label act2_1_shot_5:
     centered "{=centered_text}และทั้งคู่ก็กินข้าวอย่างเป็นสุขชั่วนิรันดร์{/centered_text}"
     centered "{=centered_text}อวสาน{/centered_text}"
     centered "{=centered_text}thank you for plaping{/centered_text}"
+    $ _game_menu_screen = None
     play movie "meme.webm"
     $ renpy.block_rollback()
+    $ _game_menu_screen = "save"
     pause 25
 
     jump act2_1_shot_6
@@ -286,11 +288,15 @@ label act2_1_shot_8:
     mild "ค่ะ…"
     scene bg2day
     window hide
+    $ _game_menu_screen = None
+    $ quick_meneu = False
     show gacha_movie
     stop music fadeout 0.5
     show phone at truecenter:
         zoom 3.2
     $ renpy.pause(39, hard=True)
+    $ quick_menu = True
+    $ _game_menu_screen = "save"
     scene bg2day:
         crop (100,200,1480,720)
         size (1920, 1080)
