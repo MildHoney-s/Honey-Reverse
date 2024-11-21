@@ -1,5 +1,9 @@
 label act2_2_shot_1:
-    # - หลังจากเล่นมินิเกมบริหารร้าน -
+    $ quick_menu = False
+    play music minigame1_bgm loop fadein 1.0
+    call screen minigame_1(minigame1_act2_2)
+    $ renpy.block_rollback()
+    $ quick_menu = True
     play sound door_sfx fadein 0.25 volume 0.45
     scene bg2day
     play music pixfia_bgm loop fadein 1.5

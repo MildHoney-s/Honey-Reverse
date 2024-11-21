@@ -231,7 +231,7 @@ screen doll_screen():
             if game.attempts_left <= 0:
                 text "เอาใหม่ๆยังไม่ได้พี่แพนเลย" color "#f81528"
             else:
-                text "คีบพี่แพนไปให้มายด์สิ" color "#4bccdb"
+                text "คีบพี่แพนไปให้มายด์สิ" color "#2709cf"
 
     # Bind space key for throwing action
     if game.running and not (game.attempts_left <= 0 or game.winner):

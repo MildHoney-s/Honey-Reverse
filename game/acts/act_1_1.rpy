@@ -630,7 +630,7 @@ label act1_1_shot_5:
 label act1_1_shot_6:
     $ quick_menu = False
     play music minigame1_bgm loop fadein 1.0
-    call screen minigame_1(minigame1_act1_1)
+    call screen minigame_1(minigame1_act1_1,force_lose = True)
     $ renpy.block_rollback()
     $ quick_menu = True
 
@@ -763,6 +763,11 @@ label act1_1_shot_6:
     hide mild maid_idle1 with easeoutleft
     "หลังจากมายด์เสิร์ฟลูกค้าโต๊ะนี้ มายด์ไม่รู้เลยว่าตัวเองได้มีแฟนคลับไปซะแล้ว"
     stop music fadeout 0.5
+    $ quick_menu = False
+    play music minigame2_bgm loop fadein 1.0
+    call screen minigame_1(minigame1_act1_1_2)
+    $ renpy.block_rollback()
+    $ quick_menu = True
     scene black
     with dissolve
     centered "{=centered_text}แล้วเวลาก็ล่วงเลยผ่านไปจนกระทั่งถึงเวลาปิดร้าน{/centered_text}"

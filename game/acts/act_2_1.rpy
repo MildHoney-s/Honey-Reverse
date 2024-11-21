@@ -1,5 +1,4 @@
 label act2_1_shot_1:
-    # - หลังจากเล่นมินิเกมบริหารร้าน -
     scene bg2day
     with fade
     stop music fadeout 1.5

@@ -28,6 +28,7 @@ init python:
             self.maid = None
             self.stat = "idle"
             self.selected_stat = None
+            self.wait_counter = 0
 
     # Game Handler
     class cafe_handler:
@@ -93,19 +94,19 @@ init python:
             maid_stat_value = maid.stats.get(client_stat_name, 0)
             if "_angry" in client.image:
                 client.image = client.image[:-6]
+            if "_idle" in client.image:
+                client.image = client.image[:-5]
+            if "_happy" in client.image:
+                client.image = client.image[:-6]
             if maid_stat_value >= client_required_value:
-                if "_idle" in client.image:
-                    client.image = client.image[:-5]
                 if client.stat != "waiting":
                     client.image = "{}_happy".format(client.image)
-                    return random.randint(30, 40)
+                    return random.randint(20, 25)
                 client.image = "{}_happy".format(client.image)
             else:
-                if "_happy" in client.image:
-                    client.image = client.image[:-6]
                 if client.stat != "waiting":
                     client.image = "{}_idle".format(client.image)
-                    return random.randint(15, 25)
+                    return random.randint(15, 20)
                 client.image = "{}_idle".format(client.image)
 
         def clicked_out(self):
@@ -134,7 +135,7 @@ init python:
                 if key == client.selected_stat[0]:
                     maid_stat_value = client.maid.stats[key]
                     client_stat_value = client.selected_stat[1]
-                    gain_amount = 11 if maid_stat_value >= client_stat_value else 7
+                    gain_amount = 6 if maid_stat_value >= client_stat_value else 3
                     renpy.play("minigames/cafe/bubble_7.ogg", "sound")
                     spawn_stamina(client.x, client.y, gain_amount, self)
 
@@ -194,12 +195,17 @@ init python:
                         client.stat = "waiting"
                 elif client.stat == "waiting":
                     client.waiting_duration -= 1
+                    client.wait_counter += 1
                     if client.waiting_duration <= 0:
                         if "_idle" in client.image:
                             client.image = client.image[:-5]
                         if "_happy" in client.image:
                             client.image = client.image[:-6]
                         client.stat = "idle"  # Set to idle when waiting time runs out
+                        self.release_slot(client)
+                    if client.wait_counter >= 10:
+                        client.stat = "idle"  # Set to idle when waiting time runs out
+                        self.clients_left_count += 1
                         self.release_slot(client)
 
             self.regenerate_stamina_for_bench()
@@ -288,7 +294,7 @@ init python:
                     client.image = client.image[:-5]
                 if "_happy" in client.image:
                     client.image = client.image[:-6]
-                if "_angry" not in client.image:
+                if "_angry" in client.image:
                     client.image = client.image[:-6]
                 if client.stat in ["serving", "ready", "chanting", "waiting"]:
                     client.stat = "idle"
@@ -317,10 +323,10 @@ screen cafe_hire_screen(maid_list):
                                 for key,value in i.stats.items():
                                     text "[key]: [value]"
                             bar value i.stamina range 100 xysize 130,26 right_bar "cafe_empty_stamina_bar" left_bar "cafe_full_stamina_bar" align .5,.5
-                add i.image align (0.5, 0.0) xsize 156 ysize 120
+                add i.image align (0.5, 0.0) xsize 130 ysize 130
 
 image frame = Transform("images/minigames/cafe/tsuru_portrait.png",alpha=0.0)
-screen minigame_1(g):
+screen minigame_1(g,force_lose = False):
     add "images/minigames/cafe/cafe_bg.png"
     style_prefix "cafe"
 
@@ -342,7 +348,7 @@ screen minigame_1(g):
                 else:
                     add "frame1" xysize 302,161 offset 20,-30
                 vbox:
-                    xpos 26 ypos -46
+                    xpos 27 ypos -42
                     # Timer as text (in seconds) placed ABOVE the button for specific states
                     if i.stat == "waiting":
                         text "[i.waiting_duration]" size 20 color "#080808" ypos -15
@@ -384,9 +390,9 @@ screen minigame_1(g):
                     # Display client stats below the image and maid
                     vbox:
                         xalign 0.77
-                        ypos -110
+                        ypos -100
                         for stat_name, stat_value in i.stats.items():
-                            text "[stat_name]: [stat_value]" size 20 color "#080808"  # Show each stat with a label
+                            text "[stat_name]: [stat_value]" size 20 color "#FFFFFF" xalign 0.5  # Show each stat with a label
 
 
     # maid display and interaction at the bottom of the screen
@@ -396,22 +402,29 @@ screen minigame_1(g):
             vbox:
                 if g.stat != "day":
                     button:
-                        add i.image xsize 156 ysize 120
+                        add i.image xsize 130 ysize 130
                         hovered Function(g.hovered, i)
                         unhovered Function(g.unhovered)
                         action Function(g.clicked_maid, i)
                     bar value i.stamina range 100 xysize 130,26 right_bar "cafe_empty_stamina_bar" left_bar "cafe_full_stamina_bar" align .5,.5
 
     # Adjusted stamina bottle and text at the top-left
-    text str(g.stamina) size 60 align .0,.0 offset 130,10  # Adjusted position for text
-    text str(g.clients_left_count) size 60 align .0,.1 offset 130,10
+    add "cafe_corner" xysize (495,184) align .005,.01
+    add "gui/honey_revense_logo.png" xysize (180,180) align .007,.012
+    add "cafe_coin" xysize (75, 75) align .13,.015
+    add "cafe_exit" xysize (75, 75) align .13,.11
+    text str(g.stamina) size 60 align .13,.015 offset 150,10  # Adjusted position for text
+    text str(g.clients_left_count)+"/3" size 60 align .13,.11 offset 130,10
 
     # Handling the held item (maid or client)
     if g.holding:
         timer .02 repeat True action Function(g.update_holding)
-        add g.holding.image offset g.holding_pos xsize 156 ysize 120
+        add g.holding.image offset g.holding_pos xsize 130 ysize 130
 
     if g.clients_left_count >= 3:
+        if force_lose:
+            timer 0.01 action Return()
+        timer 0.01 action Function(g.end_night)
         vbox spacing -90 box_reverse True align (0.5, 0.5):
             frame:
                 add "summary" xysize (500,750) align .5,.5
@@ -424,15 +437,15 @@ screen minigame_1(g):
                     text "Client left"
                     text "[g.clients_left_count]"
                 button:
-                    align (0.5,0.75)
+                    align (0.5,0.765)
                     text "Click To Restart"
                     action [Function(g.reset),Function(g.start)]
 
     # Time bar during night state
     elif g.stat == "night":
         # bar value g.time range 90 xysize 900,10 align (0.5, 0.0) yoffset 10
-        bar value g.time range 45 xysize 150,36 right_bar "test_bar" left_bar "bar" align (0.5, 0.0) yoffset 10
-        text ("[g.time]") align (0.5, 0.05)
+        bar value g.time range 60 xysize 800,128 right_bar "test_bar" left_bar "bar" align (0.5, 0.0) yoffset 10
+        text ("[g.time]") align (0.5, 0.065) color "#ffffff"
         timer 1 repeat True action Function(g.tick)
 
     # Start screen with button to start the game
@@ -444,21 +457,26 @@ screen minigame_1(g):
 
     # Day state with Finish button
     elif g.stat == "day":
-        vbox spacing -90 box_reverse True align (0.5, 0.5):
+        vbox spacing -60 box_reverse True align (0.5, 0.5):
             frame:
                 add "summary" xysize (500,750) align .5,.5
                 hbox:
                     spacing 100
-                    align (0.5, 0.5)
+                    align (0.5, 0.45)
+                    text "Client left"
+                    text "[g.clients_left_count]"
+                hbox:
+                    spacing 100
+                    align (0.5, 0.55)
                     text "Total Recive"
                     text "[g.stamina]"
                 hbox:
                     spacing 100
-                    align (0.5, 0.6)
-                    text "Client left"
-                    text "[g.clients_left_count]"
+                    align (0.5, 0.65)
+                    text "Total Money"
+                    text "[g.stamina+money]"
                 button:
-                    align (0.5,0.75)
+                    align (0.5,0.765)
                     text "Sign Here {}".format(sign_name)
                     action [SetVariable("sign_name",povname),SetVariable("money",money + g.stamina)]
         if sign_name is povname:
@@ -469,15 +487,16 @@ screen minigame_1(g):
             frame:
                 add "status" xysize (450,675) align (1.0,0.1)
                 vbox:
-                    spacing 42
-                    align (0.86, 0.418)
+                    spacing 52
+                    align (0.86, 0.42)
                     text g.hovered_client.name color "#ffb300" size 40
                     for key,value in g.hovered_client.stats.items():
                         text "[key]: [value]"
                 add g.hovered_client.image align (0.918, 0.12) xsize 156 ysize 156
-                bar value g.hovered_client.stamina range 100 xysize 130,26 right_bar "cafe_empty_stamina_bar" left_bar "cafe_full_stamina_bar" align (0.912, 0.265)
+                #bar value g.hovered_client.stamina range 100 xysize 130,26 right_bar "cafe_empty_stamina_bar" left_bar "cafe_full_stamina_bar" align (0.912, 0.265)
 init:
     style cafe_text:
+        font "cafe.ttf"
         align (.5,.5)
     style cafe_frame:
         align (.5,.5)
@@ -490,9 +509,9 @@ init python:
     # Sample data for names and stats
     names = ["client1","client2","client3","client4"]
     default_possible_stats = {
-        "Sexy": (0, 100),
-        "Joy": (0, 100),
-        "Lovely": (0, 100),
+        "Sexy": (0, 40),
+        "Joy": (0, 40),
+        "Lovely": (0, 40),
     }
     # Sample positions following your previous example
     positions = [
@@ -535,22 +554,22 @@ init python:
 
 init:
     default tsuru_working = cafe_maid(
-        name="Tsuru",
+        name="Tsururu",
         image="tsuru_portrait",
         stats={
-            "Lovely": 25,
-            "Sexy": 17,
-            "Joy": 30,
+            "Lovely": 22,
+            "Sexy": 11,
+            "Joy": 17,
         },
-        stamina=100,
+        stamina=120,
         )
 
     default mild_working = cafe_maid(
-        name="Mild",
+        name="Mild-R",
         image="mild_portrait",
         stats={
-            "Lovely": 15,
-            "Sexy": 20,
+            "Lovely": 14,
+            "Sexy": 23,
             "Joy": 13,
         },
         stamina=120,
@@ -560,30 +579,46 @@ init:
         name="Debirun",
         image="del_portrait",
         stats={
-            "Lovely": 15,
+            "Lovely": 14,
             "Sexy": 8,
-            "Joy": 18,
+            "Joy": 28,
         },
         stamina=120,
     )
 
-    default custom_stat_ranges = {
-        "Sexy": (0, 25),         # Custom max for Love
-        "Joy": (0, 25),          # Custom max for Joy
-        "Lovely": (0, 25),    # Custom max for Lovely
+    default custom_stat_ranges_1 = {
+        "Sexy": (10, 29),         # Custom max for Sexy
+        "Joy": (16, 29),          # Custom max for Joy
+        "Lovely": (14, 29),    # Custom max for Lovely
+    }
+
+    default custom_stat_ranges_2 = {
+        "Sexy": (12, 33),         # Custom max for Sexy
+        "Joy": (18, 29),          # Custom max for Joy
+        "Lovely": (17, 33),    # Custom max for Lovely
     }
 
     default minigame1_act1_1 = cafe_handler(
-        [tsuru_working, mild_working, debirun_working],  # Fixed clients
-        generate_random_clients(4, max_stats=1, stat_ranges=custom_stat_ranges)  # Generate 1 random client with up to 2 stats
+        [tsuru_working],  # Fixed clients
+        generate_random_clients(10, max_stats=1)  # Generate 1 random client with up to 2 stats
+    )
+
+    default minigame1_act1_1_2 = cafe_handler(
+        [mild_working, tsuru_working],  # Fixed clients
+        generate_random_clients(10, max_stats=1,stat_ranges=custom_stat_ranges_1)  # Generate 1 random client with up to 3 stats (default)
     )
 
     default minigame1_act1_2_shot_3 = cafe_handler(
         [mild_working, debirun_working],  # Fixed clients
-        generate_random_clients(2, max_stats=3)  # Generate 2 random clients with up to 3 stats
+        generate_random_clients(10, max_stats=1,stat_ranges=custom_stat_ranges_2)  # Generate 2 random clients with up to 3 stats
     )
 
     default minigame1_act1_2_shot_4 = cafe_handler(
         [mild_working, tsuru_working, debirun_working],  # Fixed clients
-        generate_random_clients(4, max_stats=1)  # Generate 1 random client with up to 3 stats (default)
+        generate_random_clients(10, max_stats=1,stat_ranges=custom_stat_ranges_2)  # Generate 1 random client with up to 3 stats (default)
+    )
+
+    default minigame1_act2_2 = cafe_handler(
+        [mild_working, tsuru_working, debirun_working],  # Fixed clients
+        generate_random_clients(10, max_stats=1)  # Generate 1 random client with up to 3 stats (default)
     )

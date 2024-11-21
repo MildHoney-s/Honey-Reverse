@@ -80,12 +80,12 @@ init:
 
 # The game starts here.
 label start:
+    #$ povname = "Test"
     #$ _skipping = False
     #$ config.rollback_enabled = False
     # $ persistent.gameclear = True
     #jump doll_game_center
     jump act1_1_shot_1
-    # $ povname = "Test"
     # $ money = 100
     # jump act2_3_shot_1
     # jump whack_a_mole_game_center
