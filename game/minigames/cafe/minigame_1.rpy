@@ -3,6 +3,18 @@ init python:
     init_time = 60
     sign_name = "______"
 
+    name_colors = {
+        "Mild-R": "#afefdb",
+        "Tsururu": "#4ddbf4",
+        "Debirun": "#433ed5"
+    }
+
+    stat_colors = {
+        "Lovely": "#FF69B4",
+        "Sexy": "#DC143C",
+        "Joy": "#FFFF00"
+    }
+
     # Maid Class
     class cafe_maid:
         def __init__(self, name, image, stats, stamina):
@@ -247,7 +259,6 @@ init python:
                 if pos_client == client:
                     self.occupied_positions[i] = None
 
-
         def hovered(self, client):
             self.hovered_client = client
 
@@ -277,7 +288,6 @@ init python:
             self.spawn_timer = 0
             self.current_client = None
             self.clients_left_count = 0
-
 
         def start(self):
             self.time = init_time
@@ -394,7 +404,6 @@ screen minigame_1(g,force_lose = False):
                         for stat_name, stat_value in i.stats.items():
                             text "[stat_name]: [stat_value]" size 20 color "#FFFFFF" xalign 0.5  # Show each stat with a label
 
-
     # maid display and interaction at the bottom of the screen
     hbox:
         align (0.5, 1.0) yoffset -20
@@ -482,16 +491,18 @@ screen minigame_1(g,force_lose = False):
         if sign_name is povname:
             timer 1.2 action [SetVariable("sign_name","_____"),Return()]
 
-    if g.hovered_client and type(g.hovered_client) is cafe_maid:
+    if g.hovered_client and type(g.hovered_client) is cafe_maid and g.stat == 'night':
         vbox spacing -90 box_reverse True align (0.5, 0.5):
             frame:
                 add "status" xysize (450,675) align (1.0,0.1)
                 vbox:
                     spacing 52
                     align (0.86, 0.42)
-                    text g.hovered_client.name color "#ffb300" size 40
+                    $ name_color = name_colors.get(g.hovered_client.name, "#ffb300")
+                    text g.hovered_client.name color name_color size 40
                     for key,value in g.hovered_client.stats.items():
-                        text "[key]: [value]"
+                        $ stat_color = stat_colors.get(key, "#ffb300")
+                        text "[key]: {color=#fff}[value]{/color}" color stat_color
                 add g.hovered_client.image align (0.918, 0.12) xsize 156 ysize 156
                 #bar value g.hovered_client.stamina range 100 xysize 130,26 right_bar "cafe_empty_stamina_bar" left_bar "cafe_full_stamina_bar" align (0.912, 0.265)
 init:

@@ -17,7 +17,6 @@ init python:
         x1, y1, x2, y2 = rect
         return x1 <= x <= x2 and y1 <= y <= y2
 
-
     class Doll:
         def __init__(self, x, y, image):
             self.x = x
@@ -36,7 +35,6 @@ init python:
         def contains(self, x, y):
             """Check if a point (x, y) is inside the doll's bounds."""
             return self.x + 160 <= x <= self.x + 320 and self.y + 130 <= y <= self.y + 382
-
 
     class DollBar(renpy.Displayable):
         def __init__(self, image):
@@ -77,8 +75,6 @@ init python:
 
             renpy.redraw(self, 0)
             return rv
-
-
 
     class doll_game:
         def __init__(self, player_name):
@@ -132,7 +128,6 @@ init python:
 
             return dolls
 
-
         def reset_game(self):
             """Reset the game state but keep the same dolls."""
             self.running = False
@@ -141,7 +136,6 @@ init python:
             self.winner = False
             self.claw.x = 0
             self.claw.y = 0
-
 
             # Only generate dolls once when the game starts
             if not self.dolls:  # Generate dolls if they haven't been generated yet
@@ -217,7 +211,6 @@ screen doll_screen():
                     text "START GAME" color "#36d559"
                     action Function(game.start_game)
 
-
     if game.running:
         for doll in game.dolls:
             add doll.get_scaled_image() xpos doll.x ypos doll.y
@@ -248,7 +241,6 @@ screen doll_screen():
                 action Function(game.reset_game)
     elif game.winner:
         timer 0.05 action Return()
-
 
 label doll_game_center:
     scene doll_bg
