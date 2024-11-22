@@ -1,7 +1,7 @@
 init python:
     from copy import copy
     left_time = 10
-    init_time = 10
+    init_time = 60
     sign_name = "______"
 
     name_colors = {
