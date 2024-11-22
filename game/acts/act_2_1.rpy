@@ -140,6 +140,8 @@ label act2_1_shot_5:
     centered "{=centered_text}อวสาน{/centered_text}"
     centered "{=centered_text}thank you for plaping{/centered_text}"
     $ _game_menu_screen = None
+    stop music
+    stop sound
     play movie "meme.webm"
     $ renpy.block_rollback()
     $ _game_menu_screen = "save"

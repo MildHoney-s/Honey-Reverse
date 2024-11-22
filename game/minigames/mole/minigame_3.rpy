@@ -1,5 +1,5 @@
 default persistent.mole_highscore = 120
-
+default limit_coin_mole = False
 init python:
     import renpy.store as store
 
@@ -173,12 +173,26 @@ screen whack_a_mole(g):
 
         button:
             align .736, .17 xysize 93, 29 background "images/minigames/mole/mole_coin_acceptor.png"
-            action Function(g.insert_coin)
-
-    textbutton "RETURN":
-        text_style "tx_button"
-        align (0.0, 1.0)
-        action Return()
+            if tokens-3 >= 6 and g.coin < 3:
+                action [Function(g.insert_coin),SetVariable("tokens",tokens-1)]
+            elif tokens >= 8 and g.coin >= 1 and g.coin < 3:
+                action [Function(g.insert_coin),SetVariable("tokens",tokens-1)]
+            elif tokens >= 7 and g.coin >= 2 and g.coin < 3:
+                action [Function(g.insert_coin),SetVariable("tokens",tokens-1)]
+            elif g.coin != 3:
+                action SetVariable("limit_coin_mole",True)
+    if limit_coin_mole:
+        text "NOT ENOUGH COIN LEFT FOR THIS GAME" align(0.5, 0.5) color "#ff0000ff" outlines [ (2, "#ffffff", 0, 0) ]
+    if g.coin == 0 and not g.running:
+        textbutton "Exit":
+            text_style "tx_button"
+            align (0.0, 1.0)
+            action Return()
+    hbox:
+        spacing 25
+        align (0.975,0.025)
+        add "doll_coin" size (100,100)
+        text "{}".format(tokens) size 100 offset (0, -20) color "#abaeaeff"
 
     if g.running:
         timer g.speed repeat True action Function(g.tick)

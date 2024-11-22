@@ -98,17 +98,13 @@ init python:
                 self.shoot_cooldown -= 1
 
         def restart(self):
-            if store.money >= 0:
-                store.money -= 10
-                self.kills = 0
-                self.health = 5
-                self.bullets = 8
-                self.active_enemies = []
-                self.stat = "playing"
-                self.combo_kills = 0
-                self.spawn = self.original_spawn
-            else:
-                store.money += 10
+            self.kills = 0
+            self.health = 5
+            self.bullets = 8
+            self.active_enemies = []
+            self.stat = "playing"
+            self.combo_kills = 0
+            self.spawn = self.original_spawn
 
         def spawn(self):
             if self.stat == "dead":
@@ -242,7 +238,7 @@ screen shooter():
     elif shooter_game.stat == "dead":
         vbox:
             align .5,.5 spacing 10
-            if money > 0:
+            if tokens > 3:
                 button:
                     background "#006"
                     insensitive_background "#eae4e4"
@@ -250,7 +246,7 @@ screen shooter():
                     padding 20,20
                     align (0.5, 0.5)
                     text "Restart use 3 coins"
-                    action Function(shooter_game.restart)
+                    action [Function(shooter_game.restart),SetVariable("tokens",tokens-3)]
             button:
                 background "#006"
                 insensitive_background "#eae4e4"
@@ -276,6 +272,11 @@ screen shooter():
         hbox:
             text "COMBO " style "combo_text"
             text str(shooter_game.combo_kills) style "combo_text"
+    hbox:
+        spacing 25
+        align (0.975,0.03)
+        add "doll_coin" size (100,100)
+        text "{}".format(tokens) size 80 offset (0, 10) color "#abaeaeff"
 
 style shooter_text:
     font "ARCADE_N.ttf"

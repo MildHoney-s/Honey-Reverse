@@ -143,14 +143,14 @@ init python:
 
         def insert_coin(self):
             """Inserts a coin."""
-            if self.coin < 3:
-                self.coin += 3
+            if self.coin < 1:
+                self.coin += 1
 
         def start_game(self):
             """Starts the game after inserting coins."""
-            if self.coin >= 3:
+            if self.coin >= 1:
                 self.running = True
-                self.coin -= 3
+                self.coin -= 1
 
         def throw(self):
             """Throws the arrow and checks for collision."""
@@ -194,22 +194,31 @@ screen doll_screen():
             add doll.get_scaled_image() xpos doll.x ypos doll.y
         vbox:
             align .5, .5
-            if game.coin < 3:
+            if tokens > 0 or game.coin > 0:
+                if game.coin < 1:
+                    button:
+                        background "#006"
+                        insensitive_background "#eae4e4"
+                        hover_background "#00a"
+                        padding 20,20
+                        text "Use 1 coins to START" color "#ed3d89"
+                        action [Function(game.insert_coin),SetVariable("tokens",tokens-1)]
+                else:
+                    button:
+                        background "#006"
+                        insensitive_background "#eae4e4"
+                        hover_background "#00a"
+                        padding 20,20
+                        text "START GAME" color "#36d559"
+                        action Function(game.start_game)
+            elif not game.winner:
                 button:
                     background "#006"
                     insensitive_background "#eae4e4"
                     hover_background "#00a"
                     padding 20,20
-                    text "Use 3 coins to START" color "#ed3d89"
-                    action Function(game.insert_coin)
-            else:
-                button:
-                    background "#006"
-                    insensitive_background "#eae4e4"
-                    hover_background "#00a"
-                    padding 20,20
-                    text "START GAME" color "#36d559"
-                    action Function(game.start_game)
+                    text "กดเพื่อใช้เงินจากอนาคต" color "#fa9b17"
+                    action SetVariable("tokens",tokens+10)
 
     if game.running:
         for doll in game.dolls:
@@ -221,7 +230,7 @@ screen doll_screen():
         vbox:
             align .5, .025
             text "[game.attempts_left]/3" align (0.5,0.5)
-            if game.attempts_left <= 0:
+            if game.attempts_left <= 0 and not game.winner:
                 text "เอาใหม่ๆยังไม่ได้พี่แพนเลย" color "#f81528"
             else:
                 text "คีบพี่แพนไปให้มายด์สิ" color "#2709cf"
@@ -241,6 +250,13 @@ screen doll_screen():
                 action Function(game.reset_game)
     elif game.winner:
         timer 0.05 action Return()
+
+    hbox:
+        spacing 25
+        align (0.975,0.025)
+        add "doll_coin" size (100,100)
+        text "{}".format(tokens) size 100 offset (0, -20) color "#abaeaeff"
+
 
 label doll_game_center:
     scene doll_bg

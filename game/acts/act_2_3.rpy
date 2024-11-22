@@ -335,6 +335,7 @@ label act2_3_shot_1:
     mild "ปะ ไปไหนหรอคะ"
     pov "ฮิฮี่ ม่ายย บอกกกก"
     play music arcade_bgm loop fadein 1.0 fadeout 0.5
+    $ tokens = money//10
     scene bg19
     pov "ที่นี่ไงล่าาา"
     show mild unhood_idle2 at leftposmild

@@ -1,5 +1,6 @@
 init python:
     from copy import copy
+    left_time = 10
     init_time = 60
     sign_name = "______"
 
@@ -14,7 +15,6 @@ init python:
         "Sexy": "#DC143C",
         "Joy": "#FFFF00"
     }
-
     # Maid Class
     class cafe_maid:
         def __init__(self, name, image, stats, stamina):
@@ -31,7 +31,7 @@ init python:
             self.name = name
             self.image = image
             self.stats = stats
-            self.chant_delay = 10
+            self.chant_delay = 15
             self.chant_duration = 10
             self.serve_duration = 10
             self.stamina = stamina or random.randint(80, 100)
@@ -44,12 +44,14 @@ init python:
 
     # Game Handler
     class cafe_handler:
-        def __init__(self, maids, clients):
+        def __init__(self, maids, clients,chant_delay=15,chant_duration=10):
             self.maids = maids
             self.clients = clients
             self.hovered_client = None
             self.holding = None
             self.stat = "start"
+            self.chant_delay = chant_delay
+            self.chant_duration = chant_duration
             self.holding_pos = (-200, -200)
             self.stamina = 0
             self.time = 0
@@ -113,12 +115,12 @@ init python:
             if maid_stat_value >= client_required_value:
                 if client.stat != "waiting":
                     client.image = "{}_happy".format(client.image)
-                    return random.randint(20, 25)
+                    return random.randint(18, 25)
                 client.image = "{}_happy".format(client.image)
             else:
                 if client.stat != "waiting":
                     client.image = "{}_idle".format(client.image)
-                    return random.randint(15, 20)
+                    return random.randint(25, 30)
                 client.image = "{}_idle".format(client.image)
 
         def clicked_out(self):
@@ -215,7 +217,7 @@ init python:
                             client.image = client.image[:-6]
                         client.stat = "idle"  # Set to idle when waiting time runs out
                         self.release_slot(client)
-                    if client.wait_counter >= 10:
+                    if client.wait_counter > left_time:
                         client.stat = "idle"  # Set to idle when waiting time runs out
                         self.clients_left_count += 1
                         self.release_slot(client)
@@ -244,8 +246,8 @@ init python:
                 self.current_client = next(self.spawn_sequence)
 
             if self.current_client.stat == "idle":
-                self.current_client.chant_delay = 15
-                self.current_client.chant_duration = 10
+                self.current_client.chant_delay = self.chant_delay
+                self.current_client.chant_duration = self.chant_duration
                 self.current_client.selected_stat = key, value = random.choice(list(self.current_client.stats.items()))
                 self.current_client.stat = "ready"
                 self.current_client.x, self.current_client.y = self.spawn_positions[available_index]
@@ -258,6 +260,7 @@ init python:
             for i, pos_client in enumerate(self.occupied_positions):
                 if pos_client == client:
                     self.occupied_positions[i] = None
+
 
         def hovered(self, client):
             self.hovered_client = client
@@ -288,6 +291,7 @@ init python:
             self.spawn_timer = 0
             self.current_client = None
             self.clients_left_count = 0
+
 
         def start(self):
             self.time = init_time
@@ -361,13 +365,13 @@ screen minigame_1(g,force_lose = False):
                     xpos 27 ypos -42
                     # Timer as text (in seconds) placed ABOVE the button for specific states
                     if i.stat == "waiting":
-                        text "[i.waiting_duration]" size 20 color "#080808" ypos -15
+                        text "[i.waiting_duration]" size 20 color "#ff6200d9" ypos -15
                     elif i.stat == "chanting":
                         text "[i.chant_duration]" size 20 color "#ff0000" ypos -15
                     elif i.stat == "ready":
-                        text "[i.chant_delay]" size 20 color "#080808" ypos -15
+                        text "[i.chant_delay]" size 20 color "#fffb00f7" ypos -15
                     elif i.stat == "serving":
-                        text "[i.serve_duration]" size 20 color "#080808" ypos -15
+                        text "[i.serve_duration]" size 20 color "#ffffff" ypos -15
 
                     # Button containing client image on the left and maid (if placed) on the right
                     button:
@@ -403,6 +407,7 @@ screen minigame_1(g,force_lose = False):
                         ypos -100
                         for stat_name, stat_value in i.stats.items():
                             text "[stat_name]: [stat_value]" size 20 color "#FFFFFF" xalign 0.5  # Show each stat with a label
+
 
     # maid display and interaction at the bottom of the screen
     hbox:
@@ -461,7 +466,9 @@ screen minigame_1(g,force_lose = False):
     elif g.stat == "start":
         button:
             align (0.5, 0.5) padding 20,20 background "#e66f0ecc"
-            text "Let's start."
+            insensitive_background "#eae4e4"
+            hover_background "#e7802ccc"
+            text "Let's start." color "#eae4e4"
             action Function(g.start)
 
     # Day state with Finish button
@@ -483,7 +490,10 @@ screen minigame_1(g,force_lose = False):
                     spacing 100
                     align (0.5, 0.65)
                     text "Total Money"
-                    text "[g.stamina+money]"
+                    if sign_name is povname:
+                        text "[money]"
+                    else:
+                        text "[g.stamina+money]"
                 button:
                     align (0.5,0.765)
                     text "Sign Here {}".format(sign_name)
@@ -504,7 +514,6 @@ screen minigame_1(g,force_lose = False):
                         $ stat_color = stat_colors.get(key, "#ffb300")
                         text "[key]: {color=#fff}[value]{/color}" color stat_color
                 add g.hovered_client.image align (0.918, 0.12) xsize 156 ysize 156
-                #bar value g.hovered_client.stamina range 100 xysize 130,26 right_bar "cafe_empty_stamina_bar" left_bar "cafe_full_stamina_bar" align (0.912, 0.265)
 init:
     style cafe_text:
         font "cafe.ttf"
@@ -520,9 +529,9 @@ init python:
     # Sample data for names and stats
     names = ["client1","client2","client3","client4"]
     default_possible_stats = {
-        "Sexy": (0, 40),
-        "Joy": (0, 40),
-        "Lovely": (0, 40),
+        "Sexy": (10, 40),
+        "Joy": (10, 40),
+        "Lovely": (10, 40),
     }
     # Sample positions following your previous example
     positions = [
@@ -621,15 +630,18 @@ init:
 
     default minigame1_act1_2_shot_3 = cafe_handler(
         [mild_working, debirun_working],  # Fixed clients
-        generate_random_clients(10, max_stats=1,stat_ranges=custom_stat_ranges_2)  # Generate 2 random clients with up to 3 stats
+        generate_random_clients(10, max_stats=1,stat_ranges=custom_stat_ranges_1),  # Generate 2 random clients with up to 3 stats
+        chant_delay = 10,chant_duration=5
     )
 
     default minigame1_act1_2_shot_4 = cafe_handler(
         [mild_working, tsuru_working, debirun_working],  # Fixed clients
-        generate_random_clients(10, max_stats=1,stat_ranges=custom_stat_ranges_2)  # Generate 1 random client with up to 3 stats (default)
+        generate_random_clients(10, max_stats=1,stat_ranges=custom_stat_ranges_2),  # Generate 1 random client with up to 3 stats (default)
+        chant_delay = 10,chant_duration=5
     )
 
     default minigame1_act2_2 = cafe_handler(
         [mild_working, tsuru_working, debirun_working],  # Fixed clients
-        generate_random_clients(10, max_stats=1)  # Generate 1 random client with up to 3 stats (default)
+        generate_random_clients(10, max_stats=1),  # Generate 1 random client with up to 3 stats (default)
+        chant_delay = 3,chant_duration=3
     )

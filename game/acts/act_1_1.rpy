@@ -628,6 +628,8 @@ label act1_1_shot_5:
 
 #shot 6 First Work
 label act1_1_shot_6:
+    stop music
+    stop sound
     $ quick_menu = False
     play music minigame1_bgm loop fadein 1.0
     call screen minigame_1(minigame1_act1_1,force_lose = True)

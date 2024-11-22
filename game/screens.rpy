@@ -5,6 +5,7 @@
 init offset = -1
 default money = 0
 default honey_score = 0
+default tokens = 1
 default persistent.gameclear = False
 default persistent.secret_cg = False
 default persistent.current_page = 1

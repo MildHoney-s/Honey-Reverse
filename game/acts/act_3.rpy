@@ -748,11 +748,12 @@ label act3_shot_3:
         "บอกความในใจ":
             $ honey_score += 1
             pov "ฉันมั่นใจแล้ว ว่าฉันน่ะรักเธอ"
-            mild "ฉันเอง… ฉันเองก็…."
             if honey_score == 8:
                 $ persistent.secret_cg = True
                 scene cg5
-                pause 10
+            mild "ฉันเอง… ฉันเองก็…."
+            pause 5.0
+
     stop music fadeout 0.25
     scene bg6night
     with vpunch

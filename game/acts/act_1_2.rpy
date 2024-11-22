@@ -480,9 +480,10 @@ label act1_2_shot_8:
     pov "วันนี้ก็คงประมาณนี้แหละ หวังว่าหลังจากนี้จะราบรื่นเหมือนกันทุกวันนะ~"
     scene bg7night
     with dissolve
-    play sound body_sfx fadein 0.8 volume 0.75
+    play sound body_sfx volume 0.75
     pov "นอนดีกว่า~ "#//(กึ้ง!).....sfx
     pov "อีกแล้วหรอ แหะๆ ห้ามทักนี่นา… รีบหนีไปนอนดีกว่า……"
+    stop sound
     scene black with eye_shut
     pause 1.0
 
