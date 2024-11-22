@@ -176,7 +176,7 @@ label act2_2_shot_1:
     stop music fadeout 1.5
     scene black
     with fade
-    scene bg2day
+    scene bg29
     with dissolve
     play music cafe_bgm loop fadein 1.5
     pov "(หลังจากที่ไปแสดงสเตจวันนั้น มายด์ก็ดูมีชีวิตชีวามากขึ้นนะ รวมทั้งยอมขึ้นสเตจตามปกติแล้วด้วย)"
@@ -203,7 +203,7 @@ label act2_2_shot_1:
     stop music fadeout 1.5
     $ renpy.pause(1, modal = True)
     play sound clap_sfx fadein 0.5
-    scene bg2day
+    scene bg29
     show tsuru maid_frog4 at tsuru_close
     with dissolve
     tsuru "ขอบคุณค่าาาาาาาาา"
