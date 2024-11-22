@@ -76,7 +76,11 @@ init:
     define transition_4 = ImageDissolve("images/transition/4.jpg", 1.0, time_warp=_warper.easeout)
     define tv_transition = ImageDissolve("images/transition/tv.png", 1.0, time_warp=_warper.easeout)
     define curtain = ImageDissolve("images/transition/curtain.jpeg", 1.0, time_warp=_warper.easeout)
+label splashscreen:
 
+    $ renpy.movie_cutscene('splashscreen.webm')
+
+    return
 
 # The game starts here.
 label start:
