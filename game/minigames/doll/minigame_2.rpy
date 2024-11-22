@@ -263,6 +263,5 @@ label doll_game_center:
     play music arcade_bgm
     $ quick_menu = False
     call screen doll_screen
-    $ povname = "test"
     $ quick_menu = True
     jump act2_3_shot_4

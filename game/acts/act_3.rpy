@@ -858,6 +858,7 @@ label act3_shot_3:
     pov "ด้วยความยินดีเลยล่ะ"
     scene black
     with fade
+    $ persistent.gameclear = True
     jump demo
     # // transition รีรัน BG ทั้งหมด แล้วตัดจบที่จอมืดลง
     # ส่งท้ายเครดิตเกมส์

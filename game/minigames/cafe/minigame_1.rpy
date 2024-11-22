@@ -1,7 +1,7 @@
 init python:
     from copy import copy
     left_time = 10
-    init_time = 60
+    init_time = 10
     sign_name = "______"
 
     name_colors = {
@@ -497,7 +497,8 @@ screen minigame_1(g,force_lose = False):
                 button:
                     align (0.5,0.765)
                     text "Sign Here {}".format(sign_name)
-                    action [SetVariable("sign_name",povname),SetVariable("money",money + g.stamina)]
+                    if sign_name is not povname:
+                        action [SetVariable("sign_name",povname),SetVariable("money",money + g.stamina)]
         if sign_name is povname:
             timer 1.2 action [SetVariable("sign_name","_____"),Return()]
 
