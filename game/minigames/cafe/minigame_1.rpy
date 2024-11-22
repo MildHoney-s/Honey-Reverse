@@ -631,17 +631,17 @@ init:
     default minigame1_act1_2_shot_3 = cafe_handler(
         [mild_working, debirun_working],  # Fixed clients
         generate_random_clients(10, max_stats=1,stat_ranges=custom_stat_ranges_1),  # Generate 2 random clients with up to 3 stats
-        chant_delay = 10,chant_duration=5
+        chant_delay = 10,chant_duration=10
     )
 
     default minigame1_act1_2_shot_4 = cafe_handler(
         [mild_working, tsuru_working, debirun_working],  # Fixed clients
         generate_random_clients(10, max_stats=1,stat_ranges=custom_stat_ranges_2),  # Generate 1 random client with up to 3 stats (default)
-        chant_delay = 10,chant_duration=5
+        chant_delay = 10,chant_duration=7
     )
 
     default minigame1_act2_2 = cafe_handler(
         [mild_working, tsuru_working, debirun_working],  # Fixed clients
         generate_random_clients(10, max_stats=1),  # Generate 1 random client with up to 3 stats (default)
-        chant_delay = 3,chant_duration=3
+        chant_delay = 5,chant_duration=5
     )
