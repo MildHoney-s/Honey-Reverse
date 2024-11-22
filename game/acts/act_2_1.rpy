@@ -143,9 +143,11 @@ label act2_1_shot_5:
     stop music
     stop sound
     play movie "meme.webm"
-    $ renpy.block_rollback()
     $ _game_menu_screen = "save"
-    pause 25
+    $ renpy.pause(25, hard=True)
+    $ quick_menu = True
+    $ renpy.block_rollback()
+
 
     jump act2_1_shot_6
 

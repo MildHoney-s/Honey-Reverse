@@ -78,7 +78,7 @@ label act1_1_shot_2:
     pause 1.5
     show cucumbag at cucumber
     with dissolve
-    manager "(เมื่อผมมองผ่านด้านหลังของผู้สมัครคนนี้ ก็พบว่ามีกระสอบขนาดใหญ่วางอยู่ด้านหลัง)"
+    manager "(เมื่อมองผ่านด้านหลังของผู้สมัครคนนี้ ก็พบว่ามีกระสอบขนาดใหญ่วางอยู่ด้านหลัง)"
     hide ashy_sd_1
     hide cucumbag
     show ashy_sd_1 at truecenter:
@@ -86,7 +86,7 @@ label act1_1_shot_2:
     with dissolve
 
     ashy "หนูอยากทำทุกเมนูให้มีแตงกวาอยู่เยอะ ๆ เลยค่ะ!"
-    manager "อ๋าา… แบบนี้เอง ไหนลองทำอาหารที่ครัวมาเมนูนึงได้มั้ย ผมจะรอ"
+    manager "อ๋าา… แบบนี้เอง ไหนลองทำอาหารที่ครัวมาเมนูนึงได้มั้ย"
     ashy "ได้ค่าาา"
 
     scene black

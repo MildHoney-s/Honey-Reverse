@@ -1171,9 +1171,8 @@ screen history():
                 for h in _history_list:
 
                     window:
-                        if h.who != None:
+                        if (h.who != None):
                             background Image("gui/historynamebox_lg.png", xalign=0, yalign=0)
-
                         ## This lays things out properly if history_height is None.
                         has fixed:
                             yfit True
@@ -1196,7 +1195,11 @@ screen history():
                                 line_spacing 5
                                 substitute False
                                 size 30
-
+                            elif "ทายาท" in what:
+                                xalign 1.15
+                                line_spacing 1
+                                substitute False
+                                size 18
                             else:
                                 xalign 1.15
                                 line_spacing 5
