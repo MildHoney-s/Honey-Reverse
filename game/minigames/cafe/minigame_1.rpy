@@ -196,7 +196,7 @@ init python:
                             client.maid = None
                             client.waiting_duration = client.serve_duration
                             client.stat = "waiting"
-                            renpy.play("minigames/cafe/return_bench.ogg", "sound")
+                            # renpy.play("minigames/cafe/return_bench.ogg", "sound")
                             continue
                     self.stamina_gain_timers[client] -= 1
                     if self.stamina_gain_timers[client] <= 0:
@@ -217,7 +217,7 @@ init python:
                             client.image = client.image[:-6]
                         client.stat = "idle"  # Set to idle when waiting time runs out
                         self.release_slot(client)
-                    if client.wait_counter > left_time:
+                    elif client.wait_counter > left_time:
                         client.stat = "idle"  # Set to idle when waiting time runs out
                         self.clients_left_count += 1
                         self.release_slot(client)
@@ -396,6 +396,7 @@ screen minigame_1(g,force_lose = False):
                                 vbox:
                                     add "frame" xsize 130 ysize 130
                             add i.image xsize 130 ysize 130  # Left half for client image (156px wide)
+                            # text str(i.wait_counter)
 
                         hovered Function(g.hovered, i)
                         unhovered Function(g.unhovered)
@@ -530,9 +531,9 @@ init python:
     # Sample data for names and stats
     names = ["client1","client2","client3","client4"]
     default_possible_stats = {
-        "Sexy": (10, 40),
-        "Joy": (10, 40),
-        "Lovely": (10, 40),
+        "Sexy": (10, 30),
+        "Joy": (10, 30),
+        "Lovely": (10, 30),
     }
     # Sample positions following your previous example
     positions = [
@@ -608,15 +609,15 @@ init:
     )
 
     default custom_stat_ranges_1 = {
-        "Sexy": (10, 29),         # Custom max for Sexy
-        "Joy": (16, 29),          # Custom max for Joy
-        "Lovely": (14, 29),    # Custom max for Lovely
+        "Sexy": (10, 22),         # Custom max for Sexy
+        "Joy": (16, 22),          # Custom max for Joy
+        "Lovely": (14, 22),    # Custom max for Lovely
     }
 
     default custom_stat_ranges_2 = {
-        "Sexy": (12, 33),         # Custom max for Sexy
+        "Sexy": (12, 25),         # Custom max for Sexy
         "Joy": (18, 29),          # Custom max for Joy
-        "Lovely": (17, 33),    # Custom max for Lovely
+        "Lovely": (17, 26),    # Custom max for Lovely
     }
 
     default minigame1_act1_1 = cafe_handler(
