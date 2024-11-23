@@ -258,6 +258,7 @@ init python:
 
         def release_slot(self, client):
             for i, pos_client in enumerate(self.occupied_positions):
+                client.wait_counter = 0
                 if pos_client == client:
                     self.occupied_positions[i] = None
 
@@ -286,7 +287,7 @@ init python:
             self.hovered_client = None
             self.stat = "start"
             self.stamina = 0
-            self.time = 0
+            self.time = 60
             self.tonights_gain = 0
             self.spawn_timer = 0
             self.current_client = None
