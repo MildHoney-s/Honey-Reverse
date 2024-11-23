@@ -195,9 +195,9 @@ label act2_2_shot_1:
     play music idol_bgm fadein 0.5
     $ _game_menu_screen = None
     play movie "Tsuru Dance.webm"
-    $ _game_menu_screen = "save"
     $ renpy.block_rollback()
     $ renpy.pause(27, hard=True)
+    $ _game_menu_screen = "save"
     scene black
     with fade
     stop music fadeout 1.5

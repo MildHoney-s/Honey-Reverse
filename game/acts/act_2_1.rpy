@@ -143,10 +143,10 @@ label act2_1_shot_5:
     stop music
     stop sound
     play movie "meme.webm"
-    $ _game_menu_screen = "save"
     $ renpy.pause(25, hard=True)
     $ quick_menu = True
     $ renpy.block_rollback()
+    $ _game_menu_screen = "save"
 
 
     jump act2_1_shot_6
@@ -292,9 +292,9 @@ label act2_1_shot_8:
     scene bg2day
     window hide
     $ _game_menu_screen = None
-    $ quick_meneu = False
     show gacha_movie
     stop music fadeout 0.5
+    $ quick_meneu = False
     show phone at truecenter:
         zoom 3.2
     $ renpy.pause(39, hard=True)

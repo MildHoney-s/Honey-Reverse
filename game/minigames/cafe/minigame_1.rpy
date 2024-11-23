@@ -397,7 +397,7 @@ screen minigame_1(g,force_lose = False):
                                 vbox:
                                     add "frame" xsize 130 ysize 130
                             add i.image xsize 130 ysize 130  # Left half for client image (156px wide)
-                            # text str(i.wait_counter)
+                            #text str(i.wait_counter)
 
                         hovered Function(g.hovered, i)
                         unhovered Function(g.unhovered)
