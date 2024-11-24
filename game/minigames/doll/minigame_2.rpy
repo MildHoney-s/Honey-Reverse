@@ -235,10 +235,12 @@ screen doll_screen():
             else:
                 text "คีบพี่แพนไปให้มายด์สิ" color "#2709cf"
 
-    # Bind space key for throwing action
-    if game.running and not (game.attempts_left <= 0 or game.winner):
+
+    if game.winner: # Win the game will return
+        timer 0.05 action Return()
+    elif game.running: # Bind space key for throwing action
         key "K_SPACE" action Function(game.clicked)
-    if game.attempts_left <= 0:
+    elif game.attempts_left <= 0: # No attempt show retry
         vbox:
             align .5, .5
             button:
@@ -248,8 +250,6 @@ screen doll_screen():
                 padding 20,20
                 text "RETRY" color "#ac0303"
                 action Function(game.reset_game)
-    elif game.winner:
-        timer 0.05 action Return()
 
     hbox:
         spacing 25
