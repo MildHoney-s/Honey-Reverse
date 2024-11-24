@@ -210,6 +210,9 @@ screen shooter():
             align .5,.5
             text "Start"
             action Function(shooter_game.start)
+        imagebutton auto "images/tutorial/howtoplay_button_%s.png":
+            focus_mask True
+            action Show("tutorial_popup",tutorial="shoot")
 
     elif shooter_game.stat == "playing":
         timer shooter_game.spawn_interval repeat True action Function(shooter_game.spawn)
@@ -255,6 +258,10 @@ screen shooter():
                 align (0.5, 0.5)
                 text "Exit" style "exitshooter_text"
                 action Return(shooter_game.kills)
+
+        imagebutton auto "images/tutorial/howtoplay_button_%s.png":
+            focus_mask True
+            action Show("tutorial_popup",tutorial="shoot")
 
     vbox:
         spacing -30

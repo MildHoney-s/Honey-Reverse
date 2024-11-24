@@ -456,6 +456,9 @@ screen minigame_1(g,force_lose = False):
                     align (0.5,0.765)
                     text "Click To Restart"
                     action [Function(g.reset),Function(g.start)]
+        imagebutton auto "images/tutorial/howtoplay_button_%s.png":
+            focus_mask True
+            action Show("tutorial_popup")
 
     # Time bar during night state
     elif g.stat == "night":
@@ -472,6 +475,10 @@ screen minigame_1(g,force_lose = False):
             hover_background "#e7802ccc"
             text "Let's start." color "#eae4e4"
             action Function(g.start)
+
+        imagebutton auto "images/tutorial/howtoplay_button_%s.png":
+            focus_mask True
+            action Show("tutorial_popup")
 
     # Day state with Finish button
     elif g.stat == "day":

@@ -464,7 +464,7 @@ label act2_1_shot_11:
     with fade
     centered "{=down_text}XXX ปัดตก XXX{/down_text} "
     centered "{=cafe_text}- บทบาทพี่สมหมาย -{/cafe_text}"
-    show mild pajamas_smile8 at paja
+    show som at truecenter
     mild "คุณลูกค้าอยากจะรับอะไรดี หรือว่า จะรับตัวผมสักคำไหมครับ"
     pov "บทนี้เข้มดีนะ"
     show del normal_doubt1 at leftclosedel

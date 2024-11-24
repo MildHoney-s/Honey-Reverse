@@ -101,22 +101,26 @@ init python:
     g.condition("persistent.gameclear")
 
     g.button("CB3")
-    g.image(im.Scale("images/sd/rabbit.png",1000,1000))
+    g.image(im.Scale("images/sd/som.png",1920,1080))
     g.condition("persistent.gameclear")
 
     g.button("CB4")
-    g.image(im.Scale("images/sd/capybara.png",1000,1000))
+    g.image(im.Scale("images/sd/rabbit.pn",1000,1000))
     g.condition("persistent.gameclear")
 
     g.button("CB5")
-    g.image(im.Scale("images/sd/hornbill.png",1000,1000))
+    g.image(im.Scale("images/sd/capybara.png",1000,1000))
     g.condition("persistent.gameclear")
 
     g.button("CB6")
-    g.image(im.Scale("images/sd/panda.png",1000,1000))
+    g.image(im.Scale("images/sd/hornbill.png",1000,1000))
     g.condition("persistent.gameclear")
 
     g.button("CB7")
+    g.image(im.Scale("images/sd/panda.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("CB8")
     g.image(im.Scale("images/sd/del_lili.png",1000,1000))
     g.condition("persistent.gameclear")
 
@@ -1734,5 +1738,15 @@ style nvl_button:
 style nvl_button_text:
     properties gui.button_text_properties("nvl_button")
 
+screen tutorial(tutorial="cafe"):
+    add "images/tutorial/[tutorial]_tutorial.png"
+    imagebutton auto "images/tutorial/close_%s.png":
+        focus_mask True
+        action Return()
 
+screen tutorial_popup(tutorial="cafe"):
+    add "images/tutorial/[tutorial]_tutorial.png"
+    imagebutton auto "images/tutorial/close_%s.png":
+        focus_mask True
+        action [Hide("tutorial_popup")]
 

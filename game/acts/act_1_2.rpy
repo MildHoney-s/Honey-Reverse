@@ -382,9 +382,8 @@ label act1_2_shot_6:
     play music roman_bgm loop fadein 1.5 fadeout 0.5
     show milddel at truecenter:
         zoom 1.05
-    debirun "//สะอื้น"
-    debirun "พี่มายด์… หนูไม่รู้เลยว่าพี่จะเจอเรื่องแบบนี้ แง๊"
-    debirun "//เดลเข้าไปกอดมายด์"
+    debirun "โถ่ววว พี่สาวคนสวยของหนู หนูอยู่นี่น้า "
+    debirun "หนูไม่รู้เลยว่าพี่จะเจอเรื่องแบบนี้ อ่ะกอดๆ นะค้าบบ"
     mild "พี่ไม่เป็นไรแล้วเดลจัง โอ๋ๆ"
     debirun "อื้อ… //เดลถอยตัวออกจากมายด์มา"
     show mildru_sd_1 at truecenter:

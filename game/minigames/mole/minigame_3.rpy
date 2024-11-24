@@ -185,14 +185,19 @@ screen whack_a_mole(g):
         text "NOT ENOUGH COIN LEFT FOR THIS GAME" align(0.5, 0.5) color "#ff0000ff" outlines [ (2, "#ffffff", 0, 0) ]
     if g.coin == 0 and not g.running:
         textbutton "Exit":
-            text_style "tx_button"
-            align (0.0, 1.0)
+            text_style "exit_tx_button"
+            align (1.0, 1.0)
             action Return()
+    if not g.running:
+        imagebutton auto "images/tutorial/howtoplay_button_%s.png":
+            focus_mask True
+            action Show("tutorial_popup",tutorial="mole")
     hbox:
         spacing 25
         align (0.975,0.025)
         add "doll_coin" size (100,100)
         text "{}".format(tokens) size 100 offset (0, -20) color "#abaeaeff"
+
 
     if g.running:
         timer g.speed repeat True action Function(g.tick)
@@ -216,6 +221,10 @@ style blink_text:
 style tx_button:
     color "#be58b2"
     size 35
+
+style exit_tx_button:
+    color "#84efe8"
+    size 80
 
 transform mole_pos(yo):
     ease .4 yoffset yo

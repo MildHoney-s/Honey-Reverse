@@ -219,6 +219,9 @@ screen doll_screen():
                     padding 20,20
                     text "กดเพื่อใช้เงินจากอนาคต" color "#fa9b17"
                     action SetVariable("tokens",tokens+10)
+        imagebutton auto "images/tutorial/howtoplay_button_%s.png":
+            focus_mask True
+            action Show("tutorial_popup",tutorial="doll")
 
     if game.running:
         for doll in game.dolls:

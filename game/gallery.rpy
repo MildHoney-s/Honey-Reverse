@@ -160,10 +160,10 @@ screen gallery_4():
         # Call make_button to display the gallery images or locked placeholders.
         add g.make_button("CB1", im.Scale("images/sd/chibi_1.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image  # Unlocked first image
         add g.make_button("CB2", im.Scale("images/sd/chibi_2.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CB3", im.Scale("images/sd/rabbit.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
-        add g.make_button("CB4", im.Scale("images/sd/capybara.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CB5", im.Scale("images/sd/hornbill.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CB6", im.Scale("images/sd/panda.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
+        add g.make_button("CB3", im.Scale("images/sd/som.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
+        add g.make_button("CB4", im.Scale("images/sd/rabbit.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
+        add g.make_button("CB5", im.Scale("images/sd/capybara.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
+        add g.make_button("CB6", im.Scale("images/sd/hornbill.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
 
     frame:
         xalign 0.5
@@ -206,7 +206,8 @@ screen gallery_5():
         spacing 13
 
         # Call make_button to display the gallery images or locked placeholders.
-        add g.make_button("CB7", im.Scale("images/sd/del_lili.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
+        add g.make_button("CB7", im.Scale("images/sd/panda.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
+        add g.make_button("CB8", im.Scale("images/sd/del_lili.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
 
     frame:
         xalign 0.5
