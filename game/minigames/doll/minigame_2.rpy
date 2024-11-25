@@ -263,7 +263,6 @@ screen doll_screen():
 
 label doll_game_center:
     scene doll_bg
-    play music arcade_bgm
     $ quick_menu = False
     call screen doll_screen
     $ quick_menu = True

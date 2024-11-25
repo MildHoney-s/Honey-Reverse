@@ -350,6 +350,7 @@ label act2_3_shot_1:
     show mild unhood_smile at leftposmild
     with dissolve
     mild "จะ จะลองดูนะคะ"
+    play music mole_bgm loop volume 0.75
     call screen tutorial("mole")
     jump whack_a_mole_game_center
 
@@ -371,6 +372,7 @@ label act2_3_shot_2:
     show mild unhood_smile at leftposmild
     with dissolve
     mild "ค่า!"
+    play music shoot_bgm loop volume 0.75
     call screen tutorial("shoot")
     jump shooting_game_center
 
@@ -394,6 +396,7 @@ label act2_3_shot_3:
     with dissolve
     mild "พี่แพนนน" # Emote ประกาย
     pov "เอาล่ะนะ!"
+    play music doll_bgm loop volume 0.75
     call screen tutorial("doll")
     jump doll_game_center
 

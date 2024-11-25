@@ -247,7 +247,6 @@ default whack_1 = whack_a_mole_game(
 )
 
 label whack_a_mole_game_center:
-    play music arcade_bgm loop volume 0.75
     $ quick_menu = False
     call screen whack_a_mole(whack_1)
     $ quick_menu = True

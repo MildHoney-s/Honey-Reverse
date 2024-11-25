@@ -277,7 +277,11 @@ screen say(who, what):
             window:
                 id "namebox"
                 style "namebox"
-                text who id "who"
+                if "&" in who:
+                    text who id "who" size 30
+                else:
+                    text who id "who"
+
 
         text what id "what"
 

@@ -323,7 +323,7 @@ init python:
             self.stat = "day"
 
 screen cafe_hire_screen(maid_list):
-    style_prefix "cafe"
+    style_prefix "cafemini"
     hbox align (0.5, 0.5) spacing 20:
         for i in maid_list:
             vbox spacing -90 box_reverse True align (0.5, 0.5):
@@ -343,7 +343,7 @@ screen cafe_hire_screen(maid_list):
 image frame = Transform("images/minigames/cafe/tsuru_portrait.png",alpha=0.0)
 screen minigame_1(g,force_lose = False):
     add "images/minigames/cafe/cafe_bg.png"
-    style_prefix "cafe"
+    style_prefix "cafemini"
 
     button:
         background None
@@ -525,13 +525,14 @@ screen minigame_1(g,force_lose = False):
                         text "[key]: {color=#fff}[value]{/color}" color stat_color
                 add g.hovered_client.image align (0.918, 0.12) xsize 156 ysize 156
 init:
-    style cafe_text:
+    style cafemini_text:
         font "cafe.ttf"
         align (.5,.5)
-    style cafe_frame:
+    style cafemini_frame:
         align (.5,.5)
-    style cafe_button:
+    style cafemini_button:
         align (.5,.5)
+
 
 init python:
     import random

@@ -329,7 +329,6 @@ label shooting_game_center:
     $ quick_menu = False
     show shooting_bg at truecenter:
         zoom 1.25 ypos 605
-    play music arcade_bgm loop volume 0.75
     call screen shooter
     $ default_mouse = ""
     $ quick_menu = True
