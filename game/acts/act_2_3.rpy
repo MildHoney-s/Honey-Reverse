@@ -213,7 +213,7 @@ label act2_3_shot_1:
     pov "อื้มม ดีสิ ระหว่างทางฉันเห็นชุดน่ารักๆ เต็มไปหมดเลยนะ"
     show mild unhood_blush2 at mildunhood_close
     with dissolve
-    pov "ถ้าเธอใส่ละก็ต้องเหมาะกับเธอแน่เลย"
+    pov "ถ้าเธอใส่ล่ะก็ ต้องเหมาะกับเธอแน่เลย"
     show mild unhood_blush5 at mildunhood_close
     with dissolve
     mild "เข้าใจแล้วค่า"
@@ -236,7 +236,7 @@ label act2_3_shot_1:
     pov "อื้มม งั้นเข้าไปลองใส่ดูดีมั้ย"
     show mild unhood_blush3 at mildunhood_close
     with dissolve
-    mild "ถ้า [povname] พูดแบบนั้นละก็…."
+    mild "ถ้า [povname] พูดแบบนั้นล่ะก็…."
     scene black
     with  fade
     pause 1.0

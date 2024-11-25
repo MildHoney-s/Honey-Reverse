@@ -6,7 +6,6 @@ label act3_shot_1:
     scene black
     with transition_4
     centered "-ไม่กี่วันก่อนหน้า-"
-    # ภาพ flashback  (VFX จอมืด) ในภาพร้านมี ซึรุ เดล และฮันนี่
     scene bg8day
     with fade
     play music flashback_bgm loop fadein 0.5 fadeout 0.25
@@ -32,7 +31,7 @@ label act3_shot_1:
     with dissolve
     tsuru "โห่ววววววว พี่นี่ซื่อบื้ออะเป่าเนี่ยยยยยย!"
     debirun "ไม่คิดเลยนะว่าผู้จัดการจะอ่อนหัดได้ขนาดนี้ หนูไม่คิดเลย"
-    pov "เดี๋ยวก่อนสิ แล้วฉันควรจะทำยังไงละ!? แล้วที่ว่าควรจะทำอะไรเนี่ยมันหมายถึงอะไรกัน?"
+    pov "เดี๋ยวก่อนสิ แล้วฉันควรจะทำยังไงล่ะ!? แล้วที่ว่าควรจะทำอะไรเนี่ยมันหมายถึงอะไรกัน?"
     show tsuru maid_idle2 at leftpostsuru
     with dissolve
     tsuru "ก็หมายถึง ต้องไปสารภาพรักกับมายด์ได้แล้วไง! จะปล่อยให้เวลาผ่านไปอีกเท่าไหร่กันคะ!"
@@ -42,17 +41,15 @@ label act3_shot_1:
     show del maid_idle1 at rightposdel
     with dissolve
     tsuru "เฮ้ออ… ถ้างั้นพวกหนูจะหาจังหวะให้อยู่ด้วยกันสองต่อสองแล้วกัน พี่ก็ทำให้เต็มที่ด้วยล่ะ"
-    tsuru "แล้วเดี๋ยวหนูกับเดลจะเอาเค้กตา–" #//ตัดไป (19) เลย ?
-    #show heart
-    #with dissolve
-    pov "สะ สะ สะ สารภาพรัก! ฉัน ฉัน ฉัน….." #ตัดภาพกลับมา BG 7 ห้องฮันนี่?
+    tsuru "แล้วเดี๋ยวหนูกับเดลจะเอาเค้กตา–"
+    pov "สะ สะ สะ สารภาพรัก! ฉัน ฉัน ฉัน….."
     scene black
     with transition_4
     scene bg7day
     play music morning_bgm loop fadein 0.5 fadeout 0.25
     with fade
     pov "เล่นเอาหลังจากนั้นก็จำไม่ได้เลยว่าซึรุพูดว่าอะไร…."
-    pov "ชั่งมันละกันนะ…. คงต้องหาของขวัญวันเกิดไว้ล่วงหน้าด้วย"
+    pov "ช่างมันละกันนะ…. คงต้องหาของขวัญวันเกิดไว้ล่วงหน้าด้วย"
     show locket_open at truecenter:
         zoom 0.25
     pause 0.025
@@ -217,7 +214,7 @@ label act3_shot_2:
     show mild normal_idle1 at mildhood
     with easeinright
     play music zoo_bgm loop volume 0.25 fadein 1.0 fadeout 1.0
-    mild "ว้าววว ดูสิๆ น่ารักจังเลยค่ะ!" # //Char Mild ชุดเดท ตาเป็นประกาย
+    mild "ว้าววว ดูสิๆ น่ารักจังเลยค่ะ!"
     show rabbit at bounce,animal
     pov "กระต่ายน่ะปกติตัวเล็กแต่มีขาที่แข็งแรงมากๆ ในการกระโดด มีหูที่ยาว ใช้ฟังเสียงได้ดีเลยล่ะ"
     show rabbit at bounce,animal
@@ -225,13 +222,12 @@ label act3_shot_2:
     mild "ว้าววว จริงด้วยหูยาวๆ ดูนุ่มนิ่มจังเลย"
     show rabbit at bounce,animal
     show mild normal_smile8 at mildhood
-    mild "อ่ะ!  นั้นมัน!" # //Char เคลื่อนออกไป
+    mild "อ่ะ!  นั่นมัน!"
     show rabbit at bounce,animal
     hide mild normal_smile8
     with moveoutright
     show rabbit at bounce,animal
-    pov "หื้ม รอด้วยสิมายย"
-    # Chibi คาปิบาร่า ขึ้นพร้อม [16]
+    pov "หื้ม รอด้วยสิมายด์~~~"
     scene bg18day:
         crop (400,200,800,720)
         size (1920, 1080)
@@ -270,13 +266,13 @@ label act3_shot_2:
     pov "มายด์ระวังง!"
     show mild normal_flustered at bounce,mildhood
     with hpunch
-    pov "เป็นอะไรมั้ย" # เสียง SFX จบตรงนี้
+    pov "เป็นอะไรมั้ย"
     stop sound
     show mild normal_idle2 at bounce,mildhood
     with dissolve
     mild "ไม่เป็นไรค่ะ แล้วเมื่อกี้"
     pov "นกเงือกน่ะ เป็นสัตว์ที่หายากในปัจจุบันแล้วล่ะนะ จุดเด่น คือ จะงอยปากหนาที่ใหญ่และมีโหนกทางด้านบน"
-    pov "แล้วก็ๆ รู้มั้ยเจ้านกตัวนี้มีลักษณะพิเศษด้วยนะรู้รึเปล่า มายลองเดาดูมั้ย"
+    pov "แล้วก็ๆ รู้มั้ยเจ้านกตัวนี้มีลักษณะพิเศษด้วยนะรู้รึเปล่า มายด์ลองเดาดูมั้ย"
     show mild normal_doubt at mildhood
     show emotion_question at emotepairpos2
     with dissolve
@@ -299,14 +295,14 @@ label act3_shot_2:
     with easeoutright
     pause 1.0
     stop sound
-    mild "มะ ไม่เป็นอะไรค่ะ!" # //Char Mild หายไป
+    mild "มะ ไม่เป็นอะไรค่ะ!"
     pov "(หรือฉันทำอะไรไม่ดีไปรึเปล่านะ เอาเป็นว่าเดินตามไปก่อนละกัน)"
     scene bg18day:
         crop (600,200,1000,720)
         size (1920, 1080)
     with wiperight
     pov "(หื้ม ทำไมมายด์ถึงหยุดเดินกันนะ)"
-    pov "อ่อ ในที่สุดก็เจอแล้วสินะ"
+    pov "อ๋อ ในที่สุดก็เจอแล้วสินะ"
     scene bg18day:
         crop (600,200,1000,720)
         size (1920, 1080)
@@ -319,7 +315,7 @@ label act3_shot_2:
     pov "(ฉันมายืนอยู่ข้างๆ โดยที่ไม่พูดอะไร)"
     show mild normal_smile9 at leftmildnormal
     with dissolve
-    mild "(พี่แพน)" # //Char Mild ชุดเดท ตาเป็นประกาย
+    mild "(พี่แพน)" 
     show mild normal_smile8 at leftmildnormal
     with dissolve
     mild "[povname] คะ ขอบคุณนะคะ"
@@ -340,7 +336,7 @@ label act3_shot_2:
     with fade
     show del_lili at truecenter:
         zoom 0.7
-    tsuru "อ่อ พอดีเดลไปเจอเพื่อนสนิทเขาน่ะ เลยขอคุยกันก่อน" # // SD เดลคุยกับ ลิลี่เบล
+    tsuru "อ่อ พอดีเดลไปเจอเพื่อนสนิทเขาน่ะ เลยขอคุยกันก่อน"
     scene bg18day
     show mild normal_smile8 at middlemildnormal
     show tsuru normal_idle1_2 at leftpostsuru
@@ -349,7 +345,7 @@ label act3_shot_2:
     show tsuru normal_idle2_1 at leftpostsuru
     with dissolve
     tsuru "โชว์สัตว์น้ำก็ยังน่ารักเหมือนเดิมนะคะ"
-    tsuru "แล้วก็ออกไปดูฮิปโป" # หมูเด้งคือ?
+    tsuru "แล้วก็ออกไปดูฮิปโป"
     show mild normal_smile12 at middlemildnormal
     with dissolve
     show del normal_smile2 at rightposdel
@@ -371,10 +367,10 @@ label act3_shot_2:
     show del normal_smile8 at rightposdel
     with dissolve
     tsuru "ดีจังเลยที่เธอยิ้มแบบนี้"
-    tsuru "ยิ้มบ่อยๆนะมายด์" # // Char Tsuru normal ยิ้มหลับตา
+    tsuru "ยิ้มบ่อยๆนะมายด์"
     show mild normal_smile7 at middlemildnormal
     with dissolve
-    mild "อื้ออ" # // Char Mild เดท ยิ้มหลับตา
+    mild "อื้ออ"
     show del normal_doubt2 at rightposdel
     with dissolve
     debirun "ยังพอมีเวลาเราไปเดินกันต่อสักหน่อยมั้ยคะ"
@@ -498,7 +494,7 @@ label act3_shot_2:
         linear 1.5 crop (1900,0,3400,800)
     with dissolve
     mild "วันนี้คงเป็นอีกวันที่ฉันจะไม่มีวันลืมเลยค่ะ"
-    mild "ยิ่งตอนที่ [povname] แนะนำสัตว์แต่ละตัวให้ฟัง เหมือน [povname] จะชอบนกเงือกมากเลยค่ะ" #// Char Mild ยิ้มหลับตา
+    mild "ยิ่งตอนที่ [povname] แนะนำสัตว์แต่ละตัวให้ฟัง เหมือน [povname] จะชอบนกเงือกมากเลยค่ะ"
     scene cg3
     with dissolve
     debirun "แล้วพี่รู้รึเปล่า ความหมายของนกเงือกน่ะ"
@@ -507,14 +503,13 @@ label act3_shot_2:
         size (1920, 1080)
         linear 1.5 crop (0,0,3468,1946)
     with dissolve
-    mild "กะ ก็รู้จาก [povname] นั่นแหละ ไม่นึกว่าความหมายจะ…" #//Char Mild หน้าแดง
+    mild "กะ ก็รู้จาก [povname] นั่นแหละ ไม่นึกว่าความหมายจะ…"
     tsuru "รักเธอแค่คนเดียวจนวันสุดท้ายสินะ"
     tsuru "แล้วเห็นพูดถึง [povname] บ่อยเลย รู้สึกยังไงกับ [povname] บ้างล่ะ ชอบเขารึเปล่า?"
     mild "ชะ ชอบหรอคะ ชอบในที่นี้……"
     tsuru "ชอบที่หมายถึง เป็นคนที่เราอยากดูแลและอยากอยู่เคียงข้างเขาไปตลอดชีวิตน่ะ"
-    mild "กะ ก็ไม่ได้ไม่ชอบ [povname] หรอกนะแต่เรื่องแบบนี้……" #//Char Mild หน้าแดง
+    mild "กะ ก็ไม่ได้ไม่ชอบ [povname] หรอกนะแต่เรื่องแบบนี้……"
     tsuru "ก็อย่างเช่น อยากอยู่ใกล้ๆ เวลาทำอะไรก็จะนึกถึงเขา ว่าเขาจะชอบมั้ยนะ เป็นห่วงเป็นใยเขามากๆ อาการพวกนี้ แกมีบ้างรึเปล่าล่ะ"
-    #//Char Mild หน้าแดง
     tsuru "ถ้าไม่มีก็ไม่เป็นอะไรหรอกนะ ฉันก็ถามเฉยๆน่ะ"
     debirun "อ่อ จริงด้วย พี่ซึรุคือเมื่อกี้อ่ะนะ ยัยไข่บอกว่า …………"
     show white with fade
@@ -524,7 +519,7 @@ label act3_shot_2:
     play music roman_bgm loop fadein 0.5 fadeout 0.25
     pov "อ่ะ! มายด์ ไปแช่น้ำมาเป็นไงบ้าง"
     show mild onsen_flustered at bounce,mildunhood_close
-    mild "คะ คะ [povname]" #//Char Mild หน้าแดง
+    mild "คะ คะ [povname]"
     pov "เป็นอะไรมั้ย ทำไมหน้าแดงล่ะ แช่น้ำนานไปรึป่าว"
     menu:
         "เข้าไปดูอาการ":
@@ -571,7 +566,6 @@ label act3_shot_2:
         zoom 1.5
     with easeoutbottom
     pov "บะ แบบว่า………."
-    # SFX เสียงลูบหัวในอนิเมะ  แต่จริงๆ คือเสียงคนซบกัน
     show mild onsen_sleep at mildunhood_close:
         ypos 750
         zoom 1.5
@@ -604,26 +598,27 @@ label act3_shot_3:
     play music cafe_bgm loop fadein 0.5 volume 0.6
     with dissolve
     pause 1.5
-    scene bg2night # opacity ไฟดับ
+    scene bg2night
     show black:
         alpha .5
     pause 1
-    pov "ยัยเด็กพวกนั้นนี่นะ… ถึงจะเตี้ยมกันแล้วก็เถอะ แต่ไม่คิดจะส่งสัญญาณบอกกันเลยรึไง?"
+    pov "ยัยเด็กพวกนั้นนี่นะ… ถึงจะเตี๊ยมกันแล้วก็เถอะ แต่ไม่คิดจะส่งสัญญาณบอกกันเลยรึไง?"
     pov "ถ้าฉันหัวใจวายขึ้นมาจะทำไงเล่า!? ช่างมันเถอะ…"
     stop music fadeout 0.5
     pov "เอาเป็นว่าไปเตรียมอาหารก่อนแล้วกั- (ตึ้ง!!)"
     play music drama_bgm loop fadein 0.75
+#หา sound ตึง เพิ่ม test 2
     pov "เสียงอะไรน่ะ! มาจากชั้นบนหนิ มายด์ทำอะไรตกรึป่าวนะ…"
     play sound walking_sfx
     scene bg5night with walkingVertical
-    centered "[povname] เดินขึ้นไปชั้นบน เพื่อไปดูที่ห้องมายด์เผื่อว่ามายด์จะทำอะไรตก"
+    centered "หลังจากนั้น [povname] ก็เดินขึ้นไปชั้นบน เพื่อไปดูที่ห้องมายด์เผื่อว่ามายด์จะทำอะไรตก"
     play sound knock_sfx
     show bg21:
         zoom 1.5
         xalign 0.5
         yalign 0.6
     pov "มายด์ เธอได้ทำอะไรตกรึป่าว?"
-    centered "…………" # ไม่มีเสียงตอบรับจากภายในห้อง
+    centered "…………"
     play sound knock_sfx volume 1.5
     pov "มายด์…! เธอเป็นอะไรรึป่าว?"
     centered "…………"
@@ -693,10 +688,11 @@ label act3_shot_3:
     scene bg24 with fade
     pause 1.5
     researcher "มันอาจจะเจ็บนิดหน่อยนะสาวน้อย"
-    researcher "DNA ของเธอนี่ช่างเหมาะกับการทดลองเสียจริง"
+#renpy มันกากอะ
+    researcher "DNA ของเธอมันช่างเหมาะกับการทดลองเสียจริง"
     researcher "ถ้าเป็นเธอล่ะก็ การทดลองสร้างมิวแทนต์ที่สมบูรณ์แบบจะต้องสำเร็จอย่างแน่นอน"
     mild "มะ ไม่เอาค่ะ…"
-    researcher "โธ่~ สาวน้อย เธอจะได้รับร่างกายที่แข็งแกร่ง เพียงแค่เธอ~ ยอมให้ฉันดัดแปลง DNA ของเธอนิดหน่อย~" # SFX ที่ดูน่ากลัว
+    researcher "โธ่~ สาวน้อย เธอจะได้รับร่างกายที่แข็งแกร่ง เพียงแค่เธอ~ ยอมให้ฉันดัดแปลง DNA ของเธอนิดหน่อย~"
     mild "ไม่ไม่ ไม่ไม่ ไม่ไม่ ไม่เอานะคะ ไม่เอา อย่า-"
     scene black
     with eye_open
@@ -739,7 +735,7 @@ label act3_shot_3:
     mild "เลิกทำหน้าเศร้าได้แล้วนะคะ"
     pov "นี่มายด์…"
     show mild pajamas_flustered1 at mildunhood_close
-    pov "ฉันหนะ… มีเรื่องที่อยากจะบอกกับเธอมานานแล้วละ ตั้งแต่วันที่ได้พบเธอ ฉันก็เริ่มรู้สึกแบบนี้มาตลอดเลย เป็นความรู้สึกที่ฉันเองก็ไม่เข้าใจหรอก แต่ว่าตอนนี้…."
+    pov " ฉันน่ะ… มีเรื่องที่อยากจะบอกกับเธอมานานแล้วล่ะ ตั้งแต่วันที่ได้พบเธอ ฉันก็เริ่มรู้สึกแบบนี้มาตลอดเลย เป็นความรู้สึกที่ฉันเองก็ไม่เข้าใจหรอก แต่ว่าตอนนี้…."
     menu:
         "ปลอบมายด์":
             $ honey_score -= 1
@@ -826,18 +822,16 @@ label act3_shot_3:
     show cake2 at center:
         zoom 0.32
     with dissolve
-    # Asset เค้กมีเทียนไฟ กับ เทียนดับ
     pov "มายด์ฉันมีอะไรที่เตรียมมาให้เธอด้วยนะ"
     hide cake2
     with easeoutbottom
     show locket_close at center:
         zoom 0.32
     with easeinbottom
-    # SD  Assetกล่องสีแดง (Hexcode #7f1734)
     show mild pajamas_doubt at mildcloseleft
     with easeoutleft
-    mild "มันคืออะไรหรอคะ?" # //emote confused
-    pov "เป็นของที่ฉันซื้อมาเอง เพราะคิดว่าน่าจะเหมาะกับเธอดีน่ะ แต่ถ้าเธอไม่ชอบละก็จะไม่ใช้ก็ได้นะ" # Asset red box #7f1734 open(สร้อย?)
+    mild "มันคืออะไรหรอคะ?"
+    pov "เป็นของที่ฉันซื้อมาเอง เพราะคิดว่าน่าจะเหมาะกับเธอดีน่ะ แต่ถ้าเธอไม่ชอบล่ะก็จะไม่ใช้ก็ได้นะ"
     hide locket_close
     show locket_open at center:
         yalign 0.5
@@ -845,7 +839,7 @@ label act3_shot_3:
     with dissolve
     show mild pajamas_smile6 at mildcloseleft
     with dissolve
-    mild "สวยจัง!" #//ตาเป็นประกาย
+    mild "สวยจัง!"
     hide locket_open
     show mild pajamas_idle2 at mildunhood_close
     with dissolve
@@ -860,5 +854,3 @@ label act3_shot_3:
     with fade
     $ persistent.gameclear = True
     jump demo
-    # // transition รีรัน BG ทั้งหมด แล้วตัดจบที่จอมืดลง
-    # ส่งท้ายเครดิตเกมส์

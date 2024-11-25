@@ -107,8 +107,8 @@ label act1_2_shot_2:
     show mild maid_flustered at leftposmild
     show del normal_smile7 at rightposdel
     with dissolve
-    pov "ฟะ แฟนอะไรละ มะ ไม่ใช่สักหน่อย เนอะมาย–"
-    pov "(ระหว่างที่ฉันแก้ตัวพอได้หันไปมองที่มายด์ กลับเห็นสีหน้าของเธอที่แดงผ่าวราวกับมะเขือเทศ นะ นี่เธอเขินอยู่อย่างงั้นหรอ!)"
+    pov "ฟะ แฟนอะไรละ มะ ไม่ใช่สักหน่อย เนอะมายด์–"
+    pov "(ระหว่างที่ฉันแก้ตัวพอได้หันไปมองที่มายด์ กลับเห็นสีหน้าของเธอที่แดงผ่าวราวกับมะเขือเทศ\nนะ นี่เธอเขินอยู่อย่างงั้นหรอ!)"
     show del normal_smile8 at rightposdel
     show mild maid_blush2 at leftposmild
     with dissolve
@@ -175,7 +175,7 @@ label act1_2_shot_3:
     show emotion_question at emoteclose
     with dissolve
     mild "คืออะไรหรอคะ"
-    pov "ไอดอลน่ะ เป็นเหมือนผู้ที่คอยมอบรอยยิ้ม ความสดใส ที่จะช่วย รักษาหัวใจ ให้กับผู้คนยังไงละ"
+    pov "ไอดอลน่ะ เป็นเหมือนผู้ที่คอยมอบรอยยิ้ม ความสดใส ที่จะช่วย รักษาหัวใจ ให้กับผู้คนยังไงล่ะ"
     show mild maid_blush2 at mild_close
     hide emotion_question
     with dissolve

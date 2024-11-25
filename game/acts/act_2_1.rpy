@@ -2,7 +2,7 @@ label act2_1_shot_1:
     scene bg2day
     with fade
     stop music fadeout 1.5
-    "ไม่รู้ทำไมเหมือนกันแต่เวลาที่ได้อยู่ด้วยกันกับมาย ผ่านไปเร็วมากเลยล่ะ รู้ตัวอีกทีก็ผ่านไป 1 เดือนซะแล้ว"
+    "ไม่รู้ทำไมเหมือนกันแต่เวลาที่ได้อยู่ด้วยกันกับมายด์ ผ่านไปเร็วมากเลยล่ะ รู้ตัวอีกทีก็ผ่านไป 1 เดือนซะแล้ว"
     scene bg2day
     show curtain:
         alpha 0.25
@@ -36,7 +36,7 @@ label act2_1_shot_2:
     "หลังจากที่ตื่นจากฝันอันแปลกประหลาด เราได้พบว่าตัวเองอยู่ที่พื้นข้างๆ เตียง"
     play music morning_bgm loop fadein 0.5 fadeout 1.0 volume 0.5
     pov "ฝันร้ายอะไรกันนี่…"
-    pov "ทำไม… ฉันต้องฝันว่าเจอสองคนนั้นไถเงินด้วยล่ะเนี่ย อุส่าได้เจอมายในฝันแท้ ๆ เชียว"
+    pov "ทำไม… ฉันต้องฝันว่าเจอสองคนนั้นไถเงินด้วยล่ะเนี่ย อุส่าได้เจอมายด์ในฝันแท้ ๆ เชียว"
     pov "แปปนะไถเงินหรอ วันนี้วันเสาร์… วันที่ต้องจ่ายเงินเดือนนี่น่า"
     pov "เจองี้ไปนอนไม่หลับแล้ว เดี๋ยวจะต้องไปอ่านกล่องรับความคิดเห็นอีก แถมทั้งซึรุกับเดลก็จะมารับเงินเดือนด้วย"
     pov "ว่าแต่ตอนนี้มายด์ตื่นหรือยังนะ…"
@@ -49,7 +49,7 @@ label act2_1_shot_3:
     play sound walking_sfx
     pov "(มายด์เขามักจะตื่นสายเสมอเลยถ้าไม่มีใครไปปลุก)"
     pov "(ปกติเดลหรือซึรุจะเป็นคนมาปลุกมายด์ แต่วันนี้ฉันน่าจะเป็นคนไปปลุกแทนเพราะสะดุ้งตื่นจากสองคนนั้นเนี่ย)"
-    pov "(แปลกจังเลยนะปกติวันหยุด เดลกับซึรุจะมาเล่นกับมายด์นิ ทำไมยังไม่มากันอีก)"
+    pov "(แปลกจังเลยนะปกติวันหยุด เดลกับซึรุจะมาเล่นกับมายด์หนิ ทำไมยังไม่มากันอีก)"
     show bg22:
         zoom 1.5
         xalign 0.5
@@ -141,6 +141,7 @@ label act2_1_shot_5:
     centered "{=centered_text}thank you for plaping{/centered_text}"
     stop music
     stop sound
+    $ quick_menu = False
     $ _game_menu_screen = None
     $ renpy.block_rollback()
     play movie "meme.webm"
@@ -246,7 +247,7 @@ label act2_1_shot_8:
     tsuru "เดลเป็นอะไรไปน่ะ"
     show del normal_crying2 at rightposdel
     with dissolve
-    debirun "คือ งบเติมกาชาหนูหมดไปแล้วกับค่าซ่อมรถน่ะค่ะ… แล้ว แล้ว… กาชาที่หนูว่าจะเปิดมันจะหมดแล้ว แง่—"
+    debirun "คือ งบเติมกาชาหนูหมดไปแล้วกับค่าซ่อมรถน่ะค่ะ… แล้ว แล้ว… กาชาที่หนูว่าจะเปิดมันจะหมดแล้ว แง"
     mild "//ยื่นซองให้เดล"
     show mild pajamas_smile4 at lsposmild
     with dissolve
@@ -288,19 +289,19 @@ label act2_1_shot_8:
     show tsuru normal_idle1_2 at middlepostsuru
     show del normal_crying1 at rightposdel
     with dissolve
-    tsuru "มายด์… ลองกดดูสิ ถ้ากดแล้วออกหน้าตู้มาเดลอาจจะกลับมาเป็นเหมือนเดิมก็ได้นะ"
+    tsuru "มายด์… ลองกดดูสิ ถ้ากดแล้วออกหน้าตู้มา เดลอาจจะกลับมาเป็นเหมือนเดิมก็ได้นะ"
     mild "ค่ะ…"
     scene bg2day
     window hide
     $ _game_menu_screen = None
     show gacha_movie
     stop music fadeout 0.5
-    $ quick_meneu = False
     show phone at truecenter:
         zoom 3.2
+    $ quick_menu = False
     $ renpy.pause(39, hard=True)
-    $ quick_menu = True
     $ _game_menu_screen = "save"
+    $ quick_menu = True
     scene bg2day:
         crop (100,200,1480,720)
         size (1920, 1080)
@@ -344,12 +345,12 @@ label act2_1_shot_9:
     pov "ชมว่ายังไงบ้างหรอ ไหนๆ"
     show tsuru normal_smile2 at tsuru_close
     with dissolve
-    tsuru "“ระหว่างอยู่ในร้าน ซึรุหลับในเวลาตอนที่มารับเมนูบ้าง ตอนที่นั่งพักอยู่บ้าง แม้แต่ตอนที่ยืนรออาหารเพื่อมาเสริฟอยู่”"
+    tsuru "“ระหว่างอยู่ในร้าน ซึรุหลับในเวลาตอนที่มารับเมนูบ้าง ตอนที่นั่งพักอยู่บ้าง แม้แต่ตอนที่ยืนรออาหารเพื่อมาเสิร์ฟอยู่”"
     tsuru "และนี่อีกคำชมนึง"
     show tsuru normal_smile3 at bounce,tsuru_close
     tsuru "“ฉันกำลังจะออกจากร้าน ฉันเห็นซึรุคุยกับกบด้วยเสียงแบบกบ อย่างเหมือนเลย”"
     show tsuru normal_smile6 at tsuru_close
-    pov "นั้นไม่น่าใช้คำชมนะซึรุ…"
+    pov "นั่นไม่น่าใช่คำชมนะซึรุ…"
     pov "งั้นทางฝั่งเดล ได้คำติชมยังไงบ้างหรอ"
     scene bg2day
     show del normal_smile2 at del_close
@@ -494,8 +495,8 @@ label act2_1_shot_11:
     scene bg2day
     show del normal_smile3 at del_close
     with dissolve
-    debirun "ว้าววว สุดยากเลยยย-!! ไม่น่าเชื่อเลยว่าพี่มายด์จะสามารถแสดงบทบาทได้เหมือนหนูขนาดนี้"
-    debirun "แต่น่าเสียดายนะ ในที่แห่งนี้ มีผู้บรรชาการสูงสุดได้เพียงแค่คนเดียว-!!"
+    debirun "ว้าววว สุดยอดเลยยย-!! ไม่น่าเชื่อเลยว่าพี่มายด์จะสามารถแสดงบทบาทได้เหมือนหนูขนาดนี้"
+    debirun "แต่น่าเสียดายนะ ในที่แห่งนี้ มีผู้บัญชาการสูงสุดได้เพียงแค่คนเดียว-!!"
     show del normal_smile9 at del_close
     with dissolve
     debirun "งั้นมาดวลกัน"
