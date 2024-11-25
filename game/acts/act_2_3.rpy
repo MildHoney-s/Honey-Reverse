@@ -356,6 +356,7 @@ label act2_3_shot_1:
 
 label act2_3_shot_2:
     scene bg19
+    play music arcade_bgm loop fadein 1.0 fadeout 0.5
     show mild unhood_idle1 at leftposmild
     with fade
     pov "สุดยอดดดดด มายด์เล่นเกมเก่งเหมือนกันนะเนี่ยยย"
@@ -378,6 +379,7 @@ label act2_3_shot_2:
 
 label act2_3_shot_3:
     scene bg19
+    play music arcade_bgm loop fadein 1.0 fadeout 0.5
     show mild unhood_smile at leftposmild
     with fade
     pov "หู้ยยย อย่างคมม ไม่อยากเชื่อเลยว่าเกมแบบนี้ เธอก็ยังเล่นได้"

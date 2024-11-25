@@ -139,9 +139,10 @@ label act2_1_shot_5:
     centered "{=centered_text}และทั้งคู่ก็กินข้าวอย่างเป็นสุขชั่วนิรันดร์{/centered_text}"
     centered "{=centered_text}อวสาน{/centered_text}"
     centered "{=centered_text}thank you for plaping{/centered_text}"
-    $ _game_menu_screen = None
     stop music
     stop sound
+    $ _game_menu_screen = None
+    $ renpy.block_rollback()
     play movie "meme.webm"
     $ renpy.pause(25, hard=True)
     $ quick_menu = True

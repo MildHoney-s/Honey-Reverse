@@ -87,7 +87,7 @@ init python:
         def increase_difficulty(self):
             # Increase difficulty by reducing spawn interval
             self.time_elapsed += 1
-            if self.time_elapsed % 30 == 0:  # Every 30 seconds
+            if self.time_elapsed % 20 == 0:  # Every 30 seconds
                 self.spawn_interval = max(0.1, self.spawn_interval - 0.15)  # Reduce spawn interval but not below 0.5
 
         def start(self):
@@ -105,6 +105,7 @@ init python:
             self.stat = "playing"
             self.combo_kills = 0
             self.spawn = self.original_spawn
+            self.time_elapsed = 0
 
         def spawn(self):
             if self.stat == "dead":
@@ -114,9 +115,14 @@ init python:
             self.active_enemies = [i for i in self.active_enemies if i.stat != "hidden"]
 
             # Spawn only if fewer than the maximum number of active enemies
-            if len(self.active_enemies) < 3:
+            if len(self.active_enemies) < 5:
                 # Fixed weights for enemies: 5 for thieves, 2 for villagers (2:3 ratio)
-                weights = [3 if enemy[0][0] == "shooting_thief" else 2 for enemy in self.enemies]
+                if self.time_elapsed > 45:
+                    weights = [10 if enemy[0][0] == "shooting_thief" else 0 for enemy in self.enemies]
+                elif self.time_elapsed > 30:
+                    weights = [5 if enemy[0][0] == "shooting_thief" else 1 for enemy in self.enemies]
+                else:
+                    weights = [4 if enemy[0][0] == "shooting_thief" else 2 for enemy in self.enemies]
 
                 # Select an enemy based on the fixed weights
                 e = random.choices(self.enemies, weights=weights, k=1)[0]

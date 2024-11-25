@@ -412,6 +412,7 @@ label act1_2_shot_7:
     stop music
     $ _game_menu_screen = None
     $ quick_menu = False
+    $ renpy.block_rollback()
     play movie "frog.webm"
     $ renpy.block_rollback()
     $ renpy.pause(42, hard=True)
