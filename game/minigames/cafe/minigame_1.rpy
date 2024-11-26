@@ -366,13 +366,13 @@ screen minigame_1(g,force_lose = False):
                     xpos 27 ypos -42
                     # Timer as text (in seconds) placed ABOVE the button for specific states
                     if i.stat == "waiting":
-                        text "[i.waiting_duration]" size 20 color "#ff6200d9" ypos -15
+                        text "[i.waiting_duration]" size 20 color "#ff6200d9" ypos -15 outlines [ (1, "#ffffff", 0, 0) ]
                     elif i.stat == "chanting":
-                        text "[i.chant_duration]" size 20 color "#ff0000" ypos -15
+                        text "[i.chant_duration]" size 20 color "#ff0000" ypos -15 outlines [ (1, "#ffffff", 0, 0) ]
                     elif i.stat == "ready":
-                        text "[i.chant_delay]" size 20 color "#fffb00f7" ypos -15
+                        text "[i.chant_delay]" size 20 color "#d6c540f7" ypos -15 outlines [ (1, "#514f4f", 0, 0) ]
                     elif i.stat == "serving":
-                        text "[i.serve_duration]" size 20 color "#ffffff" ypos -15
+                        text "[i.serve_duration]" size 20 color "#ffffff" ypos -15 outlines [ (1, "#514f4f", 0, 0) ]
 
                     # Button containing client image on the left and maid (if placed) on the right
                     button:
@@ -382,7 +382,7 @@ screen minigame_1(g,force_lose = False):
                         background "#0000"  # Transparent background
 
                         hbox:
-                            spacing 16
+                            spacing 15
 
                             # Display maid on the right half if a maid is placed
                             if i.maid:

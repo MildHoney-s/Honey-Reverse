@@ -212,7 +212,7 @@ define gui.history_height = 210             # Height of a history entry.
 define gui.history_name_xpos = 233          # Position and alignment of character names.
 define gui.history_name_ypos = 0
 define gui.history_name_width = 180
-define gui.history_name_xalign = 0
+define gui.history_name_xalign = 0.5
 
 define gui.history_text_xpos = 255          # Position and alignment of dialogue text.
 define gui.history_text_ypos = 3
