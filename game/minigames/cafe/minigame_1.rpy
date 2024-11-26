@@ -511,7 +511,7 @@ screen minigame_1(g,force_lose = False):
                             text "[sign_name]"
                             action [SetVariable("sign_name",povname),SetVariable("money",money + g.stamina)]
                         else:
-                            text "[sign_name]" font "pahnto.ttf" size 36 bold True
+                            text "[sign_name]" font "Mali-BoldItalic.ttf" size 25
         if sign_name is povname:
             timer 1.2 action [SetVariable("sign_name","_____"),Return()]
 

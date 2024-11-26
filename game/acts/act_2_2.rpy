@@ -26,9 +26,9 @@ label act2_2_shot_1:
     show pixchan at bounce,shadowcloser
     pixchan "เธ๊อออ เมดคนเมื่อกี้น่ารักเนอะะ"
     show zoulfia at bounce,shadowclosel
-    zoulfia "เธอว่าไงนะ…!"
+    zoulfia "เธอว่าไงนะ...!"
     show pixchan at bounce,shadowcloser
-    pixchan "อ้ยย ต่อให้ฉันจะชมใคร เธอก็น่ารักที่สุดอยู่แล้วนะคะ คุณแฟนที่น่ารัก"
+    pixchan "อุ้ยย ต่อให้ฉันจะชมใคร เธอก็น่ารักที่สุดอยู่แล้วนะคะ คุณแฟนที่น่ารัก"
     show zoulfia at bounce,shadowclosel
     zoulfia "เธอเนี่ย คนเยอะแยะ อ๊ากกกกกกกกกก! คนบว้าๆๆๆๆๆ"
     show pixchan at bounce,shadowcloser
@@ -48,7 +48,7 @@ label act2_2_shot_1:
     mild "ถ้าในร้านของเราตอนนี้ เมนูแนะนำคือ ฮันนี่บราวชูก้า ค่ะ"
     show mild maid_smile5 at mild_close
     with dissolve
-    mild "และพิเศษ ถ้าลูกค้าสั่งเซ็ตฮันนี่สเปเชียล จะได้รับอาหาร 1 จาน ทาโกะยากิ 1 จาน เครื่องดื่ม 1 แก้ว และสามารถเลือกน้องเมดแสดงบนสเตจได้ค่ะ"
+    mild "และพิเศษ ถ้าคุณลูกค้าสั่งเซ็ตฮันนี่สเปเชียล จะได้รับเซ็ตอาหาร, ทาโกะยากิและเครื่องดื่ม 1 ชุด และสามารถเลือกน้องเมดแสดงบนสเตจได้ค่ะ"
     scene bg2day:
         crop (400,240,1280,720)
         size (1920, 1080)

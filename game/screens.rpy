@@ -13,6 +13,8 @@ default persistent.current_page_gallery = 1
 default load_from_main = True
 default config_from_main = True
 default show_skip_btn = True
+default history_name_checker = ""
+default nvl_name_checker = ""
 
 init python:
 
@@ -1179,22 +1181,29 @@ screen history():
                 for h in _history_list:
 
                     window:
-                        if (h.who != None):
+                        if (h.who != None) and (str(h.who) is not history_name_checker):
                             background Image("gui/historynamebox_lg.png", xalign=0, yalign=0)
                         ## This lays things out properly if history_height is None.
                         has fixed:
                             yfit True
+                        if (h.who != None):
+                            if str(h.who) is not history_name_checker: #is not history_name_checker
+                                #text str(h.who)
+                                label h.who:
+                                    if "&" in h.who:
+                                        style "history_manyname_text"
+                                    else:
+                                        style "history_name_text"
+                                    substitute False
 
-                        if h.who:
+                                    ## Take the color of the who text from the Character, if
+                                    ## set.
+                                    if "color" in h.who_args:
+                                        text_color h.who_args["color"]
 
-                            label h.who:
-                                style "history_name_text"
-                                substitute False
-
-                                ## Take the color of the who text from the Character, if
-                                ## set.
-                                if "color" in h.who_args:
-                                    text_color h.who_args["color"]
+                                $ history_name_checker = h.who
+                        else:
+                            $ history_name_checker = ""
 
                         $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
                         text what:
@@ -1202,17 +1211,12 @@ screen history():
                                 xalign 0.8
                                 line_spacing 5
                                 substitute False
-                                size 30
-                            elif "ทายาท" in what:
-                                xalign 1.15
-                                line_spacing 1
-                                substitute False
-                                size 18
+                                size 40
                             else:
                                 xalign 1.15
                                 line_spacing 5
                                 substitute False
-                                size 25
+                                size 45
                     ## This puts some space between entries so it's easier to read
                     null height 20
 
@@ -1259,6 +1263,14 @@ style history_name_text:
     min_width gui.history_name_width
     text_align gui.history_name_xalign
 
+style history_manyname_text:
+    xpos 0
+    ypos .05
+    yanchor 1
+    size 10
+    min_width gui.history_name_width
+    text_align gui.history_name_xalign
+
 style history_text:
     xpos gui.history_text_xpos
     ypos gui.history_text_ypos
@@ -1267,7 +1279,8 @@ style history_text:
     min_width gui.history_text_width
     text_align gui.history_text_xalign
     layout ("subtitle" if gui.history_text_xalign else "tex")
-    font "cafe3.ttf"
+    kerning 1.5
+    font "TCS4GiveKhemThit.ttf"
     color gui.interface_text_color
 
 style history_label:
@@ -1675,9 +1688,10 @@ screen nvl_dialogue(dialogue):
                 yfit gui.nvl_height is None
 
                 if d.who is not None:
-
-                    text d.who:
-                        id d.who_id
+                    if str(d.who) is not nvl_name_checker:
+                        text d.who:
+                            id d.who_id
+                        $ nvl_name_checker = str(d.who)
 
                 text d.what:
                     id d.what_id

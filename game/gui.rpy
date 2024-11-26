@@ -208,7 +208,7 @@ define gui.unscrollable = "hide"
 # Settings for the dialogue history screen.
 
 define config.history_length = 250          # Number of history blocks to keep.
-define gui.history_height = 210             # Height of a history entry.
+define gui.history_height = 150           # Height of a history entry.
 define gui.history_name_xpos = 233          # Position and alignment of character names.
 define gui.history_name_ypos = 0
 define gui.history_name_width = 180
