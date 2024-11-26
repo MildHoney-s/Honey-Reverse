@@ -1267,7 +1267,7 @@ style history_text:
     min_width gui.history_text_width
     text_align gui.history_text_xalign
     layout ("subtitle" if gui.history_text_xalign else "tex")
-    font gui.text_font
+    font "cafe3.ttf"
     color gui.interface_text_color
 
 style history_label:

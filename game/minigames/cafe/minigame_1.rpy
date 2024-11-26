@@ -503,11 +503,15 @@ screen minigame_1(g,force_lose = False):
                         text "[money]"
                     else:
                         text "[g.stamina+money]"
-                button:
+                hbox:
                     align (0.5,0.765)
-                    text "Sign Here {}".format(sign_name)
-                    if sign_name is not povname:
-                        action [SetVariable("sign_name",povname),SetVariable("money",money + g.stamina)]
+                    text "Sign Here"
+                    button:
+                        if sign_name is not povname:
+                            text "[sign_name]"
+                            action [SetVariable("sign_name",povname),SetVariable("money",money + g.stamina)]
+                        else:
+                            text "[sign_name]" font "pahnto.ttf" size 36 bold True
         if sign_name is povname:
             timer 1.2 action [SetVariable("sign_name","_____"),Return()]
 
