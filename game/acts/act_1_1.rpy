@@ -21,12 +21,12 @@ label act1_1_shot_1:
     $ renpy.pause(1,modal=True)
 
     window show
-    manager "ตอนนี้ร้านของเราลูกค้าก็เยอะขึ้นแล้ว สองคนนั้นจะไหวไหมเนี่ย คนนึงก็เด็กซุ่มซ่าม ส่วนอีกคนก็……"
-    manager "ยิ่งเสียงตอนเรียกหาฉันเวลามีปัญหา…"
-    manager "เห้ออ…"
-    manager "แล้วฉันก็ทำงานในครัวคนเดียวซะด้วยสิ หรือว่า- จะหาสาวสวยๆมาช่วยทำครัวเพิ่มดีน้าา อะแหะๆ…"
+    manager "ตอนนี้ร้านของเราลูกค้าก็เยอะขึ้นแล้ว สองคนนั้นจะไหวไหมเนี่ย คนนึงก็เด็กซุ่มซ่าม ส่วนอีกคนก็...."
+    manager "ยิ่งเสียงตอนเรียกหาฉันเวลามีปัญหา.."
+    manager "เห้ออ.."
+    manager "แล้วฉันก็ทำงานในครัวคนเดียวซะด้วยสิ หรือว่า- จะหาสาวสวยๆมาช่วยทำครัวเพิ่มดีน้าา อะแหะๆ.."
     stop sound
-    manager "ถึงจะเคยประกาศรับสมัครไปแล้วก็เถอะ แต่ผลลัพธ์ที่ได้ก็……"
+    manager "ถึงจะเคยประกาศรับสมัครไปแล้วก็เถอะ แต่ผลลัพธ์ที่ได้ก็...."
     stop music fadeout 0.5
     window hide dissolve
 
@@ -69,7 +69,7 @@ label act1_1_shot_2:
     show ashy_sd_1 at truecenter:
         zoom 0.6
     with dissolve
-    ashy "คุณผู้จัดการจ๋าาา ถ้าไม่รังเกียจละก็… หนูเอาแตงกวาจากสวนที่บ้านมาฝากด้วยล่ะ!!"
+    ashy "คุณผู้จัดการจ๋าาา ถ้าไม่รังเกียจละก็.. หนูเอาแตงกวาจากสวนที่บ้านมาฝากด้วยล่ะ!!"
 
     show ashy_sd_1 at truecenter:
         crop (0,0,1920,1080)
@@ -87,7 +87,7 @@ label act1_1_shot_2:
     with dissolve
 
     ashy "หนูอยากทำทุกเมนูให้มีแตงกวาอยู่เยอะ ๆ เลยค่ะ!"
-    manager "อ๋าา… แบบนี้เอง ไหนลองทำอาหารที่ครัวมาเมนูนึงได้มั้ย"
+    manager "อ๋าา.. แบบนี้เอง ไหนลองทำอาหารที่ครัวมาเมนูนึงได้มั้ย"
     ashy "ได้ค่าาา"
 
     scene black
@@ -99,7 +99,7 @@ label act1_1_shot_2:
         zoom 0.667
     with dissolve
     ashy "มาแล้วค่า~ นายท่าน เบอร์เกอร์สูตรพิเศษจากหนูเอง!"
-    manager "ดูดีนี่ ไหนลองซิ…"
+    manager "ดูดีนี่ ไหนลองซิ.."
     manager "**ลองชิม**"
     show cucumburg at truecenter
     with dissolve
@@ -107,7 +107,7 @@ label act1_1_shot_2:
     manager "แค่กๆ อะไรกันเนี่ยทำไมไส้ในถึงได้มีแต่แตงกวาล่ะ!" with sshake
     play music nightmare_bgm loop  fadein 1.25
     hide cucumburg
-    ashy "เธอจ๋าาา จะไม่เอาแตงกวาจริงหรอจ๊ะ นี่น่ะของดีประจำอำเภ…"
+    ashy "เธอจ๋าาา จะไม่เอาแตงกวาจริงหรอจ๊ะ นี่น่ะของดีประจำอำเภ.."
     manager "เดี๋ยวลูกค้าก็ได้กินแตงกวาทุกเมนูพอดี ไม่ได้ๆ แบบนี้คงต้องให้ไม่ผ่าน!"
     manager "ไม่ผ่าน!!!" with ashyShake
     hide ashy_sd_1 with dissolve
@@ -126,7 +126,7 @@ label act1_1_shot_2:
     window show
     ami "(อื้อออ...เราทำได้..ทำได้..ใช่ทำได้)"
     ami "สวัสดีค่าา หัวใจที่บอบช้ำของคุณ ขอเค้าดูแลเถอะนะคะ ><"
-    ami "ตะ….. ตื่นเต้นจังเลยค่ะ"
+    ami "ตะ... ตื่นเต้นจังเลยค่ะ"
 
     manager "ไม่เป็นไรนะ สบายๆนะ"
     manager "ถ้างั้นช่วยแจกใบปลิวสัก 15 ใบได้มั้ย"
@@ -142,7 +142,7 @@ label act1_1_shot_2:
     play sound crowded_sfx loop volume 0.75 fadein 1.25
     ami "“สวัสดีค่า~! ขอฝากใบปลิวของร้านไว้หน่อยนะคะ~"
     "หลังจากนั้นก็มีกลุ่มผู้คนเข้ามารุมล้อม จนบังตัวผู้สัมภาษณ์คนนี้จนหมด"
-    ami "อะ เอ่อ… ใบปลิวหมดแล้วค่าาา.. งื้อออ…. ค-คุณผู้จัดการคะะ..ช่วยด้วยค่าา…"
+    ami "อะ เอ่อ.. ใบปลิวหมดแล้วค่าาา.. งื้อออ... ค-คุณผู้จัดการคะะ..ช่วยด้วยค่าา.."
     manager "เดี๋ยวก่อน เผลอแปปเดียว ทำไมคนมาเยอะขนาดนั้นล่ะ!"
     manager "หยุดก่อน หยุดก่อนนนนนน"
     manager "(ถึงแม้ตัวฉันจะพยายามห้ามผู้คนที่มารุมล้อมเท่าไหร่ ก็ไม่สามารถเข้าไปช่วยเหลือได้)"
@@ -202,8 +202,8 @@ label act1_1_shot_3:
 
     hide sd_wanted
     manager "นักวิทยาศาสตร์ชอบทดลองอะไรประหลาดๆ อยู่เรื่อย"
-    manager "เห้ออ… นั่นคนเลยนะ เป็นมนุษย์เหมือนกันแท้ๆ"
-    manager "แล้วข้อความสุดท้ายนั่นก็คือ… ให้ระวังมิวแทนต์ไว้เพราะเป็นอันตรายงั้นหรอ…… เอาเถอะคงไม่เกี่ยวกับฉันล่ะมั้ง…"
+    manager "เห้ออ.. นั่นคนเลยนะ เป็นมนุษย์เหมือนกันแท้ๆ"
+    manager "แล้วข้อความสุดท้ายนั่นก็คือ.. ให้ระวังมิวแทนต์ไว้เพราะเป็นอันตรายงั้นหรอ.... เอาเถอะคงไม่เกี่ยวกับฉันล่ะมั้ง.."
     window hide
     stop music fadeout 1.25
     play sound walking_sfx loop fadein 0.5
@@ -248,7 +248,7 @@ label act1_1_shot_3:
     with dissolve
 
     manager "(เรียกแล้วไม่ตื่น จึงอุ้มขึ้นมา แอบเห็นแขนที่ลักษณะเป็นหลอดๆ มีน้ำชมพูๆอยู่ภายใน)"
-    manager "ดะ เดี๋ยวก่อนนะ… นะ นี่คนคนนี้… หรือว่าจะเป็น มิวแทนต์ในข่าวนั้น… เอาไงดีถ้าพาไปโรงพยาบาลคนนี้จะเป็นอันตรายมั้ยนะ"
+    manager "ดะ เดี๋ยวก่อนนะ.. นะ นี่คนคนนี้.. หรือว่าจะเป็น มิวแทนต์ในข่าวนั้น.. เอาไงดีถ้าพาไปโรงพยาบาลคนนี้จะเป็นอันตรายมั้ยนะ"
     manager "(ระหว่างที่อุ้ม ก็ยืนนิ่งคิดอยู่สักพัก)"
     manager "อ่ะ! จริงสิ พาไปที่ร้านของเราก่อนแล้วกันนะ ถ้าตื่นแล้วลองคุยดูก่อนละกัน" with sshake
     window hide
@@ -308,7 +308,7 @@ label act1_1_shot_4:
     show emotion_spiral at emotepairpos2
     with dissolve
 
-    hooded_figure "งืม งั่ม น .§€÷สกsdากวkjบ"
+    hooded_figure "งืม งั่ม น .palสกsdากวkjบ"
     hide mild hood_idle2
     show mild hood_idle1 at mildhood
     show tsuru maid_wow at leftpostsuru
@@ -318,7 +318,7 @@ label act1_1_shot_4:
     hide mild hood_idle1
     show mild hood_scared at mildhood
     with dissolve
-    hooded_figure "นะ น้ำ… ขะ ขอ… น้ำาา.."
+    hooded_figure "นะ น้ำ.. ขะ ขอ.. น้ำาา.."
     hide mild hood_scared
     show mild hood_idle1 at mildhood
     with dissolve
@@ -347,7 +347,7 @@ label act1_1_shot_4:
     show mild hood_idle1 at mildhood
     with dissolve
     show emotion_question at emotepairpos1
-    tsuru "เอ๊~ อะเรรรรรรรร๊?…คุณผู้จัดการ.. ไม่มีน้ำเปล่าหรอคะ"
+    tsuru "เอ๊~ อะเรรรรรรรร๊?..คุณผู้จัดการ.. ไม่มีน้ำเปล่าหรอคะ"
     manager "พอดีร้านน้ำที่สั่งไป เขายังไม่มาส่งน่ะ แต่อาการแบบนี้ฉันว่าให้ดื่มอะไรที่มีน้ำตาลน่าจะช่วยได้มากกว่านะ"
     hide emotion_question
     show tsuru maid_idle2 at leftpostsuru
@@ -395,7 +395,7 @@ label act1_1_shot_4:
     hide emotion_celebrate
     show tsuru maid_idle2 at leftpostsuru
     with dissolve
-    mild_nohood "คือฉัน………"
+    mild_nohood "คือฉัน......"
     manager "อ่ะ ไม่ต้องห่วงนะ ที่นี่ไม่มีใครทำร้ายเธอหรอกนะ"
     mild_nohood "//พยักหน้า"
     scene black with dissolve
@@ -494,7 +494,7 @@ label act1_1_shot_4_q1_c2:
     tsuru "ร้าน “ฮันนี่รีเวิร์ส” เป็นร้านบริการสไตล์ญี่ปุ่น คล้ายๆร้านเมดคาเฟ่ แต่ทางร้านเราจะมีการเพิ่มเรื่องของการ Roleplay เข้าไปด้วย!"
     tsuru "อย่างซึรุคุณผู้จัดการให้เล่นเป็นน้องสาวน่ะนะ"
 
-    manager "ซึรุน่ะมีออร่าความเป็นน้องสาว ซุ่มซ่าม–"
+    manager "ซึรุน่ะมีออร่าความเป็นน้องสาว ซุ่มซ่าม-"
     scene bg2day:
         crop (100,200,1280,720)
         size (1920, 1080)
@@ -523,13 +523,13 @@ label act1_1_shot_5:
     $ povname = renpy.input("ส่วนฉันชื่อ (กรอกชื่อของคุณ)")
 
     pov "ส่วนฉันชื่อ [povname] เป็นผู้จัดการของร้านนี้"
-    pov "แล้วก็มีอีกคนนึง…"
+    pov "แล้วก็มีอีกคนนึง.."
     pov "ไว้รอเจอพรุ่งนี้แล้วกันนะ"
     scene bg2day:
         crop (400,200,1780,720)
         size (1920, 1080)
     show mild unhood_smile at mildunhood_close
-    mild_nohood "ฉัน…. ได้รับชื่อมาว่า มายด์-อาร์(Mild-R) ค่ะ"
+    mild_nohood "ฉัน... ได้รับชื่อมาว่า มายด์-อาร์(Mild-R) ค่ะ"
     mild  "เป็นชื่อที่แปะอยู่บนหลอดทดลองที่ฉันหลุดออกมา"
     pov "ถ้าอย่างงั้นยินดีที่ได้รู้จักนะมายด์  เธอจะช่วยมาทำงานที่ร้านของฉันหน่อยได้มั้ย"
     pov "ร้านของฉันขาดคนพอดี มีชุด มีที่พักอยู่ตรงข้ามห้องของฉัน"
@@ -553,7 +553,7 @@ label act1_1_shot_5:
     show mild unhood_smile at mildhood
     show tsuru maid_smile1 at leftpostsuru
     with dissolve
-    mild "ถะ ถ้างั้น…. ขอฝากตัวด้วยนะคะ"
+    mild "ถะ ถ้างั้น... ขอฝากตัวด้วยนะคะ"
     show tsuru maid_smile2 at leftpostsuru
     show emotion_celebrate at emotepairpos1
     with sshake
@@ -669,9 +669,9 @@ label act1_1_shot_6:
     with easeinleft
     mild "//เดินมาหาคุณที่ครัว"
     show emotion_question at emotepairpos1
-    mild "คุณ [povname] คะ มีอะไรที่ฉันช่วยได้มั้ยคะ…"
+    mild "คุณ [povname] คะ มีอะไรที่ฉันช่วยได้มั้ยคะ.."
 
-    pov "ช่วยเก็บโต๊ะ...… ไม่สิไม่เป็นไร-"
+    pov "ช่วยเก็บโต๊ะ..... ไม่สิไม่เป็นไร-"
     hide emotion_question with dissolve
     hide mild maid_doubt with easeoutright
     pov "(ไม่ทันจะได้พูดจบ มายด์ก็เดินไปเก็บโต๊ะ)"
@@ -745,7 +745,7 @@ label act1_1_shot_6:
     show omurice_red at omu
     show mild maid_blush2 at middleposmild
     with dissolve
-    mild "อ่าา หมีค่า… คือฉันพึ่งเริ่มทำงานเลยยังไม่ค่อยเก่งขอโทษด้วยนะคะ"
+    mild "อ่าา หมีค่า.. คือฉันพึ่งเริ่มทำงานเลยยังไม่ค่อยเก่งขอโทษด้วยนะคะ"
 
     customer "อะ เฮื้อกกกกก น่ารักกกกกกกกกกกกก"
 
@@ -754,7 +754,7 @@ label act1_1_shot_6:
     show mild maid_idle2 at middleposmild
     hide omurice_red
     with dissolve
-    mild "ชื่อ มายด์อาร์ ค่ะ ขอฝากตัวด้วยนะคะ…."
+    mild "ชื่อ มายด์อาร์ ค่ะ ขอฝากตัวด้วยนะคะ..."
     mild "(เอ๊ะ แล้วเราต้องเรียกคุณลูกค้าว่าอะไรดีล่ะ จะเรียกพี่ๆแบบซึรุก็ไม่ได้สินะ ถะ ถ้างั้น)"
     show mild maid_heart at middleposmild
     show emotion_love at emotepos
@@ -802,7 +802,7 @@ label act1_1_shot_7:
     show mildru_sd_2 at truecenter:
         zoom 0.7
     with dissolve
-    mild "ตะ แต่ว่าฉันยัง คิดว่ายังทำได้ไม่ดีเท่าไหร่…"
+    mild "ตะ แต่ว่าฉันยัง คิดว่ายังทำได้ไม่ดีเท่าไหร่.."
     hide mildru_sd_2
     show mildru_sd_1 at truecenter:
         zoom 0.7
@@ -834,20 +834,20 @@ label act1_1_shot_7:
     show mild maid_doubt at middleposmild
     show emotion_question at emotepos
     with dissolve
-    mild "มะ ไม่เลยค่ะ แต่ว่าฉันสงสัยอย่างนึงค่ะ…"
+    mild "มะ ไม่เลยค่ะ แต่ว่าฉันสงสัยอย่างนึงค่ะ.."
 
     pov "อื้มม..ว่าไงถามมาได้เลยนะ ฉันฟังอยู่"
     show mild maid_idle1 at middleposmild
     hide emotion_question
     with dissolve
-    mild "คะ คือว่าห้องนี้มันแปลกนิดหน่อยค่ะ… มีเฟอร์นิเจอร์อยู่ครบเลย…"
+    mild "คะ คือว่าห้องนี้มันแปลกนิดหน่อยค่ะ.. มีเฟอร์นิเจอร์อยู่ครบเลย.."
 
     pov "อ๋อนี่เป็นห้องของญาติฉันเองแหละ แต่ว่าเค้าต้องไปดูแลกิจการอีกสาขาที่ต่างจังหวัด ก็เลยไม่ค่อยได้กลับมาใช้ห้องนี้แล้วน่ะ"
     pov "(พอดีว่าเขาต้องไปดูแลอีกสาขาน่ะ ก็เลยไม่ค่อยได้กลับมาใช้ห้องนี้แล้ว)"
     show mild maid_flustered at mild_close
     show emotion_stressed at emotepos
     with dissolve
-    mild "มันจะ ดะ ดีจริงๆ หรอคะ…"
+    mild "มันจะ ดะ ดีจริงๆ หรอคะ.."
 
     pov "เธอทำตัวตามสบายได้เลย"
     pov "//ยิ้มหวาน"
@@ -859,7 +859,7 @@ label act1_1_shot_7:
     pov "จะว่าไปอย่าเรียกฉันว่า คุณจะได้มั้ย เรียกแค่ชื่อของฉันก็พอ"
     pov "ไหนเรียกซิ~ [povname]"
     show mild maid_flustered at mild_close
-    mild "คะ-คุณ มะ ไม่สิ [povname] ค่ะ….. // .//////. เขิลอาย"
+    mild "คะ-คุณ มะ ไม่สิ [povname] ค่ะ.... // .//////. เขิลอาย"
 
     pov "อื้มม ขอบคุณมากนะมายด์"
     pov "//มองมายด์แล้วพึ่งนึกได้ว่ามายด์ยังไม่มีชุดใส่"
@@ -911,7 +911,7 @@ label act1_1_shot_7:
     hide brown_transparent
     play sound cry_sfx fadein 0.5 volume 0.35
     pov "(ระหว่างที่ฉันเขียนไดอารี่เกิดเสียงบางอย่างที่ แปลกประหลาด ทำให้ฉันต้องชะงักจากการเขียนไดอารี่ เสียงบางอย่างที่คล้ายกับเสียงคนร้องไห้ ทรมานด้วยเจ็บปวดอย่างน่าหดหู่)"
-    pov "มะ ไม่มั้ง เอาเป็นว่าฉันเขียนไดอารี่แค่นี้ก่อนละกันนะ ไปนอนดีกว่า อะแหะๆๆ…"
+    pov "มะ ไม่มั้ง เอาเป็นว่าฉันเขียนไดอารี่แค่นี้ก่อนละกันนะ ไปนอนดีกว่า อะแหะๆๆ.."
     scene bg7night
     with dissolve
     stop sound

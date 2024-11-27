@@ -27,11 +27,11 @@ label act1_2_shot_1:
     with dissolve
     mild "รอบนี้จะแกล้งให้ฉันต้องจ่ายค่าอาหารให้คุณอีกมั้ยคะเนี่ย"
     pov "กะ ก็ต้องไม่ใช่น่ะซิ! เป็นสวัสดิการให้พนักงานน่ะ!"
-    pov "(นี่เธอยังระแวงเรื่องเมื่อตอนนั้นอยู่อีกหรอเนี่ย…)"
+    pov "(นี่เธอยังระแวงเรื่องเมื่อตอนนั้นอยู่อีกหรอเนี่ย..)"
     pov "แล้วเธออยากทานอะไรล่ะ มีอะไรอยากกินเป็นพิเศษรึเปล่า"
     show mild maid_doubt at mild_close
     with dissolve
-    mild "อื้ม….. พอดีฉันไม่ค่อยมีเมนูในใจเลยค่ะ ที่ทานแล้วอร่อยคงเป็น ชานม ที่[povname] เคยเอามาให้"
+    mild "อื้ม.... พอดีฉันไม่ค่อยมีเมนูในใจเลยค่ะ ที่ทานแล้วอร่อยคงเป็น ชานม ที่[povname] เคยเอามาให้"
     pov "งั้น เอาเป็นเมนูของที่ร้านแล้วกันเนอะ"
     show mild maid_smile1 at mild_close
     with dissolve
@@ -41,12 +41,12 @@ label act1_2_shot_1:
         size (1920, 1080)
     show mild maid_blush2 at mild_close
     with fade
-    mild "(ถึงจะรู้อยู่แล้วว่า [povname] ทำอาหารเก่งก็เถอะนะ แต่พอได้ดูใกล้ๆ แบบนี้…)"
+    mild "(ถึงจะรู้อยู่แล้วว่า [povname] ทำอาหารเก่งก็เถอะนะ แต่พอได้ดูใกล้ๆ แบบนี้..)"
     pov "เสร็จแล้ว!"
     show mild maid_smile3 at mild_close
     with dissolve
     pov "เชิญทานเลย ออมไรส์สูตรพิเศษจากฉันเอง!"
-    mild "งั้นขออนุญาต…ทานนะคะ"
+    mild "งั้นขออนุญาต..ทานนะคะ"
     show mild maid_smile9 at mild_close
     with dissolve
     mild "อร่อยมากเลยค่ะ!"
@@ -84,12 +84,12 @@ label act1_2_shot_2:
     pov "ฮิฮิ"
     stop music fadeout 1.0
     play sound door_sfx fadein 0.25 volume 0.55
-    unknow_debirun "เอ่อคือ…."
+    unknow_debirun "เอ่อคือ..."
     scene bg2day
     show mild maid_blush1 at leftposmild
     with dissolve
     play music cafe_bgm loop fadein 1.0 fadeout 1.0
-    unknow_debirun "สวัสดีค่ะ ผู้จัดการ…"
+    unknow_debirun "สวัสดีค่ะ ผู้จัดการ.."
     show del normal_smile2 at rightposdel
     with easeinright
     pov "อ่ะ ว่าไงสวัสดียามเช้านะ เดลจัง มาเช้าจังเลยนะ"
@@ -98,16 +98,16 @@ label act1_2_shot_2:
         size (1920, 1080)
     show del normal_idle1 at del_close
     with dissolve
-    debirun "ก็มันว่างนี่คะ…."
+    debirun "ก็มันว่างนี่คะ..."
     hide del normal_idle1
     show del normal_smile1 at del_close
     with dissolve
-    debirun "แล้วนี่หนูมาขัดจังหวะผู้จัดการกับแฟนรึเปล่าคะเนี่ย…."
+    debirun "แล้วนี่หนูมาขัดจังหวะผู้จัดการกับแฟนรึเปล่าคะเนี่ย..."
     scene bg2day
     show mild maid_flustered at leftposmild
     show del normal_smile7 at rightposdel
     with dissolve
-    pov "ฟะ แฟนอะไรละ มะ ไม่ใช่สักหน่อย เนอะมายด์–"
+    pov "ฟะ แฟนอะไรละ มะ ไม่ใช่สักหน่อย เนอะมายด์-"
     pov "(ระหว่างที่ฉันแก้ตัวพอได้หันไปมองที่มายด์ กลับเห็นสีหน้าของเธอที่แดงผ่าวราวกับมะเขือเทศ\nนะ นี่เธอเขินอยู่อย่างงั้นหรอ!)"
     show del normal_smile8 at rightposdel
     show mild maid_blush2 at leftposmild
@@ -131,7 +131,7 @@ label act1_2_shot_2:
     show mild maid_doubt at mild_close
     show emotion_question at emoteclose
     with dissolve
-    mild "มายด์หรอ อืม……………"
+    mild "มายด์หรอ อืม.."
     mild "คิดว่าน่าจะประมาณ 20 กว่าๆ แล้วนะคะ"
     scene bg2day
     show mild maid_idle1 at leftposmild
@@ -149,7 +149,7 @@ label act1_2_shot_3:
     show emotion_question at emoteclose
     with fade
     debirun "เห็นว่าเป็นพนักงานใหม่แล้วพี่มายด์เล่นบทอะไรหรอผู้จัดการ"
-    pov "ฮื้ม… จริงๆ ฉันก็คิดไว้สักพักแล้วแหละ ว่าคาแรคเตอร์แบบมายด์ที่ฉันเห็นควรจะเป็น……."
+    pov "ฮื้ม.. จริงๆ ฉันก็คิดไว้สักพักแล้วแหละ ว่าคาแรคเตอร์แบบมายด์ที่ฉันเห็นควรจะเป็น..."
     menu:
         "เมดพยาบาล แบบไอดอลสาวไปเลย":
             $ honey_score += 1
@@ -166,11 +166,11 @@ label act1_2_shot_3:
                 crop (100,200,1480,720)
                 size (1920, 1080)
             show mild maid_flustered at mild_close
-            mild "ฟะ แฟน…?"
+            mild "ฟะ แฟน..?"
             pov "หมายถึงเมดพยาบาล แบบไอดอลสาวนะ"
     show mild maid_smile3 at mild_close
     with dissolve
-    mild "คะ ค่า แล้ว ไอดอล…."
+    mild "คะ ค่า แล้ว ไอดอล..."
     show mild maid_doubt at mild_close
     show emotion_question at emoteclose
     with dissolve
@@ -179,7 +179,7 @@ label act1_2_shot_3:
     show mild maid_blush2 at mild_close
     hide emotion_question
     with dissolve
-    mild "ฉันเป็นแบบนั้นหรอคะ…"
+    mild "ฉันเป็นแบบนั้นหรอคะ.."
     pov "อื้มม ใช่สิ ออร่าที่มาจากตัวเธอน่ะ สุดยอดมากเลยนะ"
     scene bg2day
     show mild maid_blush1 at leftposmild
@@ -208,10 +208,10 @@ label act1_2_shot_3:
     show delbyou at truecenter:
         zoom 1.1
     with fade
-    debirun "ย๊า ด้วยนามของผู้อยู่เหนือกาลเวลา พวกเจ้าจงฟัง! นามของข้าคือเดบิรุน! ก้มหัวสะสิ 5 5 5  5 5 5 5 5   5 55 5 5 5 5 5 5 55 !"
-    mild "ดะ..เดล… จัง….. เปี่ยน.. ไป๊"
+    debirun "ย๊า ด้วยนามของผู้อยู่เหนือกาลเวลา พวกเจ้าจงฟัง! นามของข้าคือเดบิรุน! \nก้มหัวสะสิ 5 5 5  5 5 5 5 5 5 55 5 5 5 5 5 5 55 !"
+    mild "ดะ..เดล.. จัง.... เปี่ยน.. ไป๊"
     debirun "เอาล่ะ! ได้เวลาไปต้อนรับเจ้าพวกมนุษย์แล้วสินะ ฮ่าฮาฮ่า!"
-    mild "…………………………….."
+    mild "...."
 
     $ quick_menu = False
     play music minigame2_bgm loop fadein 1.0 fadeout 0.5
@@ -228,12 +228,12 @@ label act1_2_shot_4:
     show mild maid_smile10 at leftposmild
     with fade
     debirun "นี่ก็ผ่านมาสักพักแล้วนะผู้จัดการ พี่ซึรุเขายังไม่มาเลย"
-    pov "นั่นสิเป็นอะไรรึเปล่านะ…"
+    pov "นั่นสิเป็นอะไรรึเปล่านะ.."
     scene bg2day:
         crop (400,240,1280,720)
         size (1920, 1080)
     show mild maid_doubt at mild_close
-    mild "(ตอนคุยกับพวกเรายังเป็นเดลจังตอนปกติสินะ…)"
+    mild "(ตอนคุยกับพวกเรายังเป็นเดลจังตอนปกติสินะ..)"
     scene bg2day
     show del maid_doubt at rightposdel
     show mild maid_doubt at leftposmild
@@ -254,12 +254,12 @@ label act1_2_shot_4:
     show mild maid_idle2 at llposmild
     with dissolve
     mild "ซึรุทำไมมาช้าจัง"
-    pov "หวังว่ารอบนี้จะมีข้อแก้ตัวดี ๆ นะซึรุ……"
+    pov "หวังว่ารอบนี้จะมีข้อแก้ตัวดี ๆ นะซึรุ.."
     show del maid_idle1 at llposdel
     show tsuru normal_smile5 at rightpostsuru
     show emotion_tear at emotepairpos2
     with dissolve
-    tsuru "อ่า…เอ่อ…นะ หนู นอนเพลิน แหะๆ"
+    tsuru "อ่า..เอ่อ..นะ หนู นอนเพลิน แหะๆ"
     show mild maid_idle1 at llposmild
     with dissolve
     mild "โถ้ว นึกว่าเป็นอะไรซะอีกนะ"
@@ -346,9 +346,9 @@ label act1_2_shot_5:
     debirun "แล้วพี่มายด์ล่ะ มีตุ๊กตาบ้างมั้ย"
     show mild maid_doubt at llposmild
     with dissolve
-    mild "ตุ๊กตาหรอคะ……."
+    mild "ตุ๊กตาหรอคะ..."
     show emotion_question at emotepairpos1
-    mild "ที่เป็นตัวนุ่มๆ น่ารักๆ เอาไว้กอดหรอคะ…"
+    mild "ที่เป็นตัวนุ่มๆ น่ารักๆ เอาไว้กอดหรอคะ.."
     hide emotion_question
     show del maid_smile4 at middleposdel
     show tsuru maid_smile1 at rightpostsuru
@@ -370,11 +370,11 @@ label act1_2_shot_6:
     show tsuru maid_smile2 at rightpostsuru
     with dissolve
     tsuru "ผู้จัดการยังไม่เล่าให้ฟังหรอ"
-    debirun "ยังนะพี่….."
+    debirun "ยังนะพี่...."
     pov "//กระแอม"
     show tsuru maid_smile3 at rightpostsuru
     with dissolve
-    tsuru "เรื่องมีอยู่ว่า……."
+    tsuru "เรื่องมีอยู่ว่า..."
     scene black with dissolve
     stop music fadeout 1.0
     centered "{=centered_text} ซึรุได้เล่าเรื่องราวทั้งหมดให้เดลฟัง{/centered_text}"
@@ -385,7 +385,7 @@ label act1_2_shot_6:
     debirun "โถ่ววว พี่สาวคนสวยของหนู หนูอยู่นี่น้า "
     debirun "หนูไม่รู้เลยว่าพี่จะเจอเรื่องแบบนี้ อ่ะกอดๆ นะค้าบบ"
     mild "พี่ไม่เป็นไรแล้วเดลจัง โอ๋ๆ"
-    debirun "อื้อ… //เดลถอยตัวออกจากมายด์มา"
+    debirun "อื้อ.. //เดลถอยตัวออกจากมายด์มา"
     show mildru_sd_1 at truecenter:
         zoom 0.7
     with dissolve
@@ -433,25 +433,25 @@ label act1_2_shot_7:
     tsuru "ตัวนี้เรียกว่าแพนด้าน่ะ"
     show mild maid_doubt at rightposmild
     with dissolve
-    mild "แพน…. อะไรนะคะ?"
+    mild "แพน... อะไรนะคะ?"
     show tsuru maid_smile4 at leftpostsuru
     with dissolve
     tsuru "แพนนนนนนนน ด้าาา"
     show mild maid_stunned at rightposmild
     with dissolve
-    mild "พะ แพน….."
+    mild "พะ แพน...."
     mild "ออกเสียงยากจัง"
     show mild maid_stunned at middleposmild
     show del maid_smile4 at rightposdel
     with easeinright
     debirun "งั้นก็เรียกพี่แพน เลยก็ได้นี่"
     show mild maid_smile11 at middleposmild
-    mild "พี่แพน… งื้อออออ น่ารักจังงง"
+    mild "พี่แพน.. งื้อออออ น่ารักจังงง"
     show tsuru maid_smile2 at leftpostsuru
     with dissolve
     tsuru "ไว้มีโอกาสฉันจะหาพี่แพนมาให้นะ ถึงจะเป็นพวงกุญแจก็เถอะ ไว้สักวันเราไปหาซื้อพี่แพนด้วยกันนะ"
     mild "อื้ออ!"
-    pov "(มายด์ยังต้องเรียนรู้โลกภายนอกอีกเยอะเลยสินะ ไว้ถ้ามีโอกาสฉันคงต้องพาออกไปข้างนอกสักหน่อยแล้วล่ะ แต่แบบนี้ก็คือ ดะ เดท..สินะ….)"
+    pov "(มายด์ยังต้องเรียนรู้โลกภายนอกอีกเยอะเลยสินะ ไว้ถ้ามีโอกาสฉันคงต้องพาออกไปข้างนอกสักหน่อยแล้วล่ะ แต่แบบนี้ก็คือ ดะ เดท..สินะ...)"
     pov "เอาล่ะพวกเธอ ถ้าเก็บร้านเสร็จแล้วก็กลับบ้านได้เลยนะ เดินทางปลอดภัยล่ะ วันนี้ก็ขอบคุณมาก"
     show mild maid_smile3 at middleposmild
     show del maid_smile1 at rightposdel
@@ -471,9 +471,9 @@ label act1_2_shot_8:
     nvl clear
     diary "วันนี้ซึรุก็มาสายอีกแล้ว แถมยังตื่นสายเหมือนเดิมเลยด้วย ทำเอาฉันตกใจได้ทุกครั้งเลยนะ"
     diary "อ๋อเป็นวันแรกที่เดลกับมายด์ได้เจอกันด้วย สนิทกันไวดีจริงๆ นะ เข้ากันเป็นปี่เป็นขลุ่ยเลย เห็นแบบนี้ก็ชื่นใจสุดๆ ที่สาวๆ เข้ากันได้ดี"
-    diary "ถึงมายด์จะตกใจตอนที่เดลเข้าโหมดทำงานก็เถอะ ฮ่าฮ่าฮ่า…..)"
-    diary "วันนี้ได้รู้อะไรเกี่ยวกับมายด์เพิ่มขึ้นด้วย จากที่สาวๆ คุยกันเหมือนมายด์จะชอบแพนด้า มาก ๆ เลยนะ ถึงแม้วิธีเรียกจะแปลกๆ …."
-    diary "พี่แพนงั้นหรอ... น่ารักดีแฮะ… บ้าจริงแค่นึกถึงฉันก็หุบยิ้มไม่ได้แล้วเนี่ย น่ารักจนใจแทบวายเลย! "
+    diary "ถึงมายด์จะตกใจตอนที่เดลเข้าโหมดทำงานก็เถอะ ฮ่าฮ่าฮ่า...)"
+    diary "วันนี้ได้รู้อะไรเกี่ยวกับมายด์เพิ่มขึ้นด้วย จากที่สาวๆ คุยกันเหมือนมายด์จะชอบแพนด้า มาก ๆ เลยนะ ถึงแม้วิธีเรียกจะแปลกๆ ..."
+    diary "พี่แพนงั้นหรอ... น่ารักดีแฮะ... บ้าจริงแค่นึกถึงฉันก็หุบยิ้มไม่ได้แล้วเนี่ย น่ารักจนใจแทบวายเลย! "
     hide diary
     hide brown_transparent
     with dissolve
@@ -481,8 +481,8 @@ label act1_2_shot_8:
     scene bg7night
     with dissolve
     play sound body_sfx volume 0.75
-    pov "นอนดีกว่า~ "#//(กึ้ง!).....sfx
-    pov "อีกแล้วหรอ แหะๆ ห้ามทักนี่นา… รีบหนีไปนอนดีกว่า……"
+    pov "นอนดีกว่า~ "
+    pov "อีกแล้วหรอ แหะๆ ห้ามทักนี่นา.. รีบหนีไปนอนดีกว่า.."
     stop sound
     scene black with eye_shut
     pause 1.0

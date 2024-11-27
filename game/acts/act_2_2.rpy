@@ -101,7 +101,7 @@ label act2_2_shot_1:
     hide emotion_stressed
     show mild maid_grumpy at leftposmild
     with dissolve
-    mild "ตะ… แต่ฉันไม่มั่นใจเลย"
+    mild "ตะ.. แต่ฉันไม่มั่นใจเลย"
     show tsuru maid_smile4 at rightpostsuru
     tsuru "ไม่ต้องห่วงนะ ฉันเป็นกำลังใจให้ และฉันมีเพลงเตรียมไว้ให้แกด้วยนะ"
     show mild maid_doubt at leftposmild
@@ -152,11 +152,11 @@ label act2_2_shot_1:
     show mild maid_doubt at leftposmild
     with dissolve
     mild "มะ หมายความว่ายังไงหรอคะ"
-    mild "ระ หรือว่าหูยาวๆ นั่น …."
+    mild "ระ หรือว่าหูยาวๆ นั่น ..."
     pixchan "ใช่แล้วค่ะ หูนี่น่ะ ไม่ใช่ที่คาดผม แต่เป็นหูจริงๆ ของฉันค่ะ"
     show mild maid_sorry at leftposmild
     with dissolve
-    mild "ยะ อย่างนี้นี่เอง คุณเองก็เป็นมิวแทนท์เหมือนกันหรอคะ…"
+    mild "ยะ อย่างนี้นี่เอง คุณเองก็เป็นมิวแทนท์เหมือนกันหรอคะ.."
     pixchan "อย่าทำหน้าแบบนั้นสิคะ ไม่ต้องคิดมากหรอกนะ"
     pixchan "ไม่มีใครจะทำร้ายเธอทั้งนั้นแหละ อีกอย่างเธอต้องเจอกับคนคนนั้นแน่นอน"
     show mild maid_doubt at leftposmild

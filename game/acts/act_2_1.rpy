@@ -21,7 +21,7 @@ label act2_1_shot_1:
     show del normal_police at closerightposdel
     show tsuru normal_grumpy2 at closeleftpostsuru
     with zoomin
-    pov "เอิ่ม… พวกเธอมาจากไหนกัน?"
+    pov "เอิ่ม... พวกเธอมาจากไหนกัน?"
     tsuru "ไม่ลืมเงินของพวกเราใช่ไหม คุณผู้จัดการ"
     pov "ด-เดี๋ยวสิ!? อ๊ากก!"
     scene black with eye_shut
@@ -35,11 +35,11 @@ label act2_1_shot_2:
     scene bg7day with eye_open
     "หลังจากที่ตื่นจากฝันอันแปลกประหลาด เราได้พบว่าตัวเองอยู่ที่พื้นข้างๆ เตียง"
     play music morning_bgm loop fadein 0.5 fadeout 1.0 volume 0.5
-    pov "ฝันร้ายอะไรกันนี่…"
-    pov "ทำไม… ฉันต้องฝันว่าเจอสองคนนั้นไถเงินด้วยล่ะเนี่ย อุส่าได้เจอมายด์ในฝันแท้ ๆ เชียว"
-    pov "แปปนะไถเงินหรอ วันนี้วันเสาร์… วันที่ต้องจ่ายเงินเดือนนี่น่า"
+    pov "ฝันร้ายอะไรกันนี่..."
+    pov "ทำไม... ฉันต้องฝันว่าเจอสองคนนั้นไถเงินด้วยล่ะเนี่ย อุส่าได้เจอมายด์ในฝันแท้ ๆ เชียว"
+    pov "แปปนะไถเงินหรอ วันนี้วันเสาร์... วันที่ต้องจ่ายเงินเดือนนี่น่า"
     pov "เจองี้ไปนอนไม่หลับแล้ว เดี๋ยวจะต้องไปอ่านกล่องรับความคิดเห็นอีก แถมทั้งซึรุกับเดลก็จะมารับเงินเดือนด้วย"
-    pov "ว่าแต่ตอนนี้มายด์ตื่นหรือยังนะ…"
+    pov "ว่าแต่ตอนนี้มายด์ตื่นหรือยังนะ..."
 
     jump act2_1_shot_3
 
@@ -68,7 +68,7 @@ label act2_1_shot_3:
     play sound doorclose_sfx fadein 0.25
     show bg5day with hpunch
     # text : (SFX : เสียงดัง *ปั้ง-!!*) พร้อมกับประตูห้องที่ปิดลง
-    pov "อะ ขอโทษนะมายด์-! เอิ่ม… มาปลุกให้ไปกินข้าวน่ะ "
+    pov "อะ ขอโทษนะมายด์-! เอิ่ม... มาปลุกให้ไปกินข้าวน่ะ "
     play sound walking_sfx
     pov "เดี๋ยวฉันลงไปทำข้าวเช้ารอนะ ถ้าแต่งตัวเสร็จแล้วลงมาทานด้วยนะ"
     stop sound
@@ -111,7 +111,7 @@ label act2_1_shot_4:
     with dissolve
     mild "การที่ไม่ให้ชานม ก็เหมือนกับบอกว่าไม่รักมายด์นั่นแหละ"
     pov "ได้ๆ ฉันจะไม่ห้ามเธอกินชานมแล้ว"
-    pov "(อ่า… งั้นเปลี่ยนเป็นให้ชานมแค่ครึ่งแก้วแล้วกัน)"
+    pov "(อ่า... งั้นเปลี่ยนเป็นให้ชานมแค่ครึ่งแก้วแล้วกัน)"
 
     jump act2_1_shot_5
 
@@ -182,11 +182,11 @@ label act2_1_shot_6:
     show del normal_crying1 at del_close
     with dissolve
     debirun "รถสตาร์ทไม่ติด-"
-    pov "เนี่ยไม่ใช้น้ำมันได*** ใช้แล้วเครื่องฟิตสตาร์ทติดง่าย—"
+    pov "เนี่ยไม่ใช้น้ำมันได*** ใช้แล้วเครื่องฟิตสตาร์ทติดง่าย-"
     show del normal_abuse2 at del_close
     show emotion_question at emoteclose
-    debirun "เอิ่ม… ก็แบบว่า หนูรู้จักแต่โตเกียวนะ อร่อยด้วย ได*** คืออะไรหรอ…"
-    pov "…"
+    debirun "เอิ่ม... ก็แบบว่า หนูรู้จักแต่โตเกียวนะ อร่อยด้วย ได*** คืออะไรหรอ..."
+    pov "..."
     scene bg2day:
         crop (400,200,1780,720)
         size (1920, 1080)
@@ -194,12 +194,12 @@ label act2_1_shot_6:
     with dissolve
     show loading at loading
     pov "งั้นซึรุล่ะ"
-    tsuru "อ๋อ…"
-    pov "ซึรุ… ซึรุ-!!"
+    tsuru "อ๋อ..."
+    pov "ซึรุ... ซึรุ-!!"
     hide loading
     show tsuru normal_idle2_2 at bounce,tsuru_close
-    tsuru "อ๋อ-!! หนูตื่นสายค่ะ…"
-    pov "(โอเคพอจะเดาออกแล้วล่ะ…)"
+    tsuru "อ๋อ-!! หนูตื่นสายค่ะ..."
+    pov "(โอเคพอจะเดาออกแล้วล่ะ...)"
 
     jump act2_1_shot_7
 
@@ -215,7 +215,7 @@ label act2_1_shot_7:
     show del normal_idle2 at rightposdel
     with dissolve
     debirun "ผู้จัดการยังให้เงินเดือนแบบนี้อยู่อีกหรอ สมัยนี้เขาเปลี่ยนไปใช้ระบบโมบายแบงค์กิ้งในแอพมือถือกันหมดแล้วนะ"
-    pov "หรือเธอจะไม่เอา…"
+    pov "หรือเธอจะไม่เอา..."
     show del normal_stunned2 at rightposdel
     with dissolve
     debirun "ไม่ได้นะผู้จัดการ-!! เอาค่ะๆ นี่มันเงินจากการทำงานของหนูเชียวนะ"
@@ -247,7 +247,7 @@ label act2_1_shot_8:
     tsuru "เดลเป็นอะไรไปน่ะ"
     show del normal_crying2 at rightposdel
     with dissolve
-    debirun "คือ งบเติมกาชาหนูหมดไปแล้วกับค่าซ่อมรถน่ะค่ะ… แล้ว แล้ว… กาชาที่หนูว่าจะเปิดมันจะหมดแล้ว แง"
+    debirun "คือ งบเติมกาชาหนูหมดไปแล้วกับค่าซ่อมรถน่ะค่ะ... แล้ว แล้ว... กาชาที่หนูว่าจะเปิดมันจะหมดแล้ว แง"
     mild "//ยื่นซองให้เดล"
     show mild pajamas_smile4 at lsposmild
     with dissolve
@@ -275,22 +275,22 @@ label act2_1_shot_8:
     show tsuru normal_sorry at middlepostsuru
     with dissolve
     tsuru_pov "อ่า ไม่ทันแล้ว"
-    mild "อ่ะ เดล… เดลหายไปแล้ว"
+    mild "อ่ะ เดล... เดลหายไปแล้ว"
     play sound door_sfx volume 0.5
     show del normal_smile6 at rightposdel
     with easeinright
     debirun "เย่ๆ-!! ได้เปิดกาชาแล้ว-!! กดเลย-!!"
     scene black
-    centered "{=centered_text}เดลได้กดกาชาที่ตัวเองอยากได้หลังจากนั้น…{/centered_text}"
+    centered "{=centered_text}เดลได้กดกาชาที่ตัวเองอยากได้หลังจากนั้น...{/centered_text}"
     centered "{=centered_text}เดลได้ถอนหายใจออกมายาวๆ พร้อมกับส่ายหัวไปชุดนึง{/centered_text}"
     scene bg2day
-    pov "เฮ่อ… (สม…)"
+    pov "เฮ่อ... (สม...)"
     show mild pajamas_idle1 at lsposmild
     show tsuru normal_idle1_2 at middlepostsuru
     show del normal_crying1 at rightposdel
     with dissolve
-    tsuru "มายด์… ลองกดดูสิ ถ้ากดแล้วออกหน้าตู้มา เดลอาจจะกลับมาเป็นเหมือนเดิมก็ได้นะ"
-    mild "ค่ะ…"
+    tsuru "มายด์... ลองกดดูสิ ถ้ากดแล้วออกหน้าตู้มา เดลอาจจะกลับมาเป็นเหมือนเดิมก็ได้นะ"
+    mild "ค่ะ..."
     scene bg2day
     window hide
     $ _game_menu_screen = None
@@ -324,7 +324,7 @@ label act2_1_shot_8:
         size (1920, 1080)
     show mild pajamas_smile5 at paja
     with dissolve
-    pov "มายด์ เราเอาเงินตรงนั้นมาซื้อชานมได้นะ…"
+    pov "มายด์ เราเอาเงินตรงนั้นมาซื้อชานมได้นะ..."
     show mild pajamas_flustered1 at paja
     mild "อ่ะ จริงด้วยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยย-!!"
     "และนี่ก็เป็นครั้งแรกที่มายด์ได้รับบทเรียนเกี่ยวกับการใช้เงิน"
@@ -338,7 +338,7 @@ label act2_1_shot_9:
     scene bg2day
     pov "แต่ละคนได้รับความเห็นเป็นยังไงบ้างนะ"
     show tsuru normal_idle2_1 at tsuru_close
-    tsuru "งั้นเริ่มที่หนูนะ …เอ๊ะ ?"
+    tsuru "งั้นเริ่มที่หนูนะ ...เอ๊ะ ?"
     show tsuru normal_smile1 at tsuru_close
     with dissolve
     tsuru "มีแต่คนชมหนูทั้งนั้นเลยหนิน่า ผู้จัดการ"
@@ -350,20 +350,20 @@ label act2_1_shot_9:
     show tsuru normal_smile3 at bounce,tsuru_close
     tsuru "“ฉันกำลังจะออกจากร้าน ฉันเห็นซึรุคุยกับกบด้วยเสียงแบบกบ อย่างเหมือนเลย”"
     show tsuru normal_smile6 at tsuru_close
-    pov "นั่นไม่น่าใช่คำชมนะซึรุ…"
+    pov "นั่นไม่น่าใช่คำชมนะซึรุ..."
     pov "งั้นทางฝั่งเดล ได้คำติชมยังไงบ้างหรอ"
     scene bg2day
     show del normal_smile2 at del_close
     with dissolve
     debirun "ส่วนฝั่งหนูก็ “คุยเรื่องเกมกับอนิเมะได้สนุกมาก โดยเฉพาะเกมกาชา”"
-    pov "เดี๋ยวนะ…"
+    pov "เดี๋ยวนะ..."
     show del normal_smile9 at del_close
     with dissolve
-    debirun "ยังมีอีกนะผู้จัดการ “ท่านผบ.ช่างปรีชาสามารถแสดงกิริยาอาการแสน… บลา บลา บลา”"
+    debirun "ยังมีอีกนะผู้จัดการ “ท่านผบ.ช่างปรีชาสามารถแสดงกิริยาอาการแสน... บลา บลา บลา”"
     show del normal_smile3 at del_close
     with dissolve
     pov "(เราไม่เข้าใจเลยว่าเดลกำลังพูดถึงอะไรอยู่ เหมือนดูอนิเมะมากเกินไป เดี๋ยวนะ เมื่อกี้ได้ยินคำว่า “ข้านั้นเก่งที่สุดในจักรวาล ฮะฮาฮ่า-!” ใช่มั้ยนะ ?)"
-    pov "อะ โอเค…ดีมากเลยเดล (สมกับเป็นเดลจริงๆ …) // กุมขมับ"
+    pov "อะ โอเค...ดีมากเลยเดล (สมกับเป็นเดลจริงๆ ...) // กุมขมับ"
 
     jump act2_1_shot_10
 
@@ -375,17 +375,17 @@ label act2_1_shot_10:
     show  mild pajamas_idle3 at paja
     with dissolve
     mild "คะ ค่ะ ฉันได้มาเป็น “มายด์น่ารัก น่ารักมาก น่ารักที่สุด” ค่ะ [povname]"
-    pov "(ดะ เดี๋ยว… นั่นที่ฉันเขียนเล่นๆ หนิ นึกว่าทิ้งไปแล้วซะอีก ใครเอาไปใส่ในนั้นล่ะเนี่ย)"
+    pov "(ดะ เดี๋ยว... นั่นที่ฉันเขียนเล่นๆ หนิ นึกว่าทิ้งไปแล้วซะอีก ใครเอาไปใส่ในนั้นล่ะเนี่ย)"
     show  mild pajamas_smile5 at paja
     with dissolve
     pov "ละ แล้วมีคำติชมอื่นอีกหรือเปล่านะ"
     show mild pajamas_doubt at paja
     with dissolve
     mild "มีค่ะ มีค่ะ เขาว่า “ตอนนี้ยังดูเขินๆ อยู่เลย อยากให้มายด์แสดงให้สมบทบาทมากขึ้นกว่านี้จัง มันไม่เข้ากับบทบาทเลย”"
-    pov "…"
+    pov "..."
     show mild pajamas_sorry at paja
     with dissolve
-    pov "…จะว่าไป มายด์ก็ยังไม่มีบทบาทประจำตัวเลยนะ"
+    pov "...จะว่าไป มายด์ก็ยังไม่มีบทบาทประจำตัวเลยนะ"
     scene bg2day
     with dissolve
     show tsuru normal_smile2 at leftpostsuru
@@ -413,7 +413,7 @@ label act2_1_shot_11:
     centered "{=cafe_text}- บทบาทซึนเดเระ -{/cafe_text}"
     show mild pajamas_tsundere at paja
     mild "ยะ อยู่รึเปล่า ชั้นมาหาแล้วนะ ขอบใจชั้นด้วยล่ะ หึ! ฉันมะ ไม่ได้ตั้งใจทําให้นายหรอกนะ! เชอะ!!!"
-    pov "เหมือนมายด์กำลังโมโหอยู่เลย…"
+    pov "เหมือนมายด์กำลังโมโหอยู่เลย..."
     show del normal_idle1 at leftclosedel
     show tsuru normal_idle1 at rightclosetsuru
     tsuru "แหะๆ นั่นสินะคะ" # Char ยิ้มแห้ง
@@ -426,7 +426,7 @@ label act2_1_shot_11:
     mild "ถ้าคิดจะไปกินของคนอื่นล่ะก็.... จะไม่มีเค้ากับเธอ... มีแต่ฉันกับแก..." # ทําหน้ายันๆ Char หน้ามืด แบบยัน
     show mild pajamas_angry2 at paja
     with dissolve
-    mild "เดี๋ยวนะ… กลิ่นนี้ไม่คุ้นเลย แกไปหาคนอื่นมาใช่ไหม-!!"
+    mild "เดี๋ยวนะ... กลิ่นนี้ไม่คุ้นเลย แกไปหาคนอื่นมาใช่ไหม-!!"
     show del normal_idle2 at leftclosedel
     show tsuru normal_idle1_1 at rightclosetsuru
     pov_tsuru_debirun "คะ ครับ / ค-ค่ะ"
@@ -436,15 +436,15 @@ label act2_1_shot_11:
     centered "{=down_text}XXX ปัดตก XXX{/down_text} "
     centered "{=cafe_text}- บทบาทคูลเดเระ -{/cafe_text}"
     show mild pajamas_cooldere at paja
-    mild "อาหารของคุณที่สั่ง กินให้อร่อยนะ…"
+    mild "อาหารของคุณที่สั่ง กินให้อร่อยนะ..."
     play sound "<from 0.2 to 10.5>SFX/silentwind_sfx.mp3" fadein 0.5
-    pov_tsuru_debirun "…"
+    pov_tsuru_debirun "..."
     scene bg2day
     with fade
     centered "{=down_text}XXX ปัดตก XXX{/down_text} "
     centered "{=cafe_text}- บทบาทพี่มินอาร์ -{/cafe_text}"
     show mild pajamas_smile2 at paja
-    mild "แหมมม อยากให้คนอื่นมารับเมนูอย่างงั้นหรอ… ทำไมต้องอยากได้คนอื่นล่ะ ในเมื่อมีฉันอยู่ทั้งคนแล้วหนิ"
+    mild "แหมมม อยากให้คนอื่นมารับเมนูอย่างงั้นหรอ... ทำไมต้องอยากได้คนอื่นล่ะ ในเมื่อมีฉันอยู่ทั้งคนแล้วหนิ"
     show mild pajamas_smile1 at paja:
         xpos 450
         zoom 1.35
@@ -491,7 +491,7 @@ label act2_1_shot_11:
     mild_nvl "ผู้นำทางหายนะอันยิ่งใหญ่จากจักรวาลมาสู่โลกาและมวลมนุษยชาติ"
     mild_nvl "มายด์-บิ-รุน รุน รุน รุน-!!"
     hide white_transparent
-    tsuru_pov "…"
+    tsuru_pov "..."
     scene bg2day
     show del normal_smile3 at del_close
     with dissolve
@@ -519,7 +519,7 @@ label act2_1_shot_11:
     with fade
     stop music fadeout 1.5
     centered "{=down_text}XXX ปัดตก XXX{/down_text} "
-    centered "{=cafe_text}และทุกคนก็ลงความคิดเห็นได้ว่า… มายด์เป็นเหมือนเดิมแหละดีแล้ว{/cafe_text}"
+    centered "{=cafe_text}และทุกคนก็ลงความคิดเห็นได้ว่า... มายด์เป็นเหมือนเดิมแหละดีแล้ว{/cafe_text}"
 
     jump act2_1_shot_12
 
@@ -533,7 +533,7 @@ label act2_1_shot_12:
     show tsuru normal_idle1_2 at middlepostsuru
     show del normal_smile1 at rightposdel
     pov "จะว่าไปแล้ว"
-    pov "มายด์… ลองขึ้นสเตจดูมั้ย"
+    pov "มายด์... ลองขึ้นสเตจดูมั้ย"
     show mild pajamas_shock at lsposmild
     with sshake
     show tsuru normal_doubt at middlepostsuru
@@ -546,28 +546,28 @@ label act2_1_shot_12:
     show tsuru normal_doubt at rightpostsuru
     hide emotion_shock
     with easeinleft
-    debirun "พี่มายด์ ทำใจดีๆ ไว้ พี่มายด์–!! พี่ซึรุทำอะไรสักอย่างทีสิ" # ทำหน้าล่ก
+    debirun "พี่มายด์ ทำใจดีๆ ไว้ พี่มายด์-!! พี่ซึรุทำอะไรสักอย่างทีสิ" # ทำหน้าล่ก
     show tsuru normal_dark at rightpostsuru
     with dissolve
-    tsuru "มายด์ขึ้นสเตจหรอ… อะฮุฮิฮุฮิ น่าสนใจดีหนิน่า พี่มายด์ขึ้นสเตจ" # Char tsuru_maid_angry_au_darkface
+    tsuru "มายด์ขึ้นสเตจหรอ... อะฮุฮิฮุฮิ น่าสนใจดีหนิน่า พี่มายด์ขึ้นสเตจ" # Char tsuru_maid_angry_au_darkface
     scene bg2day
     show mild_please_sd at truecenter:
         zoom 0.7
     mild "ฉะ ฉันขอดูอีกสักพักได้ไหมคะ [povname]" # SD : มายมาอ้อน
-    mild "ฉันไม่แน่ใจว่าจะทำได้น่ะค่ะ…"
+    mild "ฉันไม่แน่ใจว่าจะทำได้น่ะค่ะ..."
     mild "น้าาาาาาาาาาา"
     hide mild_please_sd
     with fade
     show tsuru normal_doubt at middlepostsuru
-    tsuru "มายด์… พี่ผู้จัดการ ลองพูดอะไรหน่อยสิ"
+    tsuru "มายด์... พี่ผู้จัดการ ลองพูดอะไรหน่อยสิ"
     pov "ดะ เดี๋ยว ทำไมเป็นฉันล่ะ"
     show tsuru normal_smile4 at middlepostsuru
     with dissolve
     tsuru "เพราะ พี่เป็นผู้จัดการไง หนูเชื่อว่าพี่ต้องทำอะไรได้แน่นอน" # Char tsuru_maid_smile_ad_ec_mo
-    pov "(ยัยนี่นี่นะ… เอาโรลในร้านมาใช้เลยหรอ…)"
+    pov "(ยัยนี่นี่นะ... เอาโรลในร้านมาใช้เลยหรอ...)"
     show mild pajamas_grumpy at paja
     with dissolve
-    pov "อะแฮ่ม… (ไม่ลองก็ไม่รู้ล่ะนะ)"
+    pov "อะแฮ่ม... (ไม่ลองก็ไม่รู้ล่ะนะ)"
     menu:
         "ลองพูดถึงซึรุและเดล":
             pov "มายด์ คือว่า ซึรุกับเดลเขาได้ขึ้นสเตจแล้วนะ มายด์ไม่สนใจขึ้นบ้างสักหน่อยหรอ"
@@ -583,18 +583,18 @@ label act2_1_shot_12:
 
 label act2_1_shot_13:
     pov "(ช่วยไม่ได้ คงต้องใช้วิธีนั้นแล้วสินะ)"
-    pov "มายด์… ถ้ามายด์ได้ขึ้นสเตจ จะให้ชานมเพิ่มขึ้นอีกวันละแก้วเลยนะ"
+    pov "มายด์... ถ้ามายด์ได้ขึ้นสเตจ จะให้ชานมเพิ่มขึ้นอีกวันละแก้วเลยนะ"
     scene bg2day:
         crop (100,200,1480,720)
         size (1920, 1080)
     show mild pajamas_doubt at paja
-    mild "…"
-    mild "{size=*0.5}เดือนนึง… //พูดด้วยเสียงเบาๆ{/size}"
+    mild "..."
+    mild "{size=*0.5}เดือนนึง... //พูดด้วยเสียงเบาๆ{/size}"
     pov "อะ อะไรนะมายด์"
     show mild pajamas_grumpy at bounce,paja
     with dissolve
     mild "ฉันขอชานมเพิ่มขึ้นเดือนนึงเต็มๆ เลยยยยย-!!" # Char mild_maid_smile_au_ec_mo
-    pov "ดะ เดี๋ยว… ไม่ได้ ฉันให้ได้แค่สัปดาห์เดียวเท่านั้น มากกว่านั้นมันจ-"
+    pov "ดะ เดี๋ยว... ไม่ได้ ฉันให้ได้แค่สัปดาห์เดียวเท่านั้น มากกว่านั้นมันจ-"
     show mild pajamas_sorry at leftposmild
     with zoomout
     pause 1.5
@@ -605,8 +605,8 @@ label act2_1_shot_13:
     pause 1.5
     show del normal_gloomy2 at rightposdel
     with easeinright
-    debirun "ดูแล้ว… ผู้จัดการต้องยอมแล้วแหละ"
-    pov "เห้อ… โอเค มายด์ งั้นถ้ามายด์ขึ้นสเตจ จะให้ชานมเพิ่มขึ้นวันละแก้วเดือนนึงเลย"
+    debirun "ดูแล้ว... ผู้จัดการต้องยอมแล้วแหละ"
+    pov "เห้อ... โอเค มายด์ งั้นถ้ามายด์ขึ้นสเตจ จะให้ชานมเพิ่มขึ้นวันละแก้วเดือนนึงเลย"
     hide del normal_gloomy2
     with None
     show mild pajamas_smile6 at bounce,paja
@@ -626,7 +626,7 @@ label act2_1_shot_13:
     diary "ทั้งเรื่องในกล่องความคิดเห็นอีก ใครกันนะ ที่มาว่ามายด์แสดงได้ไม่ดีพอ"
     diary "แต่เพราะอย่างนั้น เราก็เลยได้เห็นมายด์ในหลายๆ ลุคเลย"
     diary "รวมไปถึงเราจะได้เห็นมายด์ขึ้นสเตจแล้ว ฉันดีใจมากเลย"
-    diary "ถึงแม้ว่า… ฉันจะต้องสังเวยชานมสำหรับหนึ่งเดือนไป"
+    diary "ถึงแม้ว่า... ฉันจะต้องสังเวยชานมสำหรับหนึ่งเดือนไป"
     diary "มันต้องคุ้มแน่ๆ กับการที่มายด์-"
     play sound falling_sfx fadein 0.15
     nvl clear

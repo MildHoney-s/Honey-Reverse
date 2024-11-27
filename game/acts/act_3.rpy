@@ -2,7 +2,7 @@ label act3_shot_1:
     scene bg7day with eye_open
     play music morning_bgm loop
     pov "ขึ้นเดือนใหม่ เดือนสุดท้ายของปีแล้วสินะ"
-    pov "เดือนนี้ก็มีอีเว้นท์อีกหลายอย่างเลย รวมถึงวันเกิดของมายด์ด้วย…"
+    pov "เดือนนี้ก็มีอีเว้นท์อีกหลายอย่างเลย รวมถึงวันเกิดของมายด์ด้วย.."
     scene black
     with transition_4
     centered "-ไม่กี่วันก่อนหน้า-"
@@ -15,7 +15,7 @@ label act3_shot_1:
     show  del maid_idle2 at rightposdel
     with easeinright
     debirun "นั่นสิๆ ดูเป็นห่วงพี่มายด์มากจนผิดปกติ"
-    pov "คือ…ฉัน…"
+    pov "คือ..ฉัน.."
     show tsuru maid_smile2 at leftpostsuru
     show del maid_abuse at rightposdel
     with dissolve
@@ -25,7 +25,7 @@ label act3_shot_1:
     show tsuru maid_smile4 at leftpostsuru
     tsuru "ก็ไม่มีอะไรหรอกค่ะ หนูแค่คิดว่าพี่ผู้จัดการควรจะทำอะไรได้แล้ว"
     pov "(ตอนซึรุจะพูดอะไรจริงจังจะเรียกฉันว่าพี่นี่หน่า..)"
-    pov "ควรจะทำอะไร.. หมายถึงอะไรหรอ…"
+    pov "ควรจะทำอะไร.. หมายถึงอะไรหรอ.."
     show tsuru maid_wow at leftpostsuru
     show del maid_stunned at rightposdel
     with dissolve
@@ -36,20 +36,20 @@ label act3_shot_1:
     with dissolve
     tsuru "ก็หมายถึง ต้องไปสารภาพรักกับมายด์ได้แล้วไง! จะปล่อยให้เวลาผ่านไปอีกเท่าไหร่กันคะ!"
     pov "ก็ที่ผ่านมาฉันเอาแต่เล่นมุกจีบแบบแกล้งๆนี่นา จะให้บอกไปว่าชอบแบบจริงจังมันก็"
-    pov "…"
+    pov ".."
     show tsuru maid_idle1 at leftpostsuru
     show del maid_idle1 at rightposdel
     with dissolve
-    tsuru "เฮ้ออ… ถ้างั้นพวกหนูจะหาจังหวะให้อยู่ด้วยกันสองต่อสองแล้วกัน พี่ก็ทำให้เต็มที่ด้วยล่ะ"
-    tsuru "แล้วเดี๋ยวหนูกับเดลจะเอาเค้กตา–"
-    pov "สะ สะ สะ สารภาพรัก! ฉัน ฉัน ฉัน….."
+    tsuru "เฮ้ออ.. ถ้างั้นพวกหนูจะหาจังหวะให้อยู่ด้วยกันสองต่อสองแล้วกัน พี่ก็ทำให้เต็มที่ด้วยล่ะ"
+    tsuru "แล้วเดี๋ยวหนูกับเดลจะเอาเค้กตา-"
+    pov "สะ สะ สะ สารภาพรัก! ฉัน ฉัน ฉัน...."
     scene black
     with transition_4
     scene bg7day
     play music morning_bgm loop fadein 0.5 fadeout 0.25
     with fade
-    pov "เล่นเอาหลังจากนั้นก็จำไม่ได้เลยว่าซึรุพูดว่าอะไร…."
-    pov "ช่างมันละกันนะ…. คงต้องหาของขวัญวันเกิดไว้ล่วงหน้าด้วย"
+    pov "เล่นเอาหลังจากนั้นก็จำไม่ได้เลยว่าซึรุพูดว่าอะไร..."
+    pov "ช่างมันละกันนะ... คงต้องหาของขวัญวันเกิดไว้ล่วงหน้าด้วย"
     show locket_open at truecenter:
         zoom 0.25
     pause 0.025
@@ -87,14 +87,14 @@ label act3_shot_1:
     play sound "<from 5 to 8>SFX/bell_sfx.mp3" fadeout 0.25
     employee "ยินดีด้วยค่ะคุณลูกค้า! ได้รับตั๋วรางวัลพิเศษเที่ยวออนเซ็น 1 ครอบครัวค่าาาาา!......."
     stop music fadeout 1.5
-    pov "…… (เอาจริงดิ)"
+    pov ".. (เอาจริงดิ)"
     scene bg2day with dottransition
     play music cafe_bgm loop fadein 0.5 fadeout 0.25
     show tsuru maid_drunk1 at middlepostsuru
     show del maid_wave at rightposdel
     with dissolve
-    tsuru_debirun "ผู้จัดการสวัสดีค่า…"
-    pov "อ้าว…พวกเธอมาเร็วจัง"
+    tsuru_debirun "ผู้จัดการสวัสดีค่า.."
+    pov "อ้าว..พวกเธอมาเร็วจัง"
     pov "เอ๊ะ ทำไมซึรุตัวแดงๆ ล่ะ?"
     show del maid_idle2 at rightposdel
     show tsuru maid_drunk2 at middlepostsuru
@@ -103,14 +103,14 @@ label act3_shot_1:
     show del maid_idle1 at rightposdel
     with dissolve
     debirun "ส่วนเดลเลิกเรียนเร็วก็เลยมาเจอพี่ซึรุที่ตัวแดงระหว่างทางน่ะ"
-    pov "ปกติก็ไม่น่าจะแดงข้ามวันนะซึรุ…."
+    pov "ปกติก็ไม่น่าจะแดงข้ามวันนะซึรุ..."
     show tsuru maid_drunk4 at middlepostsuru
     with dissolve
-    tsuru "ขอนมสักแก้วหน่อยสิพี่ผู้จัดการ เดี๋ยวหนูก็ดีขึ้น…"
+    tsuru "ขอนมสักแก้วหน่อยสิพี่ผู้จัดการ เดี๋ยวหนูก็ดีขึ้น.."
     pov "จ้าๆ"
     show mild maid_wave at llposmild
     with easeinleft
-    mild "สวัสดีค่า…. มาเร็วจังเลยนะ"
+    mild "สวัสดีค่า... มาเร็วจังเลยนะ"
     show del maid_smile4 at rightposdel
     show tsuru maid_drunk3 at middlepostsuru
     with dissolve
@@ -145,11 +145,11 @@ label act3_shot_1:
     show del maid_smile3 at rightposdel
     with easeinright
     debirun "จริงด้วยยย ผู้จัดการได้มาหรออออ"
-    pov "อืมม… จะว่ายังไงดี ก็ใช่แหละตอนนี้ยังคิดอยู่เลยว่าดวงปีนี้ฉันหมดแล้วรึป่าวนะ"
+    pov "อืมม.. จะว่ายังไงดี ก็ใช่แหละตอนนี้ยังคิดอยู่เลยว่าดวงปีนี้ฉันหมดแล้วรึป่าวนะ"
     show tsuru maid_smile5 at bounce,leftpostsuru
     with dissolve
     tsuru "นี่ๆ จะว่าไปมันมีสวนสัตว์อยู่จังหวัดนั้นด้วยนี่นาผู้จัดการ"
-    pov "จะว่าไปก็จริงนะ…"
+    pov "จะว่าไปก็จริงนะ.."
     show del maid_smile6 at bounce,rightposdel
     with dissolve
     debirun "งั้นเราไปสวนสัตว์ด้วยเลยมั้ยผู้จัดการ"
@@ -481,7 +481,7 @@ label act3_shot_2:
     mild "สนุกมากเลยค่ะ อาหารก็อร่อยเหมือนที่ [povname] ทำให้ทานเลยค่ะ"
     scene cg3
     with dissolve
-    tsuru "งั้นหรอ…"
+    tsuru "งั้นหรอ.."
     tsuru "แล้วเที่ยวกับ [povname] วันนี้เป็นยังไงบ้าง"
     scene cg3:
         xpos -1500
@@ -503,15 +503,15 @@ label act3_shot_2:
         size (1920, 1080)
         linear 1.5 crop (0,0,3468,1946)
     with dissolve
-    mild "กะ ก็รู้จาก [povname] นั่นแหละ ไม่นึกว่าความหมายจะ…"
+    mild "กะ ก็รู้จาก [povname] นั่นแหละ ไม่นึกว่าความหมายจะ.."
     tsuru "รักเธอแค่คนเดียวจนวันสุดท้ายสินะ"
     tsuru "แล้วเห็นพูดถึง [povname] บ่อยเลย รู้สึกยังไงกับ [povname] บ้างล่ะ ชอบเขารึเปล่า?"
-    mild "ชะ ชอบหรอคะ ชอบในที่นี้……"
+    mild "ชะ ชอบหรอคะ ชอบในที่นี้.."
     tsuru "ชอบที่หมายถึง เป็นคนที่เราอยากดูแลและอยากอยู่เคียงข้างเขาไปตลอดชีวิตน่ะ"
-    mild "กะ ก็ไม่ได้ไม่ชอบ [povname] หรอกนะแต่เรื่องแบบนี้……"
+    mild "กะ ก็ไม่ได้ไม่ชอบ [povname] หรอกนะแต่เรื่องแบบนี้.."
     tsuru "ก็อย่างเช่น อยากอยู่ใกล้ๆ เวลาทำอะไรก็จะนึกถึงเขา ว่าเขาจะชอบมั้ยนะ เป็นห่วงเป็นใยเขามากๆ อาการพวกนี้ แกมีบ้างรึเปล่าล่ะ"
     tsuru "ถ้าไม่มีก็ไม่เป็นอะไรหรอกนะ ฉันก็ถามเฉยๆน่ะ"
-    debirun "อ่อ จริงด้วย พี่ซึรุคือเมื่อกี้อ่ะนะ ยัยไข่บอกว่า …………"
+    debirun "อ่อ จริงด้วย พี่ซึรุคือเมื่อกี้อ่ะนะ ยัยไข่บอกว่า .."
     show white with fade
     scene bg12night_on with dissolve
     show mild onsen_blush1 at mildunhood_close
@@ -555,17 +555,17 @@ label act3_shot_2:
     mild "ที่ดูแลฉันมาตลอด ทั้งความใจดี ความเอาใจใส่ที่มีให้ ฉันดีใจมากๆเลยค่ะ"
     show mild onsen_smile4 at mildunhood_close
     with dissolve
-    mild "[povname] คะ ฉัน….."
+    mild "[povname] คะ ฉัน...."
     show mild onsen_blush2 at mildunhood_close:
         zoom 1.5
     with dissolve
     mild "คือ ฉัน.."
-    pov "(อะไรกัน น่ะ น่ารัก! นี่มันอีเว้นท์อะไรเนี่ย…)"
+    pov "(อะไรกัน น่ะ น่ารัก! นี่มันอีเว้นท์อะไรเนี่ย..)"
     show mild onsen_blush2 at mildunhood_close:
         ypos 750
         zoom 1.5
     with easeoutbottom
-    pov "บะ แบบว่า………."
+    pov "บะ แบบว่า..."
     show mild onsen_sleep at mildunhood_close:
         ypos 750
         zoom 1.5
@@ -575,7 +575,7 @@ label act3_shot_2:
     pov "นะ นี่"
     show mild onsen_sleep at mildunhood_close
     with easeinbottom
-    pov "หลับหรอกหรอ…"
+    pov "หลับหรอกหรอ.."
     pov "(อุ้มกลับไปส่งแล้วกัน)"
     scene bg12night_on with dottransition
     show tsuru onsen_stunned at middlepostsuru
@@ -602,13 +602,13 @@ label act3_shot_3:
     show black:
         alpha .5
     pause 1
-    pov "ยัยเด็กพวกนั้นนี่นะ… ถึงจะเตี๊ยมกันแล้วก็เถอะ แต่ไม่คิดจะส่งสัญญาณบอกกันเลยรึไง?"
-    pov "ถ้าฉันหัวใจวายขึ้นมาจะทำไงเล่า!? ช่างมันเถอะ…"
+    pov "ยัยเด็กพวกนั้นนี่นะ.. ถึงจะเตี๊ยมกันแล้วก็เถอะ แต่ไม่คิดจะส่งสัญญาณบอกกันเลยรึไง?"
+    pov "ถ้าฉันหัวใจวายขึ้นมาจะทำไงเล่า!? ช่างมันเถอะ.."
     stop music fadeout 0.5
     play sound drop_sfx
     pov "เอาเป็นว่าไปเตรียมอาหารก่อนแล้วกั- (ตึ้ง!!)"
     play music drama_bgm loop fadein 0.75
-    pov "เสียงอะไรน่ะ! มาจากชั้นบนหนิ มายด์ทำอะไรตกรึป่าวนะ…"
+    pov "เสียงอะไรน่ะ! มาจากชั้นบนหนิ มายด์ทำอะไรตกรึป่าวนะ.."
     play sound walking_sfx
     scene bg5night with walkingVertical
     centered "หลังจากนั้น [povname] ก็เดินขึ้นไปชั้นบน เพื่อไปดูที่ห้องมายด์เผื่อว่ามายด์จะทำอะไรตก"
@@ -618,10 +618,10 @@ label act3_shot_3:
         xalign 0.5
         yalign 0.6
     pov "มายด์ เธอได้ทำอะไรตกรึป่าว?"
-    centered "…………"
+    centered ".."
     play sound knock_sfx volume 1.5
-    pov "มายด์…! เธอเป็นอะไรรึป่าว?"
-    centered "…………"
+    pov "มายด์..! เธอเป็นอะไรรึป่าว?"
+    centered ".."
     play sound knock_sfx volume 1.8
     pov "มายด์อาร์!! เธอยังโอเคดีใช่มั้ย!?"
     pov "มายด์! รอฉันก่อนนะ!"
@@ -653,19 +653,19 @@ label act3_shot_3:
         alpha .5
     pov "(พอฉันเปิดประตูออกมาพบกับมายด์ที่นั่งทรุดอยู่ที่พื้น)"
     pov "มายด์!"
-    mild "[povname]…"
-    pov "ฉันเอง… ฉันอยู่นี่แล้ว…"
+    mild "[povname].."
+    pov "ฉันเอง.. ฉันอยู่นี่แล้ว.."
     scene cg4:
         size (1920,1080)
     show black:
         alpha .5
-    mild "อือ…"
-    pov "นี่เธอ… กลัวความมืดหรอ?"
-    mild "อือ…"
+    mild "อือ.."
+    pov "นี่เธอ.. กลัวความมืดหรอ?"
+    mild "อือ.."
     pov "(เสียงร้องอันแผ่วเบา ร่างเล็กๆที่สั่นระริกของมายด์ถือเป็นคำตอบที่สมเหตุสมผล ว่าทำไมเธอถึงอยู่ในสภาพแบบนี้ได้)"
-    pov "ขอโทษนะ ฉันไม่นึกว่าจะเธอกลัวมากขนาดนี้…"
+    pov "ขอโทษนะ ฉันไม่นึกว่าจะเธอกลัวมากขนาดนี้.."
     mild "มะ ไม่เป็นไร"
-    pov "ไม่เป็นไรไม่ได้หรอกนะ…"
+    pov "ไม่เป็นไรไม่ได้หรอกนะ.."
     play sound head_sfx fadein 0.25
     "ลูบหัวมายด์"
     pov "ฉันขอโทษจริงๆ นะ ฉันสัญญาว่าจะไม่ปล่อยให้เรื่องแบบนี้เกิดขึ้นอีก"
@@ -679,11 +679,11 @@ label act3_shot_3:
     $ show_quickmenu = False
     $ renpy.pause(3.5,hard=True)
     $ show_quickmenu = True
-    mild "[povname]…"
-    pov "มายด์ ถ้าเธอไม่ว่าอะไร… ช่วยเล่าเหตุผลที่เธอกลัวความมืดให้ฉันฟังหน่อยได้มั้ย"
-    mild "[povname]… อยากจะฟังจริงๆ หรอ… [povname] อาจจะกลัวมายด์ไปเลยก็ได้…"
+    mild "[povname].."
+    pov "มายด์ ถ้าเธอไม่ว่าอะไร.. ช่วยเล่าเหตุผลที่เธอกลัวความมืดให้ฉันฟังหน่อยได้มั้ย"
+    mild "[povname].. อยากจะฟังจริงๆ หรอ.. [povname] อาจจะกลัวมายด์ไปเลยก็ได้.."
     pov "ไม่มีทางเป็นแบบนั้นหรอก ตลอดมาฉันไม่เคยกลัวเธอเลยนะ"
-    mild "ถะ ถ้า [povname] พูดมาถึงขนาดนั้น…"
+    mild "ถะ ถ้า [povname] พูดมาถึงขนาดนั้น.."
     play music dark_bgm loop fadein 0.75 fadeout 1.25
     scene bg24 with fade
     pause 1.5
@@ -691,7 +691,7 @@ label act3_shot_3:
 #renpy มันกากอะ
     researcher "ตัว DNA ของเธอมันช่างเหมาะกับการทดลองเสียจริง"
     researcher "ถ้าเป็นเธอล่ะก็ การทดลองสร้างมิวแทนต์ที่สมบูรณ์แบบจะต้องสำเร็จอย่างแน่นอน"
-    mild "มะ ไม่เอาค่ะ…"
+    mild "มะ ไม่เอาค่ะ.."
     researcher "โธ่~ สาวน้อย เธอจะได้รับร่างกายที่แข็งแกร่ง เพียงแค่เธอ~ ยอมให้ฉันดัดแปลง DNA ของเธอนิดหน่อย~"
     mild "ไม่ไม่ ไม่ไม่ ไม่ไม่ ไม่เอานะคะ ไม่เอา อย่า-"
     scene black
@@ -699,26 +699,26 @@ label act3_shot_3:
     centered "{=down_text}(มายด์สะดุ้งตื่นด้วยความหวาดกลัวและระแวง){/down_text}"
     centered "{=down_text}(ร่างกายสาวตัวเล็กที่สะดุ้งตื่นจากฝันอันแสนเลวร้ายที่ตัวของเธอไม่อยากจะจดจำ และรับรู้ถึงมันเสียด้วยซ้ำ){/down_text}"
     centered "{=down_text}(ร่างกายที่สั่นเครือของเธอแสดงถึงความหวาดระแวงและความหวาดกลัวได้อย่างชัดเจน){/down_text}"
-    pov "…(นี่เธอ… ผ่านอะไรมาเยอะขนาดนี้ด้วยร่างกายเล็กๆนั้น……..)"
+    pov "..(นี่เธอ.. ผ่านอะไรมาเยอะขนาดนี้ด้วยร่างกายเล็กๆนั้น....)"
     play music drama_bgm loop fadein 1.0 fadeout 0.5
     scene cg4:
         xpos -650 ypos -220
     show black:
         alpha .4
     with fade
-    mild "เรื่องมันก็มีแค่เท่านี้แหละค่ะ…"
-    pov "มายด์…"
+    mild "เรื่องมันก็มีแค่เท่านี้แหละค่ะ.."
+    pov "มายด์.."
     show black:
         alpha .45
     with dissolve
-    mild "คะ? [povname]…กลัวมายด์จริงๆสินะค-"
+    mild "คะ? [povname]..กลัวมายด์จริงๆสินะค-"
     scene cg4:
         size(1920,1080)
     show black:
         alpha .25
     with dissolve
     play music hug_bgm loop fadein 1.0 fadeout 2.0
-    pov "อย่าพูดแบบนั้นสิ…"
+    pov "อย่าพูดแบบนั้นสิ.."
     pov "แม้ฉันจะรู้แล้วว่าเธอมีที่มายังไง แต่ฉันก็ยังรู้สึกกับเธอเหมือนเดิมนะ"
     pov "ฉันเสียใจมาก ฉันทำให้เธอกลัวและนึกถึงเรื่องราวแย่ๆ"
     scene bg6night
@@ -733,9 +733,9 @@ label act3_shot_3:
     show black:
         alpha .15
     mild "เลิกทำหน้าเศร้าได้แล้วนะคะ"
-    pov "นี่มายด์…"
+    pov "นี่มายด์.."
     show mild pajamas_flustered1 at mildunhood_close
-    pov " ฉันน่ะ… มีเรื่องที่อยากจะบอกกับเธอมานานแล้วล่ะ ตั้งแต่วันที่ได้พบเธอ ฉันก็เริ่มรู้สึกแบบนี้มาตลอดเลย เป็นความรู้สึกที่ฉันเองก็ไม่เข้าใจหรอก แต่ว่าตอนนี้…."
+    pov " ฉันน่ะ.. มีเรื่องที่อยากจะบอกกับเธอมานานแล้วล่ะ ตั้งแต่วันที่ได้พบเธอ ฉันก็เริ่มรู้สึกแบบนี้มาตลอดเลย เป็นความรู้สึกที่ฉันเองก็ไม่เข้าใจหรอก แต่ว่าตอนนี้..."
     menu:
         "ปลอบมายด์":
             $ honey_score -= 1
@@ -747,7 +747,7 @@ label act3_shot_3:
             if honey_score == 8:
                 $ persistent.secret_cg = True
                 scene cg5
-            mild "ฉันเอง… ฉันเองก็…."
+            mild "ฉันเอง.. ฉันเองก็..."
             pause 5.0
 
     stop music fadeout 0.25
@@ -770,7 +770,7 @@ label act3_shot_3:
         size (1920, 1080)
     show del normal_police at del_close
     with dissolve
-    debirun "ตำรวจ…"
+    debirun "ตำรวจ.."
     scene bg6night
     show tsuru normal_idle1 at middlepostsuru
     show del normal_stunned2 at leftposdel
@@ -785,25 +785,25 @@ label act3_shot_3:
     pov "ฉันก็พึ่งรู้เหมือนกันนี่แหละ"
     show tsuru normal_sorry at middlepostsuru
     with dissolve
-    tsuru "แก… ฉันขอโทษนะที่ไม่ได้ตรวจสอบให้ดีก่อน…"
+    tsuru "แก.. ฉันขอโทษนะที่ไม่ได้ตรวจสอบให้ดีก่อน.."
     show del normal_sorry at leftposdel
     with dissolve
-    debirun "เดลก็ขอโทษนะพี่มายด์ คราวหลังเดลจะถามก่อน…"
+    debirun "เดลก็ขอโทษนะพี่มายด์ คราวหลังเดลจะถามก่อน.."
     show mild pajamas_flustered1 at rrposmild
-    mild "มะ ไม่เป็นไรหรอก… ฉันผิดเองแหละที่ไม่ได้บอกทุกคน"
+    mild "มะ ไม่เป็นไรหรอก.. ฉันผิดเองแหละที่ไม่ได้บอกทุกคน"
     pov "มายด์ เธอน่ะไม่ผิดหรอกนะ ปกติไม่มีใครเค้าพูดถึงสิ่งที่ตัวเองกลัวกันนักหรอก"
     show mild pajamas_doubt at rrposmild
     with dissolve
     mild "งะ งั้นหรอคะ?"
-    pov "อืม… งั้นเอาเป็นว่าพวกเรามาฉลองวันเกิดกันดีกว่า"
+    pov "อืม.. งั้นเอาเป็นว่าพวกเรามาฉลองวันเกิดกันดีกว่า"
     show emotion_question at bounce,emotepairpos3
     mild "เอ๊ะ? วันเกิดใครหรอคะ?"
     show tsuru normal_smile4 at middlepostsuru
     show del normal_police at leftposdel
     with sshake
     hide emotion_question
-    pov_tsuru_debirun "ก็วันเกิดเธอไง…"
-    debirun "อย่าบอกนะว่าพี่มายด์… แก่จนจำไม่ได้แล้วหรอ"
+    pov_tsuru_debirun "ก็วันเกิดเธอไง.."
+    debirun "อย่าบอกนะว่าพี่มายด์.. แก่จนจำไม่ได้แล้วหรอ"
     show mild pajamas_angry2 at bounce,rrposmild
     show emotion_angry at emotepairpos3
     mild "ไอ้เดล! ฉันแค่ลืมเฉยๆ เถอะ"
@@ -848,7 +848,7 @@ label act3_shot_3:
     scene bg6light
     show mild pajamas_smile5 at mildunhood_close
     with dissolve
-    mild "ขะ-ขอบคุณนะ ที่ทำเพื่อเค้าขนาดนี้…"
+    mild "ขะ-ขอบคุณนะ ที่ทำเพื่อเค้าขนาดนี้.."
     pov "ด้วยความยินดีเลยล่ะ"
     scene black
     with fade

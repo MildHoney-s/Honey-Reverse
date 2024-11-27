@@ -36,10 +36,10 @@ label act2_3_shot_1:
     tsuru "เหมือนหมาข้างบ้านมากกว่าอ่ะ แล้วมายด์ล่ะมีอะไรที่คิดไว้มั้ย"
     show mild maid_doubt at llposmild
     with dissolve
-    mild "อืม…. มัมมี่ ล่ะมั้งคะ"
+    mild "อืม... มัมมี่ ล่ะมั้งคะ"
     show tsuru maid_idle2 at middlepostsuru
     with dissolve
-    tsuru "เธอพึ่งดูหนังเรื่องไหนจบมารึเปล่าเนี่ย…."
+    tsuru "เธอพึ่งดูหนังเรื่องไหนจบมารึเปล่าเนี่ย..."
     mild "ก็นิดหน่อยนะ แล้วซึรุเลือกได้รึยัง"
     show tsuru maid_idle1 at middlepostsuru
     with dissolve
@@ -66,14 +66,14 @@ label act2_3_shot_1:
     pov "หื้ม ว่าไงมายด์ มีอะไรหรอ"
     show mild maid_blush1 at mild_close
     with dissolve
-    mild "คือ… ฉันไม่มีพร๊อบที่ใช้ในวันฮาโลวีนเลยค่ะ ก็เลย…"
-    pov "งั้นเราไป…ซื้อของด้วยกันมั้ย"
+    mild "คือ.. ฉันไม่มีพร๊อบที่ใช้ในวันฮาโลวีนเลยค่ะ ก็เลย.."
+    pov "งั้นเราไป..ซื้อของด้วยกันมั้ย"
     pov "ในห้างน่ะ"
     show mild maid_flustered at mild_close
     with dissolve
-    mild "ตะ แต่…."
+    mild "ตะ แต่..."
     pov "แต่อะไรหรอ มีอะไรที่กังวลรึเปล่า"
-    mild "แต่ตัวฉันที่เป็นแบบนี้…ถ้าคนอื่นๆ มองมาจะ.."
+    mild "แต่ตัวฉันที่เป็นแบบนี้..ถ้าคนอื่นๆ มองมาจะ.."
     pov "อืมม.."
     pov "ถ้าอย่างงั้นเราไปในวันฮาโลวีนกันมั้ย"
     show mild maid_doubt at mild_close
@@ -168,7 +168,7 @@ label act2_3_shot_1:
     show mild unhood_blush4 at mildunhood_close
     with dissolve
     "จังหวะที่ฉันได้ชี้ไปที่ร้าน มือของฉันก็จูงมือของมายด์มาอย่างไม่รู้ตัว"
-    mild "คะ คือ คือว่า มือ…"
+    mild "คะ คือ คือว่า มือ.."
     show mild unhood_blush3 at mildunhood_close
     with dissolve
     pov "ขะ ขอโทษนะ ฉันเผลอตัวน่ะ จะไม่ทำอีกแล้ว!"
@@ -236,7 +236,7 @@ label act2_3_shot_1:
     pov "อื้มม งั้นเข้าไปลองใส่ดูดีมั้ย"
     show mild unhood_blush3 at mildunhood_close
     with dissolve
-    mild "ถ้า [povname] พูดแบบนั้นล่ะก็…."
+    mild "ถ้า [povname] พูดแบบนั้นล่ะก็..."
     scene black
     with  fade
     pause 1.0
@@ -245,7 +245,7 @@ label act2_3_shot_1:
     show mild normal_blush2 at mildunhood
     with curtain
     pause 1.5
-    mild "คะ… คือว่า… เป็นยังไงบ้างคะ"
+    mild "คะ.. คือว่า.. เป็นยังไงบ้างคะ"
     show mild normal_blush2 at mildunhood_close
     with dissolve
     pov "(เอื้อก! น่ารักกกก! ทำไมถึงน่ารักขนาดนี้!!!)"
@@ -278,7 +278,7 @@ label act2_3_shot_1:
     restaurant_staff "เมนูแนะนำก็จะมี ซุปมัทฉะข้าวโพด หมูสามชั้นผัดหว๊านหวาน หัวหอมแบบสดๆ และของหวานเป็นไอศครีมทุเรียนกะปิค่ะ"
     show mild unhood_scared at bounce,mild_close
     with vpunch
-    pov "อ่า…."
+    pov "อ่า..."
     show mild unhood_smile2 at mild_close
     with dissolve
     pov "เอาเป็นชาไทย กับ ชานม อย่างละแก้วก็พอ.."
@@ -293,7 +293,7 @@ label act2_3_shot_1:
     show mild unhood_blush2 at mild_close
     with dissolve
     mild "ก็ [povname] ช่วยฉันมาตลอดเลยนี่นา ฉันไม่รู้ว่าจะตอบแทนยังไงดี.."
-    mild "ฉันมีแต่จะได้รับจาก [povname] มาตลอด…"
+    mild "ฉันมีแต่จะได้รับจาก [povname] มาตลอด.."
     show mild unhood_blush5 at mild_close
     with dissolve
     pov "มายด์ เธอรู้มั้ยที่ฉันทำให้น่ะ ฉันไม่ได้อยากได้อะไรเป็นพิเศษหรอกนะ"
@@ -318,12 +318,12 @@ label act2_3_shot_1:
     show mild unhood_smile2 at mild_close
     with dissolve
     mild "ไม่เอา ถือว่าให้ฉันได้ตอบแทนอะไรให้บ้างเถอะนะคะ"
-    pov "(ตะ แต่หลอดนั้นเธอ…. ดูดไปแล้วนะ)"
+    pov "(ตะ แต่หลอดนั้นเธอ... ดูดไปแล้วนะ)"
     pov "(ช่วยไม่ได้แฮะ)"
     "จากนั้น [povname] ก็ได้ดื่มชานมหลอดเดียวกับมายด์ไป แล้วมายด์ก็พึ่งรู้ตัวว่ามันเป็นจูบทางอ้อมนั่นเอง"
     show mild unhood_flustered at mild_close
     with dissolve
-    mild "(นะ นี่มัน จะ จะ จูบ… งื้ออ)"
+    mild "(นะ นี่มัน จะ จะ จูบ.. งื้ออ)"
     pov "มายด์"
     show mild unhood_blush3 at mild_close
     with dissolve
@@ -340,7 +340,7 @@ label act2_3_shot_1:
     pov "ที่นี่ไงล่าาา"
     show mild unhood_idle2 at leftposmild
     with easeinleft
-    mild "ที่นี่คือ…… ที่ไหนหรอคะ?"
+    mild "ที่นี่คือ.. ที่ไหนหรอคะ?"
     pov "ที่นี่คือเกมเซนเตอร์ ล่ะ เป็นที่ที่มีเกมหลายๆ แบบ ให้เราเล่นเพื่อผ่อนคลายน่ะ"
     show mild unhood_smile2 at bounce,leftposmild
     with dissolve
@@ -417,7 +417,7 @@ label act2_3_shot_4:
     pov "ถ้าเธอชอบฉันก็ดีใจนะ ดูแลพี่แพนดีๆล่ะ"
     pov "(อ่า.. )"
     mild "จะดูแลอย่างดีเลยค่ะ ขอบคุณนะคะ [povname]"
-    mild "{size=*0.5}แบบนี้จะไม่ให้ชอบ… ได้ยังไงล่ะ{/size}"
+    mild "{size=*0.5}แบบนี้จะไม่ให้ชอบ.. ได้ยังไงล่ะ{/size}"
     pov "มายด์พูดอะไรรึเปล่า?"
     scene bg17
     show mild unhood_blush2 at mildunhood_close
@@ -442,7 +442,7 @@ label act2_3_shot_4:
     diary "ถึงฉันจะบอกว่าเอากี่ตัวก็ได้ แต่ชุดนั้นก็เหมาะกับมายด์มากเลยนะ"
     diary "เหมาะกับสาวสวยและน่ารักสุดๆ หวังว่าจะใส่มาให้เห็นบ่อยๆนะ"
     diary "ต่อมาก็ตอนไปร้านอาหาร ทำเอาช็อคเลยล่ะ เพราะชื่อเมนูแต่ละจานดูจะอันตรายสุดๆไปเลยล่ะ "
-    diary "เฮ่อ… ดีนะที่ไม่ต้องกินจริงๆ"
+    diary "เฮ่อ.. ดีนะที่ไม่ต้องกินจริงๆ"
     nvl clear
     diary "แล้วจากนั้นเราก็ไปเกมเซนเตอร์กัน จังหวะที่ได้เห็นมายด์ตอนนั้น ทำเอาหัวใจของฉัน"
     diary "เต้นไม่เป็นจังหวะ ทำไมถึงน่ารักขนาดนี้กันนะ อยากจะบอกว่าชอบนะ เรามาคบกันเปล่า"
