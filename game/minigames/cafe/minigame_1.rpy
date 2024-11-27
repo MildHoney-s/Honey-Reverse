@@ -196,7 +196,6 @@ init python:
                             client.maid = None
                             client.waiting_duration = client.serve_duration
                             client.stat = "waiting"
-                            # renpy.play("minigames/cafe/return_bench.ogg", "sound")
                             continue
                     self.stamina_gain_timers[client] -= 1
                     if self.stamina_gain_timers[client] <= 0:
@@ -350,8 +349,6 @@ screen minigame_1(g,force_lose = False):
         action Function(g.clicked_out)
 
     for i in g.clients:
-        #if g.stat == "night":
-            #add "frame1" xysize 305,160 align (.5,.5) offset i.x-11,i.y-5
         fixed fit_first True:
             align (.5,.5) offset i.x,i.y
             # Only show the button if the client's status is in ["waiting", "ready", "chanting", "serving"]
@@ -397,7 +394,6 @@ screen minigame_1(g,force_lose = False):
                                 vbox:
                                     add "frame" xsize 130 ysize 130
                             add i.image xsize 130 ysize 130  # Left half for client image (156px wide)
-                            #text str(i.wait_counter)
 
                         hovered Function(g.hovered, i)
                         unhovered Function(g.unhovered)
@@ -409,7 +405,6 @@ screen minigame_1(g,force_lose = False):
                         ypos -100
                         for stat_name, stat_value in i.stats.items():
                             text "[stat_name]: [stat_value]" size 20 color "#FFFFFF" xalign 0.5  # Show each stat with a label
-
 
     # maid display and interaction at the bottom of the screen
     hbox:
@@ -462,8 +457,7 @@ screen minigame_1(g,force_lose = False):
 
     # Time bar during night state
     elif g.stat == "night":
-        # bar value g.time range 90 xysize 900,10 align (0.5, 0.0) yoffset 10
-        bar value g.time range 60 xysize 800,128 right_bar "test_bar" left_bar "bar" align (0.5, 0.0) yoffset 10
+        bar value g.time range 60 xysize 800,128 right_bar "cafe_empty_time_bar" left_bar "cafe_full_time_bar" align (0.5, 0.0) yoffset 10
         text ("[g.time]") align (0.5, 0.065) color "#ffffff"
         timer 1 repeat True action Function(g.tick)
 

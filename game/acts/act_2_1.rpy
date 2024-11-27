@@ -67,7 +67,6 @@ label act2_1_shot_3:
     mild "*กรี้ด* อ๊าา-!! เดี๋ยว-!!"
     play sound doorclose_sfx fadein 0.25
     show bg5day with hpunch
-    # text : (SFX : เสียงดัง *ปั้ง-!!*) พร้อมกับประตูห้องที่ปิดลง
     pov "อะ ขอโทษนะมายด์-! เอิ่ม... มาปลุกให้ไปกินข้าวน่ะ "
     play sound walking_sfx
     pov "เดี๋ยวฉันลงไปทำข้าวเช้ารอนะ ถ้าแต่งตัวเสร็จแล้วลงมาทานด้วยนะ"
@@ -129,7 +128,7 @@ label act2_1_shot_5:
     hide spa
     show mild pajamas_flustered1 at paja
     with dissolve
-    mild "คะ คะ?" # Char mild_pajamas_flustered
+    mild "คะ คะ?"
     window hide
     show mild pajamas_flustered1 at bounce,mild_zoom
     pause 1.5
@@ -416,14 +415,14 @@ label act2_1_shot_11:
     pov "เหมือนมายด์กำลังโมโหอยู่เลย..."
     show del normal_idle1 at leftclosedel
     show tsuru normal_idle1 at rightclosetsuru
-    tsuru "แหะๆ นั่นสินะคะ" # Char ยิ้มแห้ง
-    debirun "ใช่เลยผู้จัดการ" # Char ยิ้มแห้ง
+    tsuru "แหะๆ นั่นสินะคะ"
+    debirun "ใช่เลยผู้จัดการ"
     scene bg2day
     with fade
     centered "{=down_text}XXX ปัดตก XXX{/down_text} "
     centered "{=cafe_text}- บทบาทยันเดเระ -{/cafe_text}"
     show mild pajamas_angry1 at paja
-    mild "ถ้าคิดจะไปกินของคนอื่นล่ะก็.... จะไม่มีเค้ากับเธอ... มีแต่ฉันกับแก..." # ทําหน้ายันๆ Char หน้ามืด แบบยัน
+    mild "ถ้าคิดจะไปกินของคนอื่นล่ะก็.... จะไม่มีเค้ากับเธอ... มีแต่ฉันกับแก..."
     show mild pajamas_angry2 at paja
     with dissolve
     mild "เดี๋ยวนะ... กลิ่นนี้ไม่คุ้นเลย แกไปหาคนอื่นมาใช่ไหม-!!"
@@ -461,7 +460,7 @@ label act2_1_shot_11:
     show tsuru normal_crying at rightclosetsuru
     hide mild pajamas_smile5
     with dissolve
-    tsuru_debirun "เอาพี่มายด์ของหนูคืนมา-!!" # Char หน้าร้องไห้
+    tsuru_debirun "เอาพี่มายด์ของหนูคืนมา-!!"
     scene bg2day
     with fade
     centered "{=down_text}XXX ปัดตก XXX{/down_text} "
@@ -546,14 +545,14 @@ label act2_1_shot_12:
     show tsuru normal_doubt at rightpostsuru
     hide emotion_shock
     with easeinleft
-    debirun "พี่มายด์ ทำใจดีๆ ไว้ พี่มายด์-!! พี่ซึรุทำอะไรสักอย่างทีสิ" # ทำหน้าล่ก
+    debirun "พี่มายด์ ทำใจดีๆ ไว้ พี่มายด์-!! พี่ซึรุทำอะไรสักอย่างทีสิ"
     show tsuru normal_dark at rightpostsuru
     with dissolve
-    tsuru "มายด์ขึ้นสเตจหรอ... อะฮุฮิฮุฮิ น่าสนใจดีหนิน่า พี่มายด์ขึ้นสเตจ" # Char tsuru_maid_angry_au_darkface
+    tsuru "มายด์ขึ้นสเตจหรอ... อะฮุฮิฮุฮิ น่าสนใจดีหนิน่า พี่มายด์ขึ้นสเตจ"
     scene bg2day
     show mild_please_sd at truecenter:
         zoom 0.7
-    mild "ฉะ ฉันขอดูอีกสักพักได้ไหมคะ [povname]" # SD : มายมาอ้อน
+    mild "ฉะ ฉันขอดูอีกสักพักได้ไหมคะ [povname]"
     mild "ฉันไม่แน่ใจว่าจะทำได้น่ะค่ะ..."
     mild "น้าาาาาาาาาาา"
     hide mild_please_sd
@@ -563,7 +562,7 @@ label act2_1_shot_12:
     pov "ดะ เดี๋ยว ทำไมเป็นฉันล่ะ"
     show tsuru normal_smile4 at middlepostsuru
     with dissolve
-    tsuru "เพราะ พี่เป็นผู้จัดการไง หนูเชื่อว่าพี่ต้องทำอะไรได้แน่นอน" # Char tsuru_maid_smile_ad_ec_mo
+    tsuru "เพราะ พี่เป็นผู้จัดการไง หนูเชื่อว่าพี่ต้องทำอะไรได้แน่นอน"
     pov "(ยัยนี่นี่นะ... เอาโรลในร้านมาใช้เลยหรอ...)"
     show mild pajamas_grumpy at paja
     with dissolve
@@ -593,7 +592,7 @@ label act2_1_shot_13:
     pov "อะ อะไรนะมายด์"
     show mild pajamas_grumpy at bounce,paja
     with dissolve
-    mild "ฉันขอชานมเพิ่มขึ้นเดือนนึงเต็มๆ เลยยยยย-!!" # Char mild_maid_smile_au_ec_mo
+    mild "ฉันขอชานมเพิ่มขึ้นเดือนนึงเต็มๆ เลยยยยย-!!"
     pov "ดะ เดี๋ยว... ไม่ได้ ฉันให้ได้แค่สัปดาห์เดียวเท่านั้น มากกว่านั้นมันจ-"
     show mild pajamas_sorry at leftposmild
     with zoomout

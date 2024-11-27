@@ -385,7 +385,7 @@ label act2_3_shot_3:
     pov "หู้ยยย อย่างคมม ไม่อยากเชื่อเลยว่าเกมแบบนี้ เธอก็ยังเล่นได้"
     show mild unhood_smile2 at leftposmild
     with dissolve
-    mild "ฉะ ฉันอาจจะถนัดเกมอะไรแนวนี้รึเปล่านะคะ" #ยิ้ม
+    mild "ฉะ ฉันอาจจะถนัดเกมอะไรแนวนี้รึเปล่านะคะ"
     pov "(ดูผ่อนคลายแบบนี้ชื่นใจดีจัง)"
     scene bg17
     with fade
@@ -396,7 +396,7 @@ label act2_3_shot_3:
     show mild unhood_smile2 at leftposmild
     show emotion_surprise at emotepairpos1
     with dissolve
-    mild "พี่แพนนน" # Emote ประกาย
+    mild "พี่แพนนน"
     pov "เอาล่ะนะ!"
     play music doll_bgm loop volume 0.75
     call screen tutorial("doll")

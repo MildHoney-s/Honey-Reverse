@@ -1,5 +1,4 @@
 label act1_1_shot_1:
-    #Start scene Story Board Shot 1
     scene bg1 with dissolve
     play music walking_bgm loop
 
@@ -30,18 +29,16 @@ label act1_1_shot_1:
     stop music fadeout 0.5
     window hide dissolve
 
-    jump act1_1_shot_2 #go to shot 2
+    jump act1_1_shot_2
 
-#Interview scene with Ashy/Ami  Shot 2
 label act1_1_shot_2:
-    #Ashy scene
     scene black
     centered "{=centered_text}บุคคลปริศนา มีผมสีส้มยาวสลวย พร้อมกิ๊ปที่มีรูปภูเขาไฟ มีท่าทางดูสดใส และ มั่นใจในตัวเอง{/centered_text}"
 
     scene bg2day with eye_open
 
     style centered_text:
-        color "#b5b5e9"  # Blue text color
+        color "#b5b5e9"
 
     show sd_ashy_1_black at truecenter:
         zoom 0.6
@@ -113,7 +110,6 @@ label act1_1_shot_2:
     hide ashy_sd_1 with dissolve
     window hide
 
-    #Ami scene
     scene black with dissolve
     stop music
     centered "{=centered_text}หลังจากผ่านไป 3 วัน บุคคลปริศนา2 ที่มาสมัครงาน มีผมสีขาว ลักษณะเป็นทวินเทล \nมีบางอย่างที่คล้ายๆที่ไขลานอยู่ด้านบน มีท่าทางเขินอาย ดูน่ารักน่าทะนุถนอม{/centered_text}"
@@ -121,7 +117,6 @@ label act1_1_shot_2:
     $ renpy.pause(1,modal=True)
     scene bg2day with eye_open
     show ami_sd_1 at truecenter
-    #play music ami_bgm loop
     play music ami_bgm loop fadein 0.25
     window show
     ami "(อื้อออ...เราทำได้..ทำได้..ใช่ทำได้)"
@@ -169,11 +164,9 @@ label act1_1_shot_2:
     ami "ชะ- ช่วยด้วยค่าาาาาา ToT"
     manager "(จากนั้นหัวของเธอ ก็ได้หมุนไปเรื่อยๆ ไม่หยุด ทำให้ได้รู้ว่าหากเด็กคนนี้เขิน ร่างกายในส่วนหัวของเธอจะหมุนไม่หยุด . . . แม้กระทั่งเธอได้เดินออกจากร้านไป และการสัมภาษณ์ก็ได้จบลง...)"
 
-    jump act1_1_shot_3 #go to shot 3
+    jump act1_1_shot_3
 
-#Met Mild-R shot3
 label act1_1_shot_3:
-    # Back to the street scene
     scene  bg1 with transition_4
     play music walking_bgm loop fadein 1.0
     manager "นี่ก็ประกาศมา 2 สัปดาห์แล้วนะ ทำไมถึงไม่เจอสักที พนักงานดีๆน่ะ!"
@@ -263,9 +256,7 @@ label act1_1_shot_3:
     with walkingVertical
     jump act1_1_shot_4
 
-#Introduce Mild and Tsuru shot 4-5
 label act1_1_shot_4:
-    # Scene transition to the cafe
     play sound door_sfx fadein 0.25 volume 0.55
     scene bg2day
     play music cafe_bgm loop fadein 0.5
@@ -431,8 +422,6 @@ label act1_1_shot_4:
             $ honey_score += 1
             jump act1_1_shot_4_q1_c2
 
-
-#choice from shot 5
 label act1_1_shot_4_q1_c1:
     manager "ไม่มีเงิน ก็จ่ายด้วยสิ่งนั้นสินะ"
     show mild unhood_blushed at mildunhood
@@ -447,7 +436,6 @@ label act1_1_shot_4_q1_c1:
     manager "ไม่ช่ายยยยย ฉันล้อเล่นนนนนนนนนนน หยุดก๊อนนนนซึรุ๊ววววววววววว"
     jump act1_1_shot_4_q1_c2
 
-#choice from shot 5
 label act1_1_shot_4_q1_c2:
     scene bg2day:
         crop (200,200,1280,720)
@@ -518,7 +506,6 @@ label act1_1_shot_4_q1_c2:
     $ renpy.pause(1,modal=False)
     jump act1_1_shot_5
 
-#shot 6 Introduction
 label act1_1_shot_5:
     $ povname = renpy.input("ส่วนฉันชื่อ (กรอกชื่อของคุณ)")
 
@@ -627,7 +614,6 @@ label act1_1_shot_5:
 
     jump act1_1_shot_6
 
-#shot 6 First Work
 label act1_1_shot_6:
     stop music
     stop sound
@@ -777,7 +763,6 @@ label act1_1_shot_6:
     centered "{=centered_text}แล้วเวลาก็ล่วงเลยผ่านไปจนกระทั่งถึงเวลาปิดร้าน{/centered_text}"
     jump act1_1_shot_7
 
-#shot7 End of work
 label act1_1_shot_7:
     play music night_bgm loop fadein 0.5
     scene bg2night

@@ -18,5 +18,3 @@ transform stamina_get_animation(x, y):
         ease .1 alpha 0
     parallel:
         ease .6 yoffset -540
-
-# self.parent.spawn_explosion(self.x, self.y)

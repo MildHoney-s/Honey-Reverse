@@ -331,7 +331,6 @@ label act1_2_shot_5:
     show siralfred at emoteclose:
         zoom 0.3
     show tsuru maid_smile at rightpostsuru
-#เดลหน้าแดงเขินๆ
     show del maid_smile2 at leftposdel
     with dissolve
     tsuru "แน่ละสิ ก็เดลชอบกอดนี่นา ตอนมานอนกับพี่ทีไรยังขอกอดพี่อยู่บ่อยๆ เลย"

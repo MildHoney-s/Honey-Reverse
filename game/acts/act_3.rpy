@@ -688,8 +688,7 @@ label act3_shot_3:
     scene bg24 with fade
     pause 1.5
     researcher "มันอาจจะเจ็บนิดหน่อยนะสาวน้อย"
-#renpy มันกากอะ
-    researcher "ตัว DNA ของเธอมันช่างเหมาะกับการทดลองเสียจริง"
+    researcher "โครงสร้าง DNA ของเธอมันช่างเหมาะกับการทดลองเสียจริง"
     researcher "ถ้าเป็นเธอล่ะก็ การทดลองสร้างมิวแทนต์ที่สมบูรณ์แบบจะต้องสำเร็จอย่างแน่นอน"
     mild "มะ ไม่เอาค่ะ.."
     researcher "โธ่~ สาวน้อย เธอจะได้รับร่างกายที่แข็งแกร่ง เพียงแค่เธอ~ ยอมให้ฉันดัดแปลง DNA ของเธอนิดหน่อย~"
@@ -853,4 +852,4 @@ label act3_shot_3:
     scene black
     with fade
     $ persistent.gameclear = True
-    jump demo
+    jump end_credit

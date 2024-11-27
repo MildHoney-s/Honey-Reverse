@@ -13,7 +13,6 @@ image black:
 image white:
     Solid("#FFF")
 
-
 init:
     python:
         import math
@@ -84,19 +83,4 @@ label splashscreen:
 
 # The game starts here.
 label start:
-    # $ povname = "Test"
-    #$ _skipping = False
-    #$ config.rollback_enabled = False
-    # $ persistent.gameclear = True
-    # $ quick_menu = False
-    # play music minigame1_bgm loop fadein 1.0
-    # call screen minigame_1(minigame1_act2_2)
-    # $ renpy.block_rollback()
-    # $ quick_menu = True
-    # $ money = 100
-    # $ tokens = 100
-    # jump doll_game_center
-    # jump act2_3_shot_1
-    # jump whack_a_mole_game_center
-    # jump shooting_game_center
     jump act1_1_shot_1
