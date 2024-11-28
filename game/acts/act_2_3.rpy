@@ -356,6 +356,7 @@ label act2_3_shot_1:
 
 label act2_3_shot_2:
     scene bg19
+    with dottransition
     play music arcade_bgm loop fadein 1.0 fadeout 0.5
     show mild unhood_idle1 at leftposmild
     with fade

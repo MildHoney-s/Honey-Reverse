@@ -188,7 +188,7 @@ label act1_2_shot_3:
     debirun "ผู้จัดการยังชมขนาดนั้น พี่มายด์เชื่อมั่นในตัวเองไว้นะ"
     show del normal_doubt1 at rightposdel
     with dissolve
-    debirun "จะว่าไป นี่ก็ใกล้เวลาเปิดร้านแล้วนะ ทำไมพี่ซึรูรุยังไม่มาอีก"
+    debirun "จะว่าไป นี่ก็ใกล้เวลาเปิดร้านแล้วนะ ทำไมพี่ซึรุยังไม่มาอีก"
     pov "เอาเถอะไม่เป็นไรหรอก พวกเธอไปเตรียมตัวกันได้เลยนะ"
     show mild maid_smile3 at leftposmild
     show del normal_smile1 at rightposdel

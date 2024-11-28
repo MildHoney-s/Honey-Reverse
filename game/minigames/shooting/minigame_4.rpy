@@ -88,7 +88,7 @@ init python:
             # Increase difficulty by reducing spawn interval
             self.time_elapsed += 1
             if self.time_elapsed % 20 == 0:  # Every 30 seconds
-                self.spawn_interval = max(0.1, self.spawn_interval - 0.15)  # Reduce spawn interval but not below 0.5
+                self.spawn_interval = max(0.05, self.spawn_interval - 0.15)  # Reduce spawn interval but not below 0.5
 
         def start(self):
             self.stat = "playing"
