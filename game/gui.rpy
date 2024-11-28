@@ -91,7 +91,7 @@ define gui.button_text_size = gui.interface_text_size  # Button text size.
 
 # Button text colors for different states.
 define gui.button_text_idle_color = gui.idle_color
-define gui.button_text_hover_color = gui.hover_color
+define gui.button_text_hover_color = "#e7e7e7"
 define gui.button_text_selected_color = gui.selected_color
 define gui.button_text_insensitive_color = gui.insensitive_color
 
@@ -137,6 +137,7 @@ define gui.slot_button_text_size = 21
 define gui.slot_button_text_xalign = 0.5
 define gui.slot_button_text_idle_color = gui.idle_small_color
 define gui.slot_button_text_selected_idle_color = gui.selected_color
+# define gui.slot_button_text_selected_hover_color = "#fff"
 define gui.slot_button_text_selected_hover_color = gui.hover_color
 
 # Thumbnail dimensions for save slots.

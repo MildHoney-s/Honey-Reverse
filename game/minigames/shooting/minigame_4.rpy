@@ -245,25 +245,28 @@ screen shooter():
         key "K_r" action Function(shooter_game.reload)
 
     elif shooter_game.stat == "dead":
-        vbox:
-            align .5,.5 spacing 10
-            if tokens > 3:
+        default retry_message = False
+        timer 1.5 action SetScreenVariable("retry_message", True)
+        if retry_message:
+            vbox:
+                align .5,.5 spacing 10
+                if tokens > 3:
+                    button:
+                        background "#006"
+                        insensitive_background "#eae4e4"
+                        hover_background "#00a"
+                        padding 20,20
+                        align (0.5, 0.5)
+                        text "Restart use 3 coins"
+                        action [Function(shooter_game.restart),SetVariable("tokens",tokens-3)]
                 button:
                     background "#006"
                     insensitive_background "#eae4e4"
                     hover_background "#00a"
                     padding 20,20
                     align (0.5, 0.5)
-                    text "Restart use 3 coins"
-                    action [Function(shooter_game.restart),SetVariable("tokens",tokens-3)]
-            button:
-                background "#006"
-                insensitive_background "#eae4e4"
-                hover_background "#00a"
-                padding 20,20
-                align (0.5, 0.5)
-                text "Exit" style "exitshooter_text"
-                action Return(shooter_game.kills)
+                    text "Exit" style "exitshooter_text"
+                    action Return(shooter_game.kills)
 
         imagebutton auto "images/tutorial/howtoplay_button_%s.png":
             focus_mask True

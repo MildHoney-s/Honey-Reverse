@@ -83,4 +83,7 @@ label splashscreen:
 
 # The game starts here.
 label start:
-    jump act1_1_shot_1
+    # jump act1_1_shot_1
+    $ povname = "test"
+    $ tokens = 100
+    jump act2_3_shot_2
