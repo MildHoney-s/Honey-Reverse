@@ -738,7 +738,7 @@ screen save():
 screen load():
 
     tag menu
-
+    key "K_ESCAPE" action Return()
     if load_from_main == False:
         add gui.game_menu_background
         imagebutton auto "gui/button/window_%s.png" action Return() align(0.91,0.1)
