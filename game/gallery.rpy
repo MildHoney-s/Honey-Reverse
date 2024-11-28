@@ -2,6 +2,7 @@ screen gallery_1():
 
     # Ensure this replaces the main menu.
     tag menu
+    key "K_ESCAPE" action Return()
 
     # The background.
     add gui.main_menu_background
@@ -16,11 +17,11 @@ screen gallery_1():
         spacing 13
 
         # Call make_button to display the gallery images or locked placeholders.
-        add g.make_button("main_menu", im.Scale("gui/main_menu.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
-        add g.make_button("CG1", im.Scale("images/cg/cg2.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
-        add g.make_button("CG2", im.Scale("images/cg/cg3.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG3", im.Scale("images/cg/cg4.jpg" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG4", im.Scale("images/cg/cg5.png" if persistent.gameclear and persistent.secret_cg else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image extra condition
+        add g.make_button("main_menu", im.Scale("images/gallery/gallery_1.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
+        add g.make_button("CG1", im.Scale("images/gallery/gallery_2.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
+        add g.make_button("CG2", im.Scale("images/gallery/gallery_3.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
+        add g.make_button("CG3", im.Scale("images/gallery/gallery_4.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
+        add g.make_button("CG4", im.Scale("images/gallery/gallery_5.png" if persistent.gameclear and persistent.secret_cg else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image extra condition
 
     frame:
         xalign 0.5
@@ -49,6 +50,7 @@ screen gallery_2():
 
     # Ensure this replaces the main menu.
     tag menu
+    key "K_ESCAPE" action Return()
 
     # The background.
     add gui.main_menu_background
@@ -63,12 +65,12 @@ screen gallery_2():
         spacing 13
 
         # Call make_button to display the gallery images or locked placeholders.
-        add g.make_button("SD1", im.Scale("images/sd/ashy_sd_1.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
-        add g.make_button("SD2", im.Scale("images/sd/ami_sd_2.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
-        add g.make_button("SD3", im.Scale("images/sd/sd_wanted.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
-        add g.make_button("SD4", im.Scale("images/sd/mildru_sd_1.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("SD5", im.Scale("images/sd/delbyou.jpg" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5) # Locked image
-        add g.make_button("SD6", im.Scale("images/sd/milddel.jpg" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
+        add g.make_button("SD1", im.Scale("images/gallery/gallery_6.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
+        add g.make_button("SD2", im.Scale("images/gallery/gallery_7.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
+        add g.make_button("SD3", im.Scale("images/gallery/gallery_8.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
+        add g.make_button("SD4", im.Scale("images/gallery/gallery_9.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
+        add g.make_button("SD5", im.Scale("images/gallery/gallery_10.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5) # Locked image
+        add g.make_button("SD6", im.Scale("images/gallery/gallery_11.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
 
     frame:
         xalign 0.5
@@ -97,6 +99,7 @@ screen gallery_3():
 
     # Ensure this replaces the main menu.
     tag menu
+    key "K_ESCAPE" action Return()
 
     # The background.
     add gui.main_menu_background
@@ -111,11 +114,11 @@ screen gallery_3():
         spacing 13
 
         # Call make_button to display the gallery images or locked placeholders.
-        add g.make_button("SD7", im.Scale("images/sd/dual_sd.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
-        add g.make_button("SD8", im.Scale("images/sd/mild_please_sd.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
-        add g.make_button("SD9", im.Scale("images/sd/photo_sd.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
-        add g.make_button("SD10", im.Scale("images/sd/ppan_sd.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("SD11", im.Scale("images/sd/garapon_sd.jpg" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5) # Locked image
+        add g.make_button("SD7", im.Scale("images/gallery/gallery_12.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
+        add g.make_button("SD8", im.Scale("images/gallery/gallery_13.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
+        add g.make_button("SD9", im.Scale("images/gallery/gallery_14.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
+        add g.make_button("SD10", im.Scale("images/gallery/gallery_15.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
+        add g.make_button("SD11", im.Scale("images/gallery/gallery_16.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5) # Locked image
 
     frame:
         xalign 0.5
@@ -144,6 +147,7 @@ screen gallery_4():
 
     # Ensure this replaces the main menu.
     tag menu
+    key "K_ESCAPE" action Return()
 
     # The background.
     add gui.main_menu_background
@@ -158,12 +162,12 @@ screen gallery_4():
         spacing 13
 
         # Call make_button to display the gallery images or locked placeholders.
-        add g.make_button("CB1", im.Scale("images/sd/chibi_1.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image  # Unlocked first image
-        add g.make_button("CB2", im.Scale("images/sd/chibi_2.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CB3", im.Scale("images/sd/som.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
-        add g.make_button("CB4", im.Scale("images/sd/rabbit.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CB5", im.Scale("images/sd/capybara.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CB6", im.Scale("images/sd/hornbill.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
+        add g.make_button("CB1", im.Scale("images/gallery/gallery_17.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image  # Unlocked first image
+        add g.make_button("CB2", im.Scale("images/gallery/gallery_18.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
+        add g.make_button("CB3", im.Scale("images/gallery/gallery_19.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
+        add g.make_button("CB4", im.Scale("images/gallery/gallery_20.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
+        add g.make_button("CB5", im.Scale("images/gallery/gallery_21.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
+        add g.make_button("CB6", im.Scale("images/gallery/gallery_22.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
 
     frame:
         xalign 0.5
@@ -192,6 +196,7 @@ screen gallery_5():
 
     # Ensure this replaces the main menu.
     tag menu
+    key "K_ESCAPE" action Return()
 
     # The background.
     add gui.main_menu_background
@@ -206,8 +211,8 @@ screen gallery_5():
         spacing 13
 
         # Call make_button to display the gallery images or locked placeholders.
-        add g.make_button("CB7", im.Scale("images/sd/panda.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
-        add g.make_button("CB8", im.Scale("images/sd/del_lili.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
+        add g.make_button("CB7", im.Scale("images/gallery/gallery_23.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
+        add g.make_button("CB8", im.Scale("images/gallery/gallery_24.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
 
     frame:
         xalign 0.5
@@ -236,6 +241,7 @@ screen gallery_6():
 
     # Ensure this replaces the main menu.
     tag menu
+    key "K_ESCAPE" action Return()
 
     # The background.
     add gui.main_menu_background
@@ -250,12 +256,12 @@ screen gallery_6():
         spacing 13
 
         # Call make_button to display the gallery images or locked placeholders.
-        add g.make_button("AS1", im.Scale("images/assets/cucumbag.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
-        add g.make_button("AS2", im.Scale("images/assets/cucumburg.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
-        add g.make_button("AS3", im.Scale("images/assets/milktea.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
-        add g.make_button("AS4", im.Scale("images/assets/omurice.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("AS5", im.Scale("images/assets/diary.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("AS6", im.Scale("images/assets/caring.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
+        add g.make_button("AS1", im.Scale("images/gallery/gallery_25.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
+        add g.make_button("AS2", im.Scale("images/gallery/gallery_26.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
+        add g.make_button("AS3", im.Scale("images/gallery/gallery_27.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
+        add g.make_button("AS4", im.Scale("images/gallery/gallery_28.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
+        add g.make_button("AS5", im.Scale("images/gallery/gallery_29.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
+        add g.make_button("AS6", im.Scale("images/gallery/gallery_30.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
 
     frame:
         xalign 0.5
@@ -284,6 +290,7 @@ screen gallery_7():
 
     # Ensure this replaces the main menu.
     tag menu
+    key "K_ESCAPE" action Return()
 
     # The background.
     add gui.main_menu_background
@@ -298,11 +305,11 @@ screen gallery_7():
         spacing 13
 
         # Call make_button to display the gallery images or locked placeholders.
-        add g.make_button("AS7", im.Scale("images/assets/siralfred.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
-        add g.make_button("AS8", im.Scale("images/assets/spa.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
-        add g.make_button("AS9", im.Scale("images/assets/edamame.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
-        add g.make_button("AS10", im.Scale("images/assets/cake.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("AS11", im.Scale("images/assets/locket_close.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
+        add g.make_button("AS7", im.Scale("images/gallery/gallery_31.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
+        add g.make_button("AS8", im.Scale("images/gallery/gallery_32.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
+        add g.make_button("AS9", im.Scale("images/gallery/gallery_33.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
+        add g.make_button("AS10", im.Scale("images/gallery/gallery_34.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
+        add g.make_button("AS11", im.Scale("images/gallery/gallery_35.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
 
     frame:
         xalign 0.5

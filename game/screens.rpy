@@ -107,7 +107,7 @@ init python:
     g.condition("persistent.gameclear")
 
     g.button("CB4")
-    g.image(im.Scale("images/sd/rabbit.pn",1000,1000))
+    g.image(im.Scale("images/sd/rabbit.png",1000,1000))
     g.condition("persistent.gameclear")
 
     g.button("CB5")
