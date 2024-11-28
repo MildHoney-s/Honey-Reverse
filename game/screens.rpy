@@ -10,6 +10,7 @@ default persistent.gameclear = False
 default persistent.secret_cg = False
 default persistent.current_page = 1
 default persistent.current_page_gallery = 1
+default is_video_render = False
 default load_from_main = True
 default config_from_main = True
 default show_skip_btn = True
@@ -405,6 +406,9 @@ screen quick_menu():
 
     ## Ensure this appears on top of other screens.
     zorder 100
+
+    if not is_video_render:
+        key "K_ESCAPE" action ShowMenu("preferences")
 
     if quick_menu:
 

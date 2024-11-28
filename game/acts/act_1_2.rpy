@@ -410,6 +410,7 @@ label act1_2_shot_7:
     scene black with dissolve
     stop music
     $ _game_menu_screen = None
+    $ is_video_render = True
     $ quick_menu = False
     $ renpy.block_rollback()
     play movie "frog.webm"
@@ -420,6 +421,7 @@ label act1_2_shot_7:
     play music panda_bgm fadein 0.25
     play movie "animal.webm" volume 0
     $ renpy.pause(36, hard=True)
+    $ is_video_render = False
     $ quick_menu = True
     $ renpy.block_rollback()
     $ _game_menu_screen = "save"

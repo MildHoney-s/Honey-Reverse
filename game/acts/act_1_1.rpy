@@ -52,8 +52,10 @@ label act1_1_shot_2:
     with dissolve
     $ _game_menu_screen = None
     $ renpy.block_rollback()
+    $ is_video_render = True
     play movie "ASH rap.webm"
     $ renpy.pause(15, hard=True)
+    $ is_video_render = False
     $ renpy.block_rollback()
     $ _game_menu_screen = "save"
     hide ashy_sd_1
@@ -144,8 +146,10 @@ label act1_1_shot_2:
     stop sound
     $ _game_menu_screen = None
     $ renpy.block_rollback()
+    $ is_video_render = True
     play movie "Ami crowded.webm"
     $ renpy.pause(18, hard=True)
+    $ is_video_render = False
     $ renpy.block_rollback()
     $ _game_menu_screen = "save"
     hide ami_sd_2
