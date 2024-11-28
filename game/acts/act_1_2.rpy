@@ -417,7 +417,8 @@ label act1_2_shot_7:
     $ renpy.pause(42, hard=True)
     scene white with tv_transition
     stop music
-    play movie "animal.webm"
+    play music panda_bgm fadein 0.25
+    play movie "animal.webm" volume 0
     $ renpy.pause(36, hard=True)
     $ quick_menu = True
     $ renpy.block_rollback()

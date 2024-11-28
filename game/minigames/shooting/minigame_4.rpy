@@ -168,7 +168,7 @@ init python:
                         self.combo_kills += 1
                         if self.kills > persistent.shoot_highscore:
                             persistent.shoot_highscore = self.kills
-                        if (self.combo_kills%10) == 0:
+                        if (self.combo_kills%10) == 0 and self.health < 20:
                             self.health += 1
             else:
                 renpy.play("minigames/shooting/empty.ogg", "sound")
