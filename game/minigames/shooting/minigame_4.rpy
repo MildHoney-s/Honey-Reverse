@@ -175,6 +175,7 @@ init python:
 
         def got_shot(self):
             if self.stat == "playing":
+                self.combo_kills = 0
                 self.health -= 1
                 if self.health < 1:
                     self.stat = "dead"
@@ -246,7 +247,7 @@ screen shooter():
 
     elif shooter_game.stat == "dead":
         default retry_message = False
-        timer 1.5 action SetScreenVariable("retry_message", True)
+        timer 1.25 action SetScreenVariable("retry_message", True)
         if retry_message:
             vbox:
                 align .5,.5 spacing 10
