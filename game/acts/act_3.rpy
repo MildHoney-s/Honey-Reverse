@@ -625,6 +625,9 @@ label act3_shot_3:
     play sound knock_sfx volume 1.8
     pov "มายด์อาร์!! เธอยังโอเคดีใช่มั้ย!?"
     pov "มายด์! รอฉันก่อนนะ!"
+    $ quick_menu = False
+    $ _game_menu_screen = None
+    $ is_video_render = True
     play sound opendoor_sfx fadein 0.85
     scene bg7night with runningVertical
     $ renpy.pause(1.5,hard=True)
@@ -647,6 +650,9 @@ label act3_shot_3:
         yalign 0.6
     with vpunch
     pause 0.5
+    $ quick_menu = True
+    $ _game_menu_screen = "save"
+    $ is_video_render = False
     scene bg6night
     show mild pajamas_sad at mild_close
     show black:

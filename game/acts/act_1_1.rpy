@@ -615,7 +615,7 @@ label act1_1_shot_5:
     tsuru "อะฮุฮิฮุฮิ สวัสดีค่าพี่ๆ ยินดีต้อนรับค่า เชิญนั่งที่โต๊ะได้เลยนะคะ"
 
     pov "นี่มายด์ วันนี้ก็ลองดูซึรุเป็นตัวอย่างไปก่อนนะ ฉันขอไปเข้าครัวก่อน"
-
+    scene cafe_bg with None
     jump act1_1_shot_6
 
 label act1_1_shot_6:
@@ -627,7 +627,6 @@ label act1_1_shot_6:
     call screen minigame_1(minigame1_act1_1,force_lose = True)
     $ renpy.block_rollback()
     $ quick_menu = True
-
     scene bg2day with fade
     play music cafe_bgm loop fadein 0.5
     play sound  crowded_sfx fadein 0.5 volume 0.65
@@ -756,6 +755,7 @@ label act1_1_shot_6:
     pause 0.5
     hide mild maid_idle1 with easeoutleft
     "หลังจากมายด์เสิร์ฟลูกค้าโต๊ะนี้ มายด์ไม่รู้เลยว่าตัวเองได้มีแฟนคลับไปซะแล้ว"
+    scene cafe_bg with None
     stop music fadeout 0.5
     $ quick_menu = False
     play music minigame2_bgm loop fadein 1.0

@@ -1,4 +1,5 @@
 label act2_2_shot_1:
+    scene cafe_bg with None
     $ quick_menu = False
     play music minigame1_bgm loop fadein 1.0
     call screen minigame_1(minigame1_act2_2)
@@ -115,9 +116,9 @@ label act2_2_shot_1:
     $ is_video_render = True
     $ renpy.block_rollback()
     play movie "Bang Pho.webm"
-    $ _game_menu_screen = "save"
     $ renpy.pause(26, hard=True)
     $ is_video_render = False
+    $ _game_menu_screen = "save"
     scene black
     with fade
     $ renpy.pause(1, modal = True)

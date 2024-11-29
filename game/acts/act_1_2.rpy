@@ -212,7 +212,7 @@ label act1_2_shot_3:
     mild "ดะ..เดล.. จัง.... เปี่ยน.. ไป๊"
     debirun "เอาล่ะ! ได้เวลาไปต้อนรับเจ้าพวกมนุษย์แล้วสินะ ฮ่าฮาฮ่า!"
     mild "...."
-
+    scene cafe_bg with None
     $ quick_menu = False
     play music minigame2_bgm loop fadein 1.0 fadeout 0.5
     call screen minigame_1(minigame1_act1_2_shot_3)
@@ -270,10 +270,8 @@ label act1_2_shot_4:
     with dissolve
     tsuru "ค้าบบบบบบบ"
     stop music fadeout 1.0
-    show black
+    scene cafe_bg
     with fade
-
-
     $ quick_menu = False
     play music minigame2_bgm loop fadein 1.0 fadeout 0.5
     call screen minigame_1(minigame1_act1_2_shot_4)

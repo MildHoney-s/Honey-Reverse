@@ -351,6 +351,7 @@ label act2_3_shot_1:
     with dissolve
     mild "จะ จะลองดูนะคะ"
     play music mole_bgm loop volume 0.75
+    scene bg19 with None
     call screen tutorial("mole")
     jump whack_a_mole_game_center
 
@@ -375,6 +376,7 @@ label act2_3_shot_2:
     with dissolve
     mild "ค่า!"
     play music shoot_bgm loop volume 0.75
+    scene bg19 with None
     call screen tutorial("shoot")
     jump shooting_game_center
 
@@ -400,6 +402,7 @@ label act2_3_shot_3:
     mild "พี่แพนนน"
     pov "เอาล่ะนะ!"
     play music doll_bgm loop volume 0.75
+    scene bg17 with None
     call screen tutorial("doll")
     jump doll_game_center
 
