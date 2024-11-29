@@ -409,6 +409,7 @@ screen quick_menu():
 
     if not is_video_render:
         key "K_ESCAPE" action ShowMenu("preferences")
+        key "mouseup_3" action ShowMenu("preferences")
 
     if quick_menu:
 

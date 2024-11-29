@@ -145,7 +145,7 @@ label act2_1_shot_5:
     $ _game_menu_screen = None
     $ renpy.block_rollback()
     play movie "meme.webm"
-    $ renpy.pause(25, hard=True)
+    $ renpy.pause(8, hard=True)
     $ is_video_render = False
     $ quick_menu = True
     $ renpy.block_rollback()

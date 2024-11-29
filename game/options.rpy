@@ -4,7 +4,7 @@
 define config.name = _("HONEY REVERSE")
 
 ## Game version for display and debugging purposes.
-define config.version = "1.42"
+define config.version = "1.69"
 
 ## Short name used in builds (no spaces or special characters).
 define build.name = "HoneyReverse"
