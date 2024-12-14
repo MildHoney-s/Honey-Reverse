@@ -511,7 +511,12 @@ label act1_1_shot_4_q1_c2:
     jump act1_1_shot_5
 
 label act1_1_shot_5:
-    $ povname = renpy.input("ส่วนฉันชื่อ (กรอกชื่อของคุณ)")
+    python:
+        povname = renpy.input("ส่วนฉันชื่อ (กรอกชื่อของคุณ)")
+
+        reserved_name = ['Mild-R', 'มายด์อาร์']
+        while povname in reserved_name:
+            povname = renpy.input("ชื่อนี้มีคนใช้แล้ว (กรอกชื่อของคุณ)")
 
     pov "ส่วนฉันชื่อ [povname] เป็นผู้จัดการของร้านนี้"
     pov "แล้วก็มีอีกคนนึง.."
