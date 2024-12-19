@@ -5,15 +5,17 @@
 init offset = -1
 default money = 0
 default honey_score = 0
+default tokens = 1
 default persistent.gameclear = False
-default persistent.cg2 = False
-default persistent.cg3 = False
-default persistent.cg4 = False
-default persistent.cg5 = False
+default persistent.secret_cg = False
 default persistent.current_page = 1
 default persistent.current_page_gallery = 1
+default is_video_render = False
 default load_from_main = True
 default config_from_main = True
+default show_skip_btn = True
+default history_name_checker = ""
+default nvl_name_checker = ""
 
 init python:
 
@@ -21,7 +23,7 @@ init python:
     g = Gallery()
 
     # Step 2. Add buttons and images to the gallery.
-    
+
     # The first unlocked image (main_menu.png)
     g.button("main_menu")   # Button for the first unlocked image
     g.image("gui/main_menu.png")
@@ -33,20 +35,16 @@ init python:
     g.condition("persistent.gameclear")
 
     g.button("CG2")
-    g.image("images/save_load/locked.png")
-    g.condition("persistent.cg2")
-    
+    g.image(im.Scale("images/cg/cg3.png",1920,1080))
+    g.condition("persistent.gameclear")
+
     g.button("CG3")
-    g.image("images/save_load/locked.png")
-    g.condition("persistent.cg3")
+    g.image(im.Scale("images/cg/cg4.jpg",1920,1080))
+    g.condition("persistent.gameclear")
 
     g.button("CG4")
-    g.image("images/save_load/locked.png")
-    g.condition("persistent.cg4")
-
-    g.button("CG5")
-    g.image("images/save_load/locked.png")
-    g.condition("persistent.cg5")
+    g.image(im.Scale("images/cg/cg5.png",1920,1080))
+    g.condition("persistent.gameclear and persistent.secret_cg")
 
     g.button("SD1")
     g.image(im.Scale("images/sd/ashy_sd_1.png",1920,1080))
@@ -69,19 +67,111 @@ init python:
     g.condition("persistent.gameclear")
 
     g.button("SD5")
-    g.image(im.Scale("images/cg/cg2.png",1920,1080))
+    g.image(im.Scale("images/sd/delbyou.jpg",1920,1080))
     g.condition("persistent.gameclear")
 
     g.button("SD6")
-    g.image(im.Scale("images/cg/cg2.png",1920,1080))
+    g.image(im.Scale("images/sd/milddel.jpg",1920,1080))
+    g.condition("persistent.gameclear")
+
+    g.button("SD7")
+    g.image(im.Scale("images/sd/dual_sd.png",1920,1080))
+    g.condition("persistent.gameclear")
+
+    g.button("SD8")
+    g.image(im.Scale("images/sd/mild_please_sd.png",1920,1080))
+    g.condition("persistent.gameclear")
+
+    g.button("SD9")
+    g.image(im.Scale("images/sd/photo_sd.png",1620,1080))
+    g.condition("persistent.gameclear")
+
+    g.button("SD10")
+    g.image(im.Scale("images/sd/ppan_sd.png",1920,1080))
+    g.condition("persistent.gameclear")
+
+    g.button("SD11")
+    g.image(im.Scale("images/sd/garapon_sd.jpg",1920,1080))
+    g.image(im.Scale("images/sd/garapon_win_sd.jpg",1920,1080))
     g.condition("persistent.gameclear")
 
     g.button("CB1")
-    g.image(im.Scale("images/sd/chibi_1.png",1920,1080))
+    g.image(im.Scale("images/sd/chibi_1.png",1000,1000))
     g.condition("persistent.gameclear")
-    
+
     g.button("CB2")
-    g.image(im.Scale("images/sd/chibi_2.png",1920,1080))
+    g.image(im.Scale("images/sd/chibi_2.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("CB3")
+    g.image(im.Scale("images/sd/som.png",1920,1080))
+    g.condition("persistent.gameclear")
+
+    g.button("CB4")
+    g.image(im.Scale("images/sd/rabbit.png",1512,1080))
+    g.condition("persistent.gameclear")
+
+    g.button("CB5")
+    g.image(im.Scale("images/sd/capybara.png",1512,1080))
+    g.condition("persistent.gameclear")
+
+    g.button("CB6")
+    g.image(im.Scale("images/sd/hornbill.png",1512,1080))
+    g.condition("persistent.gameclear")
+
+    g.button("CB7")
+    g.image(im.Scale("images/sd/panda.png",1512,1080))
+    g.condition("persistent.gameclear")
+
+    g.button("CB8")
+    g.image(im.Scale("images/sd/del_lili.png",1512,1080))
+    g.condition("persistent.gameclear")
+
+    g.button("AS1")
+    g.image(im.Scale("images/assets/cucumbag.png",1000,1080))
+    g.condition("persistent.gameclear")
+
+    g.button("AS2")
+    g.image(im.Scale("images/assets/cucumburg.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("AS3")
+    g.image(im.Scale("images/assets/milktea.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("AS4")
+    g.image(im.Scale("images/assets/omurice.png",1000,1000))
+    g.image(im.Scale("images/assets/omurice_red.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("AS5")
+    g.image(im.Scale("images/assets/diary.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("AS6")
+    g.image(im.Scale("images/assets/caring.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("AS7")
+    g.image(im.Scale("images/assets/siralfred.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("AS8")
+    g.image(im.Scale("images/assets/spa.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("AS9")
+    g.image(im.Scale("images/assets/edamame.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("AS10")
+    g.image(im.Scale("images/assets/cake.png",1000,1000))
+    g.image(im.Scale("images/assets/cake2.png",1000,1000))
+    g.condition("persistent.gameclear")
+
+    g.button("AS11")
+    g.image(im.Scale("images/assets/locket_close.png",1000,1000))
+    g.image(im.Scale("images/assets/locket_open.png",1000,1000))
     g.condition("persistent.gameclear")
 
     # The transition used when switching images.
@@ -107,7 +197,6 @@ style hyperlink_text:
 style gui_text:
     properties gui.text_properties("interface")
 
-
 style button:
     properties gui.button_properties("button")
 
@@ -115,13 +204,11 @@ style button_text is gui_text:
     properties gui.text_properties("button")
     yalign 0.5
 
-
 style label_text is gui_text:
     properties gui.text_properties("label", accent=True)
 
 style prompt_text is gui_text:
     properties gui.text_properties("prompt")
-
 
 style bar:
     ysize gui.bar_size
@@ -153,17 +240,13 @@ style vslider:
     base_bar Frame("gui/slider/vertical_[prefix_]bar.png", gui.vslider_borders, tile=gui.slider_tile)
     thumb "gui/slider/vertical_[prefix_]thumb.png"
 
-
 style frame:
     padding gui.frame_borders.padding
     background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
 
-
-
 ################################################################################
 ## In-game screens
 ################################################################################
-
 
 ## Say screen ##################################################################
 ##
@@ -178,7 +261,6 @@ style frame:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
-
 screen say(who, what):
     style_prefix "say"
 
@@ -190,10 +272,12 @@ screen say(who, what):
             window:
                 id "namebox"
                 style "namebox"
-                text who id "who"
+                if "&" in who:
+                    text who id "who" size 30
+                else:
+                    text who id "who"
 
         text what id "what"
-
 
     ## If there's a side image, display it above the text. Do not display on the
     ## phone variant - there's no room.
@@ -212,7 +296,6 @@ style say_thought is say_dialogue
 
 style namebox is default
 style namebox_label is say_label
-
 
 style window:
     xalign 0.5
@@ -243,7 +326,6 @@ style say_dialogue:
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
-
 
     adjust_spacing False
 
@@ -283,7 +365,6 @@ style input:
     xalign gui.dialogue_text_xalign
     xmaximum gui.dialogue_width
 
-
 ## Choice screen ###############################################################
 ##
 ## This screen is used to display the in-game choices presented by the menu
@@ -298,7 +379,6 @@ screen choice(items):
     vbox:
         for i in items:
             textbutton i.caption action i.action
-
 
 style choice_vbox is vbox
 style choice_button is button
@@ -317,7 +397,6 @@ style choice_button is default:
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
 
-
 ## Quick Menu screen ###########################################################
 ##
 ## The quick menu is displayed in-game to provide easy access to the out-of-game
@@ -327,6 +406,10 @@ screen quick_menu():
 
     ## Ensure this appears on top of other screens.
     zorder 100
+
+    if not is_video_render:
+        key "K_ESCAPE" action ShowMenu("preferences")
+        key "mouseup_3" action ShowMenu("preferences")
 
     if quick_menu:
 
@@ -340,13 +423,14 @@ screen quick_menu():
             textbutton _("Load") action ShowMenu('load')
             textbutton _("Q.Save") action QuickSave()
             textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            if show_skip_btn:
+                textbutton _("Skip") action Call("confirm_pause")
+            else:
+                textbutton _("Skip") action Return() sensitive False
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Setting") action ShowMenu("preferences")
             textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
-            
-
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
 ## the player has not explicitly hidden the interface.
@@ -364,7 +448,6 @@ style quick_button:
 style quick_button_text:
     properties gui.button_text_properties("quick_button")
 
-
 ################################################################################
 ## Main and Game Menu Screens
 ################################################################################
@@ -379,6 +462,9 @@ screen black_screen():
     add (blackimage)
 
 screen navigation():
+
+    add im.Scale("gui/game_logo.png",480,280):
+        align(0.05,0.025)
 
     vbox:
         style_prefix "navigation"
@@ -405,7 +491,7 @@ screen navigation():
                 action [SetVariable("config_from_main", True), ShowMenu("preferences")]
 
             imagebutton auto "images/main_menu/gallery_%s.png":
-                focus_mask True 
+                focus_mask True
                 action [SetVariable("config_from_main", True),ShowMenu("gallery_"+str(persistent.current_page_gallery))]
 
         else:
@@ -444,7 +530,6 @@ screen navigation():
                 focus_mask True
                 action Quit(main_menu)
 
-
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
 
@@ -454,7 +539,6 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
-
 
 ## Main Menu screen ############################################################
 ##
@@ -474,7 +558,6 @@ screen main_menu():
     frame:
         style "main_menu_frame"
 
-
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
@@ -490,7 +573,6 @@ screen main_menu():
             text "[config.version]":
                 style "main_menu_version"
 
-
 style main_menu_frame is empty
 style main_menu_vbox is vbox
 style main_menu_text is gui_text
@@ -500,8 +582,6 @@ style main_menu_version is main_menu_text
 style main_menu_frame:
     xsize 420
     yfill True
-
-    #background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -518,7 +598,6 @@ style main_menu_title:
 
 style main_menu_version:
     properties gui.text_properties("version")
-
 
 ## Game Menu screen ############################################################
 ##
@@ -578,10 +657,8 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
                     transclude
 
-    
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
-
 
 style game_menu_outer_frame is empty
 style game_menu_navigation_frame is empty
@@ -599,8 +676,6 @@ style return_button_text is navigation_button_text
 style game_menu_outer_frame:
     bottom_padding 45
     top_padding 300
-
-    #background "gui/overlay/game_menu.png"
 
 style game_menu_navigation_frame:
     xsize 230
@@ -634,45 +709,6 @@ style return_button:
     yalign 1.0
     yoffset -45
 
-
-## About screen ################################################################
-##
-## This screen gives credit and copyright information about the game and Ren'Py.
-##
-## There's nothing special about this screen, and hence it also serves as an
-## example of how to make a custom screen.
-
-screen about():
-
-    tag menu
-
-    ## This use statement includes the game_menu screen inside this one. The
-    ## vbox child is then included inside the viewport inside the game_menu
-    ## screen.
-    use game_menu(_("About"), scroll="viewport"):
-
-        style_prefix "about"
-
-        vbox:
-
-            label "[config.name!t]"
-            text _("Version [config.version!t]\n")
-
-            ## gui.about is usually set in options.rpy.
-            if gui.about:
-                text "[gui.about!t]\n"
-
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
-
-
-style about_label is gui_label
-style about_label_text is gui_label_text
-style about_text is gui_text
-
-style about_label_text:
-    size gui.label_text_size
-
-
 ## Load and Save screens #######################################################
 ##
 ## These screens are responsible for letting the player save the game and load
@@ -682,19 +718,17 @@ style about_label_text:
 ## https://www.renpy.org/doc/html/screen_special.html#save https://
 ## www.renpy.org/doc/html/screen_special.html#load
 
-
-
 screen save():
 
     tag menu
-    
+
     add gui.game_menu_background
-    imagebutton auto "gui/button/window_%s.png" action Return() align(0.095,0.1)
-    text ("Save") align(0.89,0.1):
+    imagebutton auto "gui/button/window_%s.png" action Return() align(0.91,0.1)
+    text ("Save") align(0.095,0.1):
         style "pref_label_text"
     hbox:
 
-        xalign 0.12
+        xalign 0.14
         yalign 0.145
         spacing 5
 
@@ -703,24 +737,21 @@ screen save():
         textbutton _("Save") action ShowMenu('save')
         textbutton _("Load") action ShowMenu('load')
         textbutton _("Setting") action ShowMenu("preferences")
-    
-    use file_slots(_("Save"))
 
+    use file_slots(_("Save"))
 
 screen load():
 
-
-
-    tag menu  
-    
+    tag menu
+    key "K_ESCAPE" action Return()
     if load_from_main == False:
         add gui.game_menu_background
-        imagebutton auto "gui/button/window_%s.png" action Return() align(0.095,0.1)
-        text ("Load") align(0.89,0.1):
+        imagebutton auto "gui/button/window_%s.png" action Return() align(0.91,0.1)
+        text ("Load") align(0.095,0.1):
             style "pref_label_text"
         hbox:
 
-            xalign 0.12
+            xalign 0.14
             yalign 0.145
             spacing 5
 
@@ -729,19 +760,15 @@ screen load():
             textbutton _("Save") action ShowMenu('save')
             textbutton _("Load") action ShowMenu('load')
             textbutton _("Setting") action ShowMenu("preferences")
-            
     else:
         add gui.main_menu_background
         add "images/save_load/menu_load.png"
         imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.935
 
-
-    
     use file_slots(_("Load"))
 
 screen file_slots(title):
 
-    
     vbox:
         if load_from_main == False:
             xpos 176
@@ -761,15 +788,12 @@ screen file_slots(title):
                     ysize 288
 
                     imagebutton auto "images/save_load/bg_frame_%s.png" action FileAction(slot)
-                
+
                     image FileScreenshot(slot) align((0,0)) xsize 512 ysize 288
 
                     image "images/save_load/Slot_number.png" align((0.01,0.048))
                     text "#[slot]":
                             style "slot_number_text" align((0.05,0))
-    
-                        
-                       
 
     frame:
         xalign 0.5
@@ -785,20 +809,11 @@ screen file_slots(title):
                         if page == persistent.current_page:
                             image "images/save_load/page_hover.png"
                             text "[page]":
-                                style "slot_time_text" align((0.65,0.65)) 
+                                style "slot_time_text" align((0.65,0.65))
                         else:
                             imagebutton auto "images/save_load/page_%s.png" action [SetVariable("persistent.current_page",page),FilePage(page)]
                             text "[page]":
                                 style "slot_time_text" align((0.65,0.65))
-                    
-
-
-
-        
-
-
-
-
 
 style slot_number_text is gui_label_text
 
@@ -814,8 +829,6 @@ style slot_number_text:
     size 37
     spacing 2
     color '#750000'
-   
-
 
 ## Preferences screen ##########################################################
 ##
@@ -829,12 +842,12 @@ screen preferences():
     tag menu
     if config_from_main == False:
         add gui.game_menu_background
-        imagebutton auto "gui/button/window_%s.png" action Return() align(0.095,0.1)
-        text ("Setting") align(0.89,0.1):
+        imagebutton auto "gui/button/window_%s.png" action Return() align(0.91,0.1)
+        text ("Setting") align(0.095,0.1):
             style "pref_label_text"
         hbox:
 
-            xalign 0.12
+            xalign 0.14
             yalign 0.145
             spacing 5
 
@@ -843,7 +856,7 @@ screen preferences():
             textbutton _("Save") action ShowMenu('save')
             textbutton _("Load") action ShowMenu('load')
             textbutton _("Setting") action ShowMenu("preferences")
-    else: 
+    else:
         add gui.main_menu_background
         add "images/config/settings.png" align((0.5, 0.5))
         imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.825
@@ -852,50 +865,37 @@ screen preferences():
     image "images/config/setting_skip.png" xpos 949 ypos 273
     image "images/config/setting_sound.png" xpos 516 ypos 589
     image "images/config/setting_window.png" xpos 516 ypos 273
-    
     use game_menu(_("Preferences"), scroll="viewport"):
-    
-
         hbox:
-            
-
             hbox:
-
                 xpos 245
                 ypos 15
-
                 spacing 6
-
                 if preferences.fullscreen == False:
                     imagebutton:
                         focus_mask True
                         idle "images/config/settings_checked.png"
-                    
                     text ("Window"):
                         style "setting_text"
-                                
                     imagebutton auto "images/config/settings_%s.png":
                         focus_mask True
                         action Preference("display", "fullscreen")
 
                     text ("Full Screen"):
                         style "setting_text"
-                                
                 else:
-                    imagebutton auto "images/config/settings_%s.png": 
+                    imagebutton auto "images/config/settings_%s.png":
                         focus_mask True
                         action Preference("display", "any window")
 
                     text ("Window"):
                         style "setting_text"
-                                
                     imagebutton:
                         focus_mask True
                         idle "images/config/settings_checked.png"
 
                     text ("Full Screen"):
                         style "setting_text"
-                                                                      
             hbox:
 
                 xpos 360
@@ -909,26 +909,22 @@ screen preferences():
                         idle "images/config/settings_checked.png"
                     text ("Only Seen Text "):
                         style "setting_text"
-                                
                     imagebutton auto "images/config/settings_%s.png":
                         focus_mask True
                         action Preference("skip", "toggle")
                     text ("All Text"):
                         style "setting_text"
-                                
                 else:
-                    imagebutton auto "images/config/settings_%s.png": 
+                    imagebutton auto "images/config/settings_%s.png":
                         focus_mask True
                         action Preference("skip", "toggle")
                     text ("Only Seen Text"):
                         style "setting_text"
-                                
                     imagebutton:
                         focus_mask True
                         idle "images/config/settings_checked.png"
                     text ("All Text"):
                         style "setting_text"
-
 
     hbox:
         style_prefix "slider"
@@ -957,8 +953,6 @@ screen preferences():
             xpos 532
             ypos 700
 
-                
-    
     hbox:
         style_prefix "slider"
         box_wrap True
@@ -976,7 +970,6 @@ screen preferences():
         xpos 1248
         ypos 762
         spacing 6
-    
         imagebutton :
             selected_idle "images/config/settings_checked.png"
             selected_hover "images/config/settings_checked.png"
@@ -984,15 +977,8 @@ screen preferences():
             hover "images/config/settings_idle.png"
             action Preference("all mute", "toggle")
 
-        
         text ("Mute All"):
             style "setting_text"
-                
-
-
-
- 
-
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text
@@ -1070,7 +1056,6 @@ style setting_text:
     spacing 2
     color '#000000'
 
-
 ## History screen ##############################################################
 ##
 ## This is a screen that displays the dialogue history to the player. While
@@ -1082,14 +1067,13 @@ style setting_text:
 screen history():
 
     tag menu
-    
     add gui.game_menu_background
-    imagebutton auto "gui/button/window_%s.png" action Return() align(0.095,0.1)
-    text ("History") align(0.89,0.1):
+    imagebutton auto "gui/button/window_%s.png" action Return() align(0.91,0.1)
+    text ("History") align(0.095,0.1):
         style "pref_label_text"
     hbox:
 
-        xalign 0.12
+        xalign 0.14
         yalign 0.145
         spacing 5
 
@@ -1104,10 +1088,9 @@ screen history():
 
         style_prefix "history"
 
-        #background Frame(["gui/overlay/main_menu.png"], tile=True)
         xmargin 180
         ymargin 50
-        xpadding 80
+        xpadding 50
         ypadding 160
 
         vpgrid:
@@ -1124,34 +1107,41 @@ screen history():
                 for h in _history_list:
 
                     window:
-                        
-                        background Image("gui/historynamebox.png", xalign=0, yalign=0)
-
+                        if (h.who != None) and (str(h.who) is not history_name_checker):
+                            background Image("gui/historynamebox_lg.png", xalign=0, yalign=0)
                         ## This lays things out properly if history_height is None.
                         has fixed:
                             yfit True
+                        if (h.who != None):
+                            if str(h.who) is not history_name_checker:
+                                label h.who:
+                                    if "&" in h.who:
+                                        style "history_manyname_text"
+                                    else:
+                                        style "history_name_text"
+                                    substitute False
 
-                        if h.who:
+                                    ## Take the color of the who text from the Character, if
+                                    ## set.
+                                    if "color" in h.who_args:
+                                        text_color h.who_args["color"]
 
-                            label h.who:
-                                style "history_name_text"
-                                
-                                
-                                substitute False
-
-                                ## Take the color of the who text from the Character, if
-                                ## set.
-                                if "color" in h.who_args:
-                                    text_color h.who_args["color"]
+                                $ history_name_checker = h.who
+                        else:
+                            $ history_name_checker = ""
 
                         $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
                         text what:
-                            line_spacing 5
-                            substitute False
-                            size 30
-                            
-                            
-
+                            if h.who == None:
+                                xalign 0.8
+                                line_spacing 5
+                                substitute False
+                                size 40
+                            else:
+                                xalign 1.15
+                                line_spacing 5
+                                substitute False
+                                size 45
                     ## This puts some space between entries so it's easier to read
                     null height 20
 
@@ -1162,14 +1152,9 @@ screen history():
                     ## from getting cut off. Adjust when replacing the
                     ## default fonts.
 
-    
-
-
-
 ## This determines what tags are allowed to be displayed on the history screen.
 
 define gui.history_allow_tags = { "alt", "noalt" }
-
 
 style history_window is empty
 
@@ -1183,7 +1168,6 @@ style history_label_text is gui_label_text
 style history_window:
     xfill True
     ysize gui.history_height
-    
 
 style history_name:
     xpos gui.history_name_xpos
@@ -1191,13 +1175,20 @@ style history_name:
     ypos gui.history_name_ypos
     xsize gui.history_name_width
     font gui.name_text_font
-    
-
 
 style history_name_text:
     xpos 0
-    ypos 5
+    ypos .05
+    yanchor 1
     size 20
+    min_width gui.history_name_width
+    text_align gui.history_name_xalign
+
+style history_manyname_text:
+    xpos 0
+    ypos .05
+    yanchor 1
+    size 10
     min_width gui.history_name_width
     text_align gui.history_name_xalign
 
@@ -1209,490 +1200,18 @@ style history_text:
     min_width gui.history_text_width
     text_align gui.history_text_xalign
     layout ("subtitle" if gui.history_text_xalign else "tex")
-    font gui.text_font
+    kerning 1.5
+    font "TCS4GiveKhemThit.ttf"
     color gui.interface_text_color
 
 style history_label:
     xfill True
     top_margin -100
-    
 
 style history_label_text:
     xalign 0.5
-    
     ## Note: When altering the size of the label, you may need to increase the
     ## ypadding of the Frame, or separate it again into top_padding and bottom_padding
-
-## Gallery Screen #################################################################
-##
-
-
-screen gallery_1():
-
-    # Ensure this replaces the main menu.
-    tag menu
-
-    # The background.
-    add gui.main_menu_background
-    add "images/save_load/menu_gallery.png"
-
-    # A grid of buttons.
-    # Create a grid layout with 2 rows and 3 columns.
-    grid 3 2:
-
-        xpos 119
-        ypos 168
-        spacing 13
-
-        # Call make_button to display the gallery images or locked placeholders.
-        add g.make_button("main_menu", im.Scale("gui/main_menu.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
-        add g.make_button("CG1", im.Scale("images/cg/cg2.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
-        add g.make_button("CG2", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG3", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG4", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-
-
-    frame:
-        xalign 0.5
-        yalign 0.85
-        hbox:
-            style_prefix "page"
-            grid 6 1:
-                spacing 15
-                for g_page in range(1,7):
-                    frame:
-                        xsize 68
-                        ysize 68
-                        if g_page == persistent.current_page_gallery:
-                            image "images/save_load/page_hover.png"
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65)) 
-                        else:
-                            imagebutton auto "images/save_load/page_%s.png" action [SetVariable("persistent.current_page_gallery",g_page),ShowMenu("gallery_"+str(g_page))]
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65))
-    
-
-
-    imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.935
-
-screen gallery_2():
-
-    # Ensure this replaces the main menu.
-    tag menu
-
-    # The background.
-    add gui.main_menu_background
-    add "images/save_load/menu_gallery.png"
-
-    # A grid of buttons.
-    # Create a grid layout with 2 rows and 3 columns.
-    grid 3 2:
-
-        xpos 119
-        ypos 168
-        spacing 13
-
-        # Call make_button to display the gallery images or locked placeholders.
-        add g.make_button("SD1", im.Scale("images/sd/ashy_sd_1.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
-        add g.make_button("SD2", im.Scale("images/sd/ami_sd_2.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Unlocked first image
-        add g.make_button("SD3", im.Scale("images/sd/sd_wanted.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)
-        add g.make_button("SD4", im.Scale("images/sd/mildru_sd_1.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("SD5", "images/save_load/locked.png", xalign=0.5, yalign=0.5) # Locked image
-        add g.make_button("SD6", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-
-
-    frame:
-        xalign 0.5
-        yalign 0.85
-        hbox:
-            style_prefix "page"
-            grid 6 1:
-                spacing 15
-                for g_page in range(1,7):
-                    frame:
-                        xsize 68
-                        ysize 68
-                        if g_page == persistent.current_page_gallery:
-                            image "images/save_load/page_hover.png"
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65)) 
-                        else:
-                            imagebutton auto "images/save_load/page_%s.png" action [SetVariable("persistent.current_page_gallery",g_page),ShowMenu("gallery_"+str(g_page))]
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65))
-    
-
-
-    imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.935
-
-screen gallery_3():
-
-    # Ensure this replaces the main menu.
-    tag menu
-
-    # The background.
-    add gui.main_menu_background
-    add "images/save_load/menu_gallery.png"
-
-    # A grid of buttons.
-    # Create a grid layout with 2 rows and 3 columns.
-    grid 3 2:
-
-        xpos 119
-        ypos 168
-        spacing 13
-
-        # Call make_button to display the gallery images or locked placeholders.
-        add g.make_button("CB1", im.Scale("images/sd/chibi_1.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image  # Unlocked first image
-        add g.make_button("CB2", im.Scale("images/sd/chibi_2.png" if persistent.gameclear else "images/save_load/locked.png", 552, 314), xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG2", "images/save_load/locked.png", xalign=0.5, yalign=0.5)
-        add g.make_button("CG3", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG4", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG5", "images/save_load/locked.png", xalign=0.5, yalign=0.5)
-
-
-    frame:
-        xalign 0.5
-        yalign 0.85
-        hbox:
-            style_prefix "page"
-            grid 6 1:
-                spacing 15
-                for g_page in range(1,7):
-                    frame:
-                        xsize 68
-                        ysize 68
-                        if g_page == persistent.current_page_gallery:
-                            image "images/save_load/page_hover.png"
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65)) 
-                        else:
-                            imagebutton auto "images/save_load/page_%s.png" action [SetVariable("persistent.current_page_gallery",g_page),ShowMenu("gallery_"+str(g_page))]
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65))
-    
-
-
-    imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.935
-
-screen gallery_4():
-
-    # Ensure this replaces the main menu.
-    tag menu
-
-    # The background.
-    add gui.main_menu_background
-    add "images/save_load/menu_gallery.png"
-
-    # A grid of buttons.
-    # Create a grid layout with 2 rows and 3 columns.
-    grid 3 2:
-
-        xpos 119
-        ypos 168
-        spacing 13
-
-        # Call make_button to display the gallery images or locked placeholders.
-        add g.make_button("SD5", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Unlocked first image
-        add g.make_button("CG1", "images/save_load/locked.png", xalign=0.5, yalign=0.5)
-        add g.make_button("CG2", "images/save_load/locked.png", xalign=0.5, yalign=0.5)
-        add g.make_button("CG3", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG4", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG5", "images/save_load/locked.png", xalign=0.5, yalign=0.5)
-
-
-    frame:
-        xalign 0.5
-        yalign 0.85
-        hbox:
-            style_prefix "page"
-            grid 6 1:
-                spacing 15
-                for g_page in range(1,7):
-                    frame:
-                        xsize 68
-                        ysize 68
-                        if g_page == persistent.current_page_gallery:
-                            image "images/save_load/page_hover.png"
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65)) 
-                        else:
-                            imagebutton auto "images/save_load/page_%s.png" action [SetVariable("persistent.current_page_gallery",g_page),ShowMenu("gallery_"+str(g_page))]
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65))
-    
-
-
-    imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.935
-
-screen gallery_5():
-
-    # Ensure this replaces the main menu.
-    tag menu
-
-    # The background.
-    add gui.main_menu_background
-    add "images/save_load/menu_gallery.png"
-
-    # A grid of buttons.
-    # Create a grid layout with 2 rows and 3 columns.
-    grid 3 2:
-
-        xpos 119
-        ypos 168
-        spacing 13
-
-        # Call make_button to display the gallery images or locked placeholders.
-        add g.make_button("SD5", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Unlocked first image
-        add g.make_button("CG1", "images/save_load/locked.png", xalign=0.5, yalign=0.5)
-        add g.make_button("CG2", "images/save_load/locked.png", xalign=0.5, yalign=0.5)
-        add g.make_button("CG3", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG4", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG5", "images/save_load/locked.png", xalign=0.5, yalign=0.5)
-
-
-    frame:
-        xalign 0.5
-        yalign 0.85
-        hbox:
-            style_prefix "page"
-            grid 6 1:
-                spacing 15
-                for g_page in range(1,7):
-                    frame:
-                        xsize 68
-                        ysize 68
-                        if g_page == persistent.current_page_gallery:
-                            image "images/save_load/page_hover.png"
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65)) 
-                        else:
-                            imagebutton auto "images/save_load/page_%s.png" action [SetVariable("persistent.current_page_gallery",g_page),ShowMenu("gallery_"+str(g_page))]
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65))
-    
-
-
-    imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.935
-
-screen gallery_6():
-
-    # Ensure this replaces the main menu.
-    tag menu
-
-    # The background.
-    add gui.main_menu_background
-    add "images/save_load/menu_gallery.png"
-
-    # A grid of buttons.
-    # Create a grid layout with 2 rows and 3 columns.
-    grid 3 2:
-
-        xpos 119
-        ypos 168
-        spacing 13
-
-        # Call make_button to display the gallery images or locked placeholders.
-        add g.make_button("SD5", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Unlocked first image
-        add g.make_button("CG1", "images/save_load/locked.png", xalign=0.5, yalign=0.5)
-        add g.make_button("CG2", "images/save_load/locked.png", xalign=0.5, yalign=0.5)
-        add g.make_button("CG3", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG4", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-        add g.make_button("CG5", "images/save_load/locked.png", xalign=0.5, yalign=0.5)  # Locked image
-
-
-    frame:
-        xalign 0.5
-        yalign 0.85
-        hbox:
-            style_prefix "page"
-            grid 6 1:
-                spacing 15
-                for g_page in range(1,7):
-                    frame:
-                        xsize 68
-                        ysize 68
-                        if g_page == persistent.current_page_gallery:
-                            image "images/save_load/page_hover.png"
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65)) 
-                        else:
-                            imagebutton auto "images/save_load/page_%s.png" action [SetVariable("persistent.current_page_gallery",g_page),ShowMenu("gallery_"+str(g_page))]
-                            text "[g_page]":
-                                style "slot_time_text" align((0.65,0.65))
-    
-
-
-    imagebutton auto "gui/button/return_%s.png" action Return() xalign 0.5 yalign 0.935
-
-## Help screen #################################################################
-##
-## A screen that gives information about key and mouse bindings. It uses other
-## screens (keyboard_help, mouse_help, and gamepad_help) to display the actual
-## help.
-
-screen help():
-
-    tag menu
-
-    default device = "keyboard"
-
-    use game_menu(_("Help"), scroll="viewport"):
-
-        style_prefix "help"
-
-        vbox:
-            spacing 23
-
-            hbox:
-
-                textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
-                textbutton _("Mouse") action SetScreenVariable("device", "mouse")
-
-                if GamepadExists():
-                    textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
-
-            if device == "keyboard":
-                use keyboard_help
-            elif device == "mouse":
-                use mouse_help
-            elif device == "gamepad":
-                use gamepad_help
-
-
-screen keyboard_help():
-
-    hbox:
-        label _("Enter")
-        text _("Advances dialogue and activates the interface.")
-
-    hbox:
-        label _("Space")
-        text _("Advances dialogue without selecting choices.")
-
-    hbox:
-        label _("Arrow Keys")
-        text _("Navigate the interface.")
-
-    hbox:
-        label _("Escape")
-        text _("Accesses the game menu.")
-
-    hbox:
-        label _("Ctrl")
-        text _("Skips dialogue while held down.")
-
-    hbox:
-        label _("Tab")
-        text _("Toggles dialogue skipping.")
-
-    hbox:
-        label _("Page Up")
-        text _("Rolls back to earlier dialogue.")
-
-    hbox:
-        label _("Page Down")
-        text _("Rolls forward to later dialogue.")
-
-    hbox:
-        label "H"
-        text _("Hides the user interface.")
-
-    hbox:
-        label "S"
-        text _("Takes a screenshot.")
-
-    hbox:
-        label "V"
-        text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
-
-    hbox:
-        label "Shift+A"
-        text _("Opens the accessibility menu.")
-
-
-screen mouse_help():
-
-    hbox:
-        label _("Left Click")
-        text _("Advances dialogue and activates the interface.")
-
-    hbox:
-        label _("Middle Click")
-        text _("Hides the user interface.")
-
-    hbox:
-        label _("Right Click")
-        text _("Accesses the game menu.")
-
-    hbox:
-        label _("Mouse Wheel Up\nClick Rollback Side")
-        text _("Rolls back to earlier dialogue.")
-
-    hbox:
-        label _("Mouse Wheel Down")
-        text _("Rolls forward to later dialogue.")
-
-
-screen gamepad_help():
-
-    hbox:
-        label _("Right Trigger\nA/Bottom Button")
-        text _("Advances dialogue and activates the interface.")
-
-    hbox:
-        label _("Left Trigger\nLeft Shoulder")
-        text _("Rolls back to earlier dialogue.")
-
-    hbox:
-        label _("Right Shoulder")
-        text _("Rolls forward to later dialogue.")
-
-
-    hbox:
-        label _("D-Pad, Sticks")
-        text _("Navigate the interface.")
-
-    hbox:
-        label _("Start, Guide")
-        text _("Accesses the game menu.")
-
-    hbox:
-        label _("Y/Top Button")
-        text _("Hides the user interface.")
-
-    textbutton _("Calibrate") action GamepadCalibrate()
-
-
-style help_button is gui_button
-style help_button_text is gui_button_text
-style help_label is gui_label
-style help_label_text is gui_label_text
-style help_text is gui_text
-
-style help_button:
-    properties gui.button_properties("help_button")
-    xmargin 12
-
-style help_button_text:
-    properties gui.button_text_properties("help_button")
-
-style help_label:
-    xsize 375
-    right_padding 30
-
-style help_label_text:
-    size gui.text_size
-    xalign 1.0
-    text_align 1.0
-
-
-
-################################################################################
-## Additional screens
-################################################################################
-
 
 ## Confirm screen ##############################################################
 ##
@@ -1723,21 +1242,16 @@ screen confirm(message, yes_action, no_action):
         $ show_text = "Back to Title"
         $ show_message = "Return to main menu?"
 
-    
     add "gui/overlay/confirm.png"
     add "gui/overlay/popup_box.png" align(0.5,0.5)
-    
-    
-    frame:
 
+    frame:
         vbox:
             xalign 0.5
             spacing 45
-                
             label _(show_text):
                 style "confirm_prompt_text"
                 xalign 0.5
-                
             label _(show_message):
                 style "confirm_prompt"
                 xalign 0.5
@@ -1751,7 +1265,6 @@ screen confirm(message, yes_action, no_action):
 
     ## Right-click and escape answer "no".
     key "game_menu" action no_action
-
 
 style confirm_frame is gui_frame
 style confirm_button is gui_medium_button
@@ -1781,63 +1294,6 @@ style confirm_button:
 style confirm_button_text:
     properties gui.button_text_properties("confirm_button")
 
-
-## Skip indicator screen #######################################################
-##
-## The skip_indicator screen is displayed to indicate that skipping is in
-## progress.
-##
-## https://www.renpy.org/doc/html/screen_special.html#skip-indicator
-
-screen skip_indicator():
-
-    zorder 100
-    style_prefix "skip"
-
-    frame:
-
-        hbox:
-            spacing 9
-
-            text _("Skipping")
-
-            text "▸" at delayed_blink(0.0, 1.0) style "skip_triangle"
-            text "▸" at delayed_blink(0.2, 1.0) style "skip_triangle"
-            text "▸" at delayed_blink(0.4, 1.0) style "skip_triangle"
-
-
-## This transform is used to blink the arrows one after another.
-transform delayed_blink(delay, cycle):
-    alpha .5
-
-    pause delay
-
-    block:
-        linear .2 alpha 1.0
-        pause .2
-        linear .2 alpha 0.5
-        pause (cycle - .4)
-        repeat
-
-
-style skip_frame is empty
-style skip_text is gui_text
-style skip_triangle is skip_text
-
-style skip_frame:
-    ypos gui.skip_ypos
-    background Frame("gui/skip.png", gui.skip_frame_borders, tile=gui.frame_tile)
-    padding gui.skip_frame_borders.padding
-
-style skip_text:
-    size gui.notify_text_size
-
-style skip_triangle:
-    ## We have to use a font that has the BLACK RIGHT-POINTING SMALL TRIANGLE
-    ## glyph in it.
-    font "DejaVuSans.ttf"
-
-
 ## Notify screen ###############################################################
 ##
 ## The notify screen is used to show the player a message. (For example, when
@@ -1855,14 +1311,12 @@ screen notify(message):
 
     timer 3.25 action Hide('notify')
 
-
 transform notify_appear:
     on show:
         alpha 0
         linear .25 alpha 1.0
     on hide:
         linear .5 alpha 0.0
-
 
 style notify_frame is empty
 style notify_text is gui_text
@@ -1876,13 +1330,11 @@ style notify_frame:
 style notify_text:
     properties gui.text_properties("notify")
 
-
 ## NVL screen ##################################################################
 ##
 ## This screen is used for NVL-mode dialogue and menus.
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#nvl
-
 
 screen nvl(dialogue, items=None):
 
@@ -1915,7 +1367,6 @@ screen nvl(dialogue, items=None):
 
     add SideImage() xalign 0.0 yalign 1.0
 
-
 screen nvl_dialogue(dialogue):
 
     for d in dialogue:
@@ -1927,13 +1378,13 @@ screen nvl_dialogue(dialogue):
                 yfit gui.nvl_height is None
 
                 if d.who is not None:
-
-                    text d.who:
-                        id d.who_id
+                    if str(d.who) is not nvl_name_checker:
+                        text d.who:
+                            id d.who_id
+                        $ nvl_name_checker = str(d.who)
 
                 text d.what:
                     id d.what_id
-
 
 ## This controls the maximum number of NVL-mode entries that can be displayed at
 ## once.
@@ -1994,48 +1445,14 @@ style nvl_button:
 style nvl_button_text:
     properties gui.button_text_properties("nvl_button")
 
+screen tutorial(tutorial="cafe"):
+    add "images/tutorial/[tutorial]_tutorial.png"
+    imagebutton auto "images/tutorial/close_%s.png":
+        focus_mask True
+        action Return()
 
-screen bookreading:
-    predict False
-    add "gui/overlay/dark.png"
-    frame:
-
-        style_prefix "nvl_window"
-
-        
-        xmargin 80
-        ymargin 120
-        xpadding 180
-        ypadding 40
-        align (0.5, 0)
-
-        vbox:
-            spacing 15
-            
-
-            text "ในโลกที่มีการวิจัยดัดแปลงสิ่งมีชีวิตหรือที่เรียกกันว่ามิวแทนต์":
-                xalign 0.5
-            text "ได้ถูกสร้างและดัดแปลงโดยเหล่านักวิทยาศาสตร์ ":
-                xalign 0.5
-            text "แต่ด้วยความอยากรู้อยากเห็นพวกเขาได้ทำการทดลองกับร่างกายมนุษย์จริงๆ":
-                xalign 0.5
-            text "จนกระทั่งถูกรัฐบาลจับได้ว่าทำการทดลองกับมนุษย์":
-                xalign 0.5
-            text "จึงมีการบุกจับกุมยังห้องทดลอง":
-                xalign 0.5
-            text "ทว่า กลับไม่พบร่องรอยเหลืออยู่เลย เหลือเพียงความว่างเปล่า":
-                xalign 0.5
-            text "อีกทั้งยังไม่พบกับร่างของมนุษย์ผู้ที่ถูกดัดแปลงอีกด้วย":
-                xalign 0.5
-            text "ฝากแก่ทุกท่าน มิวแทนต์⬜⬜⬜เป็นอันตราย ":
-                xalign 0.5
-            text "กรุณาจัดการ⬜⬜⬜มิวแทนต์ ถ้าเป็นไปได้":
-                xalign 0.5
-
-    imagebutton auto "gui/button/cg_close_%s.png" action Return() align((0.98, 0.02))
-
-
-
-    
-
-
+screen tutorial_popup(tutorial="cafe"):
+    add "images/tutorial/[tutorial]_tutorial.png"
+    imagebutton auto "images/tutorial/close_%s.png":
+        focus_mask True
+        action [Hide("tutorial_popup")]
