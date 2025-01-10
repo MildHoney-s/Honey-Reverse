@@ -511,7 +511,18 @@ label act1_1_shot_4_q1_c2:
     jump act1_1_shot_5
 
 label act1_1_shot_5:
-    $ povname = renpy.input("ส่วนฉันชื่อ (กรอกชื่อของคุณ)")
+    python:
+        povname = renpy.input("ส่วนฉันชื่อ (กรอกชื่อของคุณ)")
+
+        reserved_name = [
+            'mild-r', 'มายด์อาร์', 'mild', 'มายอา', 'มายอาร์', 'มายด์อาร์'
+            'kumomu tsururu', 'tsururu', 'tsuru', 'คุโมกุ', 'คุโมกุ ซึรุรุ', 'ซึรุ', 'ซึรุรุ',
+            'debirun', 'เดบิรุน', 'เดล',
+        ]
+
+    if povname.lower() in reserved_name:
+        "ชื่อนี้ถูกใช้เป็นชื่อของตัวละครในเนื้อเรื่องแล้ว กรุณาเลือกชื่อใหม่"
+        jump act1_1_shot_5
 
     pov "ส่วนฉันชื่อ [povname] เป็นผู้จัดการของร้านนี้"
     pov "แล้วก็มีอีกคนนึง.."
