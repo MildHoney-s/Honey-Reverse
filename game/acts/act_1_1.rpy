@@ -516,7 +516,7 @@ label act1_1_shot_5:
 
         reserved_name = [
             'mild-r', 'มายด์อาร์', 'mild', 'มายอา', 'มายอาร์', 'มายด์อาร์'
-            'kumomu tsururu', 'tsururu', 'คุโมกุ', 'คุโมกุ ซึรุรุ', 'ซึรุ', 'ซึรุรุ',
+            'kumomu tsururu', 'tsururu', 'tsuru', 'คุโมกุ', 'คุโมกุ ซึรุรุ', 'ซึรุ', 'ซึรุรุ',
             'debirun', 'เดบิรุน', 'เดล',
         ]
 
